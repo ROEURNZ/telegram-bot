@@ -1,0 +1,17 @@
+
+# Tailwind CSS for general purpose
+```markdown
+    frontend/
+    ├── node_modules/
+    ├── public/
+    │   ├── css/
+    │   │   ├── main.css          # Compiled Tailwind CSS file
+    │   │   ├── tailwind.css      # Source Tailwind CSS file
+    │   ├── js/
+    │   │   ├── main.js           # Your JS file(s)
+    │   ├── index.php             # PHP entry file
+    ├── package-lock.json         # npm dependencies lock file
+    ├── package.json              # npm package definitions
+    ├── postcss.config.js         # PostCSS configuration
+    ├── tailwind.config.js        # Tailwind configuration file
+```

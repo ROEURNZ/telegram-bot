@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A PHP-based Telegram bot backend handling real-time interactions with users via commands and webhooks.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./public/css/styles.css -o ./public/css/tailwind.css --watch",
+    "build:css:prod": "tailwindcss -i ./public/css/styles.css -o ./public/css/tailwind.min.css --minify",
+    "switch:tailwind:2.2.19": "npm install tailwindcss@2.2.19",
+    "switch:tailwind:3.4.12": "npm install tailwindcss@3.4.12"
+  },
+  "keywords": [
+    "php",
+    "telegram-bot",
+    "backend",
+    "bot"
+  ],
+  "author": "ROEURNZ",
+  "license": "ISC",
+  "dependencies": {
+    "backend": "file:"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ROEURNZ/php-telegram-bot"
+  },
+  "email": "roeurnkaki@gmail.com",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
+  }
+}
