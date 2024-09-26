@@ -58,8 +58,8 @@ function processUpdates($updates, $token) {
                 $text = $update['message']['text'];
 
                 // Store user's language preference
-                if ($text === 'English' || $text === 'ភាសាខ្មែរ') {
-                    $userLanguages[$chatId] = ($text === 'English') ? 'en' : 'kh';
+                if ($text === '🇺🇸English' || $text === '🇰🇭ភាសាខ្មែរ') {
+                    $userLanguages[$chatId] = ($text === '🇺🇸English') ? 'en' : 'kh';
                     $language = $userLanguages[$chatId];
 
                     // Acknowledge the language selection
@@ -74,7 +74,7 @@ function processUpdates($updates, $token) {
                     // Prompt for language selection
                     $replyMarkup = json_encode([
                         'keyboard' => [
-                            [['text' => 'English'], ['text' => 'ភាសាខ្មែរ']]
+                            [['text' => '🇺🇸English'], ['text' => '🇰🇭ភាសាខ្មែរ']]
                         ],
                         'resize_keyboard' => true,
                         'one_time_keyboard' => true,
@@ -136,7 +136,7 @@ function processUpdates($updates, $token) {
                 sendMessage($chatId, $responseMessage, $token);
 
                 // Send location prompt
-                sendMessage($chatId, $messages[$language]['location_prompt'], $token);
+                sendMessage($chatId, $messages[$language], $token);
                 showLocationSharing($chatId, $token, $language);
             }
 
@@ -180,7 +180,7 @@ function showLocationSharing($chatId, $token, $language) {
         'resize_keyboard' => true,
         'one_time_keyboard' => true,
     ]);
-    sendMessage($chatId, ($language === 'en' ? "Please share your current location using the button below:" : "សូមផ្ញើទីតាំងរបស់អ្នកដោយប្រើប៊ូតុងខាងក្រោម។"), $token, $replyMarkup);
+    sendMessage($chatId, ($language === 'en' ? "Please share your current location!" : "សូមផ្ញើទីតាំងរបស់អ្នក!"), $token, $replyMarkup);
 }
 
 // Main loop to fetch updates
