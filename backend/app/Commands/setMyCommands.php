@@ -9,7 +9,10 @@ function setCommands($token) {
     $commands = [
         ['command' => 'start', 'description' => 'Start the bot'],
         ['command' => 'help', 'description' => 'Get help'],
+        ['command' => 'decode', 'description' => 'Upload an image to decode the barcode or QR code'], // New command added here
         ['command' => 'menu', 'description' => 'Show menu options'],
+        ['command' => 'share_contact', 'description' => 'Share your contact information'],
+        ['command' => 'share_location', 'description' => 'Share your current location'],
     ];
 
     $data = ['commands' => $commands];
@@ -59,4 +62,3 @@ if ($response) {
 } else {
     echo "Failed to set commands due to previous errors.";
 }
-

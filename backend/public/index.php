@@ -63,7 +63,7 @@ session_start(); // Start session to access response data
 
     <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
     <h1 class="text-3xl font-bold text-center text-blue-600 mb-8">Upload Images for Barcode or QR Code Decoding</h1>
-    <form action="../app/Commands/decode/debarcoder.php" method="POST" enctype="multipart/form-data" class="text-center space-y-6">
+    <form action="../app/Controllers/WebDecodeController.php" method="POST" enctype="multipart/form-data" class="text-center space-y-6">
         
         <!-- File Input -->
         <div>
