@@ -1,5 +1,5 @@
 <?php
 /* @ROEURNZ=> File name & directory
- * backend/app/routes/routes.php
+ * backend/app/Models/EzzeModel.php
  * 
  */

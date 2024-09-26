@@ -1,0 +1,84 @@
+# How the telegram bot structure
+
+```markdown
+    telegram-bot/
+    └── backend/
+        ├── app/
+        │   ├── Controllers/                        #  Main controllers for handling requests
+        │   │   ├── BotController.php               #  Main controller for bot interactions
+        │   │   ├── QrCodeController.php            #  Controller for QR code-related actions
+        │   │   └── BarcodeController.php           #  Controller for barcode-related actions
+        │   ├── Commands/                           #  Commands triggered by users
+        │   │   ├── StartCommand.php                #  Command to start interaction with the bot
+        │   │   ├── GenerateQrCode.php              #  Command for generating QR codes
+        │   │   └── DecodeQrCode.php                #  Command for decoding QR codes
+        │   ├── Handlers/                           #  Handlers for processing updates
+        │   │   ├── UpdateHandler.php               #  Handles incoming updates from Telegram
+        │   │   ├── FileHandler.php                 #  Handles file uploads and downloads
+        │   │   ├── QrCodeHandler.php               #  Handles QR code specific logic
+        │   │   └── BarcodeHandler.php              #  Handles barcode specific logic
+        │   ├── Models/                             #  Data models representing various entities
+        │   │   ├── User.php                        #  User model
+        │   │   └── EzzeModel.php                   #  Example model
+        │   ├── Services/                           #  Business logic and services
+        │   │   ├── BotService.php                  #  Main service for bot functionalities
+        │   │   ├── QrCodeService.php               #  Service for QR code operations
+        │   │   ├── BarcodeService.php              #  Service for barcode operations
+        │   │   └── UserService.php                 #  Service for user management
+        │   ├── Utils/                              #  Utility classes and helpers
+        │   │   ├── Helper.php                      #  General helper functions
+        │   │   ├── QrCodeUtils.php                 #  QR code utility functions
+        │   │   ├── BarcodeUtils.php                #  Barcode utility functions
+        │   │   └── Logger.php                      #  Logging utility
+        │   ├── Webhooks/                           #  Directory for handling webhooks
+        │   │   ├── WebhookHandler.php              #  Main class for processing incoming webhook updates
+        │   │   ├── WebhookMiddleware.php           #  Middleware for authorization and validation of webhooks
+        │   │   ├── WebhookEvents.php               #  Constants for webhook events
+        │   │   ├── EventListeners/                 #  Directory for event listeners
+        │   │   │   ├── MessageListener.php         #  Listens for message events
+        │   │   │   ├── CallbackQueryListener.php   #  Listens for callback query events
+        │   │   │   └── InlineQueryListener.php     #  Listens for inline query events
+        │   │   └── JobQueue.php                    #  Queue for processing long-running jobs triggered by webhooks
+        │   ├── Config/                             #  Configuration files
+        │   │   ├── bot_config.php                  #  Bot-specific configurations
+        │   │   ├── database.php                    #  Database configurations
+        │   │   └── upload.php                      #  File upload configurations
+        │   ├── Localization/                       #  Localization files
+        │   │   ├── en/                             #  English language files
+        │   │   │   ├── auth.php                    #  Authentication messages
+        │   │   │   ├── validation.php              #  Validation messages
+        │   │   │   ├── errors.php                  #  Error messages
+        │   │   │   └── messages.php                #  General messages
+        │   │   ├── kh/                             #  Khmer language files
+        │   │   │   ├── auth.php                    #  Authentication messages
+        │   │   │   ├── validation.php              #  Validation messages
+        │   │   │   ├── errors.php                  #  Error messages
+        │   │   │   └── messages.php                #  General messages
+        │   ├── Routes/                             #  Routing definitions
+        │   │   ├── routes.php                      #  Main routing definitions
+        │   ├── database/                           #  Database-related files
+        │   │   ├── connection.php                  #  Database connection setup
+        │   │   └── telegram_bot.sql                #  SQL file for initializing database
+        │   ├── public/                             #  Public-facing files
+        │   │   ├── index.php                       #  Entry point for the application
+        │   │   ├── css/                            #  CSS files
+        │   │   │   └── tailwind.css                #  Tailwind CSS file
+        │   │   └── .htaccess                       #  .htaccess file for web server configuration
+        │   ├── storage/                            #  Storage directories
+        │   │   ├── logs/                           #  Log files
+        │   │   └── uploads/                        #  Uploaded files
+        │   ├── tests/                              #  Tests for the application
+        │   │   ├── Unit/                           #  Unit tests
+        │   │   │   ├── QrCodeTest.php              #  Unit test for QR code functionalities
+        │   │   │   ├── BarcodeTest.php             #  Unit test for barcode functionalities
+        │   │   └── Integration/                    #  Integration tests
+        │   ├── vendor/                             #  Composer dependencies
+        │   ├── .env                                #  Environment variables
+        │   ├── .gitignore                          #  Git ignore file
+        │   ├── composer.json                       #  Composer configuration
+        │   ├── package.json                        #  Node.js package configuration
+        │   ├── postcss.config.js                   #  PostCSS configuration
+        │   ├── tailwind.config.js                  #  Tailwind CSS configuration
+        │   └── README.md                           #  Project documentation
+
+    ```
