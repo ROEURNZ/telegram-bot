@@ -1,13 +1,15 @@
 <?php
 return [
-    'language_selection' => "You selected English.",
     'welcome_message' => "Hello! Welcome to your bot.",
-    'please_choose_language' => "Please choose your language:",
-    'help_message' => "This is your help message. You can use /restart to restart.",
-    'decode_prompt' => "Please upload an image containing a barcode or QR code.",
-    'waiting_for_image' => "Waiting for your image. Please upload an image containing a barcode or QR code.",
-    'complete_previous_steps' => "Please complete the previous steps before decoding.",
-    'thanks_for_contact' => "Thanks for sharing your contact!\nFull Name: %s %s\nPhone Number: %s\nUsername: %s",
-    'thanks_for_location' => "Latitude: %s\nLongitude: %s\n<a href=\"%s\">View on Google Maps</a>",
-    'thank_you_location' => "Thank you for sharing your location!",
+    'language_selection' => 'Please choose your language:',
+    'contact_prompt' => 'Please share your contact information.',
+    'help' => 'This is your help message. You can use /start to begin.',
+    'menu' => 'Menu options: /start, /help',
+    'thanks_for_contact' => 'Thanks for sharing your contact!',
+    'upload_barcode' => 'Please upload a barcode or QR code image.',
+    'share_location' => 'Please share your LIVE location to continue.',
+    'barcode_error' => 'Could not decode the barcode. Please try again with a clearer image.',
+    'image_error' => 'Failed to retrieve the image file. Please try again.',
+    
+
 ];

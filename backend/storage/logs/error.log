@@ -76,3 +76,75 @@ scanned 1 barcode symbols from 1 images
 scanned 1 barcode symbols from 1 images
 scanned 1 barcode symbols from 1 images
 scanned 1 barcode symbols from 1 images
+[Mon Sep 30 12:07:38.721224 2024] [mpm_winnt:notice] [pid 9900:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Sep 30 12:07:38.721224 2024] [mpm_winnt:notice] [pid 9900:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Sep 30 12:07:38.721224 2024] [core:notice] [pid 9900:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Sep 30 12:07:38.724232 2024] [mpm_winnt:notice] [pid 9900:tid 404] AH00418: Parent: Created child process 13036
+[Mon Sep 30 12:07:39.085397 2024] [mpm_winnt:notice] [pid 13036:tid 428] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images

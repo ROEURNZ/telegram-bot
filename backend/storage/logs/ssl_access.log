@@ -119,3 +119,7 @@
 ::1 - - [26/Sep/2024:08:51:23 +0700] "GET /backend/app/Handlers/handle_commands.php HTTP/1.1" 200 12486
 ::1 - - [26/Sep/2024:08:57:47 +0700] "GET /backend/app/Controllers/ HTTP/1.1" 200 466
 ::1 - - [26/Sep/2024:08:59:35 +0700] "GET /backend/app/Controllers/BotDecodeController.php HTTP/1.1" 200 559
+::1 - - [30/Sep/2024:12:37:31 +0700] "GET / HTTP/1.1" 200 465
+::1 - - [30/Sep/2024:12:37:36 +0700] "GET /backend/ HTTP/1.1" 200 884
+::1 - - [30/Sep/2024:12:37:37 +0700] "GET /backend/app/ HTTP/1.1" 200 710
+::1 - - [30/Sep/2024:12:37:39 +0700] "GET /backend/app/Handlers/ HTTP/1.1" 200 552

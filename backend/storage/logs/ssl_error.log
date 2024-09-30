@@ -1419,3 +1419,11 @@
 [Thu Sep 26 08:56:17.739258 2024] [php:warn] [pid 11012:tid 1296] [client ::1:51309] PHP Warning:  Trying to access array offset on false in C:\\Users\\ROEURN\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Handlers\\handle_commands.php on line 194, referer: https://localhost/backend/app/Handlers/
 [Thu Sep 26 08:56:20.575904 2024] [php:warn] [pid 11012:tid 1296] [client ::1:51309] PHP Warning:  Trying to access array offset on false in C:\\Users\\ROEURN\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Handlers\\handle_commands.php on line 194, referer: https://localhost/backend/app/Handlers/
 [Thu Sep 26 08:56:26.356667 2024] [php:error] [pid 11012:tid 1296] [client ::1:51309] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in C:\\Users\\ROEURN\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Handlers\\handle_commands.php on line 189, referer: https://localhost/backend/app/Handlers/
+[Mon Sep 30 12:07:38.634605 2024] [ssl:warn] [pid 9900:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 30 12:07:38.634605 2024] [ssl:warn] [pid 9900:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Sep 30 12:07:38.671959 2024] [ssl:warn] [pid 9900:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 30 12:07:38.671959 2024] [ssl:warn] [pid 9900:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Sep 30 12:07:39.023860 2024] [ssl:warn] [pid 13036:tid 428] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 30 12:07:39.023860 2024] [ssl:warn] [pid 13036:tid 428] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Mon Sep 30 12:07:39.055397 2024] [ssl:warn] [pid 13036:tid 428] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Mon Sep 30 12:07:39.055397 2024] [ssl:warn] [pid 13036:tid 428] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
