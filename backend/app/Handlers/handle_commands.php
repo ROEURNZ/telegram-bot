@@ -2,7 +2,7 @@
 // backend/app/Handlers/handle_commands.php
 // Load configuration
 $config = require '../config/bot_config.php';
-set_time_limit(300); // Allow the script to run indefinitely
+set_time_limit(120); // Allow the script to run indefinitely
 session_start();
 
 // Load localization files

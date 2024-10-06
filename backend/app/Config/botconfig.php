@@ -4,9 +4,7 @@
  * 
  */
 return [
-    'bot_token' => '7508163863:AAEj80XH3zuh1mq-ktfDgAUqSiCpIjF8FKA', 
-    // 'webhook' => '' ,
+    'bot_token' => '7314146068:AAEAyyheyyN75K7oVc17IIvQVtp36tWJwRU', 
     'chat_id' => '5938977499',
-
     
 ];
