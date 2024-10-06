@@ -210,3 +210,11 @@
 [Sun Oct 06 17:31:31.416508 2024] [ssl:warn] [pid 23276:tid 388] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
 [Sun Oct 06 17:31:31.416508 2024] [ssl:warn] [pid 23276:tid 388] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
 [Sun Oct 06 17:31:37.165602 2024] [php:notice] [pid 23276:tid 1296] [client ::1:49553] PHP Notice:  session_start(): Ignoring session_start() because a session is already active (started from C:\\Users\\ROEURN\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Handlers\\ComandHandlers.php on line 11) in C:\\Users\\ROEURN\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Commands\\setMyCommands.php on line 5, referer: https://localhost/backend/app/Handlers/
+[Sun Oct 06 17:44:38.480687 2024] [ssl:warn] [pid 8048:tid 328] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 06 17:44:38.480687 2024] [ssl:warn] [pid 8048:tid 328] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 06 17:44:38.575185 2024] [ssl:warn] [pid 8048:tid 328] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 06 17:44:38.575185 2024] [ssl:warn] [pid 8048:tid 328] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 06 17:44:39.585845 2024] [ssl:warn] [pid 15884:tid 340] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 06 17:44:39.585845 2024] [ssl:warn] [pid 15884:tid 340] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Sun Oct 06 17:44:39.672741 2024] [ssl:warn] [pid 15884:tid 340] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Sun Oct 06 17:44:39.672741 2024] [ssl:warn] [pid 15884:tid 340] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
