@@ -18,15 +18,15 @@ if (!file_exists($configFilePath)) {
 }
 
 $config = include($configFilePath);
-$botToken = $config['bot_token'] ?? null;
-$chatId = $config['chat_id'] ?? null;
+$token = $config['bot_token'];
+$chatId = $config['chat_id'];
 
 if (!$botToken || !$chatId) {
     die('Error: Bot token or chat ID is not configured properly.');
 }
 
 // Define the Telegram API URL
-$apiUrl = "https://api.telegram.org/bot{$botToken}/";
+$apiUrl = "https://api.telegram.org/bot{$token}/";
 
 // Directory to save downloaded images
 $imagesPath = __DIR__ . "/../../storage/app/public/images/decoded/";
