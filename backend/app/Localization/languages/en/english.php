@@ -37,7 +37,7 @@ return $messages = [
 
     // Button texts
     'language_option' => '🇺🇸 English',
-    'share_contact' => '📞 Share Contact',
+    'share_contact' => '📞 Share My Contact',
     'share_location' => '📍 Share Location',
 
     'contact_request' => 'Please share your contact information.',
@@ -59,7 +59,7 @@ return $messages = [
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
     'share_contact_prompt' => 'You can share your contact by using the /share_contact command.',
-    'location_prompt' => 'Please share your location.',
+    'location_prompt' => 'Please share your location to continue.',
     'decode_not_completed' => 'You have not completed the decode process yet.',
     'upload_barcode_prompt' => 'Please upload a barcode image to decode.',
     'menu' => 'Here are the available commands: /share_contact, /decode, /share_location, /change_language.',
