@@ -4,8 +4,8 @@
 return $messages = [
     // Language and welcome flow
     'welcome_message' => 'Hello! Welcome to your bot operation.',
-    'please_choose_language' => 'Please choose your language to continue',
-    'language_selection' => 'You selected English. Please share your contact.',
+    'please_choose_language' => 'Please choose your language:',
+    'language_selection' => 'You have selected English..',
     // Help and guidance
     'help_message' => "This is your help message. You can use /restart to restart.",
     'please_start' => 'Please start the bot by sending /start.',
@@ -18,11 +18,11 @@ return $messages = [
     'complete_previous_steps' => "Please complete the previous steps before decoding.",
     'restart' => '',
     // Contact sharing
-    'contact_prompt' => "Please share your contact information using the button below.",
+    'contact_prompt' => "Please share your contact information.",
     'thanks_for_contact' => "Thanks for sharing your contact!\nFull Name: %s %s\nPhone Number: %s\nUsername: %s",
     
     // Location sharing
-    'location_prompt' => "Please share your location using the button below. This works best on mobile devices.",
+    'location_prompt' => "Please share your locationto continue. This works best on mobile devices.",
     'thanks_for_location' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
     
@@ -38,8 +38,8 @@ return $messages = [
     'language_option' => '🇺🇸 English',
     'share_contact' => '📞 Share Contact',
     'share_location' => '📍 Share Location',
-    'contact_request' => 'Please share your contact information using the button below:',
-    'location_request' => 'Please share your current location using the button below:',
+    'contact_request' => 'Please share your contact information.',
+    'location_request' => 'Please share your current location to continue.',
     
 
     
