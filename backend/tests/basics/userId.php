@@ -1,9 +1,9 @@
 <?php
 
 $config = require("../app/Config/bot_config.php");
-$botToken = $config['bot_token'] ?? null; // Your bot token
-$chatId= $config['chat_id'] ?? null; // Your bot token
-$userId = "5938977499"; // Replace with the actual user ID you want to check
+$botToken = $config['bot_token'] ;
+$chatId= $config['chat_id'] ;
+$userId = "5938977499";
 
 // Prepare the request URL
 $url = "https://api.telegram.org/bot$botToken/getChatMember?chat_id=$chatId&user_id=$userId";

@@ -4,7 +4,7 @@
  * 
  */
 return [
-    'bot_token' => '7314146068:AAEAyyheyyN75K7oVc17IIvQVtp36tWJwRU', 
-    'chat_id' => '5938977499',
+    'bot_token' => '7520890760:AAHcSkbK-vtsJqasnHQi_VRn5qC5s4olKKE', 
+    // 'chat_id' => '5938977499',
     
 ];
