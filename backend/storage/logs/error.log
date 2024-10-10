@@ -436,3 +436,18 @@ PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 
 PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
 PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
 [Thu Oct 10 14:29:17.662399 2024] [mpm_winnt:notice] [pid 20460:tid 384] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
