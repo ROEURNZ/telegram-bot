@@ -40,3 +40,10 @@
 [2024-10-10 07:09:21] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
 [2024-10-10 14:09:21] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-10 14:09:21] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-10 07:29:27] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-10 07:29:27] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-10 14:29:27] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-10 14:29:27] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[10-Oct-2024 14:30:26 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 408
+[2024-10-10 07:50:10] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-10 07:50:10] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors

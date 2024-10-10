@@ -104,7 +104,7 @@ function processUpdates($updates, $token)
                 // Handle /share_location command only if user is validated and decode is completed
                 else if ($text === '/share_location') {
                     // Check if user is validated and has completed the decode
-                    if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasCompletedDecode($chatId)) {
+                    if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasCompletedDecode($userId)) {
                         // Proceed with location sharing if both conditions are met
                         sendMessage($chatId, $messages[$language]['location_prompt'], $token);
                     } else {
@@ -112,7 +112,7 @@ function processUpdates($updates, $token)
                         if (!$ezzeModel->checkUserExists($userId)) {
                             sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                             sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
-                        } elseif (!$ezzeModel->hasCompletedDecode($chatId)) {
+                        } elseif (!$ezzeModel->hasCompletedDecode($userId)) {
                             sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
                             sendMessage($chatId, $messages[$language]['upload_barcode_prompt'], $token);
                         }

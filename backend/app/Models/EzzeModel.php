@@ -55,7 +55,7 @@ class EzzeModels
         $sql = "SELECT COUNT(*) FROM users WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':user_id' => $userId]);
-        return $stmt->fetchColumn() > 0; // Returns true if user exists
+        return $stmt->fetchColumn() > 0; 
     }
 
 
@@ -77,8 +77,8 @@ class EzzeModels
         $stmt->bindParam(':type', $params['type'], PDO::PARAM_STR);
         $stmt->bindParam(':code', $params['code'], PDO::PARAM_STR);
         $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);              // Replaced image_id with file_id
-        $stmt->bindParam(':file_unique_id', $params['file_unique_id'], PDO::PARAM_STR); // Added file_unique_id
+        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);             
+        $stmt->bindParam(':file_unique_id', $params['file_unique_id'], PDO::PARAM_STR);
 
         return $stmt->execute() ? "Barcode record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
     }
@@ -117,7 +117,7 @@ class EzzeModels
         $stmt->bindParam(':lat', $params['lat'], PDO::PARAM_STR);
         $stmt->bindParam(':lon', $params['lon'], PDO::PARAM_STR);
         $stmt->bindParam(':location_url', $params['location_url'], PDO::PARAM_STR);
-        $stmt->bindParam(':date', $params['date'], PDO::PARAM_STR); // Binding the date parameter
+        $stmt->bindParam(':date', $params['date'], PDO::PARAM_STR); 
 
         return $stmt->execute() ? "Location record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
     }
