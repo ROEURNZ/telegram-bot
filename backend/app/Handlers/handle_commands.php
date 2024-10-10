@@ -1,11 +1,9 @@
 <?php
-// the filename: backend/app/Handlers/handle_commands.php
-
-require_once __DIR__ . '/../Controllers/BotDecodeController.php';
+// backend/app/Handlers/handle_commands.php
 // Load configuration
 $config = require '../config/bot_config.php';
-set_time_limit(300); // Allow the script to run indefinitely
-date_default_timezone_set("Asia/Phnom_Penh");
+set_time_limit(120); // Allow the script to run indefinitely
+session_start();
 
 // Load localization files
 $messages = [
@@ -13,14 +11,13 @@ $messages = [
     'kh' => include('../Localization/languages/kh/khmer.php'),
 ];
 
-// Function to send messages with optional inline keyboard
+// Function to send messages
 function sendMessage($chatId, $message, $token, $replyMarkup = null) {
     $url = "https://api.telegram.org/bot{$token}/sendMessage";
     $data = [
         'chat_id' => $chatId,
         'text' => $message,
         'parse_mode' => 'HTML',
-        'disable_web_page_preview' => true
     ];
 
     if ($replyMarkup) {
@@ -36,85 +33,100 @@ function sendMessage($chatId, $message, $token, $replyMarkup = null) {
     $response = curl_exec($ch);
     
     if ($response === false) {
-        error_log("Error sending message: " . curl_error($ch)); // Log error instead of echo
+        echo "Error sending message: " . curl_error($ch);
     }
 
     curl_close($ch);
 }
 
 // Function to process updates
+
 function processUpdates($updates, $token) {
-    static $userLanguages = []; // Store user language preferences
-    static $step = []; // Track steps for users
-
-    global $messages; // Access global messages variable
-
+    global $messages; // Access the global messages array
     foreach ($updates as $update) {
         if (isset($update['message'])) {
             $chatId = $update['message']['chat']['id'];
+
+            // Determine the user's language preference
+            $userLanguage = $_SESSION['user_language'] ?? 'en'; // Default to English
 
             // Handle text messages
             if (isset($update['message']['text'])) {
                 $text = $update['message']['text'];
 
-                // Store user's language preference
-                if ($text === 'English' || $text === 'ភាសាខ្មែរ') {
-                    $userLanguages[$chatId] = ($text === 'English') ? 'en' : 'kh';
-                    $language = $userLanguages[$chatId];
+                switch ($text) {
+                    case '/start':
+                        sendMessage($chatId, $messages[$userLanguage]['welcome_message'], $token);
+                        
+                        $replyMarkup = json_encode([
+                            'keyboard' => [
+                                [['text' => '🇺🇸 English']],
+                                [['text' => '🇰🇭 ភាសាខ្មែរ']]
+                            ],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
+                        sendMessage($chatId, $messages[$userLanguage]['language_selection'], $token, $replyMarkup);
+                        break;
 
-                    // Acknowledge the language selection
-                    sendMessage($chatId, $messages[$language]['language_selection'], $token);
-                    showContactSharing($chatId, $token, $language);
-                    continue; // Skip further processing for this message
-                }
+                   case '🇺🇸 English':
+                        $_SESSION['user_language'] = 'en'; // Set user language to English
+                        sendMessage($chatId, "You selected English", $token); // New response
+                        $contactMarkup = json_encode([
+                            'keyboard' => [[['text' => 'Share My Contact', 'request_contact' => true]]],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
+                        sendMessage($chatId, $messages['en']['contact_prompt'], $token, $contactMarkup);
+                        break;
 
-                // Default response if /start or /help is used
-                if ($text === '/start') {
-                    sendMessage($chatId, $messages['en']['welcome_message'], $token);
-                    // Prompt for language selection
-                    $replyMarkup = json_encode([
-                        'keyboard' => [
-                            [['text' => 'English'], ['text' => 'ភាសាខ្មែរ']]
-                        ],
-                        'resize_keyboard' => true,
-                        'one_time_keyboard' => true,
-                    ]);
-                    sendMessage($chatId, $messages['en']['please_choose_language'], $token, $replyMarkup);
-                    continue; // Skip further processing for this message
-                }
+                    case '🇰🇭 ភាសាខ្មែរ':
+                        $_SESSION['user_language'] = 'kh'; // Set user language to Khmer
+                        sendMessage($chatId, "អ្នកបានជ្រើសរើសខ្មែរ", $token); // New response
+                        $contactMarkup = json_encode([
+                            'keyboard' => [[['text' => 'ចែករំលែកទំនាក់ទំនង', 'request_contact' => true]]],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
+                        sendMessage($chatId, $messages['kh']['contact_prompt'], $token, $contactMarkup);
+                        break;
 
-                if ($text === '/help') {
-                    sendMessage($chatId, $messages['en']['help_message'], $token);
-                    continue;
+                    case '/help':
+                        sendMessage($chatId, $messages[$userLanguage]['help'], $token);
+                        break;
+
+                    case '/menu':
+                        sendMessage($chatId, $messages[$userLanguage]['menu'], $token);
+                        break;
+
+                    case '/share_contact': // Handle the /share_contact command
+                        $contactMarkup = json_encode([
+                            'keyboard' => [[['text' => 'Share My Contact', 'request_contact' => true]]],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
+                        sendMessage($chatId, $messages[$userLanguage]['contact_prompt'], $token, $contactMarkup);
+                        break;
+
+                    case '/change_language': // Handle the /change_language command
+                        $replyMarkup = json_encode([
+                            'keyboard' => [
+                                [['text' => '🇺🇸 English']],
+                                [['text' => '🇰🇭 ភាសាខ្មែរ']]
+                            ],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
+                        sendMessage($chatId, $messages[$userLanguage]['language_selection'], $token, $replyMarkup);
+                        break;
+
+
+                    case '/decode': // Handle the /decode command
+                        sendMessage($chatId, $messages[$userLanguage]['upload_barcode'], $token);
+                        break;
                 }
             }
 
-            // Handle the /decode command
-            if (isset($text) && $text === '/decode') {
-                $language = $userLanguages[$chatId] ?? 'en'; // Default to English if not set
-            
-                if (!isset($step[$chatId])) {
-                    // First time decoding, prompt for image upload
-                    sendMessage($chatId, $messages[$language]['decode_prompt'], $token);
-                    $step[$chatId] = 'decode'; // Set step to decoding
-                } elseif ($step[$chatId] === 'decode') {
-                    if (isset($update['message']['photo'])) {
-                        // Process the uploaded image
-                        $photoId = end($update['message']['photo'])['file_id']; // Get the highest resolution image
-                        sendMessage($chatId, $messages[$language]['image_received'], $token);
-                        // Add further logic to download/process the image here
-                        $step[$chatId] = null; // Reset the step after processing
-                    } else {
-                        // Waiting for image
-                        sendMessage($chatId, $messages[$language]['waiting_for_image'], $token);
-                    }
-                } else {
-                    // If not in the correct step for decoding
-                    sendMessage($chatId, $messages[$language]['complete_previous_steps'], $token);
-                }
-                continue; // Skip further processing for this message
-            }
-            
             // Handle contact sharing
             if (isset($update['message']['contact'])) {
                 $contact = $update['message']['contact'];
@@ -123,21 +135,82 @@ function processUpdates($updates, $token) {
                 $lastName = $contact['last_name'] ?? '';
                 $username = $update['message']['from']['username'] ? "https://t.me/{$update['message']['from']['username']}" : "No username available";
 
-                // Respond with contact details based on language preference
-                $language = $userLanguages[$chatId] ?? 'en'; // Default to English if not set
-                $responseMessage = sprintf(
-                    $messages[$language]['thanks_for_contact'],
-                    $firstName,
-                    $lastName,
-                    $phoneNumber,
-                    $username
-                );
+                // Get the user's selected language
+                $language = $_SESSION['user_language'] ?? 'en'; // Default to English if not set
+
+                // Prepare the response message based on the selected language
+                if ($language === 'kh') {
+                    $responseMessage = sprintf(
+                        $messages['kh']['thanks_for_contact'],
+                        $firstName,
+                        $lastName,
+                        $phoneNumber,
+                        $username
+                    );
+                } else {
+                    $responseMessage = sprintf(
+                        "Thanks for sharing your contact!\nFull Name: %s %s\nPhone Number: %s\nUsername: %s",
+                        $firstName,
+                        $lastName,
+                        $phoneNumber,
+                        $username
+                    );
+                }
 
                 sendMessage($chatId, $responseMessage, $token);
+                sendMessage($chatId, $messages[$userLanguage]['upload_barcode'], $token);
+            }
 
-                // Send location prompt
-                sendMessage($chatId, $messages[$language]['location_prompt'], $token);
-                showLocationSharing($chatId, $token, $language);
+            // Handle image upload (barcode/QR code)
+            if (isset($update['message']['photo'])) {
+                $fileId = end($update['message']['photo'])['file_id'];
+
+                // Retrieve the file data
+                $fileData = file_get_contents("https://api.telegram.org/bot{$token}/getFile?file_id={$fileId}");
+                $fileData = json_decode($fileData, true);
+
+                if (isset($fileData['result']['file_path'])) {
+                    $filePath = $fileData['result']['file_path'];
+                    $fileUrl = "https://api.telegram.org/file/bot{$token}/{$filePath}";
+
+                    // Download the image
+                    $downloadedImage = file_get_contents($fileUrl);
+                    $localFilePath = "../images/" . basename($filePath);
+
+                    // Ensure the directory exists and is writable
+                    if (!is_dir('../images')) {
+                        mkdir('../images', 0777, true);
+                    }
+
+                    file_put_contents($localFilePath, $downloadedImage);
+
+                    // Process the barcode image
+                    $decodedBarcode = processBarcodeImage($localFilePath);
+
+                    if ($decodedBarcode) {
+                        // Store the decoded barcode in the session as an array
+                        if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
+                            $_SESSION['decodedBarcodes'][$chatId] = [];
+                        }
+                        $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcode; // Append to the array
+
+                        // Ask for location sharing if this is the first barcode
+                        if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                            $locationMarkup = json_encode([
+                                // 'keyboard' => [
+                                //     [[ 'text' => 'Share Location', 'request_location' => true ]]
+                                // ],
+                                'resize_keyboard' => true,
+                                'one_time_keyboard' => true,
+                            ]);
+                            sendMessage($chatId, $messages[$userLanguage]['share_location'], $token, $locationMarkup);
+                        }
+                    } else {
+                        sendMessage($chatId, $messages[$userLanguage]['barcode_error'], $token);
+                    }
+                } else {
+                    sendMessage($chatId, $messages[$userLanguage]['image_error'], $token);
+                }
             }
 
             // Handle location sharing
@@ -146,45 +219,63 @@ function processUpdates($updates, $token) {
                 $latitude = $location['latitude'];
                 $longitude = $location['longitude'];
 
-                $mapsUrl = "https://www.google.com/maps?q={$latitude},{$longitude}";
+                // Get the user's selected language
+                $language = $_SESSION['user_language'] ?? 'en'; // Default to English if not set
 
-                $language = $userLanguages[$chatId] ?? 'en'; // Default to English if not set
-                $responseMessage = sprintf(
-                    $messages[$language]['thanks_for_location'],
-                    $latitude,
-                    $longitude,
-                    $mapsUrl
-                );
+                // Retrieve the decoded barcodes from the session (as an array)
+                $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? ['No barcode decoded.'];
+
+                // Get the current date and time
+                $date = date('M-d-Y');
+                $time = date('H:i');
+
+                // Prepare the location URL
+                $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
+
+                // Format the barcode list for the response
+                $barcodeList = implode("\n", array_map(function($barcode, $index) {
+                    return ($index + 1) . ". $barcode";
+                }, $decodedBarcodes, array_keys($decodedBarcodes)));
+
+                // Prepare the response message based on the selected language
+                if ($language === 'kh') {
+                    $responseMessage = sprintf(
+                        $messages['kh']['thank_you_location'],
+                        $date,
+                        $time,
+                        $barcodeList,
+                        $locationUrl
+                    );
+                } else {
+                    $responseMessage = sprintf(
+                        "Date: %s %s\nDecoded Codes:\n%s\nLocation: %s",
+                        $date,
+                        $time,
+                        $barcodeList,
+                        $locationUrl
+                    );
+                }
 
                 sendMessage($chatId, $responseMessage, $token);
-                sendMessage($chatId, $messages[$language]['thank_you_location'], $token);
+
+                // Clear the decoded barcodes after the message is sent
+                unset($_SESSION['decodedBarcodes'][$chatId]);
             }
         }
     }
 }
 
-// Function to show contact sharing options
-function showContactSharing($chatId, $token, $language) {
-    $replyMarkup = json_encode([
-        'keyboard' => [[['text' => ($language === 'en' ? 'Share Contact' : 'ព័ត៌មានទំនាក់ទំនង'), 'request_contact' => true]]],
-        'resize_keyboard' => true,
-        'one_time_keyboard' => true,
-    ]);
-    sendMessage($chatId, ($language === 'en' ? "Please share your contact information using the button below:" : "សូមផ្ដល់ព័ត៌មានទំនាក់ទំនងរបស់អ្នកដោយប្រើប៊ូតុងខាងក្រោម។"), $token, $replyMarkup);
-}
 
-// Function to show location sharing options
-function showLocationSharing($chatId, $token, $language) {
-    $replyMarkup = json_encode([
-        'keyboard' => [[['text' => ($language === 'en' ? 'Share Location' : 'ផ្ញើទីតាំង'), 'request_location' => true]]],
-        'resize_keyboard' => true,
-        'one_time_keyboard' => true,
-    ]);
-    sendMessage($chatId, ($language === 'en' ? "Please share your current location using the button below:" : "សូមផ្ញើទីតាំងរបស់អ្នកដោយប្រើប៊ូតុងខាងក្រោម។"), $token, $replyMarkup);
+// Function to process the barcode image
+function processBarcodeImage($filePath) {
+    // Ensure the zbarimg command is executable
+    $command = escapeshellcmd("zbarimg --raw " . escapeshellarg($filePath));
+    $output = shell_exec($command);
+    return $output ? trim($output) : false; // Return false on failure
 }
 
 // Main loop to fetch updates
-$offset = 0; // Offset for pagination
+$offset = 0;
 while (true) {
     $updates = file_get_contents("https://api.telegram.org/bot{$config['bot_token']}/getUpdates?offset={$offset}");
     $updates = json_decode($updates, true);
@@ -193,8 +284,8 @@ while (true) {
         processUpdates($updates['result'], $config['bot_token']);
         $offset = end($updates['result'])['update_id'] + 1;
     } else {
-        error_log("No updates found."); // Log no updates
+        echo "No updates found.";
     }
 
-    sleep(2); 
+    sleep(1);
 }
