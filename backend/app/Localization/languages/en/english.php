@@ -24,6 +24,7 @@ return $messages = [
 
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
+
     'thanks_for_location' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
