@@ -101,3 +101,29 @@ Stack trace:
 #4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(4): include('...')
 #5 {main}
   thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php on line 40
+[2024-10-11 06:39:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-11 06:39:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-11 13:39:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-11 13:39:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[11-Oct-2024 13:39:16 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php:40
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(40): PDO->__construct()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(49): Database->__construct()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(16): Database::getInstance()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php(30): EzzeModels->__construct()
+#4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(4): include('...')
+#5 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php on line 40
+[2024-10-11 06:39:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-11 06:39:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-11 13:39:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-11 13:39:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[11-Oct-2024 13:39:44 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php:40
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(40): PDO->__construct()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(49): Database->__construct()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(16): Database::getInstance()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php(30): EzzeModels->__construct()
+#4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(4): include('...')
+#5 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php on line 40
