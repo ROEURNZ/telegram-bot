@@ -1,5 +1,5 @@
 <?php 
-// include __DIR__ . '/../functions/polling.php';
+// file name '/../functions/polling.php';
 // Loop to keep the bot running indefinitely
 while (true) {
     // Build the URL to fetch updates with the current offset

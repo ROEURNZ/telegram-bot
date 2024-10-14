@@ -2,7 +2,9 @@
 
 return $langBase = [
     // Language and welcome flow
-    'welcome_message' => "សួស្ដី! សូមសូមស្វាគមន៍មកកាន់ប្រព័ន្ធប្រតិបត្តិការយើងខ្ញុំ។",
+    // 'welcome_message' => "សួស្ដី! សូមសូមស្វាគមន៍មកកាន់ប្រព័ន្ធប្រតិបត្តិការយើងខ្ញុំ។",
+    'new_user_message' => "សួស្ដី! សូមសូមស្វាគមន៍មកកាន់ប្រព័ន្ធប្រតិបត្តិការយើងខ្ញុំ។",
+    'welcome_message' => 'សូមស្វាគមន៍, %s %s! រីករាយដែលបានជួបអ្នក!',
     'please_choose_language' => 'សូមជ្រើសរើសភាសាដើម្បីបន្ត',
     'language_selection' => 'អ្នកបានជ្រើសរើសភាសាខ្មែរ។',
     'please_start' => 'សូមចាប់ផ្តើមបូតដោយផ្ញើ /start ។',
@@ -29,7 +31,8 @@ return $langBase = [
 
     // Decoding results
     'decode_success' => "បានដកស្រង់កូដបានដោយជោគជ័យ!\nប្រភេទ: %s\nទិន្នន័យ: %s",
-    'decode_failure' => "បរាជ័យក្នុងការដកស្រង់កូដ។ សូមព្យាយាមម្តងទៀតឬផ្ដល់រូបភាពដែលច្បាស់ជាងនេះ។",
+    'decode_failure' => "សូមព្យាយាមម្តងទៀតឬផ្ដល់រូបភាពដែលច្បាស់ជាងនេះ។",
+    'barcode_error'  => "សូមព្យាយាមម្តងទៀតឬផ្ដល់រូបភាពដែលច្បាស់ជាងនេះ។",
 
     // Error messages
     'image_download_failed' => "បរាជ័យក្នុងការដោនឡូតរូបភាព។ សូមព្យាយាមម្តងទៀត។",
@@ -58,7 +61,8 @@ return $langBase = [
 
 
 
- 
+
+
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
@@ -70,17 +74,22 @@ return $langBase = [
     'location_not_shared' => 'You have not shared your location yet.',
 
 
+    'image_error' => "សូមទោស ខ្ញុំមិនអាចទាញយករូបភាពបានទេ។ សូមសាកល្បងម្តងទៀត។",
+    'image_download_error' => "ការទាញយករូបភាពបរាជ័យ សូមសាកល្បងម្តងទៀត។",
+    'directory_error' => "មានបញ្ហាក្នុងការបង្កើតថតឯកសារសម្រាប់រក្សារូបភាព សូមទាក់ទងបុគ្គលិកបច្ចេកទេស។",
+    'image_save_error' => "ការរក្សាទុករូបភាពបរាជ័យ សូមសាកល្បងម្តងទៀត។",
+    // 'barcode_error' => "ខ្ញុំមិនអាចបកស្រាយកូដបារ៉ាក់បានទេ សូមធ្វើឱ្យវាថ្លាក់ចេញបន្តិចហើយសាកល្បងម្តងទៀត។",
+    'barcode_success' => "ជោគជ័យ! កូដបារ៉ាក់ត្រូវបានបកស្រាយនិងរក្សាទុក។ អ្នកអាចបន្តការស្កេនទៀត។",
+    'db_insert_error' => "មានបញ្ហាក្នុងការរក្សាទុកទិន្នន័យកូដបារ៉ាក់ សូមសាកល្បងម្តងទៀត។",
+
 
 
     // commands
-
-    'start_description' => 'ចាប់ផ្តើមបូត',
-    'stop_description' => 'បញ្ឈប់បូត',
-    'help_description' => 'ទទួលបានជំនួយពីការប្រើប្រាស់បូត',
-    'menu_description' => 'បង្ហាញម៉ឺនុយបញ្ជា',
-    'share_contact_description' => 'ចែករំលែកព័ត៌មានកម្រិតរបស់អ្នក',
-    'share_location_description' => 'ចែករំលែកទីតាំងរបស់អ្នក',
-    'decode_description' => 'ដោះស្រាយកូដបាកូដឬ QR',
-    'change_language_description' => 'ផ្លាស់ប្តូរប្រាជ្ញា​របស់​បូត',
-    'command_menu_header' => 'នេះគឺជាបញ្ជីបញ្ជាដែលមាននៅលើបូត:',
+    'start_desc' => "សូមចុចលើពាក្យ /start ដើម្បីចាប់ផ្ដើម។",
+    'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
+    'decode_desc' => "ដកស្រង់អត្ថបទពីកូដបារ៉ូដ ឬកូដ QR",
+    'share_location_desc' => "ចែករំលែកទីតាំងរបស់អ្នក",
+    'help_desc' => "ទទួលបានជំនួយ",
+    'menu_desc' => "បើកម៉ឺនុយ",
+    'change_language_desc' => "ប្ដូរភាសា",
 ];

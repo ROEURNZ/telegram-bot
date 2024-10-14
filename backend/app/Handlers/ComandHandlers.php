@@ -1,44 +1,53 @@
 <?php
+
 // backend/app/Handlers/CommandHandlers.php
-
 include __DIR__ . '/../includes/IncludeCommands.php';
-
 
 function processUpdates($updates, $token)
 {
-
+    global $currentMessages;
     static $userLanguages = []; // Store user language preferences
     global $messages; // Access global messages variable
-    // Instantiate the model
+    // Instantiate the model globally
     $ezzeModel = new EzzeModels();
+    setCommands($token, $currentMessages);
+
     // $ezzeModel = new EzzeModels($pdo);
     foreach ($updates as $update) {
         if (isset($update['message'])) {
+            setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
             $userId = $update['message']['from']['id'];
+            $firstName = $update['message']['from']['first_name'] ?? '';
+            $lastName = $update['message']['from']['last_name'] ?? '';
+            $username = $update['message']['from']['username'] ?? '';
+            $messageId = $update['message']['message_id'];
 
-            // Set the current chat ID in the session
-            $_SESSION['currentChatId'] = $chatId;
+
             // Default language is English if not selected
-            $language = $userLanguages[$chatId] ?? 'en';
+            $language = $userLanguages[$chatId] ?? $ezzeModel->getUserLanguage($chatId, $username) ?? 'en';
 
 
+            // Get messages based on the selected language
+            
+            $currentMessages = $messages[$language];
             // Handle text messages
             if (isset($update['message']['text'])) {
-                $text = $update['message']['text'];
-
-                // Check if the bot has started
-                if (!isset($_SESSION['started'][$chatId]) || !$_SESSION['started'][$chatId]) {
-                    if ($update['message']['text'] !== '/start') {
-                        sendMessage($chatId, $messages[$language]['please_start'], $token);
-                        continue;
+                $userCommand = $update['message']['text'];
+                // $phoneNumber = $update['message']['text']['phone_number'];
+                // Handle START_COMMAND immediately when the user presses the Start button
+                if ($userCommand === '/start') {
+                    // Check if the user exists
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        // Existing user, send welcome back message
+                        $welcomeMessage = sprintf($messages[$language]['welcome_message'], "<b>$firstName</b>", "<b>$lastName</b>");
+                        sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
+                    } else {
+                        // New user, send introduction message
+                        sendMessage($chatId, $messages[$language]['new_user_message'], $token);
                     }
-                }
 
-                // Handle START_COMMAND
-                if ($update['message']['text'] === '/start') {
-                    $_SESSION['started'][$chatId] = true;
-                    sendMessage($chatId, $messages[$language]['welcome_message'], $token);
+                    // Show language options
                     $replyMarkup = json_encode([
                         'keyboard' => [
                             [
@@ -49,46 +58,90 @@ function processUpdates($updates, $token)
                         'resize_keyboard' => true,
                         'one_time_keyboard' => true,
                     ]);
-                    sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
 
-                    continue;
+                    // Prompt user to choose a language
+                    sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
                 }
 
                 // Handle language selection
-                if (in_array($update['message']['text'], [$messages['en']['language_option'], $messages['kh']['language_option']])) {
-                    $language = $update['message']['text'] === $messages['en']['language_option'] ? 'en' : 'kh';
+                if (in_array($userCommand, [$messages['en']['language_option'], $messages['kh']['language_option']])) {
+                    // Set the language based on user selection
+                    $language = $userCommand === $messages['en']['language_option'] ? 'en' : 'kh';
+
+                    // Update user languages array and session
                     $userLanguages[$chatId] = $language;
                     $_SESSION['userLanguages'][$chatId] = $language;
 
-                    sendMessage($chatId, $messages[$language]['language_selection'], $token);
-                    // Set commands based on selected language
-                    setCommands($token, $language);
-                    showContactSharing($chatId, $token, $language);
-                    continue;
-                }
+                    // Update the user's language in the database
+                    $ezzeModel->updateUserLanguage($chatId, $language);
 
-                // Handle /share_contact command only if language is selected
-                else if ($text === '/share_contact') {
-                    // Check if the language has been selected
-                    if (isset($userLanguages[$chatId])) {
-                        $language = $userLanguages[$chatId];
-                        // Call the function to show contact sharing in the selected language
+                    sendMessage($chatId, $messages[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
+                    setCommands($token, $currentMessages);
+
+                    if ($ezzeModel->tgUsername($userId) === null) {
+
                         showContactSharing($chatId, $token, $language);
                     } else {
-                        // If language is not set, prompt user to select a language first
-                        sendMessage($chatId, $messages['en']['please_select_language'], $token); // Default to English prompt
+                        sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
+                    }
+                    continue;
+                }
+                // Handle /change_language command
+                if ($userCommand === '/change_language') {
+                    // Check if user exists in the database
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        setCommands($token, $currentMessages);
+                        // Update the user's language in the database
+                        $ezzeModel->updateUserLanguage($chatId, $language);
+                        // Provide the option to change language
+                        $replyMarkup = json_encode([
+                            'keyboard' => [
+                                [
+                                    [
+                                        'text' => $messages['en']['language_option'],
+                                        'callback_data' => 'en'
+                                    ],
+                                    [
+                                        'text' => $messages['kh']['language_option'],
+                                        'callback_data' => 'kh'
+                                    ]
+                                ]
+                            ],
+                            'resize_keyboard' => true,
+                            'one_time_keyboard' => true,
+                        ]);
 
-                        // Optionally, send a specific language prompt based on the default
-                        if (isset($messages[$language]['language_prompt'])) {
-                            sendMessage($chatId, $messages[$language]['language_prompt'], $token);
+                        sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
+                    } else {
+                        // If user does not exist in the database, prompt to register or share contact
+                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    }
+                }
+
+
+
+                // Handle /share_contact command only if language is selected
+                if ($userCommand === '/share_contact') {
+                    if (!$ezzeModel->checkUserExists($userId)) {
+                        // If the user doesn't exist, show contact sharing prompt
+                        showContactSharing($chatId, $token, $language);
+
+
+                        setCommands($token, $currentMessages);
+                    } else {
+                        // If the user exists
+                        if (!$ezzeModel->hasSelectedLanguage($userId) || !$ezzeModel->getUserLanguage($chatId, $username)) {
+                            // If the language is not set, prompt the user to select a language
+                            sendMessage($chatId, $messages['en']['please_select_language'], $token);
                         } else {
-                            // Fallback to English if the user's selected language doesn't have the prompt
-                            sendMessage($chatId, $messages['en']['language_prompt'], $token);
+                            // Update the user's language in the database if needed
+                            $ezzeModel->updateUserLanguage($userId, $language);
                         }
                     }
                 }
+
                 // Handle /decode command only if the user's contact is registered
-                else if ($text === '/decode') {
+                if ($userCommand === '/decode') {
                     // Check if the user's contact is registered in the database using the model
                     if ($ezzeModel->checkUserExists($userId)) {
                         // Proceed with decoding if contact is validated
@@ -102,22 +155,27 @@ function processUpdates($updates, $token)
                 }
 
                 // Handle /share_location command only if user is validated and decode is completed
-                else if ($text === '/share_location') {
+                if ($userCommand === '/share_location') {
                     // Check if user is validated and has completed the decode
                     if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasCompletedDecode($userId)) {
+                        setCommands($token, $currentMessages);
+
                         // Proceed with location sharing if both conditions are met
                         sendMessage($chatId, $messages[$language]['location_prompt'], $token);
                     } else {
                         // If either condition is not met, prompt the user accordingly
                         if (!$ezzeModel->checkUserExists($userId)) {
                             sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                            sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
                         } elseif (!$ezzeModel->hasCompletedDecode($userId)) {
                             sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
+                            // Optional: Uncomment the following line if you want to prompt the user to upload a barcode
+                            // sendMessage($chatId, $messages[$language]['upload_barcode_prompt'], $token);
+                        } else {
                             sendMessage($chatId, $messages[$language]['upload_barcode_prompt'], $token);
                         }
                     }
-                } elseif ($text === '/menu') {
+                }
+                if ($userCommand === '/menu') {
                     // Check if the user exists in the database (registered by sharing contact)
                     if ($ezzeModel->checkUserExists($userId)) {
                         // Provide the list of available commands
@@ -125,251 +183,212 @@ function processUpdates($updates, $token)
                     } else {
                         // If user is not registered, prompt to share contact first
                         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                        sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
-                    }
-                }
-
-                // Handle /change_language command only if the user has shared their location
-                else if ($text === '/change_language') {
-                    // Check if user exists in the database
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        // If user has shared their location
-                        if ($ezzeModel->hasSharedLocation($chatId)) {
-                            // Provide the option to change language
-                            $replyMarkup = json_encode([
-                                'keyboard' => [
-                                    [
-                                        [
-                                            'text' => $messages['en']['language_option'],
-                                            'callback_data' => 'en'
-                                        ],
-                                        [
-                                            'text' => $messages['kh']['language_option'],
-                                            'callback_data' => 'kh'
-                                        ]
-                                    ]
-                                ],
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
-                            ]);
-
-                            sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
-                        } else {
-                            // If user hasn't shared location, prompt them to share location first
-                            sendMessage($chatId, $messages[$language]['location_not_shared'], $token);
-                            sendMessage($chatId, $messages[$language]['location_prompt'], $token);
-                        }
-                    } else {
-                        // If user does not exist in the database, prompt to register or share contact
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                        sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
                     }
                 }
 
                 // Handle existing user case and proceed to upload barcode or decode
-                elseif ($text === '/upload_barcode' || $text === '/decode') {
+                if ($userCommand === '/upload_barcode' || $userCommand === '/decode') {
                     // Check if user exists in the database
                     if ($ezzeModel->checkUserExists($userId)) {
                         sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
                     } else {
                         // If user is not registered, prompt them to register
                         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                        sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
                     }
                 }
             }
 
             // Handle contact sharing
             if (isset($update['message']['contact'])) {
-                // Extract the User ID from the message
-                $userId = $update['message']['from']['id'];
-                $messageId = $update['message']['message_id'];
-                $date = date('Y-m-d H:i:s');
-                // Dynamically retrieve chat ID from the update
-                $chatId = $update['message']['chat']['id'];
-                $language = $userLanguages[$chatId] ?? 'en';
-                $contact = $update['message']['contact'];
-                $phoneNumber = $contact['phone_number'];
-                $firstName = $contact['first_name'];
-                $lastName = $contact['last_name'] ?? '';
-                $username = $update['message']['from']['username'] ? "https://t.me/{$update['message']['from']['username']}" : "No username available";
-                // Store the username directly without the URL
-                // $username = $update['message']['from']['username'] ?? 'No username available';
-                // Prepare parameters for addUser
-                $params = [
-                    'user_id' => $userId,
-                    'chat_id' => $chatId,
-                    'msg_id' => $messageId,
-                    'first_name' => $firstName,
-                    'last_name' => $lastName,
-                    'username' => $username,
-                    'phone_number' => $phoneNumber,
-                    'date' => $date,
-                    'language' => $language
-                ];
+                if (!$ezzeModel->checkUserExists($userId) && !$ezzeModel->hasSelectedLanguage($userId)) {
+                    setCommands($token, $currentMessages);
 
+                    // Extract the User ID from the message
+                    $userId = $update['message']['from']['id'];
+                    $messageId = $update['message']['message_id'];
+                    // Dynamically retrieve chat ID from the update
+                    $chatId = $update['message']['chat']['id'];
+                    $language = $userLanguages[$chatId] ?? 'en';
+                    $contact = $update['message']['contact'];
+                    $phoneNumber = $contact['phone_number'];
+                    $firstName = $contact['first_name'];
+                    $lastName = $contact['last_name'] ?? '';
+                    $username = $update['message']['from']['username'] ? "https://t.me/{$update['message']['from']['username']}" : "No username available";
 
-                $response = $ezzeModel->addUser($params);
-                echo $response;
+                    $response = $ezzeModel->addUser([
+                        'user_id' => $userId,
+                        'chat_id' => $chatId,
+                        'msg_id' => $messageId,
+                        'first_name' => $firstName,
+                        'last_name' => $lastName,
+                        'username' => $username,
+                        'phone_number' => $phoneNumber,
+                        'date' => date('Y-m-d H:i:s'),
+                        'language' => $language
+                    ]);
 
-                // $usernameLink = ($username !== 'No username available') ? "https://t.me/$username" : $username;
-                // Prepare the response message based on the selected language
-                $responseMessage = sprintf(
-                    $messages[$language]['thanks_for_contact'],
-                    $firstName,
-                    $lastName,
-                    $phoneNumber,
-                    $username
-                );
-                sendMessage($chatId, $responseMessage, $token);
-                // Show the menu again after sharing contact
-                // Send a follow-up message
-                sendMessage($chatId, $messages[$language]['upload_barcode'], $token,  json_encode(['remove_keyboard' => true]));
+                    // Prepare the response message based on the selected language
+                    $responseMessage = sprintf(
+                        $messages[$language]['thanks_for_contact'],
+                        $firstName,
+                        $lastName,
+                        $phoneNumber,
+                        $username
+                    );
+                    sendMessage($chatId, $responseMessage, $token);
+                    // Show the menu again after sharing contact
+                    // Send a follow-up message
+                    sendMessage($chatId, $messages[$language]['upload_barcode'], $token,  json_encode(['remove_keyboard' => true]));
 
-                // Set session flag to indicate contact shared
-                $_SESSION['contact_shared'][$chatId] = true;
-                // Set the current chat ID in the session
-                $_SESSION['currentChatId'] = $chatId;
-                // Re-apply the commands after contact sharing is done
-                setCommands($token, $language);
-                continue;
+                    // Set session flag to indicate contact shared
+                    $_SESSION['contact_shared'][$chatId] = true;
+                    // Set the current chat ID in the session
+                    $_SESSION['currentChatId'] = $chatId;
+                    // Re-apply the commands after contact sharing is done
+                    setCommands($token, $currentMessages);
+                    continue;
+                } else {
+                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                }
             }
 
             // Handle image upload (Barcode / QR code)
             if (isset($update['message']['photo'])) {
-                $photo = end($update['message']['photo']);  // Get the largest image size
-                $chatId = $update['message']['chat']['id'];
-                $userId = $update['message']['from']['id'];
-                $messageId = $update['message']['message_id'];
-                $fileId = $photo['file_id'];
-                $fileUniqueId = $photo['file_unique_id'];
+                if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
+                    setCommands($token, $currentMessages);
 
-                // Retrieve the file data from Telegram
-                $fileData = file_get_contents("https://api.telegram.org/bot{$token}/getFile?file_id={$fileId}");
-                $fileData = json_decode($fileData, true);
+                    $photo = end($update['message']['photo']);
+                    $chatId = $update['message']['chat']['id'];
+                    $userId = $update['message']['from']['id'];
+                    $messageId = $update['message']['message_id'];
+                    $fileId = $photo['file_id'];
+                    $fileUniqueId = $photo['file_unique_id'];
 
-                if (isset($fileData['result']['file_path'])) {
-                    $filePath = $fileData['result']['file_path'];
-                    $fileUrl = "https://api.telegram.org/file/bot{$token}/{$filePath}";
-                    $imagesPath = __DIR__ . "/../../storage/app/public/images/decoded/";
+                    // Retrieve the file data from Telegram
+                    $fileData = file_get_contents("https://api.telegram.org/bot{$token}/getFile?file_id={$fileId}");
+                    $fileData = json_decode($fileData, true);
 
-                    // Download and save the image locally
-                    $downloadedImage = file_get_contents($fileUrl);
-                    $localFilePath = $imagesPath . basename($filePath);
+                    if (isset($fileData['result']['file_path'])) {
+                        $filePath = $fileData['result']['file_path'];
+                        $fileUrl = "https://api.telegram.org/file/bot{$token}/{$filePath}";
+                        $imagesPath = __DIR__ . "/../../storage/app/public/images/decoded/";
+                        // Download and save the image locally
+                        $downloadedImage = file_get_contents($fileUrl);
+                        $localFilePath = $imagesPath . basename($filePath);
 
-                    // Ensure the directory exists
-                    if (!is_dir($imagesPath)) {
-                        mkdir($imagesPath, 0777, true);
-                    }
-
-                    // Save the downloaded image locally
-                    file_put_contents($localFilePath, $downloadedImage);
-
-                    // Process the barcode image
-                    $decodedBarcodeData = processBarcodeImage($localFilePath);
-
-                    if (isset($decodedBarcodeData['code'])) {
-                        // Store the decoded barcode data
-                        $code = $decodedBarcodeData['code'];
-                        $type = $decodedBarcodeData['type'];
-
-                        // Save decoded barcode to session
-                        if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
-                            $_SESSION['decodedBarcodes'][$chatId] = [];
+                        // Ensure the directory exists
+                        if (!is_dir($imagesPath)) {
+                            mkdir($imagesPath, 0777, true);
                         }
-                        $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+                        // Save the downloaded image locally
+                        file_put_contents($localFilePath, $downloadedImage);
 
-                        // Ask for location sharing if this is the first barcode scanned
-                        if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
-                            // Prepare the markup for location sharing keyboard
-                            $locationMarkup = json_encode([
-                                // 'keyboard' => [
-                                //     [['text' => $messages[$language]['share_location'], 'request_location' => true]]
-                                // ],
-                                'resize_keyboard' => true,
-                                'one_time_keyboard' => true,
+                        // Process the barcode image
+                        require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
+                        $decodedBarcodeData = processBarcodeImage($localFilePath);
+                        if (isset($decodedBarcodeData['code'])) {
+                            $code = $decodedBarcodeData['code'];
+                            $type = $decodedBarcodeData['type'];
+
+                            // Save decoded barcode to session
+                            if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
+                                $_SESSION['decodedBarcodes'][$chatId] = [];
+                            }
+                            $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+
+                            // Insert the barcode record into the database
+
+                            $ezzeModel->addBarcode([
+                                'user_id' => $userId,
+                                'type' => $type,
+                                'code' => $code,
+                                'msg_id' => $messageId,
+                                'file_id' => $fileId,
+                                'file_unique_id' => $fileUniqueId,
+                                'decoded_status' => 1,
                             ]);
 
-                            // Send the location request message along with the keyboard
-                            sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+
+                            // Ask for location sharing if this is the first barcode scanned
+                            if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                json_encode([
+                                    'resize_keyboard' => true,
+                                    'one_time_keyboard' => true,
+                                ]);
+
+                                // Send the location request message along with the keyboard
+                                sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                            }
+                        } else {
+                            // sendMessage($chatId, $messages[$language]['barcode_error'], $token);
+                            return;  // Exit silently if barcode decoding fails
                         }
-
-                        // Prepare parameters for database insertion
-                        $params = [
-                            'user_id' => $userId,              
-                            'type' => $type,                   
-                            'code' => $code,                   
-                            'msg_id' => $messageId,            
-                            'file_id' => $fileId,              
-                            'file_unique_id' => $fileUniqueId, 
-                        ];
-
-                        // Insert barcode record into the database
-                        $response = $ezzeModel->addBarcode($params);
-                        echo $response;
                     } else {
-                        // Handle error if barcode decoding failed
-                        sendMessage($chatId, $messages[$language]['barcode_error'], $token);
+                        return;  // Exit silently if unable to retrieve the file from Telegram
                     }
                 } else {
-                    // Handle error if unable to retrieve the file from Telegram
-                    sendMessage($chatId, $messages[$language]['image_error'], $token);
+                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                 }
             }
 
 
             // Handle location sharing
             if (isset($update['message']['location'])) {
-                $userId = $update['message']['from']['id'];
-                $chatId = $update['message']['chat']['id'];
-                $latitude = $update['message']['location']['latitude'];
-                $longitude = $update['message']['location']['longitude'];
-                $date = date('Y-m-d H:i:s');
+                if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
 
-                // Retrieve the decoded barcodes stored in session
-                $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
+                    $userId = $update['message']['from']['id'];
+                    $chatId = $update['message']['chat']['id'];
+                    $latitude = $update['message']['location']['latitude'];
+                    $longitude = $update['message']['location']['longitude'];
+                    $date = date('Y-m-d H:i:s');
 
-                // Format the current date and time
-                $formattedDate = formatDate($language); // Get the formatted date based on the user's language
-                $formattedTime = formatTime($language); // Get the formatted time based on the user's language
+                    // Retrieve the decoded barcodes stored in session
+                    $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
 
-                // Prepare the Google Maps URL
-                $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
+                    // Format the current date and time
+                    $formattedDate = formatDate($language); // Get the formatted date based on the user's language
+                    $formattedTime = formatTime($language); // Get the formatted time based on the user's language
 
-                // Format the barcode list for the response message
-                $barcodeList = implode("\n", array_map(function ($barcode, $index) {
-                    return ($index + 1) . ". {$barcode['code']} ({$barcode['type']})";
-                }, $decodedBarcodes, array_keys($decodedBarcodes)));
+                    // Prepare the Google Maps URL
+                    $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
-                // Save location data to the database
-                $params = [
-                    'user_id' => $userId,
-                    'lat' => $latitude,
-                    'lon' => $longitude,
-                    'location_url' => $locationUrl,
-                    'date' => $date
-                ];
-                $response = $ezzeModel->addLocation($params);
-                echo $response;
+                    // Format the barcode list for the response message
+                    $barcodeList = implode("\n", array_map(function ($barcode, $index) {
+                        // return ($index + 1) . ". {$barcode['code']} ({$barcode['type']})";
+                        return ($index + 1) . ". <code><b>{$barcode['code']}</b></code> ({$barcode['type']})";
+                    }, $decodedBarcodes, array_keys($decodedBarcodes)));
 
-                // Prepare the response message
-                $responseMessage = sprintf(
-                    $messages[$language]['thanks_for_location'],
-                    $formattedDate,
-                    $formattedTime,
-                    $barcodeList,
-                    $locationUrl
-                );
+                    // Save location data to the database
+                    $params = [
+                        'user_id' => $userId,
+                        'lat' => $latitude,
+                        'lon' => $longitude,
+                        'location_url' => $locationUrl,
+                        'date' => $date
+                    ];
+                    $response = $ezzeModel->addLocation($params);
+                    echo $response;
 
-                // Send the location confirmation message
-                sendMessage($chatId, $responseMessage, $token);
+                    // Prepare the response message
+                    $responseMessage = sprintf(
+                        $messages[$language]['thanks_for_location'],
+                        $formattedDate,
+                        $formattedTime,
+                        $barcodeList,
+                        $locationUrl
+                    );
 
-                // Clear the session for this chat after processing the barcodes and location
-                unset($_SESSION['decodedBarcodes'][$chatId]);
+                    // Send the location confirmation message
+                    sendMessage($chatId, $responseMessage, $token,  ['parse_mode' => 'HTML']);
+
+                    // Clear the session for this chat after processing the barcodes and location
+                    unset($_SESSION['decodedBarcodes'][$chatId]);
+                }
             }
         }
     }
 }
+
 
 
 // Function to show contact sharing options
@@ -399,45 +418,5 @@ function showLocationSharing($chatId, $token, $language)
     sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
 }
 
-
-
-// Function to process code images for barcode decoding
-function processBarcodeImage($filePath)
-{
-    $decodeCmd = @shell_exec(escapeshellcmd("zbarimg --raw " . escapeshellarg($filePath)));
-    $code = trim($decodeCmd);
-    if ($decodeCmd === null || $code === '') {
-        return ["error" => "Decoding failed: " . htmlspecialchars(basename($filePath))];
-    }
-    $file = $filePath;
-    $type = identifyBarcodeType($code);
-    return [
-        'file' => $file,
-        'code' => $code,
-        'type' => $type,
-    ];
-}
-
-
-// Function to identify barcode type
-function identifyBarcodeType($code)
-{
-    $trimmedCode = trim($code);
-    // Check for known barcode formats
-    if (strpos($trimmedCode, 'BEGIN') !== false) return 'QR Code';
-    if (filter_var($trimmedCode, FILTER_VALIDATE_URL)) return 'QR Code (URL)';
-    if (preg_match('/^[0-9]{8}$/', $trimmedCode)) return 'EAN-8 Barcode';
-    if (preg_match('/^[0-9]{12}$/', $trimmedCode)) return 'UPC Barcode';
-    if (preg_match('/^[0-9A-Z\-]{2,30}$/', $trimmedCode)) return 'Code 39 Barcode';
-    if (preg_match('/^[0-9A-Z\-]{1,30}$/', $trimmedCode)) return 'Code 93 Barcode';
-    if (preg_match('/^([0-9]{1,12}|[0-9]{1,5}(\s|[0-9]{1,5}){0,1})$/', $trimmedCode)) return 'Code 128 Barcode';
-    if (preg_match('/^[A-B0-9]+$/', $trimmedCode)) return 'Codabar Barcode';
-    if (preg_match('/^[0-9]{2,10}$/', $trimmedCode)) return 'ITF Barcode';
-    if (preg_match('/^[0-9]{1,10}$/', $trimmedCode)) return 'MSI Barcode';
-    if (preg_match('/^[0-9]{1,10}$/', $trimmedCode)) return 'Pharmacode Barcode';
-
-    return 'Unknown Barcode Type';
-}
-
-
-include __DIR__ . '/../includes/functions/polling.php';
+// include __DIR__ . '/../includes/functions/polling.php';
+include __DIR__. "/../Webhooks/webhook.php";

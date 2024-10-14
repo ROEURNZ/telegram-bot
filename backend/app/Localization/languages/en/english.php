@@ -3,7 +3,8 @@
 
 return $messages = [
     // Language and welcome flow
-    'welcome_message' => 'Welcome to the bot! You can interact with me now.',
+    'new_user_message' => 'Welcome to the bot! You can interact with me now.',
+    'welcome_message' => 'Welcome, %s %s! Glad to have you here!',
     'please_choose_language' => 'Please choose your language to continue',
     'language_selection' => 'You selected English.',
     // Help and guidance
@@ -29,7 +30,8 @@ return $messages = [
 
     // Decoding results
     'decode_success' => "Successfully decoded the barcode!\nType: %s\nData: %s",
-    'decode_failure' => "Failed to decode the barcode. Please try again or upload a clearer image.",
+    // 'decode_failure' => "Failed to decode the barcode. Please try again or upload a clearer image.",
+    'barcode_error'  => "Failed to decode the barcode. Please try again or upload a clearer image.",
 
     // Error messages
     'image_download_failed' => "Failed to download the image. Please try again.",
@@ -54,6 +56,7 @@ return $messages = [
 
 
 
+
     
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
@@ -67,15 +70,23 @@ return $messages = [
 
 
 
+    'image_error' => "Sorry, I couldn't retrieve the image. Please try again.",
+    'image_download_error' => "Failed to download the image. Please try again later.",
+    'directory_error' => "Error creating the directory to save images. Please contact support.",
+    'image_save_error' => "Failed to save the image. Please try again.",
+    'barcode_error' => "I couldn't decode the barcode. Please make sure it's clear and try again.",
+    'barcode_success' => "Success! The barcode has been decoded and saved. You can continue scanning.",
+    'db_insert_error' => "There was an error saving your decoded data. Please try again later.",
+ 
+
+
     // Commands Descriptions
 
-    'start_description' => 'Start the bot.',
-    'stop_description' => 'Stop the bot.',
-    'help_description' => 'Get help on using the bot.',
-    'menu_description' => 'Display the command menu.',
-    'share_contact_description' => 'Share your contact information.',
-    'share_location_description' => 'Share your current location.',
-    'decode_description' => 'Decode a barcode or QR code.',
-    'change_language_description' => 'Change the language of the bot.',
-    'command_menu_header' => 'Here are the available commands:',
+    'start_desc' => "Click on /start command to begin the bot.",
+    'share_contact_desc' => "Share your contact.",
+    'decode_desc' => "Decode a barcode or QR code.",
+    'share_location_desc' => "Share your location.",
+    'help_desc' => "Get help.",
+    'menu_desc' => "Open the menu.",
+    'change_language_desc' => "Change the language.",
 ];
