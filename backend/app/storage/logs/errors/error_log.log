@@ -559,3 +559,26 @@ Stack trace:
 [2024-10-12 22:00:13] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
 [2024-10-12 22:09:52] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-12 22:09:52] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-14 01:38:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-14 01:38:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[14-Oct-2024 08:38:52 Asia/Phnom_Penh] PHP Fatal error:  Cannot redeclare sendMessage() (previously declared in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php:32) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Webhooks\webhook.php on line 42
+[2024-10-14 01:41:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-14 01:41:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[14-Oct-2024 08:41:54 Asia/Phnom_Penh] PHP Fatal error:  Cannot redeclare sendMessage() (previously declared in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php:32) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Webhooks\webhook.php on line 41
+[2024-10-14 01:41:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-14 01:41:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[14-Oct-2024 08:41:57 Asia/Phnom_Penh] PHP Fatal error:  Cannot redeclare sendMessage() (previously declared in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php:32) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Webhooks\webhook.php on line 41
+[2024-10-14 02:06:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-14 02:06:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[14-Oct-2024 09:06:58 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php:40
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(40): PDO->__construct()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php(49): Database->__construct()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(17): Database::getInstance()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(12): EzzeModels->__construct()
+#4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#5 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(421): include('...')
+#6 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config\db.php on line 40
+[2024-10-14 02:15:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-14 02:15:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
