@@ -48,3 +48,9 @@
 ::1 - - [14/Oct/2024:11:00:47 +0700] "GET /backend/app/Handlers/ HTTP/1.1" 200 922
 ::1 - - [14/Oct/2024:10:50:32 +0700] "GET /backend/app/Handlers/ComandHandlers.php HTTP/1.1" 200 3480
 ::1 - - [14/Oct/2024:11:00:51 +0700] "GET /backend/app/Handlers/ComandHandlers.php HTTP/1.1" 200 1376
+::1 - - [14/Oct/2024:11:17:07 +0700] "GET / HTTP/1.1" 200 507
+::1 - - [14/Oct/2024:11:17:07 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [14/Oct/2024:11:17:09 +0700] "GET /backend/ HTTP/1.1" 200 962
+::1 - - [14/Oct/2024:11:17:10 +0700] "GET /backend/app/ HTTP/1.1" 200 796
+::1 - - [14/Oct/2024:11:17:11 +0700] "GET /backend/app/Handlers/ HTTP/1.1" 200 922
+::1 - - [14/Oct/2024:11:17:12 +0700] "GET /backend/app/Handlers/ComandHandlers.php HTTP/1.1" 200 5998
