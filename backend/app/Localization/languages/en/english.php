@@ -5,13 +5,13 @@ return $messages = [
     // Language and welcome flow
     'new_user_message' => 'Welcome to the bot! You can interact with me now.',
     'welcome_message' => 'Welcome, %s %s! Glad to have you here!',
-    'please_choose_language' => 'Please choose your language to continue',
-    'language_selection' => 'You selected English.',
+    'please_choose_language' => 'Please choose your language:',
+    'language_selection' => 'You have selected English.',
     // Help and guidance
     'help_message' => "This is your help message. You can use /restart to restart.",
     'please_start' => 'Please start the bot by sending /start.',
     /*** ! Image upload and barcode decoding ****/
-    'upload_barcode' => "Please upload an image containing a barcode or QR code.",
+    'upload_barcode' => "Please upload a barcode or QR code image.",
     'contact_required' => "Please share your contact information first.",
     'download_prompt' => "Please wait for a few seconds, the bot is downloading images.",
     'decode_prompt_sent' => "The decode prompt has been sent. Please upload an image containing a barcode or QR code.",
@@ -24,7 +24,7 @@ return $messages = [
     // 'thanks_for_contact' => "Thanks for sharing your contact!\nTelegram User ID: %s\nTelegram Chat ID: %s\nFull Name: %s %s\nPhone Number: %s\nUsername: %s",
 
     // Location sharing
-    'location_prompt' => "Please share your locationto continue. This works best on mobile devices.",
+    'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
     'thanks_for_location' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
@@ -42,8 +42,8 @@ return $messages = [
     'share_contact' => '📞 Share Contact',
     'share_location' => '📍 Share Location',
 
-    'contact_request' => 'Please share your contact information using the button below',
-    'location_request' => 'Please share your current location.',
+    'contact_request' => 'Please share your contact information.',
+    'location_request' => 'Please share your current location to continue.',
 
 
 

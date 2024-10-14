@@ -20,8 +20,8 @@ class EzzeModels
     function addUser($params)
     {
         // SQL statement for inserting a new user
-        $sql = "INSERT INTO `users` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
-                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
+        $sql = "INSERT INTO `users` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, date, language) 
+                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, :date, :language)";
 
         // Prepare the statement
         $stmt = $this->pdo->prepare($sql);
@@ -145,7 +145,7 @@ public function hasSelectedLanguage($userId)
         }
 
         // If the barcode doesn't exist, proceed with the insert
-        $sql = "INSERT INTO barcode (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
+        $sql = "INSERT INTO decoded (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
             VALUES (:user_id, :type, :code, :msg_id, :file_id, :file_unique_id, :decoded_status)";
         $stmt = $this->pdo->prepare($sql);
 
@@ -166,7 +166,7 @@ public function hasSelectedLanguage($userId)
     // Function to check if a barcode exists
     public function barcodeExists($code)
     {
-        $sql = "SELECT COUNT(*) FROM barcode WHERE code = :code";
+        $sql = "SELECT COUNT(*) FROM decoded WHERE code = :code";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':code', $code, PDO::PARAM_STR);
         $stmt->execute();
@@ -178,7 +178,7 @@ public function hasSelectedLanguage($userId)
     // Function to reset decoded_status to 0 for all barcodes of the user
     public function resetDecodedStatus($userId)
     {
-        $sql = "UPDATE barcode SET decoded_status = 0 WHERE user_id = :user_id";
+        $sql = "UPDATE decoded SET decoded_status = 0 WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
@@ -191,7 +191,7 @@ public function hasSelectedLanguage($userId)
     // Check if user has completed a decode
     public function hasCompletedDecode($userId)
     {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM barcode WHERE user_id = :user_id");
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM decoded WHERE user_id = :user_id");
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() > 0;
     }
@@ -203,7 +203,7 @@ public function hasSelectedLanguage($userId)
     // Function to retrieve barcodes for a user
     public function getBarcodesByUserId($userId)
     {
-        $sql = "SELECT * FROM barcode WHERE user_id = :user_id";
+        $sql = "SELECT * FROM decoded WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();

@@ -221,7 +221,7 @@ function processUpdates($updates, $token)
                         'msg_id' => $messageId,
                         'first_name' => $firstName,
                         'last_name' => $lastName,
-                        'username' => $username,
+                        'username' => $update['message']['from']['username'],
                         'phone_number' => $phoneNumber,
                         'date' => date('Y-m-d H:i:s'),
                         'language' => $language
@@ -355,7 +355,7 @@ function processUpdates($updates, $token)
                     // Format the barcode list for the response message
                     $barcodeList = implode("\n", array_map(function ($barcode, $index) {
                         // return ($index + 1) . ". {$barcode['code']} ({$barcode['type']})";
-                        return ($index + 1) . ". <code><b>{$barcode['code']}</b></code> ({$barcode['type']})";
+                        return ($index + 1) . ". <code><b>{$barcode['code']}</b></code>";
                     }, $decodedBarcodes, array_keys($decodedBarcodes)));
 
                     // Save location data to the database
@@ -418,5 +418,5 @@ function showLocationSharing($chatId, $token, $language)
     sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
 }
 
-// include __DIR__ . '/../includes/functions/polling.php';
-include __DIR__. "/../Webhooks/webhook.php";
+include __DIR__ . '/../includes/functions/polling.php';
+// include __DIR__. "/../Webhooks/webhook.php";
