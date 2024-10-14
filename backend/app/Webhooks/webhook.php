@@ -1,28 +1,42 @@
 <?php
-/* @ROEURNZ=> File name & directory
- * backend/app/Webhooks/webhook.php
- * 
- */
 
-// Load configuration and dependencies
-$config = require_once __DIR__ . '/../config/bot_config.php';
-require_once __DIR__ . '/../Services/HttpClient.php';
-require_once __DIR__ . '/../Handlers/CurlHelper.php';
+// file name 'webhook.php'
 
-use App\Services\HttpClient;
 
-$input = file_get_contents("php://input");
-$update = json_decode($input, true);
+include __DIR__ ."/../Config/bot_config.php";
+$token = $api_key;
 
-if (isset($update['message'])) {
-    // Handle the incoming message
-    $chatId = $update['message']['chat']['id'];
-    $messageText = $update['message']['text'];
+// Get the update sent from Telegram
+$update = file_get_contents("php://input");
+$updateArray = json_decode($update, true);
 
-    // Example: Send a reply
-    $httpClient = new HttpClient($config['bot_token'], $chatId);
-    $httpClient->sendMessage("You said: " . $messageText);
+// You can now process the update
+if (isset($updateArray['message'])) {
+    $chatId = $updateArray['message']['chat']['id'];
+    $messageText = $updateArray['message']['text'];
+
+    // Respond to the message (adjust this according to your bot's logic)
+    if ($messageText === "/start") {
+        sendMessage($chatId, "Welcome to the bot!", $token);
+    } else {
+        sendMessage($chatId, "You said: $messageText", $token);
+    }
 }
 
-// Log the received update (optional)
-file_put_contents('webhook.log', $input . PHP_EOL, FILE_APPEND);
+// Function to send a message via the Telegram API
+function sendMessage($chatId, $message, $token) {
+    $url = "https://api.telegram.org/bot{$token}/sendMessage";
+
+    $postFields = [
+        'chat_id' => $chatId,
+        'text' => $message
+    ];
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $postFields);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    $response = curl_exec($ch);
+    curl_close($ch);
+}

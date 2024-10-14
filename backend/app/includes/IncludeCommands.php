@@ -22,14 +22,12 @@ $messages = [
 ];
 
 include __DIR__ . $x1 . '/Localization/dateformat/dateFormat.php';
-include __DIR__ . $x1 . '/Commands/SystemCommand.php';
+// require_once __DIR__ . $x1 . '/Commands/SystemCommand.php';
 
 include __DIR__ . '/../Models/EzzeModel.php';
 
-// Instantiate the model
-$ezzeModel = new EzzeModels();
 
-// $ezzeModel = new EzzeModels($pdo);
+
 // Function to send messages
 function sendMessage($chatId, $message, $token, $replyMarkup = null)
 {
@@ -60,3 +58,53 @@ function sendMessage($chatId, $message, $token, $replyMarkup = null)
     curl_close($ch);
 }
 
+
+// Retrieve the selected language from the session or use a default
+$chatId = isset($_SESSION['currentChatId']) ? $_SESSION['currentChatId'] : null;
+$language = isset($_SESSION['userLanguages'][$chatId]) ? $_SESSION['userLanguages'][$chatId] : 'en'; // Default to English
+
+// Get messages based on the selected language
+$currentMessages = $messages[$language];
+
+
+
+// Function to set Telegram bot commands
+function setCommands($token, $messages) {
+    // Prepare commands array in the format required by Telegram API
+    $commandsToSet = [
+        ['command' => 'start', 'description' => $messages['start_desc']],
+        ['command' => 'share_contact', 'description' => $messages['share_contact_desc']],
+        ['command' => 'decode', 'description' => $messages['decode_desc']],
+        ['command' => 'share_location', 'description' => $messages['share_location_desc']],
+        ['command' => 'help', 'description' => $messages['help_desc']],
+        ['command' => 'menu', 'description' => $messages['menu_desc']],
+        ['command' => 'change_language', 'description' => $messages['change_language_desc']],
+    ];
+
+    // Prepare the data for the API call
+    $data = ['commands' => $commandsToSet];
+    $url = "https://api.telegram.org/bot{$token}/setMyCommands";
+
+    // Initialize cURL for sending the request
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); // Encode the data to JSON
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    // Execute the request and check for errors
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Get HTTP response code
+    if ($response === false || $httpCode !== 200) {
+        echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
+    } else {
+        echo "Commands set successfully: " . $response;
+    }
+
+    // Close the cURL session
+    curl_close($ch);
+}
+
+// Call the function to set commands every time the bot starts
+setCommands($token, $currentMessages);

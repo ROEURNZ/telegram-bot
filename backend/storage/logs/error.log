@@ -1,453 +1,122 @@
-[Wed Oct 09 11:01:28.136650 2024] [mpm_winnt:notice] [pid 6528:tid 188] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:01:30.157158 2024] [mpm_winnt:notice] [pid 13540:tid 356] AH00364: Child: All worker threads have exited.
-[Wed Oct 09 11:01:30.352738 2024] [mpm_winnt:notice] [pid 6528:tid 188] AH00430: Parent: Child process 13540 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:03:07.107515 2024] [mpm_winnt:notice] [pid 20288:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:03:07.107515 2024] [mpm_winnt:notice] [pid 20288:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:03:07.107515 2024] [core:notice] [pid 20288:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:03:07.115518 2024] [mpm_winnt:notice] [pid 20288:tid 328] AH00418: Parent: Created child process 18704
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:03:07.792035 2024] [mpm_winnt:notice] [pid 18704:tid 372] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 03:49:38.017847 2024] [mpm_winnt:notice] [pid 19728:tid 364] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 03:50:08.031949 2024] [mpm_winnt:notice] [pid 19728:tid 364] AH00431: Parent: Forcing termination of child process 15880
+[Sun Oct 13 03:50:34.307159 2024] [mpm_winnt:notice] [pid 4868:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 03:50:34.307159 2024] [mpm_winnt:notice] [pid 4868:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 03:50:34.307159 2024] [core:notice] [pid 4868:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 03:50:34.324163 2024] [mpm_winnt:notice] [pid 4868:tid 328] AH00418: Parent: Created child process 20676
+[Sun Oct 13 03:50:35.094893 2024] [mpm_winnt:notice] [pid 20676:tid 348] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 03:52:40.430491 2024] [mpm_winnt:notice] [pid 4868:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 03:53:10.434633 2024] [mpm_winnt:notice] [pid 4868:tid 328] AH00431: Parent: Forcing termination of child process 20676
+[Sun Oct 13 03:53:50.049283 2024] [mpm_winnt:notice] [pid 9844:tid 332] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 03:53:50.049283 2024] [mpm_winnt:notice] [pid 9844:tid 332] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 03:53:50.049283 2024] [core:notice] [pid 9844:tid 332] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 03:53:50.057315 2024] [mpm_winnt:notice] [pid 9844:tid 332] AH00418: Parent: Created child process 24000
+[Sun Oct 13 03:53:50.891871 2024] [mpm_winnt:notice] [pid 24000:tid 388] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 03:59:40.271492 2024] [mpm_winnt:notice] [pid 9844:tid 332] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:00:10.274195 2024] [mpm_winnt:notice] [pid 9844:tid 332] AH00431: Parent: Forcing termination of child process 24000
+[Sun Oct 13 04:00:14.966217 2024] [mpm_winnt:notice] [pid 21080:tid 384] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:00:14.966217 2024] [mpm_winnt:notice] [pid 21080:tid 384] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:00:14.966217 2024] [core:notice] [pid 21080:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:00:14.975225 2024] [mpm_winnt:notice] [pid 21080:tid 384] AH00418: Parent: Created child process 13748
+[Sun Oct 13 04:00:15.828786 2024] [mpm_winnt:notice] [pid 13748:tid 360] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:04:26.099405 2024] [mpm_winnt:notice] [pid 21080:tid 384] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:04:56.100988 2024] [mpm_winnt:notice] [pid 21080:tid 384] AH00431: Parent: Forcing termination of child process 13748
+[Sun Oct 13 04:05:00.135298 2024] [mpm_winnt:notice] [pid 23628:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:05:00.135298 2024] [mpm_winnt:notice] [pid 23628:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:05:00.135298 2024] [core:notice] [pid 23628:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:05:00.147024 2024] [mpm_winnt:notice] [pid 23628:tid 352] AH00418: Parent: Created child process 17584
+[Sun Oct 13 04:05:00.896852 2024] [mpm_winnt:notice] [pid 17584:tid 360] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:07:10.555577 2024] [mpm_winnt:notice] [pid 23628:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:07:40.568555 2024] [mpm_winnt:notice] [pid 23628:tid 352] AH00431: Parent: Forcing termination of child process 17584
+[Sun Oct 13 04:07:46.695953 2024] [mpm_winnt:notice] [pid 9984:tid 236] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:07:46.695953 2024] [mpm_winnt:notice] [pid 9984:tid 236] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:07:46.695953 2024] [core:notice] [pid 9984:tid 236] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:07:46.697694 2024] [mpm_winnt:notice] [pid 9984:tid 236] AH00418: Parent: Created child process 13836
+[Sun Oct 13 04:07:47.381213 2024] [mpm_winnt:notice] [pid 13836:tid 396] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:10:16.457765 2024] [mpm_winnt:notice] [pid 9984:tid 236] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:10:46.472452 2024] [mpm_winnt:notice] [pid 9984:tid 236] AH00431: Parent: Forcing termination of child process 13836
+[Sun Oct 13 04:10:50.507668 2024] [mpm_winnt:notice] [pid 16484:tid 344] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:10:50.507668 2024] [mpm_winnt:notice] [pid 16484:tid 344] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:10:50.507668 2024] [core:notice] [pid 16484:tid 344] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:10:50.517293 2024] [mpm_winnt:notice] [pid 16484:tid 344] AH00418: Parent: Created child process 22824
+[Sun Oct 13 04:10:51.232889 2024] [mpm_winnt:notice] [pid 22824:tid 376] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:15:40.778983 2024] [mpm_winnt:notice] [pid 16484:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:16:10.788990 2024] [mpm_winnt:notice] [pid 16484:tid 344] AH00431: Parent: Forcing termination of child process 22824
+[Sun Oct 13 04:16:25.937256 2024] [mpm_winnt:notice] [pid 11068:tid 384] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:16:25.937256 2024] [mpm_winnt:notice] [pid 11068:tid 384] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:16:25.937256 2024] [core:notice] [pid 11068:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:16:25.947789 2024] [mpm_winnt:notice] [pid 11068:tid 384] AH00418: Parent: Created child process 6244
+[Sun Oct 13 04:16:26.742494 2024] [mpm_winnt:notice] [pid 6244:tid 184] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
+[Sun Oct 13 04:18:57.939103 2024] [mpm_winnt:notice] [pid 11068:tid 384] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:19:27.939643 2024] [mpm_winnt:notice] [pid 11068:tid 384] AH00431: Parent: Forcing termination of child process 6244
+[Sun Oct 13 04:20:00.293076 2024] [mpm_winnt:notice] [pid 23784:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:20:00.293076 2024] [mpm_winnt:notice] [pid 23784:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:20:00.293076 2024] [core:notice] [pid 23784:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:20:00.304921 2024] [mpm_winnt:notice] [pid 23784:tid 328] AH00418: Parent: Created child process 21220
+[Sun Oct 13 04:20:01.166515 2024] [mpm_winnt:notice] [pid 21220:tid 348] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:21:03.936735 2024] [mpm_winnt:notice] [pid 23784:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:21:33.941184 2024] [mpm_winnt:notice] [pid 23784:tid 328] AH00431: Parent: Forcing termination of child process 21220
+[Sun Oct 13 04:21:36.881430 2024] [mpm_winnt:notice] [pid 21536:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:21:36.881430 2024] [mpm_winnt:notice] [pid 21536:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:21:36.881430 2024] [core:notice] [pid 21536:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:21:36.888837 2024] [mpm_winnt:notice] [pid 21536:tid 328] AH00418: Parent: Created child process 22580
+[Sun Oct 13 04:21:37.652048 2024] [mpm_winnt:notice] [pid 22580:tid 344] AH00354: Child: Starting 64 worker threads.
 scanned 1 barcode symbols from 1 images
 scanned 1 barcode symbols from 1 images
-[Wed Oct 09 11:05:37.313749 2024] [mpm_winnt:notice] [pid 20288:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:06:07.317782 2024] [mpm_winnt:notice] [pid 20288:tid 328] AH00431: Parent: Forcing termination of child process 18704
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:06:11.929140 2024] [mpm_winnt:notice] [pid 3680:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:06:11.929140 2024] [mpm_winnt:notice] [pid 3680:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:06:11.929140 2024] [core:notice] [pid 3680:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:06:11.937188 2024] [mpm_winnt:notice] [pid 3680:tid 352] AH00418: Parent: Created child process 22220
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:06:12.753360 2024] [mpm_winnt:notice] [pid 22220:tid 376] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:45:22.471727 2024] [mpm_winnt:notice] [pid 21536:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:45:52.486561 2024] [mpm_winnt:notice] [pid 21536:tid 328] AH00431: Parent: Forcing termination of child process 22580
+[Sun Oct 13 04:46:11.751439 2024] [mpm_winnt:notice] [pid 17472:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:46:11.751439 2024] [mpm_winnt:notice] [pid 17472:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:46:11.751439 2024] [core:notice] [pid 17472:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:46:11.760970 2024] [mpm_winnt:notice] [pid 17472:tid 352] AH00418: Parent: Created child process 20920
+[Sun Oct 13 04:46:12.656689 2024] [mpm_winnt:notice] [pid 20920:tid 400] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:51:19.559463 2024] [mpm_winnt:notice] [pid 17472:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:51:21.578404 2024] [mpm_winnt:notice] [pid 20920:tid 400] AH00364: Child: All worker threads have exited.
+[Sun Oct 13 04:51:21.605168 2024] [mpm_winnt:notice] [pid 17472:tid 352] AH00430: Parent: Child process 20920 exited successfully.
+[Sun Oct 13 04:51:31.231667 2024] [mpm_winnt:notice] [pid 5052:tid 384] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:51:31.231667 2024] [mpm_winnt:notice] [pid 5052:tid 384] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:51:31.231667 2024] [core:notice] [pid 5052:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:51:31.238967 2024] [mpm_winnt:notice] [pid 5052:tid 384] AH00418: Parent: Created child process 10260
+[Sun Oct 13 04:51:31.932659 2024] [mpm_winnt:notice] [pid 10260:tid 360] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 04:57:29.933026 2024] [mpm_winnt:notice] [pid 5052:tid 384] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 04:57:31.948857 2024] [mpm_winnt:notice] [pid 10260:tid 360] AH00364: Child: All worker threads have exited.
+[Sun Oct 13 04:57:31.974096 2024] [mpm_winnt:notice] [pid 5052:tid 384] AH00430: Parent: Child process 10260 exited successfully.
+[Sun Oct 13 04:57:37.721576 2024] [mpm_winnt:notice] [pid 3272:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 04:57:37.721576 2024] [mpm_winnt:notice] [pid 3272:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 04:57:37.721576 2024] [core:notice] [pid 3272:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 04:57:37.732202 2024] [mpm_winnt:notice] [pid 3272:tid 336] AH00418: Parent: Created child process 11880
+[Sun Oct 13 04:57:38.531318 2024] [mpm_winnt:notice] [pid 11880:tid 360] AH00354: Child: Starting 64 worker threads.
 scanned 1 barcode symbols from 1 images
 scanned 1 barcode symbols from 1 images
-[Wed Oct 09 11:12:49.956741 2024] [mpm_winnt:notice] [pid 3680:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:13:19.964964 2024] [mpm_winnt:notice] [pid 3680:tid 352] AH00431: Parent: Forcing termination of child process 22220
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:13:27.272742 2024] [mpm_winnt:notice] [pid 2352:tid 380] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:13:27.272742 2024] [mpm_winnt:notice] [pid 2352:tid 380] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:13:27.272742 2024] [core:notice] [pid 2352:tid 380] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:13:27.285841 2024] [mpm_winnt:notice] [pid 2352:tid 380] AH00418: Parent: Created child process 4176
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:13:28.056973 2024] [mpm_winnt:notice] [pid 4176:tid 360] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:15:24.496391 2024] [mpm_winnt:notice] [pid 2352:tid 380] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:15:54.499593 2024] [mpm_winnt:notice] [pid 2352:tid 380] AH00431: Parent: Forcing termination of child process 4176
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:16:35.151790 2024] [mpm_winnt:notice] [pid 3780:tid 368] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:16:35.151790 2024] [mpm_winnt:notice] [pid 3780:tid 368] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:16:35.151790 2024] [core:notice] [pid 3780:tid 368] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:16:35.159727 2024] [mpm_winnt:notice] [pid 3780:tid 368] AH00418: Parent: Created child process 20552
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:16:35.838863 2024] [mpm_winnt:notice] [pid 20552:tid 364] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:18:35.912698 2024] [mpm_winnt:notice] [pid 3780:tid 368] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:19:05.925257 2024] [mpm_winnt:notice] [pid 3780:tid 368] AH00431: Parent: Forcing termination of child process 20552
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:19:09.075970 2024] [mpm_winnt:notice] [pid 21116:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:19:09.075970 2024] [mpm_winnt:notice] [pid 21116:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:19:09.075970 2024] [core:notice] [pid 21116:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:19:09.092486 2024] [mpm_winnt:notice] [pid 21116:tid 328] AH00418: Parent: Created child process 23652
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:19:09.983709 2024] [mpm_winnt:notice] [pid 23652:tid 188] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:19:32.422342 2024] [mpm_winnt:notice] [pid 21116:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:19:34.439029 2024] [mpm_winnt:notice] [pid 23652:tid 188] AH00364: Child: All worker threads have exited.
-[Wed Oct 09 11:19:34.623806 2024] [mpm_winnt:notice] [pid 21116:tid 328] AH00430: Parent: Child process 23652 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:20:33.848586 2024] [mpm_winnt:notice] [pid 22216:tid 392] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:20:33.848586 2024] [mpm_winnt:notice] [pid 22216:tid 392] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:20:33.848586 2024] [core:notice] [pid 22216:tid 392] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:20:33.856745 2024] [mpm_winnt:notice] [pid 22216:tid 392] AH00418: Parent: Created child process 7552
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:20:34.722030 2024] [mpm_winnt:notice] [pid 7552:tid 352] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:21:14.492357 2024] [mpm_winnt:notice] [pid 22216:tid 392] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:21:44.506055 2024] [mpm_winnt:notice] [pid 22216:tid 392] AH00431: Parent: Forcing termination of child process 7552
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:21:53.420360 2024] [mpm_winnt:notice] [pid 7224:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:21:53.420360 2024] [mpm_winnt:notice] [pid 7224:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:21:53.420360 2024] [core:notice] [pid 7224:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:21:53.428812 2024] [mpm_winnt:notice] [pid 7224:tid 352] AH00418: Parent: Created child process 20524
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:21:54.198272 2024] [mpm_winnt:notice] [pid 20524:tid 368] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:23:34.020610 2024] [mpm_winnt:notice] [pid 7224:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:24:04.032398 2024] [mpm_winnt:notice] [pid 7224:tid 352] AH00431: Parent: Forcing termination of child process 20524
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:25:01.131573 2024] [mpm_winnt:notice] [pid 7788:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:25:01.131573 2024] [mpm_winnt:notice] [pid 7788:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:25:01.131573 2024] [core:notice] [pid 7788:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:25:01.131573 2024] [mpm_winnt:notice] [pid 7788:tid 336] AH00418: Parent: Created child process 16144
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:25:01.930848 2024] [mpm_winnt:notice] [pid 16144:tid 352] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:29:18.847621 2024] [mpm_winnt:notice] [pid 7788:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:29:48.853287 2024] [mpm_winnt:notice] [pid 7788:tid 336] AH00431: Parent: Forcing termination of child process 16144
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:30:01.208939 2024] [mpm_winnt:notice] [pid 22392:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:30:01.208939 2024] [mpm_winnt:notice] [pid 22392:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:30:01.208939 2024] [core:notice] [pid 22392:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:30:01.214984 2024] [mpm_winnt:notice] [pid 22392:tid 352] AH00418: Parent: Created child process 11024
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:30:02.056809 2024] [mpm_winnt:notice] [pid 11024:tid 360] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 11:32:51.594198 2024] [mpm_winnt:notice] [pid 22392:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 11:33:21.598951 2024] [mpm_winnt:notice] [pid 22392:tid 352] AH00431: Parent: Forcing termination of child process 11024
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:33:24.816879 2024] [mpm_winnt:notice] [pid 18728:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 11:33:24.816879 2024] [mpm_winnt:notice] [pid 18728:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 11:33:24.816879 2024] [core:notice] [pid 18728:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 11:33:24.825241 2024] [mpm_winnt:notice] [pid 18728:tid 336] AH00418: Parent: Created child process 22556
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 11:33:25.888698 2024] [mpm_winnt:notice] [pid 22556:tid 356] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 05:07:08.261005 2024] [mpm_winnt:notice] [pid 3272:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 05:07:38.301594 2024] [mpm_winnt:notice] [pid 3272:tid 336] AH00431: Parent: Forcing termination of child process 11880
+[Sun Oct 13 05:08:34.768615 2024] [mpm_winnt:notice] [pid 21536:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 05:08:34.770599 2024] [mpm_winnt:notice] [pid 21536:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 05:08:34.770599 2024] [core:notice] [pid 21536:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 05:08:34.963972 2024] [mpm_winnt:notice] [pid 21536:tid 352] AH00418: Parent: Created child process 21996
+[Sun Oct 13 05:08:54.130990 2024] [mpm_winnt:notice] [pid 21996:tid 348] AH00354: Child: Starting 64 worker threads.
 scanned 1 barcode symbols from 1 images
-[Wed Oct 09 14:38:13.634505 2024] [mpm_winnt:notice] [pid 18728:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 14:38:43.643280 2024] [mpm_winnt:notice] [pid 18728:tid 336] AH00431: Parent: Forcing termination of child process 22556
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 14:49:05.297609 2024] [mpm_winnt:notice] [pid 19828:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 14:49:05.297609 2024] [mpm_winnt:notice] [pid 19828:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 14:49:05.297609 2024] [core:notice] [pid 19828:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 14:49:05.324621 2024] [mpm_winnt:notice] [pid 19828:tid 328] AH00418: Parent: Created child process 18064
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 14:49:06.078423 2024] [mpm_winnt:notice] [pid 18064:tid 380] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Wed Oct 09 15:32:16.890517 2024] [mpm_winnt:notice] [pid 19828:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 15:32:46.903180 2024] [mpm_winnt:notice] [pid 19828:tid 328] AH00431: Parent: Forcing termination of child process 18064
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:34:43.452856 2024] [mpm_winnt:notice] [pid 21844:tid 344] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 15:34:43.452856 2024] [mpm_winnt:notice] [pid 21844:tid 344] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 15:34:43.452856 2024] [core:notice] [pid 21844:tid 344] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 15:34:43.460759 2024] [mpm_winnt:notice] [pid 21844:tid 344] AH00418: Parent: Created child process 13148
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:34:44.122053 2024] [mpm_winnt:notice] [pid 13148:tid 400] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Wed Oct 09 15:48:37.221371 2024] [mpm_winnt:notice] [pid 21844:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 15:49:07.230168 2024] [mpm_winnt:notice] [pid 21844:tid 344] AH00431: Parent: Forcing termination of child process 13148
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:49:12.918560 2024] [mpm_winnt:notice] [pid 22400:tid 364] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 15:49:12.918560 2024] [mpm_winnt:notice] [pid 22400:tid 364] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 15:49:12.918560 2024] [core:notice] [pid 22400:tid 364] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 15:49:12.925595 2024] [mpm_winnt:notice] [pid 22400:tid 364] AH00418: Parent: Created child process 17620
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:49:13.910512 2024] [mpm_winnt:notice] [pid 17620:tid 360] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 15:51:56.008160 2024] [mpm_winnt:notice] [pid 22400:tid 364] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 15:52:26.020889 2024] [mpm_winnt:notice] [pid 22400:tid 364] AH00431: Parent: Forcing termination of child process 17620
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:52:37.999568 2024] [mpm_winnt:notice] [pid 19944:tid 344] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 15:52:38.000565 2024] [mpm_winnt:notice] [pid 19944:tid 344] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 15:52:38.000565 2024] [core:notice] [pid 19944:tid 344] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 15:52:38.006780 2024] [mpm_winnt:notice] [pid 19944:tid 344] AH00418: Parent: Created child process 23560
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 15:52:38.965447 2024] [mpm_winnt:notice] [pid 23560:tid 364] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-[Wed Oct 09 16:59:56.135903 2024] [mpm_winnt:notice] [pid 19944:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 17:00:26.144733 2024] [mpm_winnt:notice] [pid 19944:tid 344] AH00431: Parent: Forcing termination of child process 23560
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 17:45:51.908759 2024] [mpm_winnt:notice] [pid 4648:tid 332] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 17:45:51.908759 2024] [mpm_winnt:notice] [pid 4648:tid 332] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 17:45:51.908759 2024] [core:notice] [pid 4648:tid 332] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 17:45:51.931413 2024] [mpm_winnt:notice] [pid 4648:tid 332] AH00418: Parent: Created child process 10448
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 17:45:55.702554 2024] [mpm_winnt:notice] [pid 10448:tid 352] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 17:47:23.885921 2024] [mpm_winnt:notice] [pid 4648:tid 332] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 17:47:25.914973 2024] [mpm_winnt:notice] [pid 10448:tid 352] AH00364: Child: All worker threads have exited.
-[Wed Oct 09 17:47:26.109234 2024] [mpm_winnt:notice] [pid 4648:tid 332] AH00430: Parent: Child process 10448 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 17:48:09.260202 2024] [mpm_winnt:notice] [pid 4588:tid 196] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 17:48:09.265422 2024] [mpm_winnt:notice] [pid 4588:tid 196] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 17:48:09.265422 2024] [core:notice] [pid 4588:tid 196] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 17:48:09.281081 2024] [mpm_winnt:notice] [pid 4588:tid 196] AH00418: Parent: Created child process 8756
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 17:48:11.105466 2024] [mpm_winnt:notice] [pid 8756:tid 392] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 19:11:32.406753 2024] [mpm_winnt:notice] [pid 4588:tid 196] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 19:11:34.453300 2024] [mpm_winnt:notice] [pid 8756:tid 392] AH00364: Child: All worker threads have exited.
-[Wed Oct 09 19:11:34.659981 2024] [mpm_winnt:notice] [pid 4588:tid 196] AH00430: Parent: Child process 8756 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 20:41:32.745506 2024] [mpm_winnt:notice] [pid 4948:tid 324] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 20:41:32.745506 2024] [mpm_winnt:notice] [pid 4948:tid 324] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 20:41:32.745506 2024] [core:notice] [pid 4948:tid 324] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 20:41:32.778563 2024] [mpm_winnt:notice] [pid 4948:tid 324] AH00418: Parent: Created child process 11252
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 20:41:35.616958 2024] [mpm_winnt:notice] [pid 11252:tid 352] AH00354: Child: Starting 64 worker threads.
-[Wed Oct 09 20:50:44.600693 2024] [mpm_winnt:notice] [pid 4948:tid 324] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 20:50:46.617384 2024] [mpm_winnt:notice] [pid 11252:tid 352] AH00364: Child: All worker threads have exited.
-[Wed Oct 09 20:50:46.821581 2024] [mpm_winnt:notice] [pid 4948:tid 324] AH00430: Parent: Child process 11252 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 20:50:57.395746 2024] [mpm_winnt:notice] [pid 20128:tid 348] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 20:50:57.395746 2024] [mpm_winnt:notice] [pid 20128:tid 348] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 20:50:57.395746 2024] [core:notice] [pid 20128:tid 348] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 20:50:57.404744 2024] [mpm_winnt:notice] [pid 20128:tid 348] AH00418: Parent: Created child process 14268
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 20:50:58.352451 2024] [mpm_winnt:notice] [pid 14268:tid 348] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Wed Oct 09 22:04:41.040464 2024] [mpm_winnt:notice] [pid 20128:tid 348] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Wed Oct 09 22:05:11.042872 2024] [mpm_winnt:notice] [pid 20128:tid 348] AH00431: Parent: Forcing termination of child process 14268
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 22:06:59.909018 2024] [mpm_winnt:notice] [pid 12624:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Wed Oct 09 22:06:59.909018 2024] [mpm_winnt:notice] [pid 12624:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Wed Oct 09 22:06:59.909018 2024] [core:notice] [pid 12624:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Wed Oct 09 22:06:59.921583 2024] [mpm_winnt:notice] [pid 12624:tid 328] AH00418: Parent: Created child process 19484
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Wed Oct 09 22:07:00.961573 2024] [mpm_winnt:notice] [pid 19484:tid 368] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 01:24:09.117651 2024] [mpm_winnt:notice] [pid 12624:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 01:24:11.321236 2024] [mpm_winnt:notice] [pid 19484:tid 368] AH00364: Child: All worker threads have exited.
-[Thu Oct 10 01:24:13.098341 2024] [mpm_winnt:notice] [pid 12624:tid 328] AH00430: Parent: Child process 19484 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 07:54:12.989625 2024] [mpm_winnt:notice] [pid 5060:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 07:54:12.989625 2024] [mpm_winnt:notice] [pid 5060:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 07:54:12.989625 2024] [core:notice] [pid 5060:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 07:54:13.187967 2024] [mpm_winnt:notice] [pid 5060:tid 336] AH00418: Parent: Created child process 10620
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 07:54:35.105635 2024] [mpm_winnt:notice] [pid 10620:tid 340] AH00354: Child: Starting 64 worker threads.
-[Thu Oct 10 09:12:23.022946 2024] [mpm_winnt:notice] [pid 5060:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 09:12:25.035155 2024] [mpm_winnt:notice] [pid 10620:tid 340] AH00364: Child: All worker threads have exited.
-[Thu Oct 10 09:12:25.250958 2024] [mpm_winnt:notice] [pid 5060:tid 336] AH00430: Parent: Child process 10620 exited successfully.
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 09:12:37.869041 2024] [mpm_winnt:notice] [pid 17776:tid 372] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 09:12:37.869041 2024] [mpm_winnt:notice] [pid 17776:tid 372] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 09:12:37.869041 2024] [core:notice] [pid 17776:tid 372] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 09:12:37.876055 2024] [mpm_winnt:notice] [pid 17776:tid 372] AH00418: Parent: Created child process 1320
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 09:12:38.531049 2024] [mpm_winnt:notice] [pid 1320:tid 340] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 09:45:46.250388 2024] [mpm_winnt:notice] [pid 17776:tid 372] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 09:46:16.257574 2024] [mpm_winnt:notice] [pid 17776:tid 372] AH00431: Parent: Forcing termination of child process 1320
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 09:53:02.013982 2024] [mpm_winnt:notice] [pid 10624:tid 352] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 09:53:02.013982 2024] [mpm_winnt:notice] [pid 10624:tid 352] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 09:53:02.013982 2024] [core:notice] [pid 10624:tid 352] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 09:53:02.022254 2024] [mpm_winnt:notice] [pid 10624:tid 352] AH00418: Parent: Created child process 16532
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 09:53:02.719668 2024] [mpm_winnt:notice] [pid 16532:tid 340] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 10:54:43.960980 2024] [mpm_winnt:notice] [pid 10624:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 10:55:13.974894 2024] [mpm_winnt:notice] [pid 10624:tid 352] AH00431: Parent: Forcing termination of child process 16532
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 10:55:28.621372 2024] [mpm_winnt:notice] [pid 20140:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 10:55:28.621372 2024] [mpm_winnt:notice] [pid 20140:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 10:55:28.621372 2024] [core:notice] [pid 20140:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 10:55:28.628565 2024] [mpm_winnt:notice] [pid 20140:tid 328] AH00418: Parent: Created child process 19996
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 10:55:29.502621 2024] [mpm_winnt:notice] [pid 19996:tid 356] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-[Thu Oct 10 11:06:43.091744 2024] [mpm_winnt:notice] [pid 20140:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 11:07:13.101267 2024] [mpm_winnt:notice] [pid 20140:tid 328] AH00431: Parent: Forcing termination of child process 19996
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 11:08:26.222493 2024] [mpm_winnt:notice] [pid 12804:tid 372] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 11:08:26.222493 2024] [mpm_winnt:notice] [pid 12804:tid 372] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 11:08:26.222493 2024] [core:notice] [pid 12804:tid 372] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 11:08:26.229672 2024] [mpm_winnt:notice] [pid 12804:tid 372] AH00418: Parent: Created child process 12196
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 11:08:26.930088 2024] [mpm_winnt:notice] [pid 12196:tid 360] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 13:26:52.469694 2024] [mpm_winnt:notice] [pid 12804:tid 372] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 13:27:22.475902 2024] [mpm_winnt:notice] [pid 12804:tid 372] AH00431: Parent: Forcing termination of child process 12196
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 13:33:55.531187 2024] [mpm_winnt:notice] [pid 17700:tid 344] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 13:33:55.531187 2024] [mpm_winnt:notice] [pid 17700:tid 344] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 13:33:55.531187 2024] [core:notice] [pid 17700:tid 344] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 13:33:55.539826 2024] [mpm_winnt:notice] [pid 17700:tid 344] AH00418: Parent: Created child process 18612
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 13:33:56.265833 2024] [mpm_winnt:notice] [pid 18612:tid 364] AH00354: Child: Starting 64 worker threads.
-[Thu Oct 10 13:45:45.196911 2024] [mpm_winnt:notice] [pid 17700:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 13:46:15.200904 2024] [mpm_winnt:notice] [pid 17700:tid 344] AH00431: Parent: Forcing termination of child process 18612
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 13:59:34.260244 2024] [mpm_winnt:notice] [pid 9084:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 13:59:34.260244 2024] [mpm_winnt:notice] [pid 9084:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 13:59:34.260244 2024] [core:notice] [pid 9084:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 13:59:34.262631 2024] [mpm_winnt:notice] [pid 9084:tid 336] AH00418: Parent: Created child process 13116
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 13:59:34.987186 2024] [mpm_winnt:notice] [pid 13116:tid 188] AH00354: Child: Starting 64 worker threads.
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 14:07:55.381059 2024] [mpm_winnt:notice] [pid 9084:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 14:08:25.391260 2024] [mpm_winnt:notice] [pid 9084:tid 336] AH00431: Parent: Forcing termination of child process 13116
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 14:09:16.350834 2024] [mpm_winnt:notice] [pid 18296:tid 360] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 14:09:16.350834 2024] [mpm_winnt:notice] [pid 18296:tid 360] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 14:09:16.350834 2024] [core:notice] [pid 18296:tid 360] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 14:09:16.359030 2024] [mpm_winnt:notice] [pid 18296:tid 360] AH00418: Parent: Created child process 5300
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 14:09:17.053615 2024] [mpm_winnt:notice] [pid 5300:tid 348] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-[Thu Oct 10 14:18:13.495217 2024] [mpm_winnt:notice] [pid 18296:tid 360] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Thu Oct 10 14:18:43.501726 2024] [mpm_winnt:notice] [pid 18296:tid 360] AH00431: Parent: Forcing termination of child process 5300
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 14:29:16.970585 2024] [mpm_winnt:notice] [pid 2964:tid 344] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
-[Thu Oct 10 14:29:16.970585 2024] [mpm_winnt:notice] [pid 2964:tid 344] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
-[Thu Oct 10 14:29:16.970585 2024] [core:notice] [pid 2964:tid 344] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
-[Thu Oct 10 14:29:16.977950 2024] [mpm_winnt:notice] [pid 2964:tid 344] AH00418: Parent: Created child process 20460
-PHP Warning:  Module "imagick" is already loaded in Unknown on line 0
-PHP Warning:  Version warning: Imagick was compiled against ImageMagick version 1808 but version 1809 is loaded. Imagick will run but may behave surprisingly in Unknown on line 0
-[Thu Oct 10 14:29:17.662399 2024] [mpm_winnt:notice] [pid 20460:tid 384] AH00354: Child: Starting 64 worker threads.
-scanned 1 barcode symbols from 1 images
-scanned 0 barcode symbols from 1 images
-
-WARNING: barcode data was not detected in some image(s)
-  things to check:
-    - is the barcode type supported?  currently supported symbologies are:
-      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
-      Code 128, Code 39 and Interleaved 2 of 5
-    - is the barcode large enough in the image?
-    - is the barcode mostly in focus?
-    - is there sufficient contrast/illumination?
-
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
-scanned 1 barcode symbols from 1 images
+[Sun Oct 13 05:14:06.249634 2024] [mpm_winnt:notice] [pid 21536:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 11:17:55.477545 2024] [core:warn] [pid 5008:tid 328] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Oct 13 11:17:55.994595 2024] [mpm_winnt:notice] [pid 5008:tid 328] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 11:17:55.994595 2024] [mpm_winnt:notice] [pid 5008:tid 328] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 11:17:55.994595 2024] [core:notice] [pid 5008:tid 328] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 11:17:55.998074 2024] [mpm_winnt:notice] [pid 5008:tid 328] AH00418: Parent: Created child process 9008
+[Sun Oct 13 11:17:58.967114 2024] [mpm_winnt:notice] [pid 9008:tid 344] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 11:40:21.205740 2024] [mpm_winnt:notice] [pid 5008:tid 328] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 11:40:23.219831 2024] [mpm_winnt:notice] [pid 9008:tid 344] AH00364: Child: All worker threads have exited.
+[Sun Oct 13 11:40:23.251433 2024] [mpm_winnt:notice] [pid 5008:tid 328] AH00430: Parent: Child process 9008 exited successfully.
+[Sun Oct 13 18:15:07.016705 2024] [mpm_winnt:notice] [pid 5240:tid 332] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Sun Oct 13 18:15:07.016705 2024] [mpm_winnt:notice] [pid 5240:tid 332] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Sun Oct 13 18:15:07.016705 2024] [core:notice] [pid 5240:tid 332] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Sun Oct 13 18:15:07.100761 2024] [mpm_winnt:notice] [pid 5240:tid 332] AH00418: Parent: Created child process 9196
+[Sun Oct 13 18:15:10.404581 2024] [mpm_winnt:notice] [pid 9196:tid 344] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 13 20:10:33.062238 2024] [mpm_winnt:notice] [pid 5240:tid 332] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Sun Oct 13 20:10:35.894398 2024] [mpm_winnt:notice] [pid 9196:tid 344] AH00364: Child: All worker threads have exited.
+[Sun Oct 13 20:10:37.368169 2024] [mpm_winnt:notice] [pid 5240:tid 332] AH00430: Parent: Child process 9196 exited successfully.
+[Mon Oct 14 08:04:48.532372 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 14 08:04:48.532372 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 14 08:04:48.532372 2024] [core:notice] [pid 5228:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 14 08:04:48.565921 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00418: Parent: Created child process 10664
+[Mon Oct 14 08:04:55.795301 2024] [mpm_winnt:notice] [pid 10664:tid 344] AH00354: Child: Starting 64 worker threads.

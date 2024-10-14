@@ -1,35 +1,31 @@
 <?php
-/* @ROEURNZ=> File name & directory
- * backend/app/Webhooks/setWebhook.php
- * 
- */
-// Load configuration
-$config = require_once __DIR__ . '/../config/bot_config.php';
+// file name 'setWebhook.php'
 
-use GuzzleHttp\Client;
+// Your bot token
+include __DIR__ ."/../Config/bot_config.php";
+$token = $api_key;
 
-function setWebhook($botToken, $webhookUrl) {
-    $client = new Client();
-    $response = $client->request('POST', "https://api.telegram.org/bot{$botToken}/setWebhook", [
-        'form_params' => [
-            'url' => $webhookUrl,
-        ],
-    ]);
+// Your server URL where the bot is hosted (Make sure it uses HTTPS)
+$webhookUrl = "https://your-domain.com/webhook.php";
 
-    return json_decode($response->getBody(), true);
-}
+// Telegram API endpoint for setting the webhook
+$url = "https://api.telegram.org/bot{$token}/setWebhook?url={$webhookUrl}";
 
-// Set the bot token and webhook URL
-$botToken = $config['bot_token'] ?? null;
-$webhookUrl = 'https://8350-175-100-10-92.ngrok-free.app/app/Webhooks/webhook.php'; /* I use NGROK for test, I will replace it with my actual URL later. */
+// Initialize cURL to set the webhook
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+$response = curl_exec($ch);
 
-if ($botToken) {
-    $result = setWebhook($botToken, $webhookUrl);
+if ($response === false) {
+    echo "Error setting webhook: " . curl_error($ch);
+} else {
+    $result = json_decode($response, true);
     if ($result['ok']) {
-        echo "Webhook set successfully: " . $result['result']['url'];
+        echo "Webhook set successfully!";
     } else {
         echo "Failed to set webhook: " . $result['description'];
     }
-} else {
-    echo "Error: Bot token is not configured properly.";
 }
+
+curl_close($ch);
