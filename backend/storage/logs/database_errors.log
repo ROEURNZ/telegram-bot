@@ -4,3 +4,4 @@ Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'
 Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
 Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
 Database connection failed: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Database connection failed: SQLSTATE[HY000] [1049] Unknown database 'ezzebot'

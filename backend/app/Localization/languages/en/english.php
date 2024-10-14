@@ -49,7 +49,7 @@ return $messages = [
 
     'help' => 'This is your help message. You can use /start to begin.',
     'menu' => 'Menu options: /start, /help',
-    'barcode_error' => 'Could not decode the barcode. Please try again with a clearer image.',
+    // 'barcode_error' => 'Could not decode the barcode. Please try again with a clearer image.',
     'image_error' => 'Failed to retrieve the image file. Please try again.',
 
     'restart_message' => 'You can select a language to restart',
@@ -62,19 +62,19 @@ return $messages = [
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
     'share_contact_prompt' => 'You can share your contact by using the /share_contact command.',
-    'location_prompt' => 'Please share your location.',
+    // 'location_prompt' => 'Please share your location.',
     'decode_not_completed' => 'You have not completed the decode process yet.',
     'upload_barcode_prompt' => 'Please upload a barcode image to decode.',
-    'menu' => 'Here are the available commands: /share_contact, /decode, /share_location, /change_language.',
+    // 'menu' => 'Here are the available commands: /share_contact, /decode, /share_location, /change_language.',
     'location_not_shared' => 'You have not shared your location yet.',
 
 
 
-    'image_error' => "Sorry, I couldn't retrieve the image. Please try again.",
+    // 'image_error' => "Sorry, I couldn't retrieve the image. Please try again.",
     'image_download_error' => "Failed to download the image. Please try again later.",
     'directory_error' => "Error creating the directory to save images. Please contact support.",
     'image_save_error' => "Failed to save the image. Please try again.",
-    'barcode_error' => "I couldn't decode the barcode. Please make sure it's clear and try again.",
+    // 'barcode_error' => "I couldn't decode the barcode. Please make sure it's clear and try again.",
     'barcode_success' => "Success! The barcode has been decoded and saved. You can continue scanning.",
     'db_insert_error' => "There was an error saving your decoded data. Please try again later.",
  

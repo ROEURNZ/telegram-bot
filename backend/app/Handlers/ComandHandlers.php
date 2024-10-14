@@ -186,16 +186,6 @@ function processUpdates($updates, $token)
                     }
                 }
 
-                // Handle existing user case and proceed to upload barcode or decode
-                if ($userCommand === '/upload_barcode' || $userCommand === '/decode') {
-                    // Check if user exists in the database
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
-                    } else {
-                        // If user is not registered, prompt them to register
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                    }
-                }
             }
 
             // Handle contact sharing

@@ -23,14 +23,13 @@ CREATE TABLE IF NOT EXISTS users (
     last_name VARCHAR(255),
     username VARCHAR(255),
     phone_number VARCHAR(20),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     date DATETIME NOT NULL,
     language ENUM('en', 'kh') NOT NULL,
     PRIMARY KEY (id)
 );
 
 -- Create the barcode table
-CREATE TABLE IF NOT EXISTS barcode (
+CREATE TABLE IF NOT EXISTS decoded (
     id INT NOT NULL AUTO_INCREMENT,
     user_id BIGINT NOT NULL,
     type VARCHAR(50) NULL,

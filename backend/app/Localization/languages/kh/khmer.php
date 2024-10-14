@@ -47,13 +47,13 @@ return $langBase = [
 
 
 
-    'contact_prompt' => 'សូមចែករំលែកព័ត៌មានទំនាក់ទំនងរបស់អ្នក។',
+    // 'contact_prompt' => 'សូមចែករំលែកព័ត៌មានទំនាក់ទំនងរបស់អ្នក។',
     'help' => 'នេះគឺជាសារជំនួយរបស់អ្នក។ អ្នកអាចប្រើ /start ដើម្បីចាប់ផ្តើម។',
     'menu' => 'ជម្រើសម៉ឺនុយ៖ /start, /help',
     'thanks_for_contact' => "អរគុណសម្រាប់ការចែករំលែកទំនាក់ទំនងរបស់អ្នក!\nឈ្មោះរបស់អ្នក: %s %s\nលេខទូរស័ព្ទ: %s\nឈ្មោះអ្នកប្រើប្រាស់: %s",
     // 'thanks_for_contact' => "អរគុណសម្រាប់ការចែករំលែកទំនាក់ទំនងរបស់អ្នក!\nTelegram User ID: %s\nTelegram Chat ID: %s\nឈ្មោះរបស់អ្នក: %s %s\nលេខទូរស័ព្ទ: %s\nឈ្មោះអ្នកប្រើប្រាស់: %s",
-    'upload_barcode' => 'សូមផ្ញើរូបភាពBarcode ឬ QR សម្រាប់ស្កេន។',
-    'barcode_error' => 'មិនអាចស្គេនបាកូដបានទេ។ សូមព្យាយាមម្ដងទៀតជាមួយរូបភាពច្បាស់ណាស់។',
+    // 'upload_barcode' => 'សូមផ្ញើរូបភាពBarcode ឬ QR សម្រាប់ស្កេន។',
+    // 'barcode_error' => 'មិនអាចស្គេនបាកូដបានទេ។ សូមព្យាយាមម្ដងទៀតជាមួយរូបភាពច្បាស់ណាស់។',
     'image_error' => 'មិនអាចទាញយករូបភាពបានទេ។ សូមព្យាយាមម្ដងទៀត។',
 
     'restart_message' => 'អ្នកអាចជ្រើសរើសភាសាដើម្បីចាប់ផ្ដើមឡើងវិញ។',
@@ -67,14 +67,14 @@ return $langBase = [
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
     'share_contact_prompt' => 'You can share your contact by using the /share_contact command.',
-    'location_prompt' => 'Please share your location.',
+    // 'location_prompt' => 'Please share your location.',
     'decode_not_completed' => 'You have not completed the decode process yet.',
     'upload_barcode_prompt' => 'Please upload a barcode image to decode.',
-    'menu' => 'Here are the available commands: /share_contact, /decode, /share_location, /change_language.',
+    // 'menu' => 'Here are the available commands: /share_contact, /decode, /share_location, /change_language.',
     'location_not_shared' => 'You have not shared your location yet.',
 
 
-    'image_error' => "សូមទោស ខ្ញុំមិនអាចទាញយករូបភាពបានទេ។ សូមសាកល្បងម្តងទៀត។",
+    // 'image_error' => "សូមទោស ខ្ញុំមិនអាចទាញយករូបភាពបានទេ។ សូមសាកល្បងម្តងទៀត។",
     'image_download_error' => "ការទាញយករូបភាពបរាជ័យ សូមសាកល្បងម្តងទៀត។",
     'directory_error' => "មានបញ្ហាក្នុងការបង្កើតថតឯកសារសម្រាប់រក្សារូបភាព សូមទាក់ទងបុគ្គលិកបច្ចេកទេស។",
     'image_save_error' => "ការរក្សាទុករូបភាពបរាជ័យ សូមសាកល្បងម្តងទៀត។",
