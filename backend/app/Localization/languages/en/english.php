@@ -39,7 +39,7 @@ return $messages = [
 
     // Button texts
     'language_option' => '🇺🇸 English',
-    'share_contact' => '📞 Share Contact',
+    'share_contact' => '📞 Share My Contact',
     'share_location' => '📍 Share Location',
 
     'contact_request' => 'Please share your contact information.',
@@ -86,7 +86,7 @@ return $messages = [
     'share_contact_desc' => "Share your contact.",
     'decode_desc' => "Decode a barcode or QR code.",
     'share_location_desc' => "Share your location.",
-    'help_desc' => "Get help.",
+    'help_desc' => "Get help.",  
     'menu_desc' => "Open the menu.",
     'change_language_desc' => "Change the language.",
 ];
