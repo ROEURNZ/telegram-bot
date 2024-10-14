@@ -13,7 +13,6 @@ function processUpdates($updates, $token)
     setCommands($token, $currentMessages);
 
     // $ezzeModel = new EzzeModels($pdo);
-    foreach ($updates as $update) {
         if (isset($update['message'])) {
             setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
@@ -84,7 +83,7 @@ function processUpdates($updates, $token)
                     } else {
                         sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
                     }
-                    continue;
+                
                 }
                 // Handle /change_language command
                 if ($userCommand === '/change_language') {
@@ -246,7 +245,7 @@ function processUpdates($updates, $token)
                     $_SESSION['currentChatId'] = $chatId;
                     // Re-apply the commands after contact sharing is done
                     setCommands($token, $currentMessages);
-                    continue;
+                   
                 } else {
                     sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                 }
@@ -386,7 +385,7 @@ function processUpdates($updates, $token)
                 }
             }
         }
-    }
+    
 }
 
 
@@ -419,4 +418,4 @@ function showLocationSharing($chatId, $token, $language)
 }
 
 // include __DIR__ . '/../includes/functions/polling.php';
-include __DIR__. "/../Webhooks/webhook.php";
+// include __DIR__. "/../Webhooks/webhook.php";
