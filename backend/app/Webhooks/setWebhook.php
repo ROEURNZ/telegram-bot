@@ -1,12 +1,11 @@
 <?php
 // file name 'setWebhook.php'
 
-// Your bot token
+include __DIR__ ."/webhook.php";
 include __DIR__ ."/../Config/bot_config.php";
 $token = $api_key;
 
-// Your server URL where the bot is hosted (Make sure it uses HTTPS)
-$webhookUrl = "https://your-domain.com/webhook.php";
+$webhookUrl = "https://efe0-175-100-10-91.ngrok-free.app/webhook.php";
 
 // Telegram API endpoint for setting the webhook
 $url = "https://api.telegram.org/bot{$token}/setWebhook?url={$webhookUrl}";

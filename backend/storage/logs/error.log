@@ -120,6 +120,7 @@ scanned 1 barcode symbols from 1 images
 [Mon Oct 14 08:04:48.532372 2024] [core:notice] [pid 5228:tid 336] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Mon Oct 14 08:04:48.565921 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00418: Parent: Created child process 10664
 [Mon Oct 14 08:04:55.795301 2024] [mpm_winnt:notice] [pid 10664:tid 344] AH00354: Child: Starting 64 worker threads.
+<<<<<<< HEAD
 [Mon Oct 14 10:34:02.103640 2024] [mpm_winnt:notice] [pid 4284:tid 440] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
 [Mon Oct 14 10:34:02.103640 2024] [mpm_winnt:notice] [pid 4284:tid 440] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
 [Mon Oct 14 10:34:02.103640 2024] [core:notice] [pid 4284:tid 440] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
@@ -183,3 +184,13 @@ scanned 1 barcode symbols from 1 images
 [Tue Oct 15 17:36:27.333443 2024] [mpm_winnt:notice] [pid 3372:tid 404] AH00418: Parent: Created child process 5628
 [Tue Oct 15 17:36:27.893448 2024] [mpm_winnt:notice] [pid 5628:tid 440] AH00354: Child: Starting 64 worker threads.
 scanned 1 barcode symbols from 1 images
+=======
+[Mon Oct 14 08:30:30.936855 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Oct 14 08:30:32.969082 2024] [mpm_winnt:notice] [pid 10664:tid 344] AH00364: Child: All worker threads have exited.
+[Mon Oct 14 08:30:33.034869 2024] [mpm_winnt:notice] [pid 5228:tid 336] AH00430: Parent: Child process 10664 exited successfully.
+[Mon Oct 14 08:31:13.876182 2024] [mpm_winnt:notice] [pid 1716:tid 384] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 14 08:31:13.876182 2024] [mpm_winnt:notice] [pid 1716:tid 384] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 14 08:31:13.876182 2024] [core:notice] [pid 1716:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 14 08:31:13.884196 2024] [mpm_winnt:notice] [pid 1716:tid 384] AH00418: Parent: Created child process 5492
+[Mon Oct 14 08:31:14.620963 2024] [mpm_winnt:notice] [pid 5492:tid 372] AH00354: Child: Starting 64 worker threads.
+>>>>>>> 594f2da6cc85959700d13f1f7d004c2ec41635b6
