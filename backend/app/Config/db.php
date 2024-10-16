@@ -65,11 +65,7 @@ try {
 ?>
 
 /**
-<?php
-/* 
- * @ROEURNZ => File name & directory
- * backend/app/Config/db.php
- */
+
 
 // Include the DirectoryLevels class
 require_once __DIR__ . '/dirl.php'; 
