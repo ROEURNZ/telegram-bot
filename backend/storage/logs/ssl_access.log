@@ -76,3 +76,9 @@
 ::1 - - [16/Oct/2024:15:19:51 +0700] "GET /backend/ HTTP/1.1" 200 962
 ::1 - - [16/Oct/2024:15:19:51 +0700] "GET /backend/app/ HTTP/1.1" 200 796
 ::1 - - [16/Oct/2024:15:19:54 +0700] "GET /backend/app/Handlers/ HTTP/1.1" 200 922
+::1 - - [16/Oct/2024:15:21:26 +0700] "GET / HTTP/1.1" 200 507
+::1 - - [16/Oct/2024:15:21:26 +0700] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [16/Oct/2024:15:21:29 +0700] "GET /backend/ HTTP/1.1" 200 962
+::1 - - [16/Oct/2024:15:21:29 +0700] "GET /backend/app/ HTTP/1.1" 200 796
+::1 - - [16/Oct/2024:15:21:32 +0700] "GET /backend/app/Models/ HTTP/1.1" 200 422
+::1 - - [16/Oct/2024:15:21:36 +0700] "GET /backend/app/Handlers/ HTTP/1.1" 200 922
