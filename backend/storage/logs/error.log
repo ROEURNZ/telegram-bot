@@ -188,3 +188,4 @@ scanned 1 barcode symbols from 1 images
 [Wed Oct 16 15:23:50.808461 2024] [core:notice] [pid 10204:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Wed Oct 16 15:23:50.811432 2024] [mpm_winnt:notice] [pid 10204:tid 404] AH00418: Parent: Created child process 13420
 [Wed Oct 16 15:23:51.166930 2024] [mpm_winnt:notice] [pid 13420:tid 420] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
