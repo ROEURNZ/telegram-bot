@@ -17,57 +17,288 @@ class EzzeModels
         $this->pdo = Database::getInstance();
     }
 
-    function addUser($params)
+    /** ----------------------------------------Admin User Controls ----------------------------------------------- */
+
+    // Admin function to delete a user by user ID
+    public function deleteUserById($userId)
     {
-        // SQL statement for inserting a new user
-        $sql = "INSERT INTO `users` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
-                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
-
-        // Prepare the statement
+        $sql = "DELETE FROM `user_profiles` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        return $stmt->execute() ? "User deleted successfully." : "Error: " . $stmt->errorInfo()[2];
+    }
 
-        // Execute the statement with parameters
+    // Admin function to update a user's information
+    public function updateUserInfo($userId, $params)
+    {
+        $sql = "UPDATE `user_profiles` SET first_name = :first_name, last_name = :last_name, username = :username, 
+                phone_number = :phone_number, language = :language WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-            ':user_id' => $params['user_id'],
-            ':chat_id' => $params['chat_id'],
-            ':msg_id' => $params['msg_id'],
             ':first_name' => $params['first_name'],
             ':last_name' => $params['last_name'],
             ':username' => $params['username'],
             ':phone_number' => $params['phone_number'],
-            ':date' => $params['date'],
-            ':language' => $params['language']
-        ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
+            ':language' => $params['language'],
+            ':user_id' => $userId
+        ]) ? "User information updated successfully." : "Error: " . $stmt->errorInfo()[2];
+    }
+
+    // Admin function to get all users
+    public function getAllUsers()
+    {
+        $sql = "SELECT * FROM `user_profiles`";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Admin function to block or unblock a user
+    public function updateUserStatus($userId, $status)
+    {
+        $sql = "UPDATE `user_profiles` SET is_blocked = :status WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([':status' => $status, ':user_id' => $userId])
+            ? "User status updated successfully."
+            : "Error: " . $stmt->errorInfo()[2];
+    }
+
+    /** ----------------------------------------Admin Barcode Controls ----------------------------------------------- */
+
+    // Admin function to delete a barcode by its code
+    public function deleteBarcodeByCode($code)
+    {
+        $sql = "DELETE FROM `barcodes` WHERE code = :code";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':code', $code, PDO::PARAM_STR);
+        return $stmt->execute() ? "Barcode deleted successfully." : "Error: " . $stmt->errorInfo()[2];
+    }
+
+    // Admin function to retrieve all barcodes for a user
+    public function getAllBarcodes()
+    {
+        $sql = "SELECT * FROM `barcodes`";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Admin function to update decoded status for a specific barcode
+    public function updateBarcodeDecodedStatus($barcodeId, $status)
+    {
+        $sql = "UPDATE `barcodes` SET decoded_status = :status WHERE id = :barcode_id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([':status' => $status, ':barcode_id' => $barcodeId])
+            ? "Barcode status updated successfully."
+            : "Error: " . $stmt->errorInfo()[2];
+    }
+
+    /** ----------------------------------------Admin Location Controls ----------------------------------------------- */
+
+    // Admin function to delete a location by user ID
+    public function deleteLocationByUserId($userId)
+    {
+        $sql = "DELETE FROM location WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        return $stmt->execute() ? "Location deleted successfully." : "Error: " . $stmt->errorInfo()[2];
+    }
+
+    // Admin function to retrieve all locations
+    public function getAllLocations()
+    {
+        $sql = "SELECT * FROM `location`";
+        $stmt = $this->pdo->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Admin function to force a user's location share status
+    public function forceUpdateShareStatus($userId, $status)
+    {
+        $sql = "UPDATE location SET share_status = :status WHERE user_id = :user_id";
+        $stmt = $this->pdo->prepare($sql);
+        return $stmt->execute([':status' => $status, ':user_id' => $userId])
+            ? "Share status updated successfully."
+            : "Error: " . $stmt->errorInfo()[2];
     }
 
 
 
-// Function to check if the user has selected a language
-public function hasSelectedLanguage($userId)
+    // Method to retrieve all user IDs
+    public function getAllUsersId()
+    {
+        $stmt = $this->pdo->prepare("SELECT user_id FROM `user_profiles`");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    }
+
+    public function deleteBarcodes($userId)
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM barcode WHERE user_id = ?");
+        return $stmt->execute([$userId]);
+    }
+
+    public function deleteLocations($userId)
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM location WHERE user_id = ?");
+        return $stmt->execute([$userId]);
+    }
+
+    public function deleteUser($userId)
+    {
+        // Start a transaction
+        $this->pdo->beginTransaction();
+
+        try {
+            // Delete barcodes associated with the user
+            if (!$this->deleteBarcodes($userId)) {
+                throw new Exception("Failed to delete barcodes.");
+            }
+
+            // Delete locations associated with the user
+            if (!$this->deleteLocations($userId)) {
+                throw new Exception("Failed to delete locations.");
+            }
+
+            // Delete the user
+            $stmt = $this->pdo->prepare("DELETE FROM users WHERE user_id = ?");
+            $stmt->execute([$userId]);
+
+            // Commit the transaction
+            $this->pdo->commit();
+            echo "User and related data deleted successfully.";
+        } catch (Exception $e) {
+            // Rollback the transaction if anything fails
+            $this->pdo->rollBack();
+            echo "Failed to delete user: " . $e->getMessage();
+        }
+    }
+
+
+
+    /**-----------------------------------------------Register the USERS --------------------------------------------------- */
+
+    function registerUsers($params)
 {
-    // Prepare the SQL query to check if the user has a language set
-    $sql = "SELECT language FROM users WHERE user_id = :user_id LIMIT 1";
+    // Check if the user already exists based on unique fields (user_id, username, or phone_number)
+    $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username OR phone_number = :phone_number";
+    $checkStmt = $this->pdo->prepare($checkSql);
+    $checkStmt->execute([
+        ':user_id' => $params['user_id'],
+        ':username' => $params['username'],
+        ':phone_number' => $params['phone_number']
+    ]);
+    
+    // If a record already exists, return an error message
+    if ($checkStmt->fetchColumn() > 0) {
+        return "Error: User already exists.";
+    }
+
+    // SQL statement for inserting a new user
+    $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
+            VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
+
+    // Prepare the statement
     $stmt = $this->pdo->prepare($sql);
 
-    // Bind the user_id parameter
-    $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-
-    // Execute the query
-    $stmt->execute();
-
-    // Fetch the language value
-    $language = $stmt->fetchColumn();
-
-    // Return true if a language is set, otherwise false
-    return !empty($language);
+    // Execute the statement with parameters
+    return $stmt->execute([
+        ':user_id' => $params['user_id'],
+        ':chat_id' => $params['chat_id'],
+        ':msg_id' => $params['msg_id'],
+        ':first_name' => $params['first_name'],
+        ':last_name' => $params['last_name'],
+        ':username' => $params['username'],
+        ':phone_number' => $params['phone_number'],
+        ':date' => $params['date'],
+        ':language' => $params['language']
+    ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
 }
 
 
-    public function getUserLanguage($chatId, $username)
+function updateUser($params)
+{
+    // Check if the user exists by user_id
+    $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
+    $checkStmt = $this->pdo->prepare($checkSql);
+    $checkStmt->execute([':user_id' => $params['user_id']]);
+    
+    // If the user does not exist, return an error message
+    if ($checkStmt->fetchColumn() == 0) {
+        return "Error: User not found.";
+    }
+
+    // Check for unique constraints on username and phone_number (ignore current user's values)
+    $uniqueCheckSql = "SELECT COUNT(*) FROM `user_profiles` 
+                       WHERE (username = :username OR phone_number = :phone_number) 
+                       AND user_id != :user_id";
+    $uniqueCheckStmt = $this->pdo->prepare($uniqueCheckSql);
+    $uniqueCheckStmt->execute([
+        ':username' => $params['username'],
+        ':phone_number' => $params['phone_number'],
+        ':user_id' => $params['user_id']
+    ]);
+
+    // If another user with the same username or phone number exists, return an error
+    if ($uniqueCheckStmt->fetchColumn() > 0) {
+        return "Error: Username or phone number already exists.";
+    }
+
+    // SQL statement for updating an existing user
+    $updateSql = "UPDATE `user_profiles` 
+                  SET chat_id = :chat_id, 
+                      msg_id = :msg_id, 
+                      first_name = :first_name, 
+                      last_name = :last_name, 
+                      username = :username, 
+                      phone_number = :phone_number, 
+                      date = :date, 
+                      language = :language 
+                  WHERE user_id = :user_id";
+
+    // Prepare the statement
+    $stmt = $this->pdo->prepare($updateSql);
+
+    // Execute the statement with parameters
+    return $stmt->execute([
+        ':user_id' => $params['user_id'],
+        ':chat_id' => $params['chat_id'],
+        ':msg_id' => $params['msg_id'],
+        ':first_name' => $params['first_name'],
+        ':last_name' => $params['last_name'],
+        ':username' => $params['username'],
+        ':phone_number' => $params['phone_number'],
+        ':date' => $params['date'],
+        ':language' => $params['language']
+
+    ]) ? "User updated successfully." : "Error: " . $stmt->errorInfo()[2];
+}
+
+
+    // Function to check if the user has selected a language
+    public function hasSelectedLanguage($userId)
+    {
+        // Prepare the SQL query to check if the user has a language set
+        $sql = "SELECT language FROM `user_profiles` WHERE user_id = :user_id LIMIT 1";
+        $stmt = $this->pdo->prepare($sql);
+
+        // Bind the user_id parameter
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+
+        // Execute the query
+        $stmt->execute();
+
+        // Fetch the language value
+        $language = $stmt->fetchColumn();
+
+        // Return true if a language is set, otherwise false
+        return !empty($language);
+    }
+
+
+    public function getUserLanguage($chatId)
     {
         // Prepare a statement to get the user's language from the database
-        $stmt = $this->pdo->prepare("SELECT language FROM users WHERE chat_id = :chat_id AND username = :username");
-        $stmt->execute(['chat_id' => $chatId, 'username' => $username]);
+        $stmt = $this->pdo->prepare("SELECT language FROM `user_profiles` WHERE chat_id = :chat_id ");
+        $stmt->execute(['chat_id' => $chatId]);
 
         // Fetch the language preference
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -80,7 +311,7 @@ public function hasSelectedLanguage($userId)
     // Method to update user's language
     public function updateUserLanguage($chatId, $language)
     {
-        $stmt = $this->pdo->prepare("UPDATE users SET language = :language WHERE chat_id = :chat_id");
+        $stmt = $this->pdo->prepare("UPDATE `user_profiles` SET language = :language WHERE chat_id = :chat_id");
         return $stmt->execute(['language' => $language, 'chat_id' => $chatId]);
     }
 
@@ -93,7 +324,7 @@ public function hasSelectedLanguage($userId)
     private function isUserIdExists($userId)
     {
         // Check if the user already exists in the database
-        $sql = "SELECT COUNT(*) FROM `users` WHERE user_id = :user_id";
+        $sql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() > 0;
@@ -103,7 +334,7 @@ public function hasSelectedLanguage($userId)
     public function tgUsername($userId)
     {
         // Prepare the SQL statement to fetch the username by user ID
-        $sql = "SELECT username FROM `users` WHERE user_id = :user_id";
+        $sql = "SELECT username FROM `user_profiles` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
 
         // Execute the statement with the provided user ID
@@ -113,14 +344,14 @@ public function hasSelectedLanguage($userId)
         return $stmt->fetchColumn() ?: null;
     }
 
-    
+
     function updateTgUsername($userId, $username)
     {
         if (empty($userId)) {
             return false;
         }
 
-        $sql = "UPDATE user_profiles SET username = :username WHERE user_id = :user_id";
+        $sql = "UPDATE `user_profiles` SET username = :username WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([':username' => $username, ':user_id' => $userId]);
     }
@@ -129,10 +360,11 @@ public function hasSelectedLanguage($userId)
     // Check if the user exists by chatId
     public function isUserChatIdExists($chatId)
     {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `users` WHERE chat_id = :chat_id");
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `user_profiles` WHERE chat_id = :chat_id");
         $stmt->execute([':chat_id' => $chatId]);
         return $stmt->fetchColumn() > 0;
     }
+
 
     /** ----------------------------------------Contact sharing for register ----------------------------------------------- */
 
@@ -145,7 +377,7 @@ public function hasSelectedLanguage($userId)
         }
 
         // If the barcode doesn't exist, proceed with the insert
-        $sql = "INSERT INTO barcode (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
+        $sql = "INSERT INTO `barcodes` (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
             VALUES (:user_id, :type, :code, :msg_id, :file_id, :file_unique_id, :decoded_status)";
         $stmt = $this->pdo->prepare($sql);
 
@@ -156,54 +388,58 @@ public function hasSelectedLanguage($userId)
         $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
         $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
         $stmt->bindParam(':file_unique_id', $params['file_unique_id'], PDO::PARAM_STR);
-        $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_INT);
+        $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_BOOL);
+        // $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_INT);
 
-        return $stmt->execute() ? "Barcode record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
+
+        // Execute the insert statement
+        if ($stmt->execute()) {
+            // Update the share status to 1 (true) after successful location insertion
+            $this->updateDecodeStatus($params['user_id']);
+            return "Decoded record inserted successfully.";
+        } else {
+            return "Error: " . $stmt->errorInfo()[2];
+        }
     }
-
-
 
     // Function to check if a barcode exists
     public function barcodeExists($code)
     {
-        $sql = "SELECT COUNT(*) FROM barcode WHERE code = :code";
+        $sql = "SELECT COUNT(*) FROM `barcodes` WHERE code = :code";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':code', $code, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
 
-
-
     // Function to reset decoded_status to 0 for all barcodes of the user
-    public function resetDecodedStatus($userId)
+    public function updateDecodeStatus($userId)
     {
-        $sql = "UPDATE barcode SET decoded_status = 0 WHERE user_id = :user_id";
+        $sql = "UPDATE `barcodes` SET decoded_status = 1 WHERE user_id = :user_id AND decoded_status = 0";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
     }
 
-
-
-
-
     // Check if user has completed a decode
+
     public function hasCompletedDecode($userId)
     {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM barcode WHERE user_id = :user_id");
-        $stmt->execute([':user_id' => $userId]);
+        $sql = "SELECT COUNT(*) FROM `barcodes` WHERE user_id = :user_id AND decoded_status = 1";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+
+        $stmt->execute(); 
         return $stmt->fetchColumn() > 0;
     }
-
-
 
 
 
     // Function to retrieve barcodes for a user
     public function getBarcodesByUserId($userId)
     {
-        $sql = "SELECT * FROM barcode WHERE user_id = :user_id";
+        $sql = "SELECT * FROM `barcodes` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
@@ -217,7 +453,7 @@ public function hasSelectedLanguage($userId)
     public function hasSharedLocation($userId)
     {
         // Prepare the SQL query to count records with share_status = 1
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM location WHERE user_id = :user_id AND share_status = 1");
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `location` WHERE user_id = :user_id AND share_status = 1");
 
         // Bind parameters and execute
         $stmt->execute([':user_id' => $userId]);
@@ -229,7 +465,7 @@ public function hasSelectedLanguage($userId)
     // Function to check if the location has been shared
     public function checkShareStatus($userId)
     {
-        $sql = "SELECT share_status FROM location WHERE user_id = :user_id AND share_status = 1 LIMIT 1"; // 1 indicates shared
+        $sql = "SELECT share_status FROM `location` WHERE user_id = :user_id AND share_status = 1 LIMIT 1"; // 1 indicates shared
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -244,7 +480,7 @@ public function hasSelectedLanguage($userId)
     public function addLocation($params)
     {
         // Prepare the SQL statement to insert the location record
-        $sql = "INSERT INTO location (user_id, lat, lon, location_url, date, share_status) 
+        $sql = "INSERT INTO `location` (user_id, lat, lon, location_url, date, share_status) 
                     VALUES (:user_id, :lat, :lon, :location_url, :date, :share_status)";
         $stmt = $this->pdo->prepare($sql);
 
@@ -254,8 +490,9 @@ public function hasSelectedLanguage($userId)
         $stmt->bindParam(':lon', $params['lon'], PDO::PARAM_STR);
         $stmt->bindParam(':location_url', $params['location_url'], PDO::PARAM_STR);
         $stmt->bindParam(':date', $params['date'], PDO::PARAM_STR);
-        $shareStatus = 0;  // Initial share status is false (0)
-        $stmt->bindParam(':share_status', $shareStatus, PDO::PARAM_INT);
+        // $shareStatus = 0;  // Initial share status is false (0)
+        // $stmt->bindParam(':share_status', $shareStatus, PDO::PARAM_INT);
+        $stmt->bindParam(':share_status', $params['share_status'], PDO::PARAM_BOOL);
 
         // Execute the insert statement
         if ($stmt->execute()) {
@@ -270,7 +507,7 @@ public function hasSelectedLanguage($userId)
     // Function to update the share status after location is shared
     public function updateShareStatus($userId)
     {
-        $sql = "UPDATE location SET share_status = 1 WHERE user_id = :user_id AND share_status = 0";
+        $sql = "UPDATE `location` SET share_status = 1 WHERE user_id = :user_id AND share_status = 0";
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -284,12 +521,10 @@ public function hasSelectedLanguage($userId)
     // Function to retrieve locations for a user
     public function getLocationsByUserId($userId)
     {
-        $sql = "SELECT * FROM location WHERE user_id = :user_id";
+        $sql = "SELECT * FROM `location` WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 }

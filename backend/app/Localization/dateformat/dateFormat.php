@@ -1,7 +1,7 @@
 <?php
 
 // Localization/dateformat/dateFormat.php
-
+date_default_timezone_set("Asia/Phnom_Penh");
 // Khmer month names
 $khmerMonths = [
     '01' => 'មករា',
@@ -64,7 +64,7 @@ function formatDate($language) {
         $day = implode('', array_map(fn($digit) => $arabicToKhmer[$digit], str_split($day)));
         $monthName = $khmerMonths[$month];
         $year = implode('', array_map(fn($digit) => $arabicToKhmer[$digit], str_split($year)));
-        return sprintf('%s %s, %s', $day, $monthName, $year);
+        return sprintf('ថ្ងៃទី %s ខែ %s ឆ្នាំ %s', $day, $monthName, $year);
     } else {
         // For English, use Month Day, Year format without leading zero on day
         $monthName = $englishMonths[$month];
@@ -78,7 +78,7 @@ function formatTime($language) {
 
     // Get current time components
     $currentTime = new DateTime();
-    $hour = $currentTime->format('h'); // Keep the leading zero
+    $hour = $currentTime->format('h');
     $minute = $currentTime->format('i');
     $second = $currentTime->format('s');
     $period = $currentTime->format('A'); // AM/PM
@@ -95,4 +95,24 @@ function formatTime($language) {
         return sprintf('%s:%s:%s %s', $hour, $minute, $second, $period);
     }
 }
+
+
+// Assuming formatDate() and formatTime() functions are already defined as previously shown.
+
+// Function to get the current date and time based on language
+function getDateTime($language) {
+    // Get formatted date and time
+    $formattedDate = formatDate($language);
+    $formattedTime = formatTime($language);
+    
+    // Dynamically change the output format based on language
+    if ($language === 'kh') {
+        // Khmer: Time first, then date
+        return sprintf('%s, %s', $formattedTime, $formattedDate);
+    } else {
+        // English: Date first, then time
+        return sprintf('%s, %s', $formattedDate, $formattedTime);
+    }
+} 
+
 

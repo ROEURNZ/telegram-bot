@@ -11,54 +11,50 @@ SET time_zone = "Asia/Phnom_Penh";
 CREATE DATABASE IF NOT EXISTS ezzebot;
 USE ezzebot;
 
--- Create the user_language table
-CREATE TABLE IF NOT EXISTS user_language (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id BIGINT NOT NULL,
-    chat_id BIGINT NOT NULL,
-    msg_id BIGINT NOT NULL,
-    language ENUM('en', 'kh') NOT NULL, 
-    PRIMARY KEY (id)
-);
 
--- Create the users table
-CREATE TABLE IF NOT EXISTS users (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id BIGINT NOT NULL,
-    chat_id BIGINT NOT NULL,
-    msg_id BIGINT NOT NULL,
-    first_name VARCHAR(255) NOT NULL,
-    last_name VARCHAR(255),
-    username VARCHAR(255),
-    phone_number VARCHAR(20),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    date DATETIME NOT NULL,
-    language ENUM('en', 'kh') NOT NULL,
-    PRIMARY KEY (id)
-);
+CREATE TABLE IF NOT EXISTS `users_profile` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` bigint NOT NULL,
+  `chat_id` bigint NOT NULL,
+  `msg_id` bigint NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `phone_number` varchar(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` datetime NOT NULL,
+  `language` enum('en','kh') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Create the barcode table
-CREATE TABLE IF NOT EXISTS barcode (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id BIGINT NOT NULL,
-    type VARCHAR(50) NULL,
-    code VARCHAR(255) NOT NULL,
-    msg_id BIGINT NULL,
-    file_id VARCHAR(100) NOT NULL,
-    file_unique_id VARCHAR(100) NOT NULL,
-    date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id)
-);
 
--- Create the location table
-CREATE TABLE IF NOT EXISTS location (
-    id INT NOT NULL AUTO_INCREMENT,
-    user_id BIGINT NOT NULL,
-    lat VARCHAR(50) NOT NULL,
-    lon VARCHAR(50) NOT NULL,
-    location_url VARCHAR(255) NULL,
-    date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (id)
-);
+CREATE TABLE IF NOT EXISTS `barcode` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` bigint NOT NULL,
+  `type` varchar(50) DEFAULT NULL,
+  `code` varchar(255) NOT NULL,
+  `msg_id` bigint DEFAULT NULL,
+  `file_id` varchar(100) NOT NULL,
+  `file_unique_id` varchar(100) NOT NULL,
+  `date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `decoded_status` boolean DEFAULT FALSE,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE IF NOT EXISTS `location` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` bigint NOT NULL,
+  `lat` varchar(50) NOT NULL,
+  `lon` varchar(50) NOT NULL,
+  `location_url` varchar(255) DEFAULT NULL,
+  `date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `share_status` boolean DEFAULT FALSE,
+--   `share_status` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 COMMIT;
+
+
+

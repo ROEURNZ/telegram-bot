@@ -1,30 +1,41 @@
 <?php
 // file name 'setWebhook.php'
 
-include __DIR__ ."/webhook.php";
-include __DIR__ ."/../Config/bot_config.php";
+include __DIR__ . "/../Config/bot_config.php"; // Ensure the correct path to bot_config.php
 $token = $api_key;
 
+// Use the ngrok URL or your actual server URL for the webhook
 $webhookUrl = "https://efe0-175-100-10-91.ngrok-free.app/webhook.php";
 
 // Telegram API endpoint for setting the webhook
-$url = "https://api.telegram.org/bot{$token}/setWebhook?url={$webhookUrl}";
+$setWebhookUrl = "https://api.telegram.org/bot{$token}/setWebhook";
 
-// Initialize cURL to set the webhook
-$ch = curl_init($url);
+// Parameters to send in the webhook request
+$params = [
+    'url' => $webhookUrl
+];
+
+// Initialize cURL session to send the request
+$ch = curl_init($setWebhookUrl); // Correctly initializing the cURL session
+
+// Configure cURL options
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+// Disable SSL verification for development (use with caution)
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Disable SSL verification
+
+// Execute cURL request
 $response = curl_exec($ch);
 
-if ($response === false) {
-    echo "Error setting webhook: " . curl_error($ch);
+// Check for errors
+if (curl_errno($ch)) {
+    echo 'Error: ' . curl_error($ch);
 } else {
-    $result = json_decode($response, true);
-    if ($result['ok']) {
-        echo "Webhook set successfully!";
-    } else {
-        echo "Failed to set webhook: " . $result['description'];
-    }
+    // Output the response from Telegram
+    echo $response;
 }
 
+// Close the cURL session
 curl_close($ch);
