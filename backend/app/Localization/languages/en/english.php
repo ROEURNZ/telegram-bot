@@ -12,6 +12,7 @@ return $messages = [
     'please_start' => 'Please start the bot by sending /start.',
     /*** ! Image upload and barcode decoding ****/
     'upload_barcode' => "Please upload a barcode or QR code image.",
+    'upload_invoice' => 'Please upload an image of the invoice.',
     'contact_required' => "Please share your contact information first.",
     'download_prompt' => "Please wait for a few seconds, the bot is downloading images.",
     'decode_prompt_sent' => "The decode prompt has been sent. Please upload an image containing a barcode or QR code.",
@@ -25,7 +26,8 @@ return $messages = [
 
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
-    'thanks_for_location' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
+    'de_location_shared' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
+    'ex_location_shared' => " Date: %s, %s\nExtracted Code:\n%s\nLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
     // Decoding results
@@ -53,6 +55,9 @@ return $messages = [
     'image_error' => 'Failed to retrieve the image file. Please try again.',
 
     'restart_message' => 'You can select a language to restart',
+
+
+    
 
 
 
@@ -85,6 +90,7 @@ return $messages = [
     'start_desc' => "Click on /start command to begin the bot.",
     'share_contact_desc' => "Share your contact.",
     'decode_desc' => "Decode a barcode or QR code.",
+    'ocr_desc'  => "Extract VAT-TIN from an image",
     'share_location_desc' => "Share your location.",
     'help_desc' => "Get help.",  
     'menu_desc' => "Open the menu.",

@@ -1,6 +1,6 @@
 <?php 
 
-// backend/app/Handlers/CommandHandlers.php
+// backend/app/include/IncludeCommands.php
 // Load configuration
 require_once __DIR__ . '/../Config/dirl.php';
 new XDirLevel();
@@ -75,6 +75,7 @@ function setCommands($token, $messages) {
         ['command' => 'start', 'description' => $messages['start_desc']],
         ['command' => 'share_contact', 'description' => $messages['share_contact_desc']],
         ['command' => 'decode', 'description' => $messages['decode_desc']],
+        ['command' => 'ocr', 'description' => $messages['ocr_desc']], 
         ['command' => 'share_location', 'description' => $messages['share_location_desc']],
         ['command' => 'help', 'description' => $messages['help_desc']],
         ['command' => 'menu', 'description' => $messages['menu_desc']],

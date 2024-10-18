@@ -13,6 +13,7 @@ function processUpdates($updates, $token)
     setCommands($token, $currentMessages);
 
     // $ezzeModel = new EzzeModels($pdo);
+    foreach ($updates as $update) {
         if (isset($update['message'])) {
             setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
@@ -28,7 +29,7 @@ function processUpdates($updates, $token)
 
 
             // Get messages based on the selected language
-            
+
             $currentMessages = $messages[$language];
             // Handle text messages
             if (isset($update['message']['text'])) {
@@ -83,7 +84,7 @@ function processUpdates($updates, $token)
                     } else {
                         sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
                     }
-                
+                    continue;
                 }
                 // Handle /change_language command
                 if ($userCommand === '/change_language') {
@@ -145,6 +146,20 @@ function processUpdates($updates, $token)
                     if ($ezzeModel->checkUserExists($userId)) {
                         // Proceed with decoding if contact is validated
                         sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
+                    } else {
+                        // If contact is not registered, prompt the user to share contact first
+                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                        // Optionally, suggest sharing contact
+                        sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
+                    }
+                }
+
+                // Handle /decode command only if the user's contact is registered
+                if ($userCommand === '/ocr') {
+                    // Check if the user's contact is registered in the database using the model
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        // Proceed with decoding if contact is validated
+                        sendMessage($chatId, $messages[$language]['upload_invoice'], $token);
                     } else {
                         // If contact is not registered, prompt the user to share contact first
                         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
@@ -227,7 +242,7 @@ function processUpdates($updates, $token)
                     sendMessage($chatId, $responseMessage, $token);
                     // Show the menu again after sharing contact
                     // Send a follow-up message
-                    sendMessage($chatId, $messages[$language]['upload_barcode'], $token,  json_encode(['remove_keyboard' => true]));
+                    sendMessage($chatId, $messages[$language]['upload_barcode'], $token, json_encode(['remove_keyboard' => true]));
 
                     // Set session flag to indicate contact shared
                     $_SESSION['contact_shared'][$chatId] = true;
@@ -235,13 +250,13 @@ function processUpdates($updates, $token)
                     $_SESSION['currentChatId'] = $chatId;
                     // Re-apply the commands after contact sharing is done
                     setCommands($token, $currentMessages);
-                   
+                    continue;
                 } else {
                     sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                 }
             }
 
-            // Handle image upload (Barcode / QR code)
+            // Handle image upload (Invoice)
             if (isset($update['message']['photo'])) {
                 if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
@@ -261,6 +276,7 @@ function processUpdates($updates, $token)
                         $filePath = $fileData['result']['file_path'];
                         $fileUrl = "https://api.telegram.org/file/bot{$token}/{$filePath}";
                         $imagesPath = __DIR__ . "/../../storage/app/public/images/decoded/";
+
                         // Download and save the image locally
                         $downloadedImage = file_get_contents($fileUrl);
                         $localFilePath = $imagesPath . basename($filePath);
@@ -272,45 +288,66 @@ function processUpdates($updates, $token)
                         // Save the downloaded image locally
                         file_put_contents($localFilePath, $downloadedImage);
 
-                        // Process the barcode image
-                        require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
-                        $decodedBarcodeData = processBarcodeImage($localFilePath);
-                        if (isset($decodedBarcodeData['code'])) {
-                            $code = $decodedBarcodeData['code'];
-                            $type = $decodedBarcodeData['type'];
+                        // Determine if the uploaded image is an invoice
+                        if (isInvoiceImage($localFilePath)) {
+                            // Extract VAT-TIN from the invoice using OCR
+                            require_once __DIR__ . '/../includes/functions/OCRFunction.php';
+                            $vatTin = extractVatTin($localFilePath); // Function to extract VAT-TIN
 
-                            // Save decoded barcode to session
-                            if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
-                                $_SESSION['decodedBarcodes'][$chatId] = [];
-                            }
-                            $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+                            if ($vatTin) {
+                                // Save VAT-TIN in the session
+                                $_SESSION['vatTin'][$chatId] = $vatTin;
 
-                            // Insert the barcode record into the database
-
-                            $ezzeModel->addBarcode([
-                                'user_id' => $userId,
-                                'type' => $type,
-                                'code' => $code,
-                                'msg_id' => $messageId,
-                                'file_id' => $fileId,
-                                'file_unique_id' => $fileUniqueId,
-                                'decoded_status' => 1,
-                            ]);
-
-
-                            // Ask for location sharing if this is the first barcode scanned
-                            if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                // Ask for location sharing after VAT-TIN extraction
                                 json_encode([
                                     'resize_keyboard' => true,
                                     'one_time_keyboard' => true,
                                 ]);
 
-                                // Send the location request message along with the keyboard
+                                // Send the location request message
                                 sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                            } else {
+                                // Handle the case where VAT-TIN could not be extracted
+                                sendMessage($chatId, $messages[$language]['vat_tin_extraction_failed'], $token);
                             }
                         } else {
-                            // sendMessage($chatId, $messages[$language]['barcode_error'], $token);
-                            return;  // Exit silently if barcode decoding fails
+                            // Handle the barcode image as before
+                            require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
+                            $decodedBarcodeData = processBarcodeImage($localFilePath);
+                            if (isset($decodedBarcodeData['code'])) {
+                                $code = $decodedBarcodeData['code'];
+                                $type = $decodedBarcodeData['type'];
+
+                                // Save decoded barcode to session
+                                if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
+                                    $_SESSION['decodedBarcodes'][$chatId] = [];
+                                }
+                                $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+
+                                // Insert the barcode record into the database
+                                $ezzeModel->addBarcode([
+                                    'user_id' => $userId,
+                                    'type' => $type,
+                                    'code' => $code,
+                                    'msg_id' => $messageId,
+                                    'file_id' => $fileId,
+                                    'file_unique_id' => $fileUniqueId,
+                                    'decoded_status' => 1,
+                                ]);
+
+                                // Ask for location sharing if this is the first barcode scanned
+                                if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                    json_encode([
+                                        'resize_keyboard' => true,
+                                        'one_time_keyboard' => true,
+                                    ]);
+
+                                    // Send the location request message
+                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                }
+                            } else {
+                                return;  // Exit silently if barcode decoding fails
+                            }
                         }
                     } else {
                         return;  // Exit silently if unable to retrieve the file from Telegram
@@ -320,18 +357,19 @@ function processUpdates($updates, $token)
                 }
             }
 
-
             // Handle location sharing
             if (isset($update['message']['location'])) {
+                // Check if the user exists and has selected a language
                 if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
-
+                    // Extract user and location information
                     $userId = $update['message']['from']['id'];
                     $chatId = $update['message']['chat']['id'];
                     $latitude = $update['message']['location']['latitude'];
                     $longitude = $update['message']['location']['longitude'];
                     $date = date('Y-m-d H:i:s');
 
-                    // Retrieve the decoded barcodes stored in session
+                    // Retrieve the VAT-TIN or decoded barcodes stored in session
+                    $vatTin = $_SESSION['vatTin'][$chatId] ?? null;
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
 
                     // Format the current date and time
@@ -343,7 +381,6 @@ function processUpdates($updates, $token)
 
                     // Format the barcode list for the response message
                     $barcodeList = implode("\n", array_map(function ($barcode, $index) {
-                        // return ($index + 1) . ". {$barcode['code']} ({$barcode['type']})";
                         return ($index + 1) . ". <code><b>{$barcode['code']}</b></code>";
                     }, $decodedBarcodes, array_keys($decodedBarcodes)));
 
@@ -353,31 +390,49 @@ function processUpdates($updates, $token)
                         'lat' => $latitude,
                         'lon' => $longitude,
                         'location_url' => $locationUrl,
-                        'date' => $date
+                        'date' => $date,
                     ];
                     $response = $ezzeModel->addLocation($params);
-                    echo $response;
 
                     // Prepare the response message
                     $responseMessage = sprintf(
-                        $messages[$language]['thanks_for_location'],
+                        $messages[$language]['ex_location_shared'],
                         $formattedDate,
                         $formattedTime,
-                        $barcodeList,
+                        $vatTin ? "VAT-TIN: <code><b>{$vatTin}</b></code>" : '',
+                        !empty($barcodeList) ? $barcodeList : 'No barcodes scanned.',
                         $locationUrl
                     );
 
                     // Send the location confirmation message
-                    sendMessage($chatId, $responseMessage, $token,  ['parse_mode' => 'HTML']);
+                    sendMessage($chatId, $responseMessage, $token, ['parse_mode' => 'HTML']);
 
-                    // Clear the session for this chat after processing the barcodes and location
+                    // Clear the session for this chat after processing the VAT-TIN and location
+                    unset($_SESSION['vatTin'][$chatId]);
                     unset($_SESSION['decodedBarcodes'][$chatId]);
+                } else {
+                    // Handle the case where the user is not registered or language not selected
+                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                 }
             }
+
+
+
+
         }
-    
+    }
 }
 
+function isInvoiceImage($filePath)
+{
+    // Here you can use various methods to determine if the image is an invoice
+    // For simplicity, let's assume that invoice images are in PDF or certain formats
+    $fileInfo = pathinfo($filePath);
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf']; // Add more as needed
+
+    // Check if the file has an allowed extension
+    return in_array(strtolower($fileInfo['extension']), $allowedExtensions);
+}
 
 
 // Function to show contact sharing options
@@ -408,4 +463,4 @@ function showLocationSharing($chatId, $token, $language)
 }
 
 include __DIR__ . '/../includes/functions/polling.php';
-// include __DIR__. "/../Webhooks/webhook.php";
+

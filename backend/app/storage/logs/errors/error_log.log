@@ -752,3 +752,369 @@ Stack trace:
 [2024-10-16 08:19:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
 [2024-10-16 08:21:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-16 08:21:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:27:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:27:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:28:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:28:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:29:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:29:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:36:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:36:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[16-Oct-2024 15:36:14 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-16 08:49:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:49:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:50:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:50:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:51:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:51:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 08:51:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 08:51:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 09:48:00] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 09:48:00] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[16-Oct-2024 16:49:45 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-16 09:55:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 09:55:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-16 09:55:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-16 09:55:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[16-Oct-2024 16:55:52 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 01:56:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 01:56:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 08:56:39 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 02:45:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 02:45:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 09:46:33 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 02:54:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 02:54:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 02:54:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 02:54:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 09:55:13 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 09:55:16 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 02:58:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 02:58:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 09:59:05 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 03:12:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:12:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 03:35:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:35:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 10:36:06 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 03:50:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:50:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 03:51:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:51:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 10:51:29 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:51:30 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:51:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[17-Oct-2024 10:51:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[17-Oct-2024 10:52:30 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:52:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[17-Oct-2024 10:52:32 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:52:32 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[2024-10-17 03:55:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:55:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 03:55:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 03:55:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 10:55:59 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:55:59 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 347
+[17-Oct-2024 10:56:04 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 10:56:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "processing_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 347
+[2024-10-17 04:07:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:07:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:07:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:07:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:08:06 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:08:08 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 04:18:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:18:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:18:26] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:18:26] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:18:57 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:18:59 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 04:25:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:25:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:26:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:26:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:27:05 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:27:08 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:27:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_vat_tin" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 383
+[17-Oct-2024 11:27:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_vat_tin" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 383
+[2024-10-17 04:32:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:32:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:32:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:32:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:33:09 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:33:09 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 11:33:17 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:33:17 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:33:17 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: array_keys(): Argument #1 ($array) must be of type array, null given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:391
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(391): array_keys()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(444): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:33:19 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:33:19 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:33:19 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: array_keys(): Argument #1 ($array) must be of type array, null given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:391
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(391): array_keys()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(444): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[2024-10-17 04:34:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:34:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:34:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:34:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[17-Oct-2024 11:34:06 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: array_keys(): Argument #1 ($array) must be of type array, null given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:391
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(391): array_keys()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(444): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 391
+[2024-10-17 04:52:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:52:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:52:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_vat_tin_found" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 471
+[2024-10-17 04:53:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:53:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:54:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:54:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 04:55:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:55:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 11:55:42 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 04:57:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 04:57:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 05:02:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:02:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 05:03:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:03:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 05:03:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:03:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 12:03:49 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 05:04:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:04:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 05:05:26] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:05:26] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 05:05:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 05:05:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 12:05:56 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 12:06:36 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 06:57:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 06:57:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 13:58:38 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 13:58:38 Asia/Phnom_Penh] PHP Fatal error:  Uncaught thiagoalessio\TesseractOCR\ImageNotFoundException: Error! The image "../../images/photo_2024-10-17_08-50-37.jpg" was not found.
+
+The current __DIR__ is C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\FriendlyErrors.php:16
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\TesseractOCR.php(28): thiagoalessio\TesseractOCR\FriendlyErrors::checkImagePath()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\OCRFunction.php(11): thiagoalessio\TesseractOCR\TesseractOCR->run()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\OCRFunction.php(41): processInvoiceImage()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(330): require_once('...')
+#4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#5 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(461): include('...')
+#6 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\FriendlyErrors.php on line 16
+[2024-10-17 06:58:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 06:58:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 13:59:04 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 13:59:04 Asia/Phnom_Penh] PHP Fatal error:  Uncaught thiagoalessio\TesseractOCR\ImageNotFoundException: Error! The image "../../images/photo_2024-10-17_08-50-37.jpg" was not found.
+
+The current __DIR__ is C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\FriendlyErrors.php:16
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\TesseractOCR.php(28): thiagoalessio\TesseractOCR\FriendlyErrors::checkImagePath()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\OCRFunction.php(11): thiagoalessio\TesseractOCR\TesseractOCR->run()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\OCRFunction.php(41): processInvoiceImage()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(330): require_once('...')
+#4 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#5 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(461): include('...')
+#6 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\vendor\thiagoalessio\tesseract_ocr\src\FriendlyErrors.php on line 16
+[2024-10-17 07:12:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:12:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 14:12:38 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 07:16:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:16:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 07:16:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:16:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 14:17:39 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 14:20:35 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 14:20:36 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[2024-10-17 07:29:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:29:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 14:29:45 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 07:33:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:33:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 07:33:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:33:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 14:34:04 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 07:36:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:36:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 07:37:02] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 07:37:02] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 14:37:29 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:06:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:06:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:06:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:06:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "decodedBarcodes" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[17-Oct-2024 15:06:42 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[17-Oct-2024 15:06:42 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, null given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:363
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(481): include('...')
+#2 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 363
+[2024-10-17 08:11:02] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:11:02] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:11:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:11:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:11:08 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:11:43 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:11:47 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 421
+[2024-10-17 08:13:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:13:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:13:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:13:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:14:19 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:16:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:16:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:16:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:16:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:17:11 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:18:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:18:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:19:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:19:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:19:37 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:19:57 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:23:06] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:23:06] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:23:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:23:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:23:39 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:23:51 Asia/Phnom_Penh] PHP Warning:  Array to string conversion in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 411
+[17-Oct-2024 15:23:51 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 442
+[2024-10-17 08:32:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:32:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:32:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:33:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:33:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:33:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:33:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:33:51 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:34:20 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 429
+[2024-10-17 08:40:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:40:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:40:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:40:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:40:34 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:42:26 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 421
+[2024-10-17 08:43:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:43:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:43:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:43:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:44:14 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:46:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:46:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:46:52 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:48:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:48:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:48:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:48:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:49:07 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:49:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:49:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:50:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:50:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:50:19 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:51:30 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:51:46 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 15:51:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_error" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[2024-10-17 08:57:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:57:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:57:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:57:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 15:57:47 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 08:59:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:59:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 08:59:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 08:59:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:00:14 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 09:07:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:07:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:08:07 Asia/Phnom_Penh] PHP Warning:  Undefined variable $userCommand in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 248
+[17-Oct-2024 16:08:10 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 09:10:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:10:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:10:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:10:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:11:03 Asia/Phnom_Penh] PHP Warning:  Undefined variable $userCommand in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 248
+[17-Oct-2024 16:11:06 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 09:21:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:21:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:21:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:21:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:22:30 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 09:34:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:34:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:34:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:34:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:35:17 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-17 09:41:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:41:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:41:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:41:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:42:18 Asia/Phnom_Penh] PHP Warning:  Undefined array key "caption" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[17-Oct-2024 16:42:18 Asia/Phnom_Penh] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[17-Oct-2024 16:42:18 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 16:43:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "caption" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[17-Oct-2024 16:43:03 Asia/Phnom_Penh] PHP Deprecated:  strpos(): Passing null to parameter #1 ($haystack) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[2024-10-17 09:51:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:51:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:51:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:51:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:52:01 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 16:52:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "thanks_for_location_without_invoice" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 411
+[17-Oct-2024 16:52:10 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 410
+[17-Oct-2024 16:55:49 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 16:56:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "thanks_for_location_without_invoice" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 411
+[17-Oct-2024 16:56:00 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 410
+[2024-10-17 09:56:47] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:56:47] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-17 09:56:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-17 09:56:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[17-Oct-2024 16:57:11 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[17-Oct-2024 16:57:23 Asia/Phnom_Penh] PHP Warning:  Undefined array key "thanks_for_location_with_invoice" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 402
+[17-Oct-2024 16:57:23 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 401
+[2024-10-18 02:01:20] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:01:20] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 09:02:03 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 02:05:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:05:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:05:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:05:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 09:05:32 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[18-Oct-2024 09:05:34 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 02:09:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:09:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 09:09:39 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 02:11:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:11:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 09:11:32 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 02:14:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:14:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:14:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:14:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 09:15:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[18-Oct-2024 09:15:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 02:31:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:31:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:31:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:31:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:33:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:33:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:33:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:33:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:40:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:40:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 02:40:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 02:40:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors

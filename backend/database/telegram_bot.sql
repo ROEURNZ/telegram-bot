@@ -52,4 +52,7 @@ CREATE TABLE IF NOT EXISTS location (
     PRIMARY KEY (id)
 );
 
+---Create table OCR---
+
+
 COMMIT;

@@ -26,7 +26,8 @@ return $langBase = [
 
     // Location sharing
     'location_prompt' => "សូមផ្ដល់ទីតាំងរបស់អ្នក។ នេះមានប្រសិទ្ធិភាពល្អបំផុតលើឧបករណ៍ចល័ត។",
-    'thanks_for_location' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
+    'de_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
+    'ex_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
     'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
 
     // Decoding results
