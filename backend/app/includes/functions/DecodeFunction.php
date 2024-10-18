@@ -19,5 +19,16 @@ function processBarcodeImage($filePath)
     ];
 }
 
+// example
+
+// $filePath = "../../images/file_2.jpg";
+// $result = processBarcodeImage($filePath);
+// if (isset($result['error'])) {
+//     echo "Error: ". $result['error'];
+// } else {
+//     echo "Decoded barcode: ". $result['code']. " of type: ". $result['type'];
+// }
+
+
 
 
