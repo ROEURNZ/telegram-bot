@@ -2,7 +2,6 @@
 
 // backend/app/Handlers/CommandHandlers.php
 include __DIR__ . '/../includes/IncludeCommands.php';
-session_start();  // Ensure this is at the top of your file
 function processUpdates($updates, $token)
 {
     global $currentMessages;
@@ -327,31 +326,30 @@ function processUpdates($updates, $token)
                             } else {
                                 return;  // Exit silently if barcode decoding fails
                             }
-                        } elseif (isInvoiceImage($localFilePath)) {
-                            // Process the invoice image for VAT-TIN extraction
-                            require_once __DIR__ . '/../includes/functions/OCRFunction.php';
-                            $vatTinData = processInvoiceImage($localFilePath); // Function to extract VAT-TIN
+                        } else {
+                            // Check if the uploaded image is an invoice (You may want to implement a more robust method for determining this)
+                            $isInvoiceImage = isInvoiceImage($localFilePath); // Implement this function as per your criteria
 
-                            // Log the result of VAT-TIN extraction
-                            error_log("VAT-TIN extraction result for chat ID: $chatId: " . print_r($vatTinData, true));
+                            if ($isInvoiceImage) {
+                                // Process the invoice image
+                                require_once __DIR__ . '/../includes/functions/OCRFunction.php';
+                                $ocrResult = processInvoiceImage($localFilePath);
 
-                            if (isset($vatTinData['error'])) {
-                                error_log("VAT-TIN extraction failed for chat ID: $chatId with error: " . $vatTinData['error']);
-                                sendMessage($chatId, $messages[$language]['vat_tin_error'], $token);
-                            } else {
-                                if (!isset($_SESSION['vatTin'])) {
-                                    $_SESSION['vatTin'] = [];
-                                }
-                                $_SESSION['vatTin'][$chatId] = $vatTinData;  // Store extracted VAT-TIN
+                                if (isset($ocrResult['vatTin'])) {
+                                    // Save the extracted VAT-TIN to session or handle it as needed
+                                    $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
 
-                                // Ask for location sharing after extracting the VAT-TIN
-                                sendMessage($chatId, $messages[$language]['location_request'], $token, [
-                                    'reply_markup' => json_encode([
+                                    // Ask for location sharing after extracting VAT-TIN
+                                    json_encode([
                                         'resize_keyboard' => true,
                                         'one_time_keyboard' => true,
-                                        'keyboard' => [[['text' => $messages[$language]['share_location'], 'request_location' => true]]]
-                                    ])
-                                ]);
+                                    ]);
+
+                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                } else {
+                                    // Handle the error case for OCR
+                                    sendMessage($chatId, $ocrResult['error'], $token);
+                                }
                             }
                         }
                     } else {
@@ -373,7 +371,7 @@ function processUpdates($updates, $token)
 
                     // Retrieve the decoded barcodes or VAT-TIN stored in session
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
-                    $vatTin = $_SESSION['vatTin'][$chatId] ?? null;
+                    $vatTin = $_SESSION['extractedVatTin'][$chatId] ?? null;
 
                     // Format the current date and time
                     $formattedDate = formatDate($language); // Get the formatted date based on the user's language
@@ -435,13 +433,6 @@ function isBarcodeImage($filePath)
     return in_array(strtolower($extension), $allowedExtensions);
 }
 
-function isInvoiceImage($filePath)
-{
-    // Example: You can enhance this function as needed
-    $allowedInvoiceExtensions = ['jpg', 'jpeg', 'png', 'pdf']; // Assuming PDFs are allowed
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedInvoiceExtensions);
-}
 
 // Function to show contact sharing options
 function showContactSharing($chatId, $token, $language)

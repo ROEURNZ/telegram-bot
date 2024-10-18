@@ -1622,3 +1622,383 @@ scanned 1 barcode symbols from 1 images
 [Fri Oct 18 10:43:41.630267 2024] [core:notice] [pid 9028:tid 420] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Fri Oct 18 10:43:41.633268 2024] [mpm_winnt:notice] [pid 9028:tid 420] AH00418: Parent: Created child process 12384
 [Fri Oct 18 10:43:42.013404 2024] [mpm_winnt:notice] [pid 12384:tid 460] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+Estimating resolution as 195
+[Fri Oct 18 10:50:24.259894 2024] [mpm_winnt:notice] [pid 9028:tid 420] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 10:50:54.269359 2024] [mpm_winnt:notice] [pid 9028:tid 420] AH00431: Parent: Forcing termination of child process 12384
+[Fri Oct 18 10:50:54.807964 2024] [mpm_winnt:notice] [pid 8324:tid 456] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 10:50:54.807964 2024] [mpm_winnt:notice] [pid 8324:tid 456] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 10:50:54.807964 2024] [core:notice] [pid 8324:tid 456] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 10:50:54.810934 2024] [mpm_winnt:notice] [pid 8324:tid 456] AH00418: Parent: Created child process 7624
+[Fri Oct 18 10:50:55.176183 2024] [mpm_winnt:notice] [pid 7624:tid 444] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+[Fri Oct 18 10:58:11.406963 2024] [mpm_winnt:notice] [pid 8324:tid 456] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 10:58:41.410691 2024] [mpm_winnt:notice] [pid 8324:tid 456] AH00431: Parent: Forcing termination of child process 7624
+[Fri Oct 18 10:58:42.057031 2024] [mpm_winnt:notice] [pid 7808:tid 416] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 10:58:42.057031 2024] [mpm_winnt:notice] [pid 7808:tid 416] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 10:58:42.057031 2024] [core:notice] [pid 7808:tid 416] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 10:58:42.060032 2024] [mpm_winnt:notice] [pid 7808:tid 416] AH00418: Parent: Created child process 13912
+[Fri Oct 18 10:58:42.429130 2024] [mpm_winnt:notice] [pid 13912:tid 456] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+Estimating resolution as 195
+Estimating resolution as 474
+Detected 136 diacritics
+Estimating resolution as 474
+Detected 136 diacritics
+[Fri Oct 18 11:02:36.795939 2024] [mpm_winnt:notice] [pid 7808:tid 416] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:03:06.796132 2024] [mpm_winnt:notice] [pid 7808:tid 416] AH00431: Parent: Forcing termination of child process 13912
+[Fri Oct 18 11:03:07.351704 2024] [mpm_winnt:notice] [pid 14644:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:03:07.351704 2024] [mpm_winnt:notice] [pid 14644:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:03:07.351704 2024] [core:notice] [pid 14644:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:03:07.354704 2024] [mpm_winnt:notice] [pid 14644:tid 404] AH00418: Parent: Created child process 15268
+[Fri Oct 18 11:03:07.720761 2024] [mpm_winnt:notice] [pid 15268:tid 428] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 11:06:20.687533 2024] [mpm_winnt:notice] [pid 14644:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:06:50.688401 2024] [mpm_winnt:notice] [pid 14644:tid 404] AH00431: Parent: Forcing termination of child process 15268
+[Fri Oct 18 11:06:51.247009 2024] [mpm_winnt:notice] [pid 9168:tid 448] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:06:51.247009 2024] [mpm_winnt:notice] [pid 9168:tid 448] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:06:51.247009 2024] [core:notice] [pid 9168:tid 448] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:06:51.250023 2024] [mpm_winnt:notice] [pid 9168:tid 448] AH00418: Parent: Created child process 5092
+[Fri Oct 18 11:06:51.616711 2024] [mpm_winnt:notice] [pid 5092:tid 432] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 11:09:36.056176 2024] [mpm_winnt:notice] [pid 9168:tid 448] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:10:06.063734 2024] [mpm_winnt:notice] [pid 9168:tid 448] AH00431: Parent: Forcing termination of child process 5092
+[Fri Oct 18 11:10:06.691779 2024] [mpm_winnt:notice] [pid 8988:tid 428] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:10:06.691779 2024] [mpm_winnt:notice] [pid 8988:tid 428] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:10:06.691779 2024] [core:notice] [pid 8988:tid 428] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:10:06.694754 2024] [mpm_winnt:notice] [pid 8988:tid 428] AH00418: Parent: Created child process 7660
+[Fri Oct 18 11:10:07.061164 2024] [mpm_winnt:notice] [pid 7660:tid 452] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 11:14:58.353806 2024] [mpm_winnt:notice] [pid 8988:tid 428] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:15:28.357939 2024] [mpm_winnt:notice] [pid 8988:tid 428] AH00431: Parent: Forcing termination of child process 7660
+[Fri Oct 18 11:15:28.971153 2024] [mpm_winnt:notice] [pid 9364:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:15:28.971153 2024] [mpm_winnt:notice] [pid 9364:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:15:28.971153 2024] [core:notice] [pid 9364:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:15:28.974155 2024] [mpm_winnt:notice] [pid 9364:tid 404] AH00418: Parent: Created child process 6984
+[Fri Oct 18 11:15:29.346090 2024] [mpm_winnt:notice] [pid 6984:tid 420] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 11:22:37.753808 2024] [mpm_winnt:notice] [pid 9364:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:23:07.764059 2024] [mpm_winnt:notice] [pid 9364:tid 404] AH00431: Parent: Forcing termination of child process 6984
+[Fri Oct 18 11:23:08.350432 2024] [mpm_winnt:notice] [pid 8572:tid 424] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:23:08.350432 2024] [mpm_winnt:notice] [pid 8572:tid 424] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:23:08.350432 2024] [core:notice] [pid 8572:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:23:08.353431 2024] [mpm_winnt:notice] [pid 8572:tid 424] AH00418: Parent: Created child process 7844
+[Fri Oct 18 11:23:08.764436 2024] [mpm_winnt:notice] [pid 7844:tid 448] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 18 11:36:09.831952 2024] [mpm_winnt:notice] [pid 8572:tid 424] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:36:39.832480 2024] [mpm_winnt:notice] [pid 8572:tid 424] AH00431: Parent: Forcing termination of child process 7844
+[Fri Oct 18 11:36:40.390216 2024] [mpm_winnt:notice] [pid 10736:tid 448] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:36:40.390216 2024] [mpm_winnt:notice] [pid 10736:tid 448] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:36:40.390216 2024] [core:notice] [pid 10736:tid 448] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:36:40.393171 2024] [mpm_winnt:notice] [pid 10736:tid 448] AH00418: Parent: Created child process 3596
+[Fri Oct 18 11:36:40.883027 2024] [mpm_winnt:notice] [pid 3596:tid 432] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 18 11:45:50.985202 2024] [mpm_winnt:notice] [pid 10736:tid 448] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:46:20.995741 2024] [mpm_winnt:notice] [pid 10736:tid 448] AH00431: Parent: Forcing termination of child process 3596
+[Fri Oct 18 11:46:21.630839 2024] [mpm_winnt:notice] [pid 2988:tid 440] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:46:21.630839 2024] [mpm_winnt:notice] [pid 2988:tid 440] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:46:21.630839 2024] [core:notice] [pid 2988:tid 440] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:46:21.633869 2024] [mpm_winnt:notice] [pid 2988:tid 440] AH00418: Parent: Created child process 3620
+[Fri Oct 18 11:46:21.987480 2024] [mpm_winnt:notice] [pid 3620:tid 436] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 11:55:42.816007 2024] [mpm_winnt:notice] [pid 2988:tid 440] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 11:56:12.819533 2024] [mpm_winnt:notice] [pid 2988:tid 440] AH00431: Parent: Forcing termination of child process 3620
+[Fri Oct 18 11:56:13.369789 2024] [mpm_winnt:notice] [pid 13188:tid 424] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 11:56:13.369789 2024] [mpm_winnt:notice] [pid 13188:tid 424] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 11:56:13.369789 2024] [core:notice] [pid 13188:tid 424] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 11:56:13.372790 2024] [mpm_winnt:notice] [pid 13188:tid 424] AH00418: Parent: Created child process 6340
+[Fri Oct 18 11:56:13.840711 2024] [mpm_winnt:notice] [pid 6340:tid 420] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 12:01:42.141325 2024] [mpm_winnt:notice] [pid 13188:tid 424] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 12:02:12.143877 2024] [mpm_winnt:notice] [pid 13188:tid 424] AH00431: Parent: Forcing termination of child process 6340
+[Fri Oct 18 12:02:12.783221 2024] [mpm_winnt:notice] [pid 11992:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 12:02:12.784220 2024] [mpm_winnt:notice] [pid 11992:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 12:02:12.784220 2024] [core:notice] [pid 11992:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 12:02:12.786219 2024] [mpm_winnt:notice] [pid 11992:tid 404] AH00418: Parent: Created child process 5044
+[Fri Oct 18 12:02:13.157628 2024] [mpm_winnt:notice] [pid 5044:tid 456] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+'which' is not recognized as an internal or external command,
+operable program or batch file.
+[Fri Oct 18 12:16:37.661567 2024] [mpm_winnt:notice] [pid 11992:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 12:17:07.666941 2024] [mpm_winnt:notice] [pid 11992:tid 404] AH00431: Parent: Forcing termination of child process 5044
+[Fri Oct 18 12:17:10.153730 2024] [mpm_winnt:notice] [pid 9648:tid 412] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 12:17:10.154729 2024] [mpm_winnt:notice] [pid 9648:tid 412] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 12:17:10.154729 2024] [core:notice] [pid 9648:tid 412] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 12:17:10.156729 2024] [mpm_winnt:notice] [pid 9648:tid 412] AH00418: Parent: Created child process 11392
+[Fri Oct 18 12:17:10.522285 2024] [mpm_winnt:notice] [pid 11392:tid 436] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+[Fri Oct 18 13:05:36.055169 2024] [mpm_winnt:notice] [pid 9648:tid 412] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 13:06:06.063509 2024] [mpm_winnt:notice] [pid 9648:tid 412] AH00431: Parent: Forcing termination of child process 11392
+[Fri Oct 18 13:06:06.708557 2024] [mpm_winnt:notice] [pid 11176:tid 412] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 13:06:06.708557 2024] [mpm_winnt:notice] [pid 11176:tid 412] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 13:06:06.708557 2024] [core:notice] [pid 11176:tid 412] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 13:06:06.710587 2024] [mpm_winnt:notice] [pid 11176:tid 412] AH00418: Parent: Created child process 4900
+[Fri Oct 18 13:06:07.077064 2024] [mpm_winnt:notice] [pid 4900:tid 420] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 18 13:08:26.960154 2024] [mpm_winnt:notice] [pid 11176:tid 412] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 13:08:28.969835 2024] [mpm_winnt:notice] [pid 4900:tid 420] AH00364: Child: All worker threads have exited.
+[Fri Oct 18 13:08:28.992837 2024] [mpm_winnt:notice] [pid 11176:tid 412] AH00430: Parent: Child process 4900 exited successfully.
+[Fri Oct 18 13:08:29.883437 2024] [mpm_winnt:notice] [pid 4796:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 13:08:29.883437 2024] [mpm_winnt:notice] [pid 4796:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 13:08:29.883437 2024] [core:notice] [pid 4796:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 13:08:29.886438 2024] [mpm_winnt:notice] [pid 4796:tid 404] AH00418: Parent: Created child process 7736
+[Fri Oct 18 13:08:30.354293 2024] [mpm_winnt:notice] [pid 7736:tid 440] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+Estimating resolution as 195
+[Fri Oct 18 13:11:54.706125 2024] [mpm_winnt:notice] [pid 4796:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 13:12:24.715273 2024] [mpm_winnt:notice] [pid 4796:tid 404] AH00431: Parent: Forcing termination of child process 7736
+[Fri Oct 18 13:12:25.362391 2024] [mpm_winnt:notice] [pid 5408:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 13:12:25.362391 2024] [mpm_winnt:notice] [pid 5408:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 13:12:25.362391 2024] [core:notice] [pid 5408:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 13:12:25.365393 2024] [mpm_winnt:notice] [pid 5408:tid 404] AH00418: Parent: Created child process 15016
+[Fri Oct 18 13:12:25.731718 2024] [mpm_winnt:notice] [pid 15016:tid 436] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+Estimating resolution as 474
+Detected 136 diacritics
+[Fri Oct 18 13:23:49.098866 2024] [mpm_winnt:notice] [pid 5408:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 13:24:19.109168 2024] [mpm_winnt:notice] [pid 5408:tid 404] AH00431: Parent: Forcing termination of child process 15016
+[Fri Oct 18 13:24:19.641382 2024] [mpm_winnt:notice] [pid 8132:tid 448] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 13:24:19.642384 2024] [mpm_winnt:notice] [pid 8132:tid 448] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 13:24:19.642384 2024] [core:notice] [pid 8132:tid 448] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 13:24:19.644355 2024] [mpm_winnt:notice] [pid 8132:tid 448] AH00418: Parent: Created child process 15112
+[Fri Oct 18 13:24:20.015421 2024] [mpm_winnt:notice] [pid 15112:tid 420] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+[Fri Oct 18 13:27:35.664016 2024] [mpm_winnt:notice] [pid 8132:tid 448] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Fri Oct 18 13:28:05.671826 2024] [mpm_winnt:notice] [pid 8132:tid 448] AH00431: Parent: Forcing termination of child process 15112
+[Fri Oct 18 13:28:06.229516 2024] [mpm_winnt:notice] [pid 14412:tid 444] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Fri Oct 18 13:28:06.229516 2024] [mpm_winnt:notice] [pid 14412:tid 444] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Fri Oct 18 13:28:06.229516 2024] [core:notice] [pid 14412:tid 444] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Fri Oct 18 13:28:06.231517 2024] [mpm_winnt:notice] [pid 14412:tid 444] AH00418: Parent: Created child process 8704
+[Fri Oct 18 13:28:06.612526 2024] [mpm_winnt:notice] [pid 8704:tid 452] AH00354: Child: Starting 64 worker threads.
