@@ -24,14 +24,10 @@ function processUpdates($updates, $token)
             $messageId = $update['message']['message_id'];
             $phoneNumber = $update['message']['contact']['phone_number'];
 
-
-
             // Default language is English if not selected
             $language = $userLanguages[$chatId] ?? $ezzeModel->getUserLanguage($chatId) ?? 'en';
 
-
             // Get messages based on the selected language
-
             $currentMessages = $messages[$language];
             // Handle text messages
             if (isset($update['message']['text'])) {

@@ -1,6 +1,6 @@
 /node_modules
 /vendor
-
+.env
 # Ignore log files
 logs/access.log
 logs/error.log
