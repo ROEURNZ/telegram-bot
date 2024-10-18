@@ -16,13 +16,13 @@
      ```
    - For example, your command is:
      ```bash
-     ssh root@178.128.17.107
+     ssh root@***.***.**.***
      ```
    - If you are using an SSH key for authentication, you may not need to enter a password. If prompted for a passphrase for your SSH key, enter it.
 
 3. **Enter Your Passphrase (if applicable):**
    - If you have set a passphrase for your SSH key, you will be prompted to enter it after initiating the connection.
-   - For example, your passphrase might be something like `ezzeteam`.
+   - For example, your passphrase might be something like `**********`.
 
 4. **You Are Now Connected to the Server:**
    - After successful authentication, you will be logged into the server and can execute commands with root privileges.
