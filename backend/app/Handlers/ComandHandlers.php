@@ -2,7 +2,7 @@
 
 // backend/app/Handlers/CommandHandlers.php
 include __DIR__ . '/../includes/IncludeCommands.php';
-
+session_start();  // Ensure this is at the top of your file
 function processUpdates($updates, $token)
 {
     global $currentMessages;
@@ -256,7 +256,7 @@ function processUpdates($updates, $token)
                 }
             }
 
-            // Handle image upload (Invoice)
+            // Handle image upload (Barcode / QR code)
             if (isset($update['message']['photo'])) {
                 if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
@@ -288,30 +288,9 @@ function processUpdates($updates, $token)
                         // Save the downloaded image locally
                         file_put_contents($localFilePath, $downloadedImage);
 
-                        // Determine if the uploaded image is an invoice
-                        if (isInvoiceImage($localFilePath)) {
-                            // Extract VAT-TIN from the invoice using OCR
-                            require_once __DIR__ . '/../includes/functions/OCRFunction.php';
-                            $vatTin = extractVatTin($localFilePath); // Function to extract VAT-TIN
-
-                            if ($vatTin) {
-                                // Save VAT-TIN in the session
-                                $_SESSION['vatTin'][$chatId] = $vatTin;
-
-                                // Ask for location sharing after VAT-TIN extraction
-                                json_encode([
-                                    'resize_keyboard' => true,
-                                    'one_time_keyboard' => true,
-                                ]);
-
-                                // Send the location request message
-                                sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                            } else {
-                                // Handle the case where VAT-TIN could not be extracted
-                                sendMessage($chatId, $messages[$language]['vat_tin_extraction_failed'], $token);
-                            }
-                        } else {
-                            // Handle the barcode image as before
+                        // Check if the image is for a barcode/QR code or an invoice
+                        if (isBarcodeImage($localFilePath)) {
+                            // Process the barcode image
                             require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
                             $decodedBarcodeData = processBarcodeImage($localFilePath);
                             if (isset($decodedBarcodeData['code'])) {
@@ -337,16 +316,42 @@ function processUpdates($updates, $token)
 
                                 // Ask for location sharing if this is the first barcode scanned
                                 if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
-                                    json_encode([
-                                        'resize_keyboard' => true,
-                                        'one_time_keyboard' => true,
+                                    sendMessage($chatId, $messages[$language]['location_request'], $token, [
+                                        'reply_markup' => json_encode([
+                                            'resize_keyboard' => true,
+                                            'one_time_keyboard' => true,
+                                            'keyboard' => [[['text' => $messages[$language]['share_location'], 'request_location' => true]]]
+                                        ])
                                     ]);
-
-                                    // Send the location request message
-                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                 }
                             } else {
                                 return;  // Exit silently if barcode decoding fails
+                            }
+                        } elseif (isInvoiceImage($localFilePath)) {
+                            // Process the invoice image for VAT-TIN extraction
+                            require_once __DIR__ . '/../includes/functions/OCRFunction.php';
+                            $vatTinData = processInvoiceImage($localFilePath); // Function to extract VAT-TIN
+
+                            // Log the result of VAT-TIN extraction
+                            error_log("VAT-TIN extraction result for chat ID: $chatId: " . print_r($vatTinData, true));
+
+                            if (isset($vatTinData['error'])) {
+                                error_log("VAT-TIN extraction failed for chat ID: $chatId with error: " . $vatTinData['error']);
+                                sendMessage($chatId, $messages[$language]['vat_tin_error'], $token);
+                            } else {
+                                if (!isset($_SESSION['vatTin'])) {
+                                    $_SESSION['vatTin'] = [];
+                                }
+                                $_SESSION['vatTin'][$chatId] = $vatTinData;  // Store extracted VAT-TIN
+
+                                // Ask for location sharing after extracting the VAT-TIN
+                                sendMessage($chatId, $messages[$language]['location_request'], $token, [
+                                    'reply_markup' => json_encode([
+                                        'resize_keyboard' => true,
+                                        'one_time_keyboard' => true,
+                                        'keyboard' => [[['text' => $messages[$language]['share_location'], 'request_location' => true]]]
+                                    ])
+                                ]);
                             }
                         }
                     } else {
@@ -359,18 +364,16 @@ function processUpdates($updates, $token)
 
             // Handle location sharing
             if (isset($update['message']['location'])) {
-                // Check if the user exists and has selected a language
                 if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
-                    // Extract user and location information
                     $userId = $update['message']['from']['id'];
                     $chatId = $update['message']['chat']['id'];
                     $latitude = $update['message']['location']['latitude'];
                     $longitude = $update['message']['location']['longitude'];
                     $date = date('Y-m-d H:i:s');
 
-                    // Retrieve the VAT-TIN or decoded barcodes stored in session
-                    $vatTin = $_SESSION['vatTin'][$chatId] ?? null;
+                    // Retrieve the decoded barcodes or VAT-TIN stored in session
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
+                    $vatTin = $_SESSION['vatTin'][$chatId] ?? null;
 
                     // Format the current date and time
                     $formattedDate = formatDate($language); // Get the formatted date based on the user's language
@@ -379,10 +382,16 @@ function processUpdates($updates, $token)
                     // Prepare the Google Maps URL
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
-                    // Format the barcode list for the response message
-                    $barcodeList = implode("\n", array_map(function ($barcode, $index) {
-                        return ($index + 1) . ". <code><b>{$barcode['code']}</b></code>";
-                    }, $decodedBarcodes, array_keys($decodedBarcodes)));
+                    // Format the barcode or VAT-TIN list for the response message
+                    $responseList = '';
+                    if (!empty($decodedBarcodes)) {
+                        $responseList .= implode("\n", array_map(function ($barcode, $index) {
+                            return ($index + 1) . ". <code><b>{$barcode['code']}</b></code>";
+                        }, $decodedBarcodes, array_keys($decodedBarcodes))) . "\n";
+                    }
+                    if ($vatTin) {
+                        $responseList .= "VAT-TIN: <code><b>{$vatTin}</b></code>";
+                    }
 
                     // Save location data to the database
                     $params = [
@@ -390,50 +399,49 @@ function processUpdates($updates, $token)
                         'lat' => $latitude,
                         'lon' => $longitude,
                         'location_url' => $locationUrl,
-                        'date' => $date,
+                        'date' => $date
                     ];
                     $response = $ezzeModel->addLocation($params);
+                    echo $response;
 
                     // Prepare the response message
                     $responseMessage = sprintf(
                         $messages[$language]['ex_location_shared'],
                         $formattedDate,
                         $formattedTime,
-                        $vatTin ? "VAT-TIN: <code><b>{$vatTin}</b></code>" : '',
-                        !empty($barcodeList) ? $barcodeList : 'No barcodes scanned.',
+                        $responseList,
                         $locationUrl
                     );
 
                     // Send the location confirmation message
                     sendMessage($chatId, $responseMessage, $token, ['parse_mode' => 'HTML']);
 
-                    // Clear the session for this chat after processing the VAT-TIN and location
-                    unset($_SESSION['vatTin'][$chatId]);
+                    // Clear the session for this chat after processing the barcodes, VAT-TIN, and location
                     unset($_SESSION['decodedBarcodes'][$chatId]);
-                } else {
-                    // Handle the case where the user is not registered or language not selected
-                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    unset($_SESSION['vatTin'][$chatId]);
                 }
             }
-
-
 
 
         }
     }
 }
 
-function isInvoiceImage($filePath)
+function isBarcodeImage($filePath)
 {
-    // Here you can use various methods to determine if the image is an invoice
-    // For simplicity, let's assume that invoice images are in PDF or certain formats
-    $fileInfo = pathinfo($filePath);
-    $allowedExtensions = ['jpg', 'jpeg', 'png', 'pdf']; // Add more as needed
-
-    // Check if the file has an allowed extension
-    return in_array(strtolower($fileInfo['extension']), $allowedExtensions);
+    // Example: Check file extension
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
+    return in_array(strtolower($extension), $allowedExtensions);
 }
 
+function isInvoiceImage($filePath)
+{
+    // Example: You can enhance this function as needed
+    $allowedInvoiceExtensions = ['jpg', 'jpeg', 'png', 'pdf']; // Assuming PDFs are allowed
+    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
+    return in_array(strtolower($extension), $allowedInvoiceExtensions);
+}
 
 // Function to show contact sharing options
 function showContactSharing($chatId, $token, $language)

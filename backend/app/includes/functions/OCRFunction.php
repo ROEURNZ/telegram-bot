@@ -14,6 +14,12 @@ function processInvoiceImage($filePath)
     $ocrCmd = escapeshellcmd("tesseract " . escapeshellarg($filePath) . " stdout");
     $ocrOutput = shell_exec($ocrCmd);
     
+    // Check for command execution errors
+    if ($ocrOutput === null) {
+        error_log("Tesseract OCR command failed for file: " . $filePath);
+        return ["error" => "OCR failed: Could not execute Tesseract."];
+    }
+
     // Trim and check if OCR succeeded
     $text = trim($ocrOutput);
     if ($text === '') {
@@ -44,5 +50,3 @@ function extractVatTin($text)
     // Return VAT-TIN if found; otherwise, return a 'not found' message
     return isset($matches[1]) ? $matches[1] : 'VAT-TIN not found.';
 }
-
-
