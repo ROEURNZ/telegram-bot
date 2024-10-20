@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+images/
+report/
+database/dbconfig.php
+vendor/
+.env
