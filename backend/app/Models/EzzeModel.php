@@ -42,25 +42,25 @@ class EzzeModels
 
 
 
-// Function to check if the user has selected a language
-public function hasSelectedLanguage($userId)
-{
-    // Prepare the SQL query to check if the user has a language set
-    $sql = "SELECT language FROM users WHERE user_id = :user_id LIMIT 1";
-    $stmt = $this->pdo->prepare($sql);
+    // Function to check if the user has selected a language
+    public function hasSelectedLanguage($userId)
+    {
+        // Prepare the SQL query to check if the user has a language set
+        $sql = "SELECT language FROM users WHERE user_id = :user_id LIMIT 1";
+        $stmt = $this->pdo->prepare($sql);
 
-    // Bind the user_id parameter
-    $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        // Bind the user_id parameter
+        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
-    // Execute the query
-    $stmt->execute();
+        // Execute the query
+        $stmt->execute();
 
-    // Fetch the language value
-    $language = $stmt->fetchColumn();
+        // Fetch the language value
+        $language = $stmt->fetchColumn();
 
-    // Return true if a language is set, otherwise false
-    return !empty($language);
-}
+        // Return true if a language is set, otherwise false
+        return !empty($language);
+    }
 
 
     public function getUserLanguage($chatId, $username)
@@ -113,7 +113,7 @@ public function hasSelectedLanguage($userId)
         return $stmt->fetchColumn() ?: null;
     }
 
-    
+
     function updateTgUsername($userId, $username)
     {
         if (empty($userId)) {
@@ -243,9 +243,14 @@ public function hasSelectedLanguage($userId)
     // Function to add a location record
     public function addLocation($params)
     {
-        // Prepare the SQL statement to insert the location record
+        // Check if latitude and longitude are set
+        if (empty($params['lat']) || empty($params['lon'])) {
+            return "Error: Latitude and Longitude cannot be null.";
+        }
+
+        // Prepare the SQL statement
         $sql = "INSERT INTO location (user_id, lat, lon, location_url, date, share_status) 
-                    VALUES (:user_id, :lat, :lon, :location_url, :date, :share_status)";
+                VALUES (:user_id, :lat, :lon, :location_url, :date, :share_status)";
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -266,6 +271,7 @@ public function hasSelectedLanguage($userId)
             return "Error: " . $stmt->errorInfo()[2];
         }
     }
+
 
     // Function to update the share status after location is shared
     public function updateShareStatus($userId)
@@ -292,23 +298,48 @@ public function hasSelectedLanguage($userId)
     }
 
 
-    // Function to insert an OCR record with VAT-TIN details
-    public function addInvoiceData($params)
+    public function addOcrData($params)
     {
-        $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, file_id, file_unique_id, decoded_status, date) 
-                VALUES (:user_id, :vat_tin, :msg_id, :file_id, :file_unique_id, :decoded_status, NOW())";
+        $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, raw_data, file_id, status, date) 
+        VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
+
         $stmt = $this->pdo->prepare($sql);
-
-        // Bind parameters
         $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':vat_tin', $params['vat_tin'], PDO::PARAM_STR);
-        $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':file_unique_id', $params['file_unique_id'], PDO::PARAM_STR);
-        $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_INT);
-
-        return $stmt->execute() ? "OCR record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
+        $stmt->bindParam(':vat_tin', $params['vat_tin']);
+        $stmt->bindParam(':msg_id', $params['msg_id']);
+        $stmt->bindParam(':raw_data', $params['raw_data']);
+        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR); // Ensure this matches your intended schema
+        $stmt->bindParam(':status', $params['status']);
+        $stmt->bindParam(':date', $params['date']);
+        if ($stmt->execute()) {
+            return "OCR data inserted successfully.";
+        } else {
+            return "Error: " . $stmt->errorInfo()[2];
+        }
     }
+
+
+    public function updateOcrLocation($params)
+    {
+        $sql = "UPDATE ocr SET lat = :lat, lon = :lon, location_url = :location_url, status = :status 
+            WHERE user_id = :user_id AND status = 0";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':lat', $params['lat']);
+        $stmt->bindParam(':lon', $params['lon']);
+        $stmt->bindParam(':location_url', $params['location_url']);
+        $stmt->bindParam(':status', $params['status']);
+        $stmt->bindParam(':user_id', $params['user_id']);
+
+        if ($stmt->execute()) {
+            return "OCR location successfully updated";
+        } else {
+            return "Error updating OCR location";
+        }
+    }
+
+    
+
 
 
 }

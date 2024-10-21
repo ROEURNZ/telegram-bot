@@ -1441,3 +1441,775 @@ Stack trace:
 [2024-10-18 08:18:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
 [2024-10-18 08:19:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-18 08:19:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:22:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:22:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:22:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:22:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:25:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:25:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:25:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:25:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:25:34 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 08:26:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:26:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:27:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:27:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:27:25 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 08:29:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:29:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:29:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:29:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:29:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[18-Oct-2024 15:31:00 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 08:34:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:34:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:34:33 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[18-Oct-2024 15:34:40 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: array_keys(): Argument #1 ($array) must be of type array, string given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:392
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(392): array_keys()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(485): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 392
+[2024-10-18 08:35:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:35:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:36:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:36:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:43:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:43:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:43:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:43:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:44:04 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 08:45:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:45:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:45:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:45:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:47:15 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-18 08:55:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:55:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 08:55:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:55:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 15:55:51 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vat_tin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 304
+[18-Oct-2024 15:55:51 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'vat_tin' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:310
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(310): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(302): EzzeModels->addInvoiceData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(483): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 310
+[18-Oct-2024 15:55:57 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vat_tin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 304
+[18-Oct-2024 15:55:57 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'vat_tin' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:310
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(310): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(302): EzzeModels->addInvoiceData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(483): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 310
+[2024-10-18 08:59:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 08:59:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:14:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:14:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:14:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:14:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:19:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:19:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:19:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:19:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:19:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:19:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:22:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:22:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:22:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:22:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:32:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:32:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:32:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:32:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:35:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:35:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:35:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:35:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 16:36:46 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[18-Oct-2024 16:37:42 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[2024-10-18 09:38:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:38:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:38:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:38:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:41:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:41:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:41:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:41:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:44:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:44:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:44:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:44:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:50:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:50:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:50:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:50:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 16:51:45 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[2024-10-18 09:55:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:55:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[18-Oct-2024 16:56:56 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[2024-10-18 09:58:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:58:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-18 09:59:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-18 09:59:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 01:08:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:08:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 08:09:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 08:09:26 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 08:09:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 08:09:26 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 08:09:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 354
+[19-Oct-2024 08:10:17 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[19-Oct-2024 08:10:53 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[2024-10-19 01:12:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:12:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 01:12:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:12:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 08:12:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 08:12:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 08:12:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 08:12:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 08:12:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 354
+[19-Oct-2024 08:12:50 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[19-Oct-2024 08:12:53 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[19-Oct-2024 08:14:26 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[19-Oct-2024 08:14:27 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 427
+[2024-10-19 01:24:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:24:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 01:24:39] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:24:39] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 08:25:11 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 334
+[19-Oct-2024 08:25:12 Asia/Phnom_Penh] PHP Warning:  Undefined variable $decodedBarcodes in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 334
+[2024-10-19 01:31:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:31:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 01:31:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 01:31:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 08:33:33 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 08:33:33 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 08:33:33 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 359
+[19-Oct-2024 08:33:40 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 432
+[2024-10-19 02:35:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:35:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 02:35:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:35:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 09:38:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-19 02:41:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:41:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 09:42:50 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 09:42:50 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 09:42:50 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 09:42:50 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 09:42:50 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 359
+[19-Oct-2024 09:42:54 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 09:42:54 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 09:42:54 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 09:42:54 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 09:42:54 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 359
+[2024-10-19 02:50:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:50:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 02:50:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:50:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 09:51:40 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[19-Oct-2024 09:51:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[19-Oct-2024 09:51:40 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[19-Oct-2024 09:51:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[19-Oct-2024 09:51:40 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 470
+[19-Oct-2024 09:51:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[19-Oct-2024 09:51:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[19-Oct-2024 09:51:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[19-Oct-2024 09:51:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 428
+[19-Oct-2024 09:51:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 470
+[2024-10-19 02:53:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:53:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 02:54:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:54:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 02:56:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:56:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 02:56:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 02:56:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 09:57:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "thanks_for_location" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 378
+[19-Oct-2024 09:57:47 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 377
+[2024-10-19 03:05:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:05:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:06:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 324
+[19-Oct-2024 10:06:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 324
+[19-Oct-2024 10:06:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 348
+[19-Oct-2024 10:06:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 348
+[19-Oct-2024 10:06:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 390
+[2024-10-19 03:10:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:10:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:11:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 373
+[19-Oct-2024 10:11:00 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 373
+[19-Oct-2024 10:11:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 397
+[19-Oct-2024 10:11:00 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 397
+[19-Oct-2024 10:11:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 439
+[19-Oct-2024 10:11:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 512
+[2024-10-19 03:12:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:12:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 03:12:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:12:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:13:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:13:19 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:13:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:13:19 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:13:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 440
+[19-Oct-2024 10:13:22 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:13:22 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:13:22 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:13:22 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:13:22 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 440
+[2024-10-19 03:16:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:16:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:17:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:10 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:10 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 440
+[19-Oct-2024 10:17:17 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:17 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:17 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:17 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:17 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 440
+[19-Oct-2024 10:17:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:24 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 374
+[19-Oct-2024 10:17:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:24 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 398
+[19-Oct-2024 10:17:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "no_command_set" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 440
+[19-Oct-2024 10:19:36 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[19-Oct-2024 10:20:24 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[19-Oct-2024 10:20:40 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 513
+[2024-10-19 03:25:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:25:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:27:23 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[19-Oct-2024 10:27:23 Asia/Phnom_Penh] PHP Warning:  Undefined array key "barcode_decoding_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 322
+[2024-10-19 03:30:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:30:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 03:30:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:30:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 03:37:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:37:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:38:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:38:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:38:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 10:38:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[2024-10-19 03:41:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:41:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:41:56 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:41:56 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:41:56 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 10:41:56 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[2024-10-19 03:47:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:47:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:48:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:48:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:48:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 10:48:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[2024-10-19 03:51:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:51:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:51:37 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:51:37 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[19-Oct-2024 10:51:37 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 10:51:37 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 317
+[19-Oct-2024 10:51:43 Asia/Phnom_Penh] PHP Fatal error:  Uncaught ArgumentCountError: 6 arguments are required, 5 given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:447
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(447): sprintf()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(524): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 447
+[2024-10-19 03:54:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:54:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:54:43 Asia/Phnom_Penh] PHP Fatal error:  Uncaught ArgumentCountError: 6 arguments are required, 5 given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:449
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(449): sprintf()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(526): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 449
+[2024-10-19 03:58:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:58:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:59:02 Asia/Phnom_Penh] PHP Fatal error:  Uncaught ArgumentCountError: 6 arguments are required, 5 given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:446
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(446): sprintf()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(523): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 446
+[2024-10-19 03:59:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 03:59:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 10:59:08 Asia/Phnom_Penh] PHP Fatal error:  Uncaught ArgumentCountError: 6 arguments are required, 5 given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:446
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(446): sprintf()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(523): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 446
+[2024-10-19 04:01:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:01:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 11:01:58 Asia/Phnom_Penh] PHP Fatal error:  Uncaught ArgumentCountError: 6 arguments are required, 5 given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:444
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(444): sprintf()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(513): include('...')
+#3 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 444
+[2024-10-19 04:03:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:03:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 04:12:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:12:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 04:16:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:16:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 04:47:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:47:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-19 04:47:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:47:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 309
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $code in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 310
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $rawData in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 313
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $latitude in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $longitude in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 315
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined variable $locationUrl in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 316
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 309
+[19-Oct-2024 11:48:00 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RawData' in 'field list' in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:304
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(304): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(307): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(543): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 304
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 309
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $code in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 310
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $rawData in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 313
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $latitude in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 314
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $longitude in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 315
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined variable $locationUrl in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 316
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 309
+[19-Oct-2024 11:48:06 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RawData' in 'field list' in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:304
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(304): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(307): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(543): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 304
+[2024-10-19 04:49:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:49:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined variable $vatTin in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 309
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined variable $rawData in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 312
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 309
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "lat" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 310
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "lon" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 311
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "location_url" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[19-Oct-2024 11:49:07 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RawData' in 'field list' in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:304
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(304): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(307): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(539): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 304
+[2024-10-19 04:49:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 04:49:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 11:50:05 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 309
+[19-Oct-2024 11:50:05 Asia/Phnom_Penh] PHP Warning:  Undefined array key "lat" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 310
+[19-Oct-2024 11:50:05 Asia/Phnom_Penh] PHP Warning:  Undefined array key "lon" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 311
+[19-Oct-2024 11:50:05 Asia/Phnom_Penh] PHP Warning:  Undefined array key "location_url" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[19-Oct-2024 11:50:05 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RawData' in 'field list' in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:304
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(304): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(307): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(538): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 304
+[2024-10-19 05:01:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 05:01:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 12:01:14 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 307
+[19-Oct-2024 12:01:14 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'RawData' in 'field list' in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:302
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(302): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOCRData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(542): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 302
+[2024-10-19 05:04:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 05:04:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 12:04:25 Asia/Phnom_Penh] PHP Warning:  Undefined array key "RawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 307
+[19-Oct-2024 12:04:25 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:302
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(302): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOCRData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(542): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 302
+[2024-10-19 05:05:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 05:05:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 12:05:41 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:302
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(302): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(316): EzzeModels->addOCRData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(541): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 302
+[2024-10-19 05:07:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-19 05:07:22] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[19-Oct-2024 12:07:28 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ezze_bot.ocr_data' doesn't exist in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:304
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(304): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(316): EzzeModels->addOCRData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(541): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 304
+[2024-10-21 01:49:47] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 01:49:47] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 08:50:12 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[21-Oct-2024 08:50:12 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[21-Oct-2024 08:50:12 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 332
+[21-Oct-2024 08:50:12 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 332
+[21-Oct-2024 08:51:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "rawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 311
+[21-Oct-2024 08:51:30 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(546): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:05:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:05:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:05:29 Asia/Phnom_Penh] PHP Warning:  Undefined array key "rawData" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 311
+[21-Oct-2024 09:05:29 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:06:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:06:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:06:41 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:09:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:09:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:09:38 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:09:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:09:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:10:03 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:10:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:10:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:10:20 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:11:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:11:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:11:33 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:315
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(315): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 315
+[2024-10-21 02:14:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:14:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:14:25 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'AgACAgUAAxkBAAIKpGcVs5yywGoq_ocAAb9muKj724t6gQACXb8xG_MPqVTQI-eMB8WVfgEAAwIAA3kAAzYE' for column 'img_id' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:315
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(315): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 315
+[2024-10-21 02:17:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:17:25] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:17:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "img_id" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 298
+[21-Oct-2024 09:17:31 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:315
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(315): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 315
+[2024-10-21 02:18:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:18:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:18:18 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:20:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:20:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:20:15 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:317
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(317): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 317
+[2024-10-21 02:20:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:20:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:20:59 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:312
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(312): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 312
+[2024-10-21 02:22:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:22:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:22:43 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:318
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(318): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 318
+[2024-10-21 02:27:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:27:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:27:07 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'lat' cannot be null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:318
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(318): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(320): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(550): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 318
+[2024-10-21 02:30:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:30:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 02:39:06] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:39:06] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 02:39:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:39:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:39:33 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:314
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(314): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 314
+[21-Oct-2024 09:39:41 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:314
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(314): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 314
+[2024-10-21 02:49:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:49:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:49:09 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:315
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(315): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 315
+[2024-10-21 02:52:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:52:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:52:23 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:315
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(315): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(319): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(549): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 315
+[2024-10-21 02:57:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:57:56] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 09:58:02 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:314
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(314): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 314
+[2024-10-21 02:59:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 02:59:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:03:00] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:03:00] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:03:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:03:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 10:03:26 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:314
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(314): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 314
+[21-Oct-2024 10:03:31 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'raw_data' at row 1 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php:314
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php(314): PDOStatement->execute()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(317): EzzeModels->addOcrData()
+#2 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(547): include('...')
+#4 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Models\EzzeModel.php on line 314
+[2024-10-21 03:04:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:04:53] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 10:05:30 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 10:05:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "barcode_decoding_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[2024-10-21 03:15:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:15:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 10:17:03 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 10:17:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "barcode_decoding_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 404
+[2024-10-21 03:19:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:19:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:19:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:19:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:24:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:24:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:25:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:25:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:32:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:32:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:40:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:40:42] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:40:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:40:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:52:46] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:52:46] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 03:52:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:52:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 10:53:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "location_received" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 451
+[21-Oct-2024 10:53:19 Asia/Phnom_Penh] PHP Warning:  Undefined array key "google_maps_link" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 451
+[2024-10-21 03:59:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 03:59:08] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 10:59:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[21-Oct-2024 11:00:02 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[21-Oct-2024 11:00:12 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[21-Oct-2024 11:00:43 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[21-Oct-2024 11:00:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[21-Oct-2024 11:01:17 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[2024-10-21 04:02:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:02:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:03:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:03:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:03:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 416
+[21-Oct-2024 11:03:33 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 416
+[2024-10-21 04:05:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:05:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:05:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "file_retrieval_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 415
+[2024-10-21 04:09:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:09:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:10:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:10:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:12:19 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:13:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:13:59] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:14:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:14:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:16:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:16:45] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:16:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:16:50] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:21:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:21:35] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:23:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:23:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:25:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:25:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:25:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:25:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:27:29 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:30:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:30:51] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:30:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:30:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:31:19 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:33:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:33:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:34:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:34:30] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:34:58 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 11:35:54 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 11:35:55 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:37:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:37:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:38:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:38:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:43:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:43:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:43:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:43:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:44:02 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 11:45:56 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:48:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:48:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:48:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:48:38] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:49:03 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 11:49:39 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 11:50:19 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 04:51:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:51:28] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 04:51:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 04:51:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 11:51:53 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 05:10:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:10:44] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 12:11:55 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 05:17:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:17:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 05:17:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:17:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 12:18:25 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 12:41:01 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 05:44:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:44:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 12:45:14 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 12:45:59 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-21 05:47:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:47:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-21 05:47:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:47:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[21-Oct-2024 12:49:16 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[21-Oct-2024 12:49:16 Asia/Phnom_Penh] PHP Warning:  Undefined array key "barcode_decoding_failed" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 364
+[2024-10-21 05:51:46] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-21 05:51:46] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors

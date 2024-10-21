@@ -26,7 +26,7 @@ return $messages = [
 
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
-    'decoded_location_shared' => " Date: %s, %s\nDecoded Codes:\n%s\nLocation: %s",
+    'decoded_location_shared' => " Date: %s, %s\nDecoded Codes: %s\nLocation: %s",
     'extracted_location_shared' => " Date: %s, %s\n%s\nLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
@@ -57,7 +57,7 @@ return $messages = [
     'restart_message' => 'You can select a language to restart',
 
 
-    
+    'require_image' => 'Could not resolve image, please try again',
 
 
 
