@@ -3647,3 +3647,37 @@ Estimating resolution as 373
 Detected 37 diacritics
 Estimating resolution as 195
 Estimating resolution as 195
+[Mon Oct 21 17:02:01.163453 2024] [mpm_winnt:notice] [pid 4180:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 21 17:02:01.163453 2024] [mpm_winnt:notice] [pid 4180:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 21 17:02:01.163453 2024] [core:notice] [pid 4180:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 21 17:02:01.166453 2024] [mpm_winnt:notice] [pid 4180:tid 404] AH00418: Parent: Created child process 7768
+[Mon Oct 21 17:02:01.528065 2024] [mpm_winnt:notice] [pid 7768:tid 448] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+[Mon Oct 21 17:03:09.635285 2024] [mpm_winnt:notice] [pid 4180:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Oct 21 17:03:39.636481 2024] [mpm_winnt:notice] [pid 4180:tid 404] AH00431: Parent: Forcing termination of child process 7768
+[Mon Oct 21 17:03:40.315059 2024] [mpm_winnt:notice] [pid 4452:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 21 17:03:40.315059 2024] [mpm_winnt:notice] [pid 4452:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 21 17:03:40.315059 2024] [core:notice] [pid 4452:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 21 17:03:40.318059 2024] [mpm_winnt:notice] [pid 4452:tid 404] AH00418: Parent: Created child process 12708
+[Mon Oct 21 17:03:40.703143 2024] [mpm_winnt:notice] [pid 12708:tid 448] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+Estimating resolution as 474
+Detected 136 diacritics
+[Mon Oct 21 17:05:57.425783 2024] [mpm_winnt:notice] [pid 4452:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Oct 21 17:06:27.433384 2024] [mpm_winnt:notice] [pid 4452:tid 404] AH00431: Parent: Forcing termination of child process 12708
+[Mon Oct 21 17:06:27.978283 2024] [mpm_winnt:notice] [pid 9708:tid 428] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 21 17:06:27.978283 2024] [mpm_winnt:notice] [pid 9708:tid 428] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 21 17:06:27.978283 2024] [core:notice] [pid 9708:tid 428] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 21 17:06:27.981287 2024] [mpm_winnt:notice] [pid 9708:tid 428] AH00418: Parent: Created child process 9456
+[Mon Oct 21 17:06:28.363501 2024] [mpm_winnt:notice] [pid 9456:tid 420] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+[Mon Oct 21 17:08:30.385670 2024] [mpm_winnt:notice] [pid 9708:tid 428] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Oct 21 17:09:00.389271 2024] [mpm_winnt:notice] [pid 9708:tid 428] AH00431: Parent: Forcing termination of child process 9456
+[Mon Oct 21 17:09:00.982791 2024] [mpm_winnt:notice] [pid 3320:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Mon Oct 21 17:09:00.982791 2024] [mpm_winnt:notice] [pid 3320:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Mon Oct 21 17:09:00.982791 2024] [core:notice] [pid 3320:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Mon Oct 21 17:09:00.985792 2024] [mpm_winnt:notice] [pid 3320:tid 404] AH00418: Parent: Created child process 9812
+[Mon Oct 21 17:09:01.351374 2024] [mpm_winnt:notice] [pid 9812:tid 444] AH00354: Child: Starting 64 worker threads.

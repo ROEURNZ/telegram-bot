@@ -318,12 +318,12 @@ function processUpdates($updates, $token)
 
                                     // Ask for location sharing after extracting VAT-TIN only if it hasn't been requested yet
                                     if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, $messages[$language]['require_invoice_image'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
                                         $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
                                     }
                                 } else {
                                     // Handle the case where VAT-TIN could not be extracted
-                                    sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
+                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
                                     unset($_SESSION['extractedVatTin'][$chatId]); // Clear the VAT-TIN from session
                                 }
                             } else {
@@ -361,19 +361,19 @@ function processUpdates($updates, $token)
 
                                     // Ask for location sharing if this is the first barcode scanned
                                     if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, $messages[$language]['require_barcode_image'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
                                         $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
                                     }
                                 } else {
                                     // Handle barcode decoding failure
-                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
                                     unset($_SESSION['decodedBarcodes'][$chatId]);
                                 }
                             } else {
                                 // Handle unsupported image type for decoding
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
-                        }else if ($_SESSION['currentCommand'][$chatId] !== 'decode' && $_SESSION['currentCommand'][$chatId] !== 'ocr') {
+                        }else if ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
                             // Handle unsupported commands; check if image is a barcode
                             if (isBarcodeImage($localFilePath)) {
                                 // Process the barcode image
@@ -385,7 +385,7 @@ function processUpdates($updates, $token)
                                     $type = $decodedBarcodeData['type'];
 
                                     // Save decoded barcode to session
-                                    if(isset($_SESSION['decodedBarcodes'][$chatId]) && empty($_SESSION['decodedBarcodes'][$chatId])) {
+                                    if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
                                         $_SESSION['decodedBarcodes'][$chatId] = [];
                                     }
                                     $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
@@ -404,12 +404,12 @@ function processUpdates($updates, $token)
 
                                     // Ask for location sharing if this is the first barcode scanned
                                     if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, $messages[$language]['require_barcode_image'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
                                         $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
                                     }
                                 } else {
                                     // Handle barcode decoding failure
-                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
                                     unset($_SESSION['decodedBarcodes'][$chatId]);
                                 }
                             }
