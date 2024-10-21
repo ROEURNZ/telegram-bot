@@ -7,13 +7,12 @@ require_once '../../includes/functions/OCRFunction.php';
 $imagePath = '../../images/photo_2024-10-17_08-50-37.jpg'; // Update with your image path
 
 // Process the invoice image
-$result = processInvoiceImage($imagePath);
+$ocrResult = processInvoiceImage($imagePath);
 
-// Output the result
-if (isset($result['error'])) {
-    echo "Error: " . $result['error'];
-} else {
-    echo "VAT-TIN: " . $result['vatTin'] . "\n";
-}
+// Extract the VAT-TIN and raw text from the result
+$vatTin = $ocrResult['vatTin'];
+$rawText = $ocrResult['text'];
 
-?>
+// Output the results (for testing purposes)
+echo "Extracted VAT-TIN: " . $vatTin . "\n";
+echo "Raw OCR Text: " . $rawText . "\n";

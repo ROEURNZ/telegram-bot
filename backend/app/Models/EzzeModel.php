@@ -301,22 +301,25 @@ class EzzeModels
     public function addOcrData($params)
     {
         $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, raw_data, file_id, status, date) 
-        VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
+                VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
         $stmt->bindParam(':vat_tin', $params['vat_tin']);
         $stmt->bindParam(':msg_id', $params['msg_id']);
-        $stmt->bindParam(':raw_data', $params['raw_data']);
-        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR); // Ensure this matches your intended schema
+        $stmt->bindParam(':raw_data', $params['text']);
+        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
         $stmt->bindParam(':status', $params['status']);
         $stmt->bindParam(':date', $params['date']);
+        
         if ($stmt->execute()) {
             return "OCR data inserted successfully.";
         } else {
+            error_log("Database error: " . implode(", ", $stmt->errorInfo())); // Log the error
             return "Error: " . $stmt->errorInfo()[2];
         }
     }
+
 
 
     public function updateOcrLocation($params)

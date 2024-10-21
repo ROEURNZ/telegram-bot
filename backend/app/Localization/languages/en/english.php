@@ -57,7 +57,8 @@ return $messages = [
     'restart_message' => 'You can select a language to restart',
 
 
-    'require_image' => 'Could not resolve image, please try again',
+    'require_invoice_image' => 'Could not resolve this invoice image, please try again',
+    'require_barcode_image' => 'Could not resolve this image, please try again',
 
 
 

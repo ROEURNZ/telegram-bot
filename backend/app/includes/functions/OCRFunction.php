@@ -10,26 +10,22 @@
  */
 function processInvoiceImage($filePath)
 {
-    // Use Tesseract OCR to process the image
-    $ocrCmd = escapeshellcmd("tesseract " . escapeshellarg($filePath) . " stdout");
+    // Assuming you're using Tesseract OCR
+    $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout";
     $ocrOutput = shell_exec($ocrCmd);
-    
-    // Check for command execution errors
+
     if ($ocrOutput === null) {
-        error_log("Tesseract OCR command failed for file: " . $filePath);
-        return ["error" => "OCR failed: Could not execute Tesseract."];
+        return ['error' => 'OCR execution failed'];
     }
 
-    // Trim and check if OCR succeeded
     $text = trim($ocrOutput);
-    if ($text === '') {
-        return ["error" => "OCR failed: Could not extract text from image."];
+    if (empty($text)) {
+        return ['error' => 'No text found in image'];
     }
 
-    // Extract VAT-TIN from the OCR text output
+    // Example of extracting VAT-TIN using regex
     $vatTin = extractVatTin($text);
 
-    // Return OCR results
     return [
         'text' => $text,
         'vatTin' => $vatTin,
