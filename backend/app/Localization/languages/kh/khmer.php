@@ -20,14 +20,16 @@ return $langBase = [
     'waiting_for_image' => "កំពុងរង់ចាំរូបភាពរបស់អ្នក។ សូមផ្ដល់រូបភាពមួយដែលមានកូដបារកូដឬកូដ QR។",
     'complete_previous_steps' => "សូមបញ្ចប់ជំហានជាមុនសិន មុនពេលស្កេនកូដ។",
 
+    'upload_invoice' => 'សូមផ្ញើរូបភាពInvoice សម្រាប់ស្កេន។',
+
     // Contact sharing
     'contact_prompt' => "សូមផ្ដល់ព័ត៌មានទំនាក់ទំនងរបស់អ្នក។",
     // 'thanks_for_contact' => "អរគុណសម្រាប់ការផ្ដល់ព័ត៌មានទំនាក់ទំនងរបស់អ្នក!\nឈ្មោះពេញ: %s %s\nលេខទូរស័ព្ទ: %s\nឈ្មោះអ្នកប្រើ: %s",
 
     // Location sharing
     'location_prompt' => "សូមផ្ដល់ទីតាំងរបស់អ្នក។ នេះមានប្រសិទ្ធិភាពល្អបំផុតលើឧបករណ៍ចល័ត។",
-    'de_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
-    'ex_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
+    'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
+    'extracted_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%s \nទីតាំង៖ %s",
     'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
 
     // Decoding results

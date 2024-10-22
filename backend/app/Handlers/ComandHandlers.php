@@ -315,22 +315,16 @@ function processUpdates($updates, $token)
 
                                     // Save OCR data to database
                                     $ezzeModel->addOcrData($ocrData);
-
-                                    // Ask for location sharing after extracting VAT-TIN only if it hasn't been requested yet
-                                    if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
-                                        $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
-                                    }
+                                    // Send the location request message along with the keyboard
+                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                 } else {
-                                    // Handle the case where VAT-TIN could not be extracted
-                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
-                                    unset($_SESSION['extractedVatTin'][$chatId]); // Clear the VAT-TIN from session
+                                    sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
                                 }
                             } else {
                                 // Handle unsupported image type for OCR
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
-                        }else if ($_SESSION['currentCommand'][$chatId] === 'decode') {
+                        } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
                             // Check if the uploaded image is a barcode/QR code
                             if (isBarcodeImage($localFilePath)) {
                                 // Process the barcode image
@@ -349,6 +343,7 @@ function processUpdates($updates, $token)
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
                                     // Insert the barcode record into the database
+
                                     $ezzeModel->addBarcode([
                                         'user_id' => $userId,
                                         'type' => $type,
@@ -359,21 +354,26 @@ function processUpdates($updates, $token)
                                         'decoded_status' => 1,
                                     ]);
 
+
                                     // Ask for location sharing if this is the first barcode scanned
-                                    if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
-                                        $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
+                                    if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                        json_encode([
+                                            'resize_keyboard' => true,
+                                            'one_time_keyboard' => true,
+                                        ]);
+
+                                        // Send the location request message along with the keyboard
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    // Handle barcode decoding failure
-                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
-                                    unset($_SESSION['decodedBarcodes'][$chatId]);
+                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    // return;  // Exit silently if barcode decoding fails
                                 }
                             } else {
                                 // Handle unsupported image type for decoding
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
-                        }else if ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
+                        } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
                             // Handle unsupported commands; check if image is a barcode
                             if (isBarcodeImage($localFilePath)) {
                                 // Process the barcode image
@@ -392,6 +392,7 @@ function processUpdates($updates, $token)
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
                                     // Insert the barcode record into the database
+
                                     $ezzeModel->addBarcode([
                                         'user_id' => $userId,
                                         'type' => $type,
@@ -402,15 +403,20 @@ function processUpdates($updates, $token)
                                         'decoded_status' => 1,
                                     ]);
 
+
                                     // Ask for location sharing if this is the first barcode scanned
-                                    if (!isset($_SESSION['locationRequested'][$chatId])) {
-                                        sendMessage($chatId, "Please share your current location to continue.", $token, json_encode(['remove_keyboard' => true]));
-                                        $_SESSION['locationRequested'][$chatId] = true; // Set the flag to true
+                                    if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                        json_encode([
+                                            'resize_keyboard' => true,
+                                            'one_time_keyboard' => true,
+                                        ]);
+
+                                        // Send the location request message along with the keyboard
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    // Handle barcode decoding failure
-                                    sendMessage($chatId, "Couldn't resolve this image, please try again.", $token);
-                                    unset($_SESSION['decodedBarcodes'][$chatId]);
+                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    // return;  // Exit silently if barcode decoding fails
                                 }
                             }
                         } else {
@@ -422,8 +428,6 @@ function processUpdates($updates, $token)
                     }
                 }
             }
-
-
 
 
             // Handle location sharing
@@ -458,11 +462,11 @@ function processUpdates($updates, $token)
                         if (is_array($vatTin)) {
                             // If VAT-TINs are in an array, loop through and add them to the response
                             foreach ($vatTin as $index => $tin) {
-                                $responseList .= ($index + 1) . ". VAT-TINs:  <code><b>{$tin}</b></code>\n";
+                                $responseList .= ($index + 1) . ". <code><b>{$tin}</b></code>\n";
                             }
                         } else {
                             // If it's a single VAT-TIN, just add it as before
-                            $responseList .= "VAT-TIN:  <code><b>{$vatTin}</b></code>\n";
+                            $responseList .= "<code><b>{$vatTin}</b></code>\n";
                         }
                     }
 

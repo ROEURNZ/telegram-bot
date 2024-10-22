@@ -2511,3 +2511,472 @@ Stack trace:
 [2024-10-21 10:09:01] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
 [2024-10-21 10:09:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-21 10:09:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:11:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:11:41] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:12:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 373
+[22-Oct-2024 08:12:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 373
+[22-Oct-2024 08:12:47 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 497
+[2024-10-22 01:13:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:13:40] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:14:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:14:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:15:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:15:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:15:57 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:15:57 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:15:57 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:15:57 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:16:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:16:00 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:16:00 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:16:00 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:16:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:16:04 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:16:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:16:04 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:16:29 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-22 01:18:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:18:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:18:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:18:19] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:18:40 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 08:18:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-22 01:21:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:21:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:21:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:21:27] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:22:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:10 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:13 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:13 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:37 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 08:22:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 08:22:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:42 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:22:47 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 494
+[2024-10-22 01:24:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:24:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:25:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:25:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:25:29 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 08:25:33 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-22 01:27:39] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:27:39] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:28:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:28:03 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:28:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:28:07 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:28:10 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:28:10 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:29:08 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-22 01:31:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:31:13] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:31:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:31:18] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:32:13 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:32:16 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:32:16 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:32:20 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[2024-10-22 01:33:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:33:36] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 08:34:03 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 08:34:07 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 08:34:11 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[2024-10-22 01:39:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:39:05] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:39:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:39:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:39:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:39:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:39:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 366
+[22-Oct-2024 08:39:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 366
+[22-Oct-2024 08:39:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:39:38 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:39:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 366
+[22-Oct-2024 08:39:38 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 366
+[22-Oct-2024 08:40:20 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 08:40:24 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[2024-10-22 01:42:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:42:04] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:42:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:42:14] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 08:42:42 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 08:42:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 08:44:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:44:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:44:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key 2056712628 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[2024-10-22 01:54:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:54:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[22-Oct-2024 08:55:15 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[22-Oct-2024 08:55:20 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 328
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[22-Oct-2024 08:55:24 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 367
+[2024-10-22 01:58:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:58:23] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 01:58:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 01:58:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:58:55 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[22-Oct-2024 08:58:58 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 369
+[2024-10-22 02:01:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:01:32] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:01:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:01:33] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 09:02:01 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 09:02:06 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[2024-10-22 02:05:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:05:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:06:16 Asia/Phnom_Penh] PHP Warning:  Undefined array key "upload_invoice" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 162
+[22-Oct-2024 09:06:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:06:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:07:15 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:07:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:08:20 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:08:52 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:09:25 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:09:57 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:10:29 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-22 02:11:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:11:15] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:11:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:11:17] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:11:32 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:33 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 329
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 368
+[22-Oct-2024 09:11:41 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 09:11:57 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:58 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:58 Asia/Phnom_Penh] PHP Warning:  Undefined variable $responseMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 488
+[22-Oct-2024 09:11:59 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:11:59 Asia/Phnom_Penh] PHP Warning:  Undefined array key "extracted_location_shared" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 479
+[22-Oct-2024 09:11:59 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 478
+[22-Oct-2024 09:12:22 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:23 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:23 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:28 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:28 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:12:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-22 02:13:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:13:37] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:15:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:15:10] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:31:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:31:58] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:33:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:33:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:35 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:40 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 302
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 339
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 379
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:45 Asia/Phnom_Penh] PHP Warning:  Undefined variable $newMessage in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:45 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[22-Oct-2024 09:34:45 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 409
+[2024-10-22 02:45:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:45:52] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:46:21 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:46:25 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 333
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:46:29 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[2024-10-22 02:48:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:48:48] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:48:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:48:54] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 02:56:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 02:56:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:56:39 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:56:44 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 09:58:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:58:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:58:28 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:58:37 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:58:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:58:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "extracted_location_shared" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 495
+[22-Oct-2024 09:58:38 Asia/Phnom_Penh] PHP Deprecated:  sprintf(): Passing null to parameter #1 ($format) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 494
+[22-Oct-2024 09:59:11 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 09:59:43 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-22 03:00:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:00:03] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:00:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:00:43] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:01:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:01:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:01:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:35 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:36 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:41 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:01:42 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[2024-10-22 03:04:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:04:09] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:04:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:04:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:04:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:28 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:31 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:43 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:44 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:46 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:47 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:04:51 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:05:45 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[2024-10-22 03:09:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:09:49] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:11:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:11:29] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:26 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:30 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:34 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 327
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[22-Oct-2024 10:12:38 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
+[2024-10-22 03:18:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:18:57] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:19:55 Asia/Phnom_Penh] PHP Deprecated:  trim(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\DecodeFunction.php on line 9
+[22-Oct-2024 10:19:57 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:320
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(572): include('...')
+#2 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 320
+[2024-10-22 03:22:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:22:34] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:24:13 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:320
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(572): include('...')
+#2 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 320
+[2024-10-22 03:27:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:27:16] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:28:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:28:31] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 340
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 340
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 389
+[22-Oct-2024 10:29:04 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 389
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 293
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 340
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 340
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Undefined array key "currentCommand" in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 389
+[22-Oct-2024 10:29:08 Asia/Phnom_Penh] PHP Warning:  Trying to access array offset on null in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 389
+[22-Oct-2024 10:30:00 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:324
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(576): include('...')
+#2 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 324
+[2024-10-22 03:31:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:31:24] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[22-Oct-2024 10:31:30 Asia/Phnom_Penh] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, string given in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php:324
+Stack trace:
+#0 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\includes\functions\polling.php(26): processUpdates()
+#1 C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php(576): include('...')
+#2 {main}
+  thrown in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 324
+[2024-10-22 03:35:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:35:21] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:38:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:38:11] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 03:39:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
+[2024-10-22 03:39:55] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
