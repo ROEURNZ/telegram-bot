@@ -45,13 +45,4 @@
 
 This approach enhances security by not logging in directly as the root user.
 
-Let me know if you need any more adjustments or additional information!
-=======================================================================
 
->>>>>>> origin/ocr_command
->>>>>>>
->>>>>>
->>>>>
->>>>
->>>
->>
