@@ -5,7 +5,7 @@
  */
 
 // Include db.php to get the PDO instance
-$pdo = require_once __DIR__ . '/../Config/db.php';
+$pdo = require_once __DIR__ . '/../../database/connection.php';
 
 class EzzeModels
 {

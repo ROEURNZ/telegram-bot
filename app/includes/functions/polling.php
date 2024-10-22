@@ -3,7 +3,7 @@
 // Loop to keep the bot running indefinitely
 while (true) {
     // Build the URL to fetch updates with the current offset
-    $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30"; // Set timeout to 30 seconds
+    $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30";
     // Initialize cURL to get updates
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

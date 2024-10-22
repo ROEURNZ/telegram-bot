@@ -1,3 +1,0 @@
-[Fri Oct 18 13:28:38.467173 2024] [mpm_winnt:notice] [pid 5252:tid 308] AH00422: Parent: Received shutdown signal -- Shutting down the server.
-[Fri Oct 18 13:28:40.484271 2024] [mpm_winnt:notice] [pid 11064:tid 352] AH00364: Child: All worker threads have exited.
-[Fri Oct 18 13:28:40.574280 2024] [mpm_winnt:notice] [pid 5252:tid 308] AH00430: Parent: Child process 11064 exited successfully.

@@ -1,11 +1,8 @@
 <?php 
 
 // backend/app/Handlers/CommandHandlers.php
-// Load configuration
-require_once __DIR__ . '/../Config/dirl.php';
-new XDirLevel();
 
-$config = require __DIR__ . $x1 . '/Config/bot_config.php';
+$config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 
 set_time_limit(0); // This will allow the script to run indefinitely
@@ -17,11 +14,11 @@ $botApiUrl = "https://api.telegram.org/bot{$token}/";
 
 // Load localization files
 $messages = [
-    'en' => include __DIR__ . $x1 . '/Localization/languages/en/english.php',
-    'kh' => include __DIR__ . $x1 . '/Localization/languages/kh/khmer.php',
+    'en' => include __DIR__ . $n1 . '/Localization/languages/en/english.php',
+    'kh' => include __DIR__ . $n1 . '/Localization/languages/kh/khmer.php',
 ];
 
-include __DIR__ . $x1 . '/Localization/dateformat/dateFormat.php';
+include __DIR__ . $n1 . '/Localization/dateformat/dateFormat.php';
 // require_once __DIR__ . $x1 . '/Commands/SystemCommand.php';
 
 include __DIR__ . '/../Models/EzzeModel.php';
@@ -95,7 +92,7 @@ function setCommands($token, $messages) {
 
     // Execute the request and check for errors
     $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Get HTTP response code
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
     if ($response === false || $httpCode !== 200) {
         echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
     } else {

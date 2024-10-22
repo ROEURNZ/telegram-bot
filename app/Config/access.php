@@ -1,17 +1,18 @@
 <?php
 // Include the definition file
-require_once 'dynDirs.php';
+include_once 'dynDirs.php';
+include_once 'api_key.php';
 
 // Output for $m variables
-for ($i = 1; $i <= 10; $i++) {
-    $mVariable = 'm' . $i; 
-    echo "\$m$i . \"/\" is simulated by " . ${$mVariable} . "/\n"; 
+for ($i = 1; $i <= 100; $i++) {
+    $mVariable = 'mdl' . $i; 
+    echo "\$mdl$i . \"/\" is simulated by " . ${$mVariable} . "/\n"; 
 }
 
-echo "\n"; // Add a line break for separation
+// echo "\n"; // Add a line break for separation
 
 // Output for $n variables
-for ($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 100; $i++) {
     $nVariable = 'n' . $i; 
     echo "\$n$i . \"/\" is simulated by " . ${$nVariable} . "/\n"; 
 }
@@ -19,8 +20,8 @@ for ($i = 1; $i <= 10; $i++) {
 echo "\n"; // Add a line break for separation
 
 // Output for combined variables
-for ($i = 1; $i <= 10; $i++) {
-    $mVar = 'm' . $i; 
+for ($i = 1; $i <= 100; $i++) {
+    $mVar = 'mdl' . $i; 
     $nVar = 'n' . $i;
 
     // Combine the variable names
@@ -29,3 +30,8 @@ for ($i = 1; $i <= 10; $i++) {
     // Output using variable variables to access the actual values
     echo "\$mnVar$i . \"/\" is simulated by " . ${$mVar} . ${$nVar} . "/\n"; 
 }
+
+echo $mdl10. $n10. $mdl100 . "/";
+// echo $z1;
+// echo $n1;
+

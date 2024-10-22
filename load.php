@@ -1,11 +1,12 @@
-<?php
+<?php 
 // file name: load.php 
+
 error_log(0);
 date_default_timezone_set("Asia/Phnom_Penh");
 
 include "vendor/autoload.php";
-include __DIR__ . "/database/dbconfig.php";
-include __DIR__ . "/api_key.php";
+include __DIR__ . "/database/connection.php";
+include __DIR__ . "/app/Config/api_key.php";
 
 define('MAX_REMINDER', 5);
 define('MAX_NOT_REPLY_REMINDER', 5);
@@ -50,16 +51,16 @@ $adminCommands = json_encode(array(
 ));
 
 // $ez = new EzzeTeamsModel();
-$ezzeTeamsModel = new EzzeTeamsModel();
+$ezzeTeamsModel = new EzzeModels();
 // $ezzeTeamsModel = $ez;
-$botSettings = $ezzeTeamsModel->getSettings();
+// $botSettings = $ezzeTeamsModel->getSettings();
 $botSettings['lang_active'] = $langActive;
 $botSettings['max_reminder'] = MAX_REMINDER;
 $botSettings['max_not_reply_reminder'] = MAX_NOT_REPLY_REMINDER;
 
 $lang_allow = array('🇰🇭 ភាសាខ្មែរ', '🇺🇸 English');
 
-$admins = $ezzeTeamsModel->getAllAdmin();
+// $admins = $ezzeTeamsModel->getAllAdmin();
 $admin_id = [];
 $adminDetails = [];
 foreach($admins as $adm) {

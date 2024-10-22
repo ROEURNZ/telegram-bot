@@ -211,7 +211,6 @@ function processUpdates($updates, $token)
                         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
                     }
                 }
-
             }
 
             // Handle contact sharing
