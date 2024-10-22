@@ -1,16 +1,2 @@
-<<<<<<< HEAD
 backend/app/public/images/decoded/*
 backend/app/public/images/decoded/*.jpg
-=======
-/node_modules
-/vendor
-.env
-# Ignore log files
-logs/access.log
-logs/error.log
-logs/ssl_access.log
-logs/ssl_error.log
-
-# ignore the images
-app/public/images/decoded/*
->>>>>>> f36e81f (refine the entire project)
