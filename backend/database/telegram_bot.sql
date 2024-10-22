@@ -53,6 +53,15 @@ CREATE TABLE IF NOT EXISTS location (
 );
 
 ---Create table OCR---
-
+CREATE TABLE ocr (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` BIGINT NOT NULL,
+    `vat_tin` VARCHAR(50) NOT NULL,
+    `msg_id` BIGINT NOT NULL,
+    `raw_data`	VARCHAR(100) NULL,
+    `file_id` varchar(100) NOT NULL,
+    `status` TINYINT NOT NULL DEFAULT 0,
+    `date` DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
 COMMIT;

@@ -4300,3 +4300,116 @@ Estimating resolution as 195
 Estimating resolution as 195
 Estimating resolution as 195
 Estimating resolution as 195
+[Tue Oct 22 13:32:54.396478 2024] [mpm_winnt:notice] [pid 1664:tid 404] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Tue Oct 22 13:32:54.396478 2024] [mpm_winnt:notice] [pid 1664:tid 404] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Tue Oct 22 13:32:54.396478 2024] [core:notice] [pid 1664:tid 404] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Oct 22 13:32:54.399478 2024] [mpm_winnt:notice] [pid 1664:tid 404] AH00418: Parent: Created child process 5936
+[Tue Oct 22 13:32:54.772186 2024] [mpm_winnt:notice] [pid 5936:tid 444] AH00354: Child: Starting 64 worker threads.
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+Estimating resolution as 195
+Estimating resolution as 195
+[Tue Oct 22 13:36:57.007395 2024] [mpm_winnt:notice] [pid 1664:tid 404] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Oct 22 13:37:27.015504 2024] [mpm_winnt:notice] [pid 1664:tid 404] AH00431: Parent: Forcing termination of child process 5936
+[Tue Oct 22 13:37:27.621452 2024] [mpm_winnt:notice] [pid 832:tid 444] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Tue Oct 22 13:37:27.621452 2024] [mpm_winnt:notice] [pid 832:tid 444] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Tue Oct 22 13:37:27.621452 2024] [core:notice] [pid 832:tid 444] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Oct 22 13:37:27.625457 2024] [mpm_winnt:notice] [pid 832:tid 444] AH00418: Parent: Created child process 14160
+[Tue Oct 22 13:37:28.037270 2024] [mpm_winnt:notice] [pid 14160:tid 420] AH00354: Child: Starting 64 worker threads.
+Estimating resolution as 195
+Estimating resolution as 195
+Estimating resolution as 195
+Estimating resolution as 195
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+scanned 1 barcode symbols from 1 images
+[Tue Oct 22 14:20:27.124261 2024] [mpm_winnt:notice] [pid 832:tid 444] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Tue Oct 22 14:20:57.139689 2024] [mpm_winnt:notice] [pid 832:tid 444] AH00431: Parent: Forcing termination of child process 14160
+[Tue Oct 22 14:20:57.799188 2024] [mpm_winnt:notice] [pid 1300:tid 420] AH00455: Apache/2.4.62 (Win64) OpenSSL/3.1.7 PHP/8.3.10 configured -- resuming normal operations
+[Tue Oct 22 14:20:57.799188 2024] [mpm_winnt:notice] [pid 1300:tid 420] AH00456: Apache Lounge VS17 Server built: Sep  4 2024 10:31:52
+[Tue Oct 22 14:20:57.799188 2024] [core:notice] [pid 1300:tid 420] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Tue Oct 22 14:20:57.802595 2024] [mpm_winnt:notice] [pid 1300:tid 420] AH00418: Parent: Created child process 4036
+[Tue Oct 22 14:20:58.178620 2024] [mpm_winnt:notice] [pid 4036:tid 444] AH00354: Child: Starting 64 worker threads.
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+Estimating resolution as 195
+scanned 0 barcode symbols from 1 images
+
+WARNING: barcode data was not detected in some image(s)
+  things to check:
+    - is the barcode type supported?  currently supported symbologies are:
+      EAN/UPC (EAN-13, EAN-8, UPC-A, UPC-E, ISBN-10, ISBN-13),
+      Code 128, Code 39 and Interleaved 2 of 5
+    - is the barcode large enough in the image?
+    - is the barcode mostly in focus?
+    - is there sufficient contrast/illumination?
+
+scanned 1 barcode symbols from 1 images
+Detected 57 diacritics
+Estimating resolution as 226
+Estimating resolution as 395
+Estimating resolution as 195
+Estimating resolution as 192
+Estimating resolution as 307
+Detected 83 diacritics
+Estimating resolution as 201
+Estimating resolution as 190
+Estimating resolution as 195
+Estimating resolution as 195
+scanned 1 barcode symbols from 1 images
+Estimating resolution as 312
+Estimating resolution as 174
+Estimating resolution as 311

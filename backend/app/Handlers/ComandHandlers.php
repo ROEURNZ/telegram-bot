@@ -295,7 +295,8 @@ function processUpdates($updates, $token)
                                 require_once __DIR__ . '/../includes/functions/OCRFunction.php';
                                 $ocrResult = processInvoiceImage($localFilePath);
                                 $_SESSION['imageType'][$chatId] = 'invoice';
-
+                                $rawText = $ocrResult['text'];
+                                
                                 // Check if VAT-TIN was extracted
                                 if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
                                     // Save the extracted VAT-TIN to session
@@ -305,7 +306,8 @@ function processUpdates($updates, $token)
                                         'user_id' => $userId,
                                         'vat_tin' => $ocrResult['vatTin'],
                                         'msg_id' => $messageId,
-                                        'raw_data' => $ocrResult['text'],
+                                        'raw_data' => $rawText,
+
                                         'file_id' => $fileId,
                                         'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
                                         'date' => date('Y-m-d H:i:s')
