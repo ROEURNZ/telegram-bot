@@ -3238,3 +3238,16 @@ Stack trace:
 [22-Oct-2024 14:23:21 Asia/Phnom_Penh] PHP Warning:  Undefined array key 1278764240 in C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Handlers\ComandHandlers.php on line 376
 [2024-10-22 07:55:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs
 [2024-10-22 07:55:12] ERROR: Directory already exists: C:\Users\PC\Development\Projects\PHP\Bots\telegram-bot\backend\app\Config/../storage/logs/errors
+[2024-10-22 15:52:14] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Config/../storage/logs
+[2024-10-22 15:52:14] ERROR: Directory already exists: C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Config/../storage/logs/errors
+[22-Oct-2024 22:52:14 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 22:52:27 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 22:52:28 Asia/Phnom_Penh] PHP Warning:  Undefined array key "ocr_desc" in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\includes\IncludeCommands.php on line 78
+[22-Oct-2024 22:52:29 Asia/Phnom_Penh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ezzebot.users' doesn't exist in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Models\EzzeModel.php:70
+Stack trace:
+#0 C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Models\EzzeModel.php(70): PDOStatement->execute()
+#1 C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Handlers\ComandHandlers.php(27): EzzeModels->getUserLanguage()
+#2 C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\includes\functions\polling.php(26): processUpdates()
+#3 C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Handlers\ComandHandlers.php(563): include('...')
+#4 {main}
+  thrown in C:\Users\ROEURN\Development\Projects\PHP\Bots\telegram-bot\app\Models\EzzeModel.php on line 70
