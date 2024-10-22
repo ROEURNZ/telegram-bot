@@ -1,2 +1,11 @@
-backend/app/public/images/decoded/*
-backend/app/public/images/decoded/*.jpg
+/vendor
+.env
+
+# Ignore log files
+storage/logs/access.log
+storage/logs/error.log
+storage/logs/ssl_access.log
+storage/logs/ssl_error.log
+
+# ignore the images
+storage/app/public/images/decoded/*

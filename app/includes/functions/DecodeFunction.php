@@ -1,5 +1,6 @@
 <?php
 
+// backend/app/include/function/DecodeFunctiom.php
 // Function to process code images for barcode decoding
 function processBarcodeImage($filePath)
 {
@@ -17,6 +18,17 @@ function processBarcodeImage($filePath)
         'type' => $type,
     ];
 }
+
+// example
+
+// $filePath = "../../images/file_2.jpg";
+// $result = processBarcodeImage($filePath);
+// if (isset($result['error'])) {
+//     echo "Error: ". $result['error'];
+// } else {
+//     echo "Decoded barcode: ". $result['code']. " of type: ". $result['type'];
+// }
+
 
 
 
