@@ -17,7 +17,6 @@ class EzzeModels
         $this->pdo = Database::getInstance();
     }
 
-<<<<<<< HEAD
     /** ----------------------------------------Admin User Controls ----------------------------------------------- */
 
     // Admin function to delete a user by user ID
@@ -36,27 +35,10 @@ class EzzeModels
                 phone_number = :phone_number, language = :language WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([
-=======
-    function addUser($params)
-    {
-        // SQL statement for inserting a new user
-        $sql = "INSERT INTO `users` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, date, language) 
-                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, :date, :language)";
-
-        // Prepare the statement
-        $stmt = $this->pdo->prepare($sql);
-
-        // Execute the statement with parameters
-        return $stmt->execute([
-            ':user_id' => $params['user_id'],
-            ':chat_id' => $params['chat_id'],
-            ':msg_id' => $params['msg_id'],
->>>>>>> origin/ocr_command
             ':first_name' => $params['first_name'],
             ':last_name' => $params['last_name'],
             ':username' => $params['username'],
             ':phone_number' => $params['phone_number'],
-<<<<<<< HEAD
             ':language' => $params['language'],
             ':user_id' => $userId
         ]) ? "User information updated successfully." : "Error: " . $stmt->errorInfo()[2];
@@ -289,24 +271,13 @@ function updateUser($params)
 
     ]) ? "User updated successfully." : "Error: " . $stmt->errorInfo()[2];
 }
-=======
-            ':date' => $params['date'],
-            ':language' => $params['language']
-        ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
-    }
-
->>>>>>> origin/ocr_command
 
 
     // Function to check if the user has selected a language
     public function hasSelectedLanguage($userId)
     {
         // Prepare the SQL query to check if the user has a language set
-<<<<<<< HEAD
         $sql = "SELECT language FROM `user_profiles` WHERE user_id = :user_id LIMIT 1";
-=======
-        $sql = "SELECT language FROM users WHERE user_id = :user_id LIMIT 1";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
 
         // Bind the user_id parameter
@@ -323,19 +294,11 @@ function updateUser($params)
     }
 
 
-<<<<<<< HEAD
     public function getUserLanguage($chatId)
     {
         // Prepare a statement to get the user's language from the database
         $stmt = $this->pdo->prepare("SELECT language FROM `user_profiles` WHERE chat_id = :chat_id ");
         $stmt->execute(['chat_id' => $chatId]);
-=======
-    public function getUserLanguage($chatId, $username)
-    {
-        // Prepare a statement to get the user's language from the database
-        $stmt = $this->pdo->prepare("SELECT language FROM users WHERE chat_id = :chat_id AND username = :username");
-        $stmt->execute(['chat_id' => $chatId, 'username' => $username]);
->>>>>>> origin/ocr_command
 
         // Fetch the language preference
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -348,11 +311,7 @@ function updateUser($params)
     // Method to update user's language
     public function updateUserLanguage($chatId, $language)
     {
-<<<<<<< HEAD
         $stmt = $this->pdo->prepare("UPDATE `user_profiles` SET language = :language WHERE chat_id = :chat_id");
-=======
-        $stmt = $this->pdo->prepare("UPDATE users SET language = :language WHERE chat_id = :chat_id");
->>>>>>> origin/ocr_command
         return $stmt->execute(['language' => $language, 'chat_id' => $chatId]);
     }
 
@@ -365,11 +324,7 @@ function updateUser($params)
     private function isUserIdExists($userId)
     {
         // Check if the user already exists in the database
-<<<<<<< HEAD
         $sql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
-=======
-        $sql = "SELECT COUNT(*) FROM `users` WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() > 0;
@@ -379,11 +334,7 @@ function updateUser($params)
     public function tgUsername($userId)
     {
         // Prepare the SQL statement to fetch the username by user ID
-<<<<<<< HEAD
         $sql = "SELECT username FROM `user_profiles` WHERE user_id = :user_id";
-=======
-        $sql = "SELECT username FROM `users` WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
 
         // Execute the statement with the provided user ID
@@ -400,11 +351,7 @@ function updateUser($params)
             return false;
         }
 
-<<<<<<< HEAD
         $sql = "UPDATE `user_profiles` SET username = :username WHERE user_id = :user_id";
-=======
-        $sql = "UPDATE user_profiles SET username = :username WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute([':username' => $username, ':user_id' => $userId]);
     }
@@ -413,19 +360,11 @@ function updateUser($params)
     // Check if the user exists by chatId
     public function isUserChatIdExists($chatId)
     {
-<<<<<<< HEAD
         $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `user_profiles` WHERE chat_id = :chat_id");
-=======
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `users` WHERE chat_id = :chat_id");
->>>>>>> origin/ocr_command
         $stmt->execute([':chat_id' => $chatId]);
         return $stmt->fetchColumn() > 0;
     }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/ocr_command
     /** ----------------------------------------Contact sharing for register ----------------------------------------------- */
 
     // Function to add a barcode record
@@ -437,11 +376,7 @@ function updateUser($params)
         }
 
         // If the barcode doesn't exist, proceed with the insert
-<<<<<<< HEAD
         $sql = "INSERT INTO `barcodes` (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
-=======
-        $sql = "INSERT INTO decoded (user_id, type, code, msg_id, file_id, file_unique_id, decoded_status) 
->>>>>>> origin/ocr_command
             VALUES (:user_id, :type, :code, :msg_id, :file_id, :file_unique_id, :decoded_status)";
         $stmt = $this->pdo->prepare($sql);
 
@@ -452,7 +387,6 @@ function updateUser($params)
         $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
         $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
         $stmt->bindParam(':file_unique_id', $params['file_unique_id'], PDO::PARAM_STR);
-<<<<<<< HEAD
         $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_BOOL);
         // $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_INT);
 
@@ -471,44 +405,21 @@ function updateUser($params)
     public function barcodeExists($code)
     {
         $sql = "SELECT COUNT(*) FROM `barcodes` WHERE code = :code";
-=======
-        $stmt->bindParam(':decoded_status', $params['decoded_status'], PDO::PARAM_INT);
-
-        return $stmt->execute() ? "Barcode record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
-    }
-
-
-
-    // Function to check if a barcode exists
-    public function barcodeExists($code)
-    {
-        $sql = "SELECT COUNT(*) FROM decoded WHERE code = :code";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':code', $code, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
 
-<<<<<<< HEAD
     // Function to reset decoded_status to 0 for all barcodes of the user
     public function updateDecodeStatus($userId)
     {
         $sql = "UPDATE `barcodes` SET decoded_status = 1 WHERE user_id = :user_id AND decoded_status = 0";
-=======
-
-
-    // Function to reset decoded_status to 0 for all barcodes of the user
-    public function resetDecodedStatus($userId)
-    {
-        $sql = "UPDATE decoded SET decoded_status = 0 WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
     }
 
-<<<<<<< HEAD
     // Check if user has completed a decode
 
     public function hasCompletedDecode($userId)
@@ -519,35 +430,15 @@ function updateUser($params)
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
         $stmt->execute(); 
-=======
-
-
-
-
-    // Check if user has completed a decode
-    public function hasCompletedDecode($userId)
-    {
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM decoded WHERE user_id = :user_id");
-        $stmt->execute([':user_id' => $userId]);
->>>>>>> origin/ocr_command
         return $stmt->fetchColumn() > 0;
     }
 
 
 
-<<<<<<< HEAD
     // Function to retrieve barcodes for a user
     public function getBarcodesByUserId($userId)
     {
         $sql = "SELECT * FROM `barcodes` WHERE user_id = :user_id";
-=======
-
-
-    // Function to retrieve barcodes for a user
-    public function getBarcodesByUserId($userId)
-    {
-        $sql = "SELECT * FROM decoded WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
@@ -561,11 +452,7 @@ function updateUser($params)
     public function hasSharedLocation($userId)
     {
         // Prepare the SQL query to count records with share_status = 1
-<<<<<<< HEAD
         $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM `location` WHERE user_id = :user_id AND share_status = 1");
-=======
-        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM location WHERE user_id = :user_id AND share_status = 1");
->>>>>>> origin/ocr_command
 
         // Bind parameters and execute
         $stmt->execute([':user_id' => $userId]);
@@ -577,11 +464,7 @@ function updateUser($params)
     // Function to check if the location has been shared
     public function checkShareStatus($userId)
     {
-<<<<<<< HEAD
         $sql = "SELECT share_status FROM `location` WHERE user_id = :user_id AND share_status = 1 LIMIT 1"; // 1 indicates shared
-=======
-        $sql = "SELECT share_status FROM location WHERE user_id = :user_id AND share_status = 1 LIMIT 1"; // 1 indicates shared
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -595,20 +478,9 @@ function updateUser($params)
     // Function to add a location record
     public function addLocation($params)
     {
-<<<<<<< HEAD
         // Prepare the SQL statement to insert the location record
         $sql = "INSERT INTO `location` (user_id, lat, lon, location_url, date, share_status) 
                     VALUES (:user_id, :lat, :lon, :location_url, :date, :share_status)";
-=======
-        // Check if latitude and longitude are set
-        if (empty($params['lat']) || empty($params['lon'])) {
-            return "Error: Latitude and Longitude cannot be null.";
-        }
-
-        // Prepare the SQL statement
-        $sql = "INSERT INTO location (user_id, lat, lon, location_url, date, share_status) 
-                VALUES (:user_id, :lat, :lon, :location_url, :date, :share_status)";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -617,14 +489,9 @@ function updateUser($params)
         $stmt->bindParam(':lon', $params['lon'], PDO::PARAM_STR);
         $stmt->bindParam(':location_url', $params['location_url'], PDO::PARAM_STR);
         $stmt->bindParam(':date', $params['date'], PDO::PARAM_STR);
-<<<<<<< HEAD
         // $shareStatus = 0;  // Initial share status is false (0)
         // $stmt->bindParam(':share_status', $shareStatus, PDO::PARAM_INT);
         $stmt->bindParam(':share_status', $params['share_status'], PDO::PARAM_BOOL);
-=======
-        $shareStatus = 0;  // Initial share status is false (0)
-        $stmt->bindParam(':share_status', $shareStatus, PDO::PARAM_INT);
->>>>>>> origin/ocr_command
 
         // Execute the insert statement
         if ($stmt->execute()) {
@@ -636,18 +503,10 @@ function updateUser($params)
         }
     }
 
-<<<<<<< HEAD
     // Function to update the share status after location is shared
     public function updateShareStatus($userId)
     {
         $sql = "UPDATE `location` SET share_status = 1 WHERE user_id = :user_id AND share_status = 0";
-=======
-
-    // Function to update the share status after location is shared
-    public function updateShareStatus($userId)
-    {
-        $sql = "UPDATE location SET share_status = 1 WHERE user_id = :user_id AND share_status = 0";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
 
         // Bind parameters
@@ -661,66 +520,10 @@ function updateUser($params)
     // Function to retrieve locations for a user
     public function getLocationsByUserId($userId)
     {
-<<<<<<< HEAD
         $sql = "SELECT * FROM `location` WHERE user_id = :user_id";
-=======
-        $sql = "SELECT * FROM location WHERE user_id = :user_id";
->>>>>>> origin/ocr_command
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-<<<<<<< HEAD
-=======
-
-
-    public function addOcrData($params)
-    {
-        $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, raw_data, file_id, status, date) 
-                VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
-
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':vat_tin', $params['vat_tin']);
-        $stmt->bindParam(':msg_id', $params['msg_id']);
-        $stmt->bindParam(':raw_data', $params['text']);
-        $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
-        $stmt->bindParam(':status', $params['status']);
-        $stmt->bindParam(':date', $params['date']);
-        
-        if ($stmt->execute()) {
-            return "OCR data inserted successfully.";
-        } else {
-            error_log("Database error: " . implode(", ", $stmt->errorInfo())); // Log the error
-            return "Error: " . $stmt->errorInfo()[2];
-        }
-    }
-
-
-
-    public function updateOcrLocation($params)
-    {
-        $sql = "UPDATE ocr SET lat = :lat, lon = :lon, location_url = :location_url, status = :status 
-            WHERE user_id = :user_id AND status = 0";
-
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':lat', $params['lat']);
-        $stmt->bindParam(':lon', $params['lon']);
-        $stmt->bindParam(':location_url', $params['location_url']);
-        $stmt->bindParam(':status', $params['status']);
-        $stmt->bindParam(':user_id', $params['user_id']);
-
-        if ($stmt->execute()) {
-            return "OCR location successfully updated";
-        } else {
-            return "Error updating OCR location";
-        }
-    }
-
-    
-
-
-
->>>>>>> origin/ocr_command
 }
