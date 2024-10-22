@@ -2264,3 +2264,100 @@
 [Tue Oct 22 11:21:21.211148 2024] [ssl:warn] [pid 11872:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
 [Tue Oct 22 11:21:21.245113 2024] [ssl:warn] [pid 11872:tid 432] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
 [Tue Oct 22 11:21:21.245113 2024] [ssl:warn] [pid 11872:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:31:52.901625 2024] [ssl:warn] [pid 12936:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:31:52.901625 2024] [ssl:warn] [pid 12936:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:31:52.944685 2024] [ssl:warn] [pid 12936:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:31:52.944685 2024] [ssl:warn] [pid 12936:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:31:53.289195 2024] [ssl:warn] [pid 14832:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:31:53.289195 2024] [ssl:warn] [pid 14832:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:31:53.322167 2024] [ssl:warn] [pid 14832:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:31:53.322167 2024] [ssl:warn] [pid 14832:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:40:51.450606 2024] [ssl:warn] [pid 6976:tid 412] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:40:51.451604 2024] [ssl:warn] [pid 6976:tid 412] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:40:51.488596 2024] [ssl:warn] [pid 6976:tid 412] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:40:51.488596 2024] [ssl:warn] [pid 6976:tid 412] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:40:51.840607 2024] [ssl:warn] [pid 5312:tid 436] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:40:51.840607 2024] [ssl:warn] [pid 5312:tid 436] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:40:51.874578 2024] [ssl:warn] [pid 5312:tid 436] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:40:51.874578 2024] [ssl:warn] [pid 5312:tid 436] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:42:53.822463 2024] [ssl:warn] [pid 8448:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:42:53.822463 2024] [ssl:warn] [pid 8448:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:42:53.861460 2024] [ssl:warn] [pid 8448:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:42:53.861460 2024] [ssl:warn] [pid 8448:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:42:54.211113 2024] [ssl:warn] [pid 1520:tid 428] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:42:54.211113 2024] [ssl:warn] [pid 1520:tid 428] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 11:42:54.247544 2024] [ssl:warn] [pid 1520:tid 428] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 11:42:54.247544 2024] [ssl:warn] [pid 1520:tid 428] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:23:03.523193 2024] [ssl:warn] [pid 7600:tid 412] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:23:03.523193 2024] [ssl:warn] [pid 7600:tid 412] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:23:03.564115 2024] [ssl:warn] [pid 7600:tid 412] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:23:03.564115 2024] [ssl:warn] [pid 7600:tid 412] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:23:03.914139 2024] [ssl:warn] [pid 4536:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:23:03.914139 2024] [ssl:warn] [pid 4536:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:23:03.944696 2024] [ssl:warn] [pid 4536:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:23:03.944696 2024] [ssl:warn] [pid 4536:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:25:31.794255 2024] [ssl:warn] [pid 15188:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:25:31.794255 2024] [ssl:warn] [pid 15188:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:25:31.835077 2024] [ssl:warn] [pid 15188:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:25:31.835077 2024] [ssl:warn] [pid 15188:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:25:32.181404 2024] [ssl:warn] [pid 4144:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:25:32.181404 2024] [ssl:warn] [pid 4144:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:25:32.213854 2024] [ssl:warn] [pid 4144:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:25:32.213854 2024] [ssl:warn] [pid 4144:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:33:01.256060 2024] [ssl:warn] [pid 800:tid 436] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:33:01.257061 2024] [ssl:warn] [pid 800:tid 436] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:33:01.296063 2024] [ssl:warn] [pid 800:tid 436] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:33:01.296063 2024] [ssl:warn] [pid 800:tid 436] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:33:01.643801 2024] [ssl:warn] [pid 2584:tid 432] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:33:01.643801 2024] [ssl:warn] [pid 2584:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:33:01.675928 2024] [ssl:warn] [pid 2584:tid 432] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:33:01.675928 2024] [ssl:warn] [pid 2584:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:34:52.479465 2024] [ssl:warn] [pid 7484:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:34:52.479465 2024] [ssl:warn] [pid 7484:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:34:52.520697 2024] [ssl:warn] [pid 7484:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:34:52.521697 2024] [ssl:warn] [pid 7484:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:34:52.998887 2024] [ssl:warn] [pid 10592:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:34:52.998887 2024] [ssl:warn] [pid 10592:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:34:53.031899 2024] [ssl:warn] [pid 10592:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:34:53.031899 2024] [ssl:warn] [pid 10592:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:39:34.341995 2024] [ssl:warn] [pid 4056:tid 432] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:39:34.341995 2024] [ssl:warn] [pid 4056:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:39:34.383962 2024] [ssl:warn] [pid 4056:tid 432] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:39:34.383962 2024] [ssl:warn] [pid 4056:tid 432] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:39:34.735810 2024] [ssl:warn] [pid 8740:tid 448] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:39:34.735810 2024] [ssl:warn] [pid 8740:tid 448] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:39:34.768145 2024] [ssl:warn] [pid 8740:tid 448] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:39:34.768145 2024] [ssl:warn] [pid 8740:tid 448] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:39:34.870739 2024] [php:error] [pid 8740:tid 1244] [client ::1:53107] PHP Parse error:  Unclosed '{' on line 6 in C:\\Users\\PC\\Development\\Projects\\PHP\\Bots\\telegram-bot\\backend\\app\\Handlers\\ComandHandlers.php on line 574, referer: https://localhost/backend/app/Handlers/
+[Tue Oct 22 12:41:57.027588 2024] [ssl:warn] [pid 14748:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:41:57.027588 2024] [ssl:warn] [pid 14748:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:41:57.069826 2024] [ssl:warn] [pid 14748:tid 404] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:41:57.069826 2024] [ssl:warn] [pid 14748:tid 404] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:41:57.424287 2024] [ssl:warn] [pid 8396:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:41:57.424287 2024] [ssl:warn] [pid 8396:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:41:57.456288 2024] [ssl:warn] [pid 8396:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:41:57.456288 2024] [ssl:warn] [pid 8396:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:49:43.572069 2024] [ssl:warn] [pid 3504:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:49:43.572069 2024] [ssl:warn] [pid 3504:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:49:43.606110 2024] [ssl:warn] [pid 3504:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:49:43.606110 2024] [ssl:warn] [pid 3504:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:49:43.957764 2024] [ssl:warn] [pid 12936:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:49:43.957764 2024] [ssl:warn] [pid 12936:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 12:49:43.991767 2024] [ssl:warn] [pid 12936:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 12:49:43.992767 2024] [ssl:warn] [pid 12936:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:05:24.423212 2024] [ssl:warn] [pid 7076:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:05:24.423212 2024] [ssl:warn] [pid 7076:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:05:24.464100 2024] [ssl:warn] [pid 7076:tid 420] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:05:24.464100 2024] [ssl:warn] [pid 7076:tid 420] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:05:24.814151 2024] [ssl:warn] [pid 1920:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:05:24.814151 2024] [ssl:warn] [pid 1920:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:05:24.846065 2024] [ssl:warn] [pid 1920:tid 440] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:05:24.846065 2024] [ssl:warn] [pid 1920:tid 440] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:11:27.741308 2024] [ssl:warn] [pid 12140:tid 448] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:11:27.741308 2024] [ssl:warn] [pid 12140:tid 448] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:11:27.777281 2024] [ssl:warn] [pid 12140:tid 448] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:11:27.777281 2024] [ssl:warn] [pid 12140:tid 448] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:11:28.148280 2024] [ssl:warn] [pid 10936:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:11:28.148280 2024] [ssl:warn] [pid 10936:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name
+[Tue Oct 22 13:11:28.180280 2024] [ssl:warn] [pid 10936:tid 444] AH01906: localhost:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Tue Oct 22 13:11:28.180280 2024] [ssl:warn] [pid 10936:tid 444] AH01909: localhost:443:0 server certificate does NOT include an ID which matches the server name

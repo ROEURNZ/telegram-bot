@@ -29,6 +29,7 @@ function processInvoiceImage($filePath)
     return [
         'text' => $text,
         'vatTin' => $vatTin,
+        'raw_data' => $text // Add raw data here
     ];
 }
 

@@ -117,8 +117,6 @@ function processUpdates($updates, $token)
                     }
                 }
 
-
-
                 // Handle /share_contact command only if language is selected
                 if ($userCommand === '/share_contact') {
                     if (!$ezzeModel->checkUserExists($userId)) {
