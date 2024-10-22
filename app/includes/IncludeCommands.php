@@ -1,18 +1,9 @@
 <?php 
 
-<<<<<<< HEAD
-// backend/app/Handlers/CommandHandlers.php
-=======
-// backend/app/include/IncludeCommands.php
-// Load configuration
-require_once __DIR__ . '/../Config/dirl.php';
-new XDirLevel();
->>>>>>> origin/ocr_command
-
 $config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 
-set_time_limit(0); // This will allow the script to run indefinitely
+set_time_limit(0); 
 session_start();
 date_default_timezone_set("Asia/Phnom_Penh");
 $offset = 0;

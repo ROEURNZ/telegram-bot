@@ -27,10 +27,7 @@ function processUpdates($updates, $token)
             $language = $userLanguages[$chatId] ?? $ezzeModel->getUserLanguage($chatId) ?? 'en';
 
             // Get messages based on the selected language
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/ocr_command
             $currentMessages = $messages[$language];
             // Handle text messages
             if (isset($update['message']['text'])) {
@@ -138,10 +135,7 @@ function processUpdates($updates, $token)
                     }
                 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/ocr_command
                 // Handle /share_contact command only if language is selected
                 if ($userCommand === '/share_contact') {
                     // Check if the user exists
@@ -598,7 +592,4 @@ function showLocationSharing($chatId, $token, $language)
 }
 
 include __DIR__ . '/../includes/functions/polling.php';
-<<<<<<< HEAD
-// include __DIR__. "/../Webhooks/webhook.php";
-=======
->>>>>>> origin/ocr_command
+
