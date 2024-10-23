@@ -7,10 +7,10 @@
  */
 
 include __DIR__ . "/../app/Config/dynDirs.php";
-require __DIR__ . $n1 . '/vendor/autoload.php';     
+require __DIR__ . $z1 . 'vendor/autoload.php';     
 
 // Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . $n1 .'');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . $z1);
 $dotenv->load();
 
 // Database configuration
@@ -45,16 +45,3 @@ class Database {
     }
 }
 
-// Check database connection
-try {
-    $pdo = Database::getInstance();
-    $pdo->query("SELECT 1");
-    echo "Database connection successful!";
-} catch (PDOException $e) {
-    $logDir = __DIR__ . $n1 . '/storage/logs';
-    if (!is_dir($logDir)) {
-        mkdir($logDir, 0777, true);
-    }
-    error_log("Database connection failed: " . $e->getMessage() . "\n", 3, $logDir . '/database_errors.log');
-    echo "Database connection failed: " . htmlspecialchars($e->getMessage());
-}

@@ -3,8 +3,10 @@
 $config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 include __DIR__ . '/../Config/dynDirs.php';
+
 set_time_limit(0); 
 session_start();
+
 date_default_timezone_set("Asia/Phnom_Penh");
 $offset = 0;
 
@@ -17,7 +19,6 @@ $messages = [
 ];
 
 include __DIR__ . $n1 . '/Localization/dateformat/dateFormat.php';
-// require_once __DIR__ . $x1 . '/Commands/SystemCommand.php';
 
 include __DIR__ . '/../Models/EzzeModel.php';
 

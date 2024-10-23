@@ -573,6 +573,4 @@ function updateUser($params)
     }
 
     
-
-
 }

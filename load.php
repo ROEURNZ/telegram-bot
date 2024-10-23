@@ -24,28 +24,6 @@ foreach ($files as $file) {
 // Load functions
 include __DIR__ . "/includes/functions/functions.php";
 $langActive = ['kh', 'en'];
-/*$userCommands = json_encode(array(
-    array(
-        "command" => "/start",
-        "description" => "Refresh Your Status"
-    ),
-    array(
-        "command" => "/worklocation",
-        "description" => "Show Work Location Map"
-    ),
-    array(
-        "command" => "/checkschedule",
-        "description" => "See My Working Schedule"
-    ),
-    array(
-        "command" => "/changelanguage",
-        "description" => "Change Language"
-    ),
-    array(
-        "command" => "/editprofile",
-        "description" => "Coming Soon"
-    )
-));*/
 
 $adminCommands = json_encode(array(
 ));
