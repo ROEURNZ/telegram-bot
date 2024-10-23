@@ -1,0 +1,30 @@
+{
+    "name": "app/telegram-bot",
+    "description": "A PHP-based Telegram bot that interacts with the Telegram API to provide automated responses and functionalities.",
+    "type": "library",
+    "require": {
+        "php": "^8.2|^8.3.10",
+        "vlucas/phpdotenv": "^5.6.1",
+        "thiagoalessio/tesseract_ocr": "^2.13"
+    },
+
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "App\\TelegramBot\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ROEURNZ",
+            "homepage": "https://github.com/ROEURNZ"
+
+        }
+    ],
+    "license": "MIT",
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
