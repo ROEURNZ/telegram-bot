@@ -7,10 +7,10 @@
  */
 
 include __DIR__ . "/../app/Config/dynDirs.php";
-require __DIR__ . $n1 . '/vendor/autoload.php';     
+require __DIR__ . $z1 . 'vendor/autoload.php';     
 
 // Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . $n1 .'');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . $z1);
 $dotenv->load();
 
 // Database configuration

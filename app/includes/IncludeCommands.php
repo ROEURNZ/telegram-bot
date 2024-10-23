@@ -1,14 +1,17 @@
-<?php 
+<?php
 
 $config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 include __DIR__ . '/../Config/dynDirs.php';
-set_time_limit(0); 
+
+set_time_limit(0);
 session_start();
+
 date_default_timezone_set("Asia/Phnom_Penh");
 $offset = 0;
 
-$botApiUr = "https://api.telegram.org/bot{$token}/";
+
+$botApiUrl = "https://api.telegram.org/bot{$token}/";
 
 // Load localization files
 $messages = [
@@ -91,7 +94,7 @@ function setCommands($token, $messages) {
 
     // Execute the request and check for errors
     $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); // Get HTTP response code
     if ($response === false || $httpCode !== 200) {
         echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
     } else {

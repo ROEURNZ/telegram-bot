@@ -45,16 +45,3 @@ class Database {
     }
 }
 
-// Check database connection
-try {
-    $pdo = Database::getInstance();
-    $pdo->query("SELECT 1");
-    echo "Database connection successful!";
-} catch (PDOException $e) {
-    $logDir = __DIR__ . $n1 . '/storage/logs';
-    if (!is_dir($logDir)) {
-        mkdir($logDir, 0777, true);
-    }
-    error_log("Database connection failed: " . $e->getMessage() . "\n", 3, $logDir . '/database_errors.log');
-    echo "Database connection failed: " . htmlspecialchars($e->getMessage());
-}

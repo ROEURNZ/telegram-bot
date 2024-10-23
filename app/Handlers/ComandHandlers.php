@@ -457,7 +457,6 @@ function processUpdates($updates, $token)
                 }
             }
 
-
             // Handle location sharing
             if (isset($update['message']['location'])) {
                 if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
