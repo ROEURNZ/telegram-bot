@@ -2,6 +2,8 @@
 
 // backend/app/Handlers/CommandHandlers.php
 include __DIR__ . '/../includes/IncludeCommands.php';
+
+
 function processUpdates($updates, $token)
 {
     global $currentMessages;
@@ -156,7 +158,7 @@ function processUpdates($updates, $token)
                                 'first_name' => $firstName,
                                 'last_name' => $lastName,
                                 'username' => $username,
-                                'phone_number' => $phoneNumber,
+                                'phone_number' => $phoneNumber ?? '',
                                 'date' => date('Y-m-d H:i:s'),
                                 'language' => $language
                             ];
@@ -336,7 +338,6 @@ function processUpdates($updates, $token)
                                         'vat_tin' => $ocrResult['vatTin'],
                                         'msg_id' => $messageId,
                                         'raw_data' => $rawText,
-
                                         'file_id' => $fileId,
                                         'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
                                         'date' => date('Y-m-d H:i:s')
