@@ -336,7 +336,6 @@ function processUpdates($updates, $token)
                                         'vat_tin' => $ocrResult['vatTin'],
                                         'msg_id' => $messageId,
                                         'raw_data' => $rawText,
-
                                         'file_id' => $fileId,
                                         'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
                                         'date' => date('Y-m-d H:i:s')
