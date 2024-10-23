@@ -592,3 +592,4 @@ function showLocationSharing($chatId, $token, $language)
 }
 
 include __DIR__ . '/../includes/functions/polling.php';
+
