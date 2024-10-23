@@ -16,3 +16,11 @@
 ::1 - - [23/Oct/2024:08:29:37 +0700] "GET /favicon.ico HTTP/1.1" 404 196
 ::1 - - [23/Oct/2024:08:34:18 +0700] "GET /index.php HTTP/1.1" 200 52
 >>>>>>> 7a31d02685dba72a74e9088ecca6380c54d12edc
+::1 - - [23/Oct/2024:09:33:15 +0700] "GET / HTTP/1.1" 200 -
+::1 - - [23/Oct/2024:09:33:41 +0700] "GET / HTTP/1.1" 200 677
+::1 - - [23/Oct/2024:09:33:47 +0700] "GET /app/ HTTP/1.1" 200 554
+::1 - - [23/Oct/2024:09:33:49 +0700] "GET /app/Localization/ HTTP/1.1" 200 334
+::1 - - [23/Oct/2024:09:33:52 +0700] "GET /app/Config/ HTTP/1.1" 200 412
+::1 - - [23/Oct/2024:09:33:57 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
+::1 - - [23/Oct/2024:09:33:58 +0700] "GET /app/Handlers/ComandHandlers.php HTTP/1.1" 200 9692
+::1 - - [23/Oct/2024:09:35:51 +0700] "GET /app/Handlers/ComandHandlers.php HTTP/1.1" 200 1403
