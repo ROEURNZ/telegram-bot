@@ -73,54 +73,58 @@ function processUpdates($updates, $token)
                     // Update the user's language in the database
                     $ezzeModel->updateUserLanguage($chatId, $language);
 
-                    // Update language setting and respond based on session flag
-                    if (isset($_SESSION['is_changing_language']) && $_SESSION['is_changing_language']) {
-                        // Language change process is active
-                        $responseText = $language === 'en' ? "Language set to English" : "អ្នកបានកំណត់ជាភាសាខ្មែរ";
-                        sendMessage($chatId, $responseText, $token);
-                        unset($_SESSION['is_changing_language']); // Reset the flag
-                    } else {
-                        // Regular language selection
-                        $responseText = $language === 'en' ? "You have selected English" : "អ្នកបានជ្រើសរើសភាសាខ្មែរ";
-                        sendMessage($chatId, $responseText, $token);
-
-                        // If not part of the `/change_language`, proceed to prompt for contact or image
-                        if ($ezzeModel->tgUsername($userId) === null) {
-                            // Prompt user to share contact if not already done
-                            showContactSharing($chatId, $token, $language);
-                        } else {
-                            // Ask user to upload a barcode or QR code
-                            sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
-                        }
-                    }
-
-                    // Set language selection flag if not set
-                    if (!isset($_SESSION['language_selected'])) {
-                        $_SESSION['language_selected'] = true;
-                    }
-
-                    // Update available commands based on the selected language
+                    sendMessage($chatId, $messages[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
                     setCommands($token, $currentMessages);
 
+                    if ($ezzeModel->tgUsername($userId) === null) {
+
+                        showContactSharing($chatId, $token, $language);
+                    } else {
+                        sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
+                    }
                     continue;
                 }
 
                 // Handle /change_language command
                 if ($userCommand === '/change_language') {
-                    // Set a session flag to track the language change process
-                    $_SESSION['is_changing_language'] = true;
-
                     // Check if user exists in the database
                     if (!$ezzeModel->checkUserExists($userId)) {
-                        // User does not exist, ask them to share their contact
-                        showContactSharing($chatId, $token, $language);
+                        // User does not exist, check if user language is set
+                        if ($ezzeModel->getUserLanguage($chatId)) {
+                            // Show language options
+                            $replyMarkup = json_encode([
+                                'keyboard' => [
+                                    [
+                                        ['text' => $messages['en']['language_option']],
+                                        ['text' => $messages['kh']['language_option']]
+                                    ]
+                                ],
+                                'resize_keyboard' => true,
+                                'one_time_keyboard' => true,
+                            ]);
+
+                            // Prompt user to choose a language
+                            sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
+                        } else {
+                            // User exists but has no language set, show contact sharing
+                            showContactSharing($chatId, $token, $language);
+                        }
                     } else {
-                        // User exists, ask them to choose a language
+                        // User exists, update the user's language in the database
+                        $ezzeModel->updateUserLanguage($chatId, $language);
+
+                        // Provide the option to change language
                         $replyMarkup = json_encode([
                             'keyboard' => [
                                 [
-                                    ['text' => $messages['en']['language_option']],
-                                    ['text' => $messages['kh']['language_option']]
+                                    [
+                                        'text' => $messages['en']['language_option'],
+                                        'callback_data' => 'en'
+                                    ],
+                                    [
+                                        'text' => $messages['kh']['language_option'],
+                                        'callback_data' => 'kh'
+                                    ]
                                 ]
                             ],
                             'resize_keyboard' => true,
@@ -129,47 +133,44 @@ function processUpdates($updates, $token)
 
                         sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
                     }
-                    continue;
                 }
 
 
-
-
                 // Handle /share_contact command only if language is selected
-                // if ($userCommand === '/share_contact') {
-                //     // Check if the user exists
-                //     if (!$ezzeModel->checkUserExists($userId)) {
-                //         // If the user doesn't exist, show contact sharing prompt
-                //         showContactSharing($chatId, $token, $language);
-                //         setCommands($token, $currentMessages);
-                //     } else {
-                //         // If the user exists
-                //         if (!$ezzeModel->hasSelectedLanguage($userId)) {
-                //             // If the language is not set, prompt the user to select a language
-                //             sendMessage($chatId, $messages['en']['please_select_language'], $token);
-                //         } else {
-                //             // If the user has a selected language, update user details
-                //             $params = [
-                //                 'chat_id' => $chatId,
-                //                 'msg_id' => $messageId,
-                //                 'first_name' => $firstName,
-                //                 'last_name' => $lastName,
-                //                 'username' => $username,
-                //                 'phone_number' => $phoneNumber,
-                //                 'date' => date('Y-m-d H:i:s'),
-                //                 'language' => $language
-                //             ];
+                if ($userCommand === '/share_contact') {
+                    // Check if the user exists
+                    if (!$ezzeModel->checkUserExists($userId)) {
+                        // If the user doesn't exist, show contact sharing prompt
+                        showContactSharing($chatId, $token, $language);
+                        setCommands($token, $currentMessages);
+                    } else {
+                        // If the user exists
+                        if (!$ezzeModel->hasSelectedLanguage($userId)) {
+                            // If the language is not set, prompt the user to select a language
+                            sendMessage($chatId, $messages['en']['please_select_language'], $token);
+                        } else {
+                            // If the user has a selected language, update user details
+                            $params = [
+                                'chat_id' => $chatId,
+                                'msg_id' => $messageId,
+                                'first_name' => $firstName,
+                                'last_name' => $lastName,
+                                'username' => $username,
+                                'phone_number' => $phoneNumber,
+                                'date' => date('Y-m-d H:i:s'),
+                                'language' => $language
+                            ];
 
-                //             // Update the user's language if it has changed
-                //             if ($ezzeModel->getUserLanguage($chatId) !== $language) {
-                //                 $ezzeModel->updateUserLanguage($userId, $language);
-                //             }
+                            // Update the user's language if it has changed
+                            if ($ezzeModel->getUserLanguage($chatId) !== $language) {
+                                $ezzeModel->updateUserLanguage($userId, $language);
+                            }
 
-                //             // Update user details
-                //             $ezzeModel->updateUser($params);
-                //         }
-                //     }
-                // }
+                            // Update user details
+                            $ezzeModel->updateUser($params);
+                        }
+                    }
+                }
 
 
                 // Handle /decode command only if the user's contact is registered
@@ -201,20 +202,20 @@ function processUpdates($updates, $token)
                 }
 
                 // Handle /share_location command
-                // if ($userCommand === '/share_location') {
-                //     // Check if user is validated
-                //     if ($ezzeModel->checkUserExists($userId)) {
-                //         // Check if user has completed the decode
-                //         if ($ezzeModel->hasCompletedDecode($userId)) {
-                //             setCommands($token, $currentMessages);
-                //             sendMessage($chatId, $messages[$language]['location_prompt'], $token);
-                //         } else {
-                //             sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
-                //         }
-                //     } else {
-                //         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                //     }
-                // }
+                if ($userCommand === '/share_location') {
+                    // Check if user is validated
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        // Check if user has completed the decode
+                        if ($ezzeModel->hasCompletedDecode($userId)) {
+                            setCommands($token, $currentMessages);
+                            sendMessage($chatId, $messages[$language]['location_prompt'], $token);
+                        } else {
+                            sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
+                        }
+                    } else {
+                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    }
+                }
 
                 if ($userCommand === '/menu') {
                     // Check if the user exists in the database (registered by sharing contact)
@@ -324,7 +325,7 @@ function processUpdates($updates, $token)
                                 $ocrResult = processInvoiceImage($localFilePath);
                                 $_SESSION['imageType'][$chatId] = 'invoice';
                                 $rawText = $ocrResult['text'];
-
+                                
                                 // Check if VAT-TIN was extracted
                                 if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
                                     // Save the extracted VAT-TIN to session
@@ -589,3 +590,4 @@ function showLocationSharing($chatId, $token, $language)
 }
 
 include __DIR__ . '/../includes/functions/polling.php';
+

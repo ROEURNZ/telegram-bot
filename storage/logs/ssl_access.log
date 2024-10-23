@@ -24,3 +24,11 @@
 ::1 - - [23/Oct/2024:09:33:57 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
 ::1 - - [23/Oct/2024:09:33:58 +0700] "GET /app/Handlers/ComandHandlers.php HTTP/1.1" 200 9692
 ::1 - - [23/Oct/2024:09:35:51 +0700] "GET /app/Handlers/ComandHandlers.php HTTP/1.1" 200 1403
+::1 - - [23/Oct/2024:10:33:26 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
+::1 - - [23/Oct/2024:11:09:30 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
+::1 - - [23/Oct/2024:11:15:32 +0700] "GET /app/ HTTP/1.1" 200 512
+::1 - - [23/Oct/2024:11:15:34 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
+::1 - - [23/Oct/2024:11:35:17 +0700] "GET /app/ HTTP/1.1" 200 512
+::1 - - [23/Oct/2024:11:35:18 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
+::1 - - [23/Oct/2024:11:52:41 +0700] "GET /app/ HTTP/1.1" 200 512
+::1 - - [23/Oct/2024:11:52:42 +0700] "GET /app/Handlers/ HTTP/1.1" 200 294
