@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 $config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 include __DIR__ . '/../Config/dynDirs.php';
 
-set_time_limit(0); 
+set_time_limit(0);
 session_start();
 
 date_default_timezone_set("Asia/Phnom_Penh");
@@ -57,7 +57,7 @@ function sendMessage($chatId, $message, $token, $replyMarkup = null)
 
 // Retrieve the selected language from the session or use a default
 $chatId = isset($_SESSION['currentChatId']) ? $_SESSION['currentChatId'] : null;
-$language = isset($_SESSION['userLanguages'][$chatId]) ? $_SESSION['userLanguages'][$chatId] : 'en'; 
+$language = isset($_SESSION['userLanguages'][$chatId]) ? $_SESSION['userLanguages'][$chatId] : 'en';
 
 // Get messages based on the selected language
 $currentMessages = $messages[$language];
@@ -65,13 +65,14 @@ $currentMessages = $messages[$language];
 
 
 // Function to set Telegram bot commands
-function setCommands($token, $messages) {
+function setCommands($token, $messages)
+{
     // Prepare commands array in the format required by Telegram API
     $commandsToSet = [
         ['command' => 'start', 'description' => $messages['start_desc']],
         ['command' => 'share_contact', 'description' => $messages['share_contact_desc']],
         ['command' => 'decode', 'description' => $messages['decode_desc']],
-        ['command' => 'ocr', 'description' => $messages['ocr_desc']], 
+        ['command' => 'ocr', 'description' => $messages['ocr_desc']],
         ['command' => 'share_location', 'description' => $messages['share_location_desc']],
         ['command' => 'help', 'description' => $messages['help_desc']],
         ['command' => 'menu', 'description' => $messages['menu_desc']],
@@ -86,13 +87,13 @@ function setCommands($token, $messages) {
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data)); 
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
     // Execute the request and check for errors
     $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     if ($response === false || $httpCode !== 200) {
         echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
     } else {
