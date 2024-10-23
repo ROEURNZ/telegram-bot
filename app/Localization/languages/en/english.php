@@ -89,11 +89,12 @@ return $messages = [
     // Commands Descriptions
 
     'start_desc' => "Click on /start command to begin the bot.",
-    'share_contact_desc' => "Share your contact.",
+    // 'share_contact_desc' => "Share your contact.",
     'decode_desc' => "Decode a barcode or QR code.",
     'ocr_desc'  => "Extract VAT-TIN from an image",
-    'share_location_desc' => "Share your location.",
+    'change_language_desc' => "Change the language.",
+    // 'share_location_desc' => "Share your location.",
     'help_desc' => "Get help.",  
     'menu_desc' => "Open the menu.",
-    'change_language_desc' => "Change the language.",
+    
 ];

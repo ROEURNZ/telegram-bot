@@ -1,5 +1,6 @@
 <?php
 
+// backend/app/include/function/OCRFunction.php
 
 /**
  * Processes an invoice image using OCR to extract text and identify VAT-TIN.
@@ -7,18 +8,17 @@
  * @param string $filePath The file path to the image.
  * @return array Contains extracted text and VAT-TIN, or error message if OCR fails.
  */
-use thiagoalessio\TesseractOCR\TesseractOCR;
-
 function processInvoiceImage($filePath)
 {
-    // Using Tesseract OCR through the PHP wrapper
-    try {
-        $ocr = (new TesseractOCR($filePath))->run();
-    } catch (Exception $e) {
-        return ['error' => 'OCR execution failed: ' . $e->getMessage()];
+    // Assuming you're using Tesseract OCR
+    $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout";
+    $ocrOutput = shell_exec($ocrCmd);
+
+    if ($ocrOutput === null) {
+        return ['error' => 'OCR execution failed'];
     }
 
-    $text = trim($ocr);
+    $text = trim($ocrOutput);
     if (empty($text)) {
         return ['error' => 'No text found in image'];
     }

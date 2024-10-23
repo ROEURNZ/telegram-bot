@@ -10,7 +10,8 @@ session_start();
 date_default_timezone_set("Asia/Phnom_Penh");
 $offset = 0;
 
-$botApiUr = "https://api.telegram.org/bot{$token}/";
+
+$botApiUrl = "https://api.telegram.org/bot{$token}/";
 
 // Load localization files
 $messages = [
@@ -19,6 +20,7 @@ $messages = [
 ];
 
 include __DIR__ . $n1 . '/Localization/dateformat/dateFormat.php';
+// require_once __DIR__ . $x1 . '/Commands/SystemCommand.php';
 
 include __DIR__ . '/../Models/EzzeModel.php';
 
@@ -76,7 +78,7 @@ function setCommands($token, $messages)
         ['command' => 'share_location', 'description' => $messages['share_location_desc']],
         ['command' => 'help', 'description' => $messages['help_desc']],
         ['command' => 'menu', 'description' => $messages['menu_desc']],
-        ['command' => 'change_language', 'description' => $messages['change_language_desc']],
+        
     ];
 
     // Prepare the data for the API call
