@@ -71,13 +71,14 @@ function setCommands($token, $messages) {
     // Prepare commands array in the format required by Telegram API
     $commandsToSet = [
         ['command' => 'start', 'description' => $messages['start_desc']],
-        ['command' => 'share_contact', 'description' => $messages['share_contact_desc']],
+        // ['command' => 'share_contact', 'description' => $messages['share_contact_desc']],
         ['command' => 'decode', 'description' => $messages['decode_desc']],
         ['command' => 'ocr', 'description' => $messages['ocr_desc']], 
-        ['command' => 'share_location', 'description' => $messages['share_location_desc']],
+        ['command' => 'change_language', 'description' => $messages['change_language_desc']],
+        // ['command' => 'share_location', 'description' => $messages['share_location_desc']],
         ['command' => 'help', 'description' => $messages['help_desc']],
         ['command' => 'menu', 'description' => $messages['menu_desc']],
-        ['command' => 'change_language', 'description' => $messages['change_language_desc']],
+        
     ];
 
     // Prepare the data for the API call
