@@ -329,6 +329,19 @@ function processUpdates($updates, $token)
                                     if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
                                         $_SESSION['decodedBarcodes'][$chatId] = [];
                                     }
+
+                                    // Check if the current barcode has already been processed to avoid duplicates
+                                    $isDuplicate = false;
+                                    foreach ($_SESSION['decodedBarcodes'][$chatId] as $existingBarcode) {
+                                        if ($existingBarcode['code'] === $decodedBarcodeData['code']) {
+                                            $isDuplicate = true;
+                                            break;
+                                        }
+                                    }
+
+                                    if (!$isDuplicate) {
+                                        $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+                                    }
                                     $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
