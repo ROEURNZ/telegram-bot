@@ -82,7 +82,7 @@ function processUpdates($updates, $token)
                     } else {
                         // Regular language selection
                         $responseText = $language === 'en' ? "You have selected English" : "អ្នកបានជ្រើសរើសភាសាខ្មែរ";
-                        sendMessage($chatId, $responseText, $token);
+                        sendMessage($chatId, $responseText, $token, json_encode(['remove_keyboard' => true]));
 
                         // If not part of the `/change_language`, proceed to prompt for contact or image
                         if ($ezzeModel->tgUsername($userId) === null) {
@@ -98,12 +98,6 @@ function processUpdates($updates, $token)
                     if (!isset($_SESSION['language_selected'])) {
                         $_SESSION['language_selected'] = true;
                     }
-
-                    // Hide language option keyboard by sending an empty keyboard
-                    $emptyKeyboard = json_encode([
-                        'remove_keyboard' => true,
-                    ]);
-                    sendMessage($chatId, " ", $token, $emptyKeyboard); // Send an empty message with the keyboard to remove it
 
                     // Update available commands based on the selected language
                     setCommands($token, $currentMessages);
@@ -137,9 +131,6 @@ function processUpdates($updates, $token)
                     }
                     continue;
                 }
-
-
-
 
 
                 // Handle /share_contact command only if language is selected
@@ -208,20 +199,20 @@ function processUpdates($updates, $token)
                 }
 
                 // Handle /share_location command
-                // if ($userCommand === '/share_location') {
-                //     // Check if user is validated
-                //     if ($ezzeModel->checkUserExists($userId)) {
-                //         // Check if user has completed the decode
-                //         if ($ezzeModel->hasCompletedDecode($userId)) {
-                //             setCommands($token, $currentMessages);
-                //             sendMessage($chatId, $messages[$language]['location_prompt'], $token);
-                //         } else {
-                //             sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
-                //         }
-                //     } else {
-                //         sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                //     }
-                // }
+                if ($userCommand === '/share_location') {
+                    // Check if user is validated
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        // Check if user has completed the decode
+                        if ($ezzeModel->hasCompletedDecode($userId)) {
+                            setCommands($token, $currentMessages);
+                            sendMessage($chatId, $messages[$language]['location_prompt'], $token);
+                        } else {
+                            sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
+                        }
+                    } else {
+                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    }
+                }
 
                 if ($userCommand === '/menu') {
                     // Check if the user exists in the database (registered by sharing contact)
@@ -323,42 +314,7 @@ function processUpdates($updates, $token)
                         file_put_contents($localFilePath, $downloadedImage);
 
                         // Check the current command and process the image accordingly
-                        if ($_SESSION['currentCommand'][$chatId] === 'ocr') {
-                            // Check if the uploaded image is an invoice
-                            if (isInvoiceImage($localFilePath)) {
-                                // Process the invoice image
-                                require_once __DIR__ . '/../includes/functions/OCRFunction.php';
-                                $ocrResult = processInvoiceImage($localFilePath);
-                                $_SESSION['imageType'][$chatId] = 'invoice';
-                                $rawText = $ocrResult['text'];
-
-                                // Check if VAT-TIN was extracted
-                                if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
-                                    // Save the extracted VAT-TIN to session
-                                    $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
-
-                                    $ocrData = [
-                                        'user_id' => $userId,
-                                        'vat_tin' => $ocrResult['vatTin'],
-                                        'msg_id' => $messageId,
-                                        'raw_data' => $rawText,
-                                        'file_id' => $fileId,
-                                        'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
-                                        'date' => date('Y-m-d H:i:s')
-                                    ];
-
-                                    // Save OCR data to database
-                                    $ezzeModel->addOcrData($ocrData);
-                                    // Send the location request message along with the keyboard
-                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                } else {
-                                    sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
-                                }
-                            } else {
-                                // Handle unsupported image type for OCR
-                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
-                            }
-                        } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
+                        if ($_SESSION['currentCommand'][$chatId] === 'decode') {
                             // Check if the uploaded image is a barcode/QR code
                             if (isBarcodeImage($localFilePath)) {
                                 // Process the barcode image
@@ -405,6 +361,42 @@ function processUpdates($updates, $token)
                                 }
                             } else {
                                 // Handle unsupported image type for decoding
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                            }
+                        }
+                        if ($_SESSION['currentCommand'][$chatId] === 'ocr') {
+                            // Check if the uploaded image is an invoice
+                            if (isInvoiceImage($localFilePath)) {
+                                // Process the invoice image
+                                require_once __DIR__ . '/../includes/functions/OCRFunction.php';
+                                $ocrResult = processInvoiceImage($localFilePath);
+                                $_SESSION['imageType'][$chatId] = 'invoice';
+                                $rawText = $ocrResult['text'];
+
+                                // Check if VAT-TIN was extracted
+                                if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
+                                    // Save the extracted VAT-TIN to session
+                                    $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
+
+                                    $ocrData = [
+                                        'user_id' => $userId,
+                                        'vat_tin' => $ocrResult['vatTin'],
+                                        'msg_id' => $messageId,
+                                        'raw_data' => $rawText,
+                                        'file_id' => $fileId,
+                                        'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
+                                        'date' => date('Y-m-d H:i:s')
+                                    ];
+
+                                    // Save OCR data to database
+                                    $ezzeModel->addOcrData($ocrData);
+                                    // Send the location request message along with the keyboard
+                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                } else {
+                                    sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
+                                }
+                            } else {
+                                // Handle unsupported image type for OCR
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
@@ -480,7 +472,8 @@ function processUpdates($updates, $token)
                     // Format the current date and time
                     $formattedDate = formatDate($language);
                     $formattedTime = formatTime($language);
-
+                    // $dateTime = getDateTime($language);
+                    // echo "Current Date and Time: " . $dateTime;
                     // Prepare the Google Maps URL
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
@@ -503,17 +496,9 @@ function processUpdates($updates, $token)
                         }
                     }
 
-                    // Get all barcode_ids from the session
-                    $barcodeIds = array_column($decodedBarcodes, 'id'); // Extract all barcode IDs
-                    $barcodeIdList = implode(',', $barcodeIds); // Create a comma-separated string of IDs
-
-                    $ocrId = $_SESSION['extractedVatTin'][$chatId] ?? null; // Get the OCR ID from session if applicable
-
                     // Save location data to the database
                     $params = [
                         'user_id' => $userId,
-                        'barcode_id' => $barcodeIdList, // Store all barcode IDs as a string
-                        'ocr_id' => $ocrId,
                         'lat' => $latitude,
                         'lon' => $longitude,
                         'location_url' => $locationUrl,
