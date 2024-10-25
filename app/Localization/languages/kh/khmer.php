@@ -91,7 +91,7 @@ return $langBase = [
     // commands
     'start_desc' => "សូមចុចលើពាក្យ /start ដើម្បីចាប់ផ្ដើម។",
     // 'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
-    'decode_desc' => "ដកស្រង់អត្ថបទពីកូដបារ៉ូដ ឬកូដ QR",
+    'decode_desc' => "ដកស្រង់អត្ថបទពីបាកូដ ឬកូដ QR",
     'ocr_desc'  => "ស្រង់ VAT-TIN ចេញពីរូបភាព",
     'change_language_desc' => "ប្ដូរភាសា",
     // 'share_location_desc' => "ចែករំលែកទីតាំងរបស់អ្នក",

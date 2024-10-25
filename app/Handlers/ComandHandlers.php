@@ -314,69 +314,6 @@ function processUpdates($updates, $token)
                         file_put_contents($localFilePath, $downloadedImage);
 
                         // Check the current command and process the image accordingly
-                        if ($_SESSION['currentCommand'][$chatId] === 'decode') {
-                            // Check if the uploaded image is a barcode/QR code
-                            if (isBarcodeImage($localFilePath)) {
-                                // Process the barcode image
-                                require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
-                                $decodedBarcodeData = processBarcodeImage($localFilePath);
-
-                                if (isset($decodedBarcodeData['code'])) {
-                                    $code = $decodedBarcodeData['code'];
-                                    $type = $decodedBarcodeData['type'];
-
-                                    // Save decoded barcode to session
-                                    if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
-                                        $_SESSION['decodedBarcodes'][$chatId] = [];
-                                    }
-
-                                    // Check if the current barcode has already been processed to avoid duplicates
-                                    $isDuplicate = false;
-                                    foreach ($_SESSION['decodedBarcodes'][$chatId] as $existingBarcode) {
-                                        if ($existingBarcode['code'] === $decodedBarcodeData['code']) {
-                                            $isDuplicate = true;
-                                            break;
-                                        }
-                                    }
-
-                                    if (!$isDuplicate) {
-                                        $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
-                                    }
-                                    $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
-                                    $_SESSION['imageType'][$chatId] = 'barcode';
-
-                                    // Insert the barcode record into the database
-
-                                    $ezzeModel->addBarcode([
-                                        'user_id' => $userId,
-                                        'type' => $type,
-                                        'code' => $code,
-                                        'msg_id' => $messageId,
-                                        'file_id' => $fileId,
-                                        'file_unique_id' => $fileUniqueId,
-                                        'decoded_status' => 1,
-                                    ]);
-
-
-                                    // Ask for location sharing if this is the first barcode scanned
-                                    if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
-                                        json_encode([
-                                            'resize_keyboard' => true,
-                                            'one_time_keyboard' => true,
-                                        ]);
-
-                                        // Send the location request message along with the keyboard
-                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                    }
-                                } else {
-                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
-                                    // return;  // Exit silently if barcode decoding fails
-                                }
-                            } else {
-                                // Handle unsupported image type for decoding
-                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
-                            }
-                        }
                         if ($_SESSION['currentCommand'][$chatId] === 'ocr') {
                             // Check if the uploaded image is an invoice
                             if (isInvoiceImage($localFilePath)) {
@@ -410,6 +347,55 @@ function processUpdates($updates, $token)
                                 }
                             } else {
                                 // Handle unsupported image type for OCR
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                            }
+                        } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
+                            // Check if the uploaded image is a barcode/QR code
+                            if (isBarcodeImage($localFilePath)) {
+                                // Process the barcode image
+                                require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
+                                $decodedBarcodeData = processBarcodeImage($localFilePath);
+
+                                if (isset($decodedBarcodeData['code'])) {
+                                    $code = $decodedBarcodeData['code'];
+                                    $type = $decodedBarcodeData['type'];
+
+                                    // Save decoded barcode to session
+                                    if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
+                                        $_SESSION['decodedBarcodes'][$chatId] = [];
+                                    }
+                                    $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+                                    $_SESSION['imageType'][$chatId] = 'barcode';
+
+                                    // Insert the barcode record into the database
+
+                                    $ezzeModel->addBarcode([
+                                        'user_id' => $userId,
+                                        'type' => $type,
+                                        'code' => $code,
+                                        'msg_id' => $messageId,
+                                        'file_id' => $fileId,
+                                        'file_unique_id' => $fileUniqueId,
+                                        'decoded_status' => 1,
+                                    ]);
+
+
+                                    // Ask for location sharing if this is the first barcode scanned
+                                    if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                        json_encode([
+                                            'resize_keyboard' => true,
+                                            'one_time_keyboard' => true,
+                                        ]);
+
+                                        // Send the location request message along with the keyboard
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                    }
+                                } else {
+                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    // return;  // Exit silently if barcode decoding fails
+                                }
+                            } else {
+                                // Handle unsupported image type for decoding
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
