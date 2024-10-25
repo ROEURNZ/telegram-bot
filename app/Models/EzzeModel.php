@@ -177,73 +177,73 @@ class EzzeModels
     /**-----------------------------------------------Register the USERS --------------------------------------------------- */
 
     function registerUsers($params)
-{
-    // Check if the user already exists based on unique fields (user_id, username, or phone_number)
-    $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username OR phone_number = :phone_number";
-    $checkStmt = $this->pdo->prepare($checkSql);
-    $checkStmt->execute([
-        ':user_id' => $params['user_id'],
-        ':username' => $params['username'],
-        ':phone_number' => $params['phone_number']
-    ]);
-    
-    // If a record already exists, return an error message
-    if ($checkStmt->fetchColumn() > 0) {
-        return "Error: User already exists.";
-    }
+    {
+        // Check if the user already exists based on unique fields (user_id, username, or phone_number)
+        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username OR phone_number = :phone_number";
+        $checkStmt = $this->pdo->prepare($checkSql);
+        $checkStmt->execute([
+            ':user_id' => $params['user_id'],
+            ':username' => $params['username'],
+            ':phone_number' => $params['phone_number']
+        ]);
 
-    // SQL statement for inserting a new user
-    $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
+        // If a record already exists, return an error message
+        if ($checkStmt->fetchColumn() > 0) {
+            return "Error: User already exists.";
+        }
+
+        // SQL statement for inserting a new user
+        $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
             VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
 
-    // Prepare the statement
-    $stmt = $this->pdo->prepare($sql);
+        // Prepare the statement
+        $stmt = $this->pdo->prepare($sql);
 
-    // Execute the statement with parameters
-    return $stmt->execute([
-        ':user_id' => $params['user_id'],
-        ':chat_id' => $params['chat_id'],
-        ':msg_id' => $params['msg_id'],
-        ':first_name' => $params['first_name'],
-        ':last_name' => $params['last_name'],
-        ':username' => $params['username'],
-        ':phone_number' => $params['phone_number'],
-        ':date' => $params['date'],
-        ':language' => $params['language']
-    ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
-}
-
-
-function updateUser($params)
-{
-    // Check if the user exists by user_id
-    $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
-    $checkStmt = $this->pdo->prepare($checkSql);
-    $checkStmt->execute([':user_id' => $params['user_id']]);
-    
-    // If the user does not exist, return an error message
-    if ($checkStmt->fetchColumn() == 0) {
-        return "Error: User not found.";
+        // Execute the statement with parameters
+        return $stmt->execute([
+            ':user_id' => $params['user_id'],
+            ':chat_id' => $params['chat_id'],
+            ':msg_id' => $params['msg_id'],
+            ':first_name' => $params['first_name'],
+            ':last_name' => $params['last_name'],
+            ':username' => $params['username'],
+            ':phone_number' => $params['phone_number'],
+            ':date' => $params['date'],
+            ':language' => $params['language']
+        ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
     }
 
-    // Check for unique constraints on username and phone_number (ignore current user's values)
-    $uniqueCheckSql = "SELECT COUNT(*) FROM `user_profiles` 
+
+    function updateUser($params)
+    {
+        // Check if the user exists by user_id
+        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
+        $checkStmt = $this->pdo->prepare($checkSql);
+        $checkStmt->execute([':user_id' => $params['user_id']]);
+
+        // If the user does not exist, return an error message
+        if ($checkStmt->fetchColumn() == 0) {
+            return "Error: User not found.";
+        }
+
+        // Check for unique constraints on username and phone_number (ignore current user's values)
+        $uniqueCheckSql = "SELECT COUNT(*) FROM `user_profiles` 
                        WHERE (username = :username OR phone_number = :phone_number) 
                        AND user_id != :user_id";
-    $uniqueCheckStmt = $this->pdo->prepare($uniqueCheckSql);
-    $uniqueCheckStmt->execute([
-        ':username' => $params['username'],
-        ':phone_number' => $params['phone_number'],
-        ':user_id' => $params['user_id']
-    ]);
+        $uniqueCheckStmt = $this->pdo->prepare($uniqueCheckSql);
+        $uniqueCheckStmt->execute([
+            ':username' => $params['username'],
+            ':phone_number' => $params['phone_number'],
+            ':user_id' => $params['user_id']
+        ]);
 
-    // If another user with the same username or phone number exists, return an error
-    if ($uniqueCheckStmt->fetchColumn() > 0) {
-        return "Error: Username or phone number already exists.";
-    }
+        // If another user with the same username or phone number exists, return an error
+        if ($uniqueCheckStmt->fetchColumn() > 0) {
+            return "Error: Username or phone number already exists.";
+        }
 
-    // SQL statement for updating an existing user
-    $updateSql = "UPDATE `user_profiles` 
+        // SQL statement for updating an existing user
+        $updateSql = "UPDATE `user_profiles` 
                   SET chat_id = :chat_id, 
                       msg_id = :msg_id, 
                       first_name = :first_name, 
@@ -254,23 +254,23 @@ function updateUser($params)
                       language = :language 
                   WHERE user_id = :user_id";
 
-    // Prepare the statement
-    $stmt = $this->pdo->prepare($updateSql);
+        // Prepare the statement
+        $stmt = $this->pdo->prepare($updateSql);
 
-    // Execute the statement with parameters
-    return $stmt->execute([
-        ':user_id' => $params['user_id'],
-        ':chat_id' => $params['chat_id'],
-        ':msg_id' => $params['msg_id'],
-        ':first_name' => $params['first_name'],
-        ':last_name' => $params['last_name'],
-        ':username' => $params['username'],
-        ':phone_number' => $params['phone_number'],
-        ':date' => $params['date'],
-        ':language' => $params['language']
+        // Execute the statement with parameters
+        return $stmt->execute([
+            ':user_id' => $params['user_id'],
+            ':chat_id' => $params['chat_id'],
+            ':msg_id' => $params['msg_id'],
+            ':first_name' => $params['first_name'],
+            ':last_name' => $params['last_name'],
+            ':username' => $params['username'],
+            ':phone_number' => $params['phone_number'],
+            ':date' => $params['date'],
+            ':language' => $params['language']
 
-    ]) ? "User updated successfully." : "Error: " . $stmt->errorInfo()[2];
-}
+        ]) ? "User updated successfully." : "Error: " . $stmt->errorInfo()[2];
+    }
 
 
     // Function to check if the user has selected a language
@@ -429,7 +429,7 @@ function updateUser($params)
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
 
-        $stmt->execute(); 
+        $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
 
@@ -531,24 +531,39 @@ function updateUser($params)
 
     public function addOcrData($params)
     {
+
+        // Check if the barcode already exists
+        if ($this->ocrExists($params['vat_tin'])) {
+            return "Error: Ocr already exists.";
+        }
         $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, raw_data, file_id, status, date) 
                 VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':vat_tin', $params['vat_tin']);
+        $stmt->bindParam(':vat_tin', $params['vat_tin'], PDO::PARAM_STR);
         $stmt->bindParam(':msg_id', $params['msg_id']);
         $stmt->bindParam(':raw_data', $params['text']);
         $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
         $stmt->bindParam(':status', $params['status']);
         $stmt->bindParam(':date', $params['date']);
-        
+
         if ($stmt->execute()) {
             return "OCR data inserted successfully.";
         } else {
             error_log("Database error: " . implode(", ", $stmt->errorInfo())); // Log the error
             return "Error: " . $stmt->errorInfo()[2];
         }
+    }
+
+    // Function to check if a barcode exists
+    public function ocrExists($vatTin)
+    {
+        $sql = "SELECT COUNT(*) FROM `ocr` WHERE vat_tin = :vat_tin";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':vat_tin', $vatTin, PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchColumn() > 0;
     }
 
 
@@ -571,8 +586,4 @@ function updateUser($params)
             return "Error updating OCR location";
         }
     }
-
-    
-
-
 }
