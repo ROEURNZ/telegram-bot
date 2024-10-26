@@ -21,7 +21,7 @@ function processUpdates($updates, $token)
             $lastName = $update['message']['from']['last_name'] ?? '';
             $username = $update['message']['from']['username'] ?? '';
             $messageId = $update['message']['message_id'];
-            $phoneNumber = $update['message']['contact']['phone_number'];
+            // $phoneNumber = $update['message']['contact']['phone_number'];
 
             // Default language is English if not selected
             $language = $userLanguages[$chatId] ?? $ezzeModel->getUserLanguage($chatId) ?? 'en';
@@ -153,7 +153,7 @@ function processUpdates($updates, $token)
                                 'first_name' => $firstName,
                                 'last_name' => $lastName,
                                 'username' => $username,
-                                'phone_number' => $phoneNumber,
+                                'phone_number' => $update['message']['contact']['phone_number'],
                                 'date' => date('Y-m-d H:i:s'),
                                 'language' => $language
                             ];
