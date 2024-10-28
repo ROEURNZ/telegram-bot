@@ -15,7 +15,8 @@ function processUpdates($updates, $token)
 
     // $ezzeModel = new EzzeModels($pdo);
     foreach ($updates as $update) {
-        if (isset($update['message'])) {
+        if (isset($update['message']) || isset($update['message']['contact']) || isset($update['message']['location'])
+        || isset($update['message']['text']) || isset($update['message']['photo'])) {
             setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
             $userId = $update['message']['from']['id'];

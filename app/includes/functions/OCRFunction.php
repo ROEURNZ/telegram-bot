@@ -3,46 +3,60 @@
 // backend/app/include/function/OCRFunction.php
 
 /**
- * Processes an invoice image using OCR to extract text and identify VAT-TIN.
+ * Processes an invoice image using OCR to extract text and identify VAT-TIN, supporting Khmer and other languages.
  *
  * @param string $filePath The file path to the image.
  * @return array Contains extracted text and VAT-TIN, or error message if OCR fails.
  */
 function processInvoiceImage($filePath)
 {
-    // Assuming you're using Tesseract OCR
-    $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout";
+    // Specify Khmer and English languages in Tesseract
+    $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout -l khm+eng";
     $ocrOutput = shell_exec($ocrCmd);
 
     if ($ocrOutput === null) {
         return ['error' => 'OCR execution failed'];
     }
 
-    $text = trim($ocrOutput);
+    // Convert output to UTF-8 if it's not already
+    $text = mb_convert_encoding(trim($ocrOutput), 'UTF-8', 'auto');
     if (empty($text)) {
         return ['error' => 'No text found in image'];
     }
 
-    // Example of extracting VAT-TIN using regex
-    $vatTin = extractVatTin($text);
+    // Extract VAT-TIN using dynamic case identification
+    list($vatTin, $caseFormat) = extractVatTin($text);
 
     return [
         'text' => $text,
         'vatTin' => $vatTin,
+        'caseFormat' => $caseFormat,
     ];
 }
 
 /**
- * Extracts VAT-TIN information from text using regex.
+ * Extracts VAT-TIN information from text using regex with dynamic case format detection.
  *
  * @param string $text The text obtained from OCR processing.
- * @return string Extracted VAT-TIN or a message if VAT-TIN not found.
+ * @return array Contains extracted VAT-TIN and detected case format, or a message if not found.
  */
 function extractVatTin($text)
 {
-    // Regex to capture VAT-TIN pattern with letters, numbers, and optional dashes
-    preg_match('/VAT[-\s]?TIN\s*:\s*([A-Z0-9\-]+)/i', $text, $matches);
-    
-    // Return VAT-TIN if found; otherwise, return a 'not found' message
-    return isset($matches[1]) ? $matches[1] : 'VAT-TIN not found.';
+    // Patterns for different case formats
+    $patterns = [
+        'uppercase' => '/VAT[-\s]?TIN\s*:\s*([A-Z0-9\-]+)/',
+        'lowercase' => '/vat[-\s]?tin\s*:\s*([a-z0-9\-]+)/',
+        'capitalcase' => '/Vat[-\s]?Tin\s*:\s*([A-Z0-9\-]+)/',
+        'any_case' => '/VAT[-\s]?TIN\s*:\s*([A-Z0-9\-]+)/i'
+    ];
+
+    // Check each pattern and determine case format
+    foreach ($patterns as $caseFormat => $pattern) {
+        if (preg_match($pattern, $text, $matches)) {
+            return [$matches[1], ucfirst($caseFormat)];
+        }
+    }
+
+    // Return 'not found' if no pattern matched
+    return ['VAT-TIN not found.', null];
 }

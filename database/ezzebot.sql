@@ -3,8 +3,8 @@
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.3.29
 
-CREATE DATABASE IF NOT EXISTS ezzebot;
-USE IF EXISTS ezzebot;
+CREATE DATABASE IF NOT EXISTS  ezzebarcodedev;
+USE IF EXISTS  ezzebarcodedev;
 
 CREATE TABLE IF NOT EXISTS `user_profiles` (
   `id` int NOT NULL AUTO_INCREMENT,

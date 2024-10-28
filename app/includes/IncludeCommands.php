@@ -90,17 +90,17 @@ function setCommands($token, $messages) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-    // Execute the request and check for errors
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
-    if ($response === false || $httpCode !== 200) {
-        echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
-    } else {
-        echo "Commands set successfully: " . $response;
-    }
+    // // Execute the request and check for errors
+    // $response = curl_exec($ch);
+    // $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE); 
+    // if ($response === false || $httpCode !== 200) {
+    //     echo "Error setting commands: " . curl_error($ch) . " | HTTP Code: " . $httpCode;
+    // } else {
+    //     echo "Commands set successfully: " . $response;
+    // }
 
-    // Close the cURL session
-    curl_close($ch);
+    // // Close the cURL session
+    // curl_close($ch);
 }
 
 // Call the function to set commands every time the bot starts
