@@ -21,6 +21,7 @@ return $langBase = [
     'complete_previous_steps' => "សូមបញ្ចប់ជំហានជាមុនសិន មុនពេលស្កេនកូដ។",
 
     'upload_invoice' => 'សូមផ្ញើរូបភាព Invoice ដើម្បីស្រង់ VAT-TIN ចេញពីរូបភាព។',
+    'upload_mrz' => 'សូមផ្ញើរូបភាព ដើម្បីស្រង់ MRZ ចេញពីរូបភាព។',
 
     // Contact sharing
     'contact_prompt' => "សូមផ្ដល់ព័ត៌មានទំនាក់ទំនងរបស់អ្នក។",
@@ -28,7 +29,7 @@ return $langBase = [
 
     // Location sharing
     'location_prompt' => "សូមផ្ដល់ទីតាំងរបស់អ្នក។ នេះមានប្រសិទ្ធិភាពល្អបំផុតលើឧបករណ៍ចល័ត។",
-    'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
+    // 'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'decoded_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
     'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
@@ -90,11 +91,12 @@ return $langBase = [
 
     // commands
     'start_desc' => "សូមចុចលើពាក្យ /start ដើម្បីចាប់ផ្ដើម។",
-    // 'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
     'decode_desc' => "ដកស្រង់អត្ថបទពីបាកូដ ឬកូដ QR",
     'ocr_desc'  => "ស្រង់ VAT-TIN ចេញពីរូបភាព",
+    'mrz_desc'  => "ស្រង់ MRZ ចេញពីរូបភាព",
     'change_language_desc' => "ប្ដូរភាសា",
-    // 'share_location_desc' => "ចែករំលែកទីតាំងរបស់អ្នក",
+    'share_location_desc' => "ចែករំលែកទីតាំងរបស់អ្នក",
+    'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
     'help_desc' => "ទទួលបានជំនួយ",
     'menu_desc' => "បើកម៉ឺនុយ",
     

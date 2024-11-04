@@ -198,6 +198,19 @@ function processUpdates($updates, $token)
                     }
                 }
 
+                // Handle /mrz command only if the user's contact is registered
+                if ($userCommand === '/mrz') {
+                    // Check if the user's contact is registered in the database using the model
+                    if ($ezzeModel->checkUserExists($userId)) {
+                        // Proceed with OCR if contact is validated
+                        sendMessage($chatId, $messages[$language]['upload_mrz'], $token);
+                        $_SESSION['currentCommand'][$chatId] = 'mrz'; // Set the current command
+                    } else {
+                        // If contact is not registered, prompt the user to share contact first
+                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    }
+                }
+
                 // Handle /share_location command
                 if ($userCommand === '/share_location') {
                     // Check if user is validated
@@ -325,28 +338,69 @@ function processUpdates($updates, $token)
 
                                 // Check if VAT-TIN was extracted
                                 if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
-                                    // Save the extracted VAT-TIN to session
-                                    $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
+                                    // Check if VAT-TIN already extracted
+                                    if (!isset($_SESSION['extractedVatTin'][$chatId])) {
+                                        // Save the extracted VAT-TIN to session
+                                        $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
 
-                                    $ocrData = [
-                                        'user_id' => $userId,
-                                        'vat_tin' => $ocrResult['vatTin'],
-                                        'msg_id' => $messageId,
-                                        'raw_data' => $rawText,
-                                        'file_id' => $fileId,
-                                        'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
-                                        'date' => date('Y-m-d H:i:s')
-                                    ];
+                                        $ocrData = [
+                                            'user_id' => $userId,
+                                            'vat_tin' => $ocrResult['vatTin'],
+                                            'msg_id' => $messageId,
+                                            'raw_data' => $rawText,
+                                            'file_id' => $fileId,
+                                            'status' => 1, // Set initial status to 1 (e.g., VAT-TIN found)
+                                            'date' => date('Y-m-d H:i:s')
+                                        ];
 
-                                    // Save OCR data to database
-                                    $ezzeModel->addOcrData($ocrData);
-                                    // Send the location request message along with the keyboard
-                                    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        // Save OCR data to database
+                                        $ezzeModel->addOcrData($ocrData);
+                                        // Send the location request message along with the keyboard
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                    }
                                 } else {
                                     sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
                                 }
                             } else {
                                 // Handle unsupported image type for OCR
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                            }
+                        } elseif ($_SESSION['currentCommand'][$chatId] === 'mrz') {
+                            // Check if the uploaded image is an MRZ image
+                            if (isMrzImage($localFilePath)) {
+                                // Process the MRZ image
+                                require_once __DIR__ . '/../includes/functions/MRZFunction.php';
+                                $mrzResult = processMrzImage($localFilePath);
+                                $_SESSION['imageType'][$chatId] = 'mrz';
+
+                                // Debugging: Log the raw MRZ result for inspection
+                                error_log(print_r($mrzResult, true));
+
+                                if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
+                                    // Check if MRZ data already extracted
+                                    if (!isset($_SESSION['extractedMrz'][$chatId])) {
+                                        $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
+
+                                        // Insert the mrz record into the database
+                                        $ezzeModel->addMRZData([
+                                            'user_id' => $userId,
+                                            'mrz_line1' => $mrzResult['mrzData'][0] ?? '',
+                                            'mrz_line2' => $mrzResult['mrzData'][1] ?? '',
+                                            'mrz_line3' => $mrzResult['mrzData'][2] ?? '',
+                                            'msg_id' => $messageId,
+                                            'file_id' => $fileId,
+                                            'decoded_status' => 1,
+                                            'date' => date('Y-m-d H:i:s')
+                                        ]);
+
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                    }
+                                } else {
+                                    // Handle case where MRZ data is not found
+                                    sendMessage($chatId, $messages[$language]['require_mrz_image'], $token);
+                                }
+                            } else {
+                                // Handle unsupported image type for MRZ
                                 sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
@@ -368,7 +422,6 @@ function processUpdates($updates, $token)
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
                                     // Insert the barcode record into the database
-
                                     $ezzeModel->addBarcode([
                                         'user_id' => $userId,
                                         'type' => $type,
@@ -379,20 +432,13 @@ function processUpdates($updates, $token)
                                         'decoded_status' => 1,
                                     ]);
 
-
                                     // Ask for location sharing if this is the first barcode scanned
                                     if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
-                                        json_encode([
-                                            'resize_keyboard' => true,
-                                            'one_time_keyboard' => true,
-                                        ]);
-
                                         // Send the location request message along with the keyboard
                                         sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
                                     sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
-                                    // return;  // Exit silently if barcode decoding fails
                                 }
                             } else {
                                 // Handle unsupported image type for decoding
@@ -465,36 +511,42 @@ function processUpdates($updates, $token)
 
                     // Retrieve the decoded barcodes or VAT-TIN stored in session
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
-                    $vatTin = $_SESSION['extractedVatTin'][$chatId] ?? null;
+                    $vatTin = $_SESSION['extractedVatTin'][$chatId] ?? [];
+                    $mrzData = $_SESSION['extractedMrz'][$chatId] ?? [];
                     $imageType = $_SESSION['imageType'][$chatId] ?? null; // Get the image type
 
                     // Format the current date and time
                     $formattedDate = formatDate($language);
                     $formattedTime = formatTime($language);
-                    // $dateTime = getDateTime($language);
-                    // echo "Current Date and Time: " . $dateTime;
-                    // Prepare the Google Maps URL
+
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
-                    // Format the barcode or VAT-TIN list for the response message
+                    // Format the barcode or VAT-TIN or MRZ list for the response message
                     $responseList = '';
                     if ($imageType === 'barcode' && !empty($decodedBarcodes)) {
                         $responseList .= implode("\n", array_map(function ($barcode, $index) {
                             return ($index + 1) . ". <code><b>{$barcode['code']}</b></code>";
                         }, $decodedBarcodes, array_keys($decodedBarcodes))) . "\n";
                     }
+
                     if ($imageType === 'invoice' && !empty($vatTin)) {
                         if (is_array($vatTin)) {
-                            // If VAT-TINs are in an array, loop through and add them to the response
                             foreach ($vatTin as $index => $tin) {
                                 $responseList .= ($index + 1) . ". <code><b>{$tin}</b></code>\n";
                             }
                         } else {
-                            // If it's a single VAT-TIN, just add it as before
                             $responseList .= "<code><b>{$vatTin}</b></code>\n";
                         }
                     }
-
+                    // Include MRZ data if available and format based on the number of lines
+                    if ($imageType === 'mrz' && !empty($mrzData)) {
+                        $lineCount = count($mrzData);
+                         $responseList .= "MRZ:\n";
+                        foreach ($mrzData as $index => $line) {
+                            $responseList .= sprintf("line%d. <code><b>%s</b></code>\n", $index + 1, htmlspecialchars($line));
+                        }
+                        
+                    }
                     // Save location data to the database
                     $params = [
                         'user_id' => $userId,
@@ -524,8 +576,15 @@ function processUpdates($updates, $token)
                             $responseList,
                             $locationUrl
                         );
+                    } elseif ($imageType === 'mrz') {
+                        $responseMessage = sprintf(
+                            $messages[$language]['mrz_location_shared'],
+                            $formattedDate,
+                            $formattedTime,
+                            $responseList,
+                            $locationUrl
+                        );
                     }
-
                     // Send the location confirmation message
                     sendMessage($chatId, $responseMessage, $token);
 
@@ -533,6 +592,7 @@ function processUpdates($updates, $token)
                     unset($_SESSION['currentCommand'][$chatId]);
                     unset($_SESSION['decodedBarcodes'][$chatId]);
                     unset($_SESSION['extractedVatTin'][$chatId]);
+                    unset($_SESSION['extractedMrz'][$chatId]); //
                     unset($_SESSION['imageType'][$chatId]); // Clear the image type
                 } else {
                     sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
@@ -557,6 +617,14 @@ function isInvoiceImage($filePath)
     $allowedInvoiceExtensions = ['jpg', 'jpeg', 'png', 'pdf']; // Assuming PDFs are allowed
     $extension = pathinfo($filePath, PATHINFO_EXTENSION);
     return in_array(strtolower($extension), $allowedInvoiceExtensions);
+}
+
+function isMRZImage($filePath)
+{
+    // Example: Check file extension
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
+    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
+    return in_array(strtolower($extension), $allowedExtensions);
 }
 
 // Function to show contact sharing options
