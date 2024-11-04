@@ -478,9 +478,7 @@ function processUpdates($updates, $token)
                     // Format the current date and time
                     $formattedDate = formatDate($language);
                     $formattedTime = formatTime($language);
-                    // $dateTime = getDateTime($language);
-                    // echo "Current Date and Time: " . $dateTime;
-                    // Prepare the Google Maps URL
+          
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
                     // Format the barcode or VAT-TIN list for the response message
