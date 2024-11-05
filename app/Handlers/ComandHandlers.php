@@ -2,10 +2,6 @@
 
 include __DIR__ . '/../includes/IncludeCommands.php';
 
-<<<<<<< HEAD
-
-=======
->>>>>>> mrz_command
 function processUpdates($updates, $token)
 {
     global $currentMessages;
@@ -20,8 +16,7 @@ function processUpdates($updates, $token)
     setCommands($token, $currentMessages);
 
     foreach ($updates as $update) {
-        if (isset($update['message']) || isset($update['message']['contact']) || isset($update['message']['location'])
-        || isset($update['message']['text']) || isset($update['message']['photo'])) {
+        if (isset($update['message'])) {
             setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
             $userId = $update['message']['from']['id'];
@@ -137,11 +132,7 @@ function processUpdates($updates, $token)
                                 'first_name' => $firstName,
                                 'last_name' => $lastName,
                                 'username' => $username,
-<<<<<<< HEAD
-                                'phone_number' => $phoneNumber ?? '',
-=======
                                 'phone_number' => $update['message']['contact']['phone_number'],
->>>>>>> mrz_command
                                 'date' => date('Y-m-d H:i:s'),
                                 'language' => $language
                             ];
@@ -427,11 +418,6 @@ function processUpdates($updates, $token)
                 }
             }
 
-<<<<<<< HEAD
-
-            // Handle location sharing
-=======
->>>>>>> mrz_command
             if (isset($update['message']['location'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->hasSelectedLanguage($userId)) {
                     $userId = $update['message']['from']['id'];
@@ -449,11 +435,7 @@ function processUpdates($updates, $token)
                     // Format the current date and time
                     $formattedDate = formatDate($language);
                     $formattedTime = formatTime($language);
-<<<<<<< HEAD
-          
-=======
 
->>>>>>> mrz_command
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
                     $responseList = '';
