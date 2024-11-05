@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 // backend/app/include/function/OCRFunction.php
 
 /**
@@ -12,6 +13,12 @@ function processInvoiceImage($filePath)
 {
     // Specify Khmer and English languages in Tesseract
     $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout -l khm+eng";
+=======
+function processInvoiceImage($filePath)
+{
+
+    $ocrCmd = "tesseract " . escapeshellarg($filePath) . " stdout";
+>>>>>>> mrz_command
     $ocrOutput = shell_exec($ocrCmd);
 
     if ($ocrOutput === null) {
@@ -24,8 +31,12 @@ function processInvoiceImage($filePath)
         return ['error' => 'No text found in image'];
     }
 
+<<<<<<< HEAD
     // Extract VAT-TIN using dynamic case identification
     list($vatTin, $caseFormat) = extractVatTin($text);
+=======
+    $vatTin = extractVatTin($text);
+>>>>>>> mrz_command
 
     return [
         'text' => $text,
@@ -34,6 +45,7 @@ function processInvoiceImage($filePath)
     ];
 }
 
+<<<<<<< HEAD
 /**
  * Extracts VAT-TIN information from text using regex with dynamic case format detection.
  *
@@ -60,3 +72,12 @@ function extractVatTin($text)
     // Return 'not found' if no pattern matched
     return ['VAT-TIN not found.', null];
 }
+=======
+function extractVatTin($text)
+{
+
+    preg_match('/VAT[-\s]?TIN\s*:\s*([A-Z0-9\-]+)/i', $text, $matches);
+
+    return isset($matches[1]) ? $matches[1] : 'VAT-TIN not found.';
+}
+>>>>>>> mrz_command

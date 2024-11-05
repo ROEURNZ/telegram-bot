@@ -1,8 +1,4 @@
 <?php
-/*
- * @ROEURNZ => File name & directory
- * backend/app/Config/dynDirs.php
- */
 
 if (!class_exists('XDirLevel')) {
     class XDirLevel

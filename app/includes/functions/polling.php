@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 <?php 
+=======
+<?php
+
+$config = include __DIR__ .  '/../../Config/api_key.php';
+$token = $api_key;
+$offset = 0;
+
+>>>>>>> mrz_command
 while (true) {
     $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30";
     $ch = curl_init($url);
@@ -19,11 +28,19 @@ while (true) {
 
     if (isset($updates['result'])) {
         processUpdates($updates['result'], $token);
+<<<<<<< HEAD
+=======
+
+>>>>>>> mrz_command
         if (!empty($updates['result'])) {
             $lastUpdateId = end($updates['result'])['update_id'];
             $offset = $lastUpdateId + 1;
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> mrz_command
     sleep(1);
 }
 

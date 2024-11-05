@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD
 $config = include __DIR__ .  '/../Config/api_key.php';
 $token = $api_key;
 include __DIR__ . '/../Config/dynDirs.php';
@@ -7,9 +8,13 @@ include __DIR__ . '/../Config/dynDirs.php';
 set_time_limit(0); 
 session_start();
 
+=======
+set_time_limit(0);
+// session_start();
+>>>>>>> mrz_command
 date_default_timezone_set("Asia/Phnom_Penh");
-$offset = 0;
 
+<<<<<<< HEAD
 $botApiUr = "https://api.telegram.org/bot{$token}/";
 
 // Load localization files
@@ -105,3 +110,9 @@ function setCommands($token, $messages) {
 
 // Call the function to set commands every time the bot starts
 setCommands($token, $currentMessages);
+=======
+include __DIR__ . '/../Localization/dateformat/dateFormat.php';
+include __DIR__ . '/../Models/loadModel.php';
+include __DIR__ . '/functions/SendMessageFunction.php';
+include __DIR__ . '/functions/SetUserCommandFunction.php';
+>>>>>>> mrz_command

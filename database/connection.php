@@ -1,16 +1,11 @@
 <?php
-// File name: connection.php
-// Purpose: Database connection setup and error handling
-/* 
- * @ROEURNZ => File name & directory
- * /database/connection.php
- */
 
+require __DIR__ . '/../vendor/autoload.php';     
 include __DIR__ . "/../app/Config/dynDirs.php";
-require __DIR__ . $z1 . 'vendor/autoload.php';     
 
+use Dotenv\Dotenv;
 // Load environment variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . $z1);
+$dotenv = Dotenv::createImmutable(__DIR__ . $z1);
 $dotenv->load();
 
 // Database configuration
@@ -25,8 +20,9 @@ if (!$dbHost || !$dbUsername || !$dbPassword || !$dbDatabase) {
 }
 
 // PDO Singleton Class
-class Database {
+class EzzeTeamDatabase {
     private static $instance = null;
+    
     private $pdo;
 
     private function __construct() {
@@ -39,7 +35,7 @@ class Database {
 
     public static function getInstance() {
         if (!self::$instance) {
-            self::$instance = new Database();
+            self::$instance = new EzzeTeamDatabase();
         }
         return self::$instance->pdo;
     }

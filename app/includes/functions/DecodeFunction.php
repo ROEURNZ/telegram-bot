@@ -1,7 +1,5 @@
 <?php
 
-// backend/app/include/function/DecodeFunctiom.php
-// Function to process code images for barcode decoding
 function processBarcodeImage($filePath)
 {
     require_once __DIR__ . "/../../Utils/Decode/DecodeTypes.php";
