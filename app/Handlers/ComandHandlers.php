@@ -1,14 +1,18 @@
 <?php
 
-// backend/app/Handlers/CommandHandlers.php
 include __DIR__ . '/../includes/IncludeCommands.php';
+
 function processUpdates($updates, $token)
 {
     global $currentMessages;
-    static $userLanguages = []; 
-    global $messages; 
+    static $userLanguages = [];
+    global $baseLanguage;
 
-    $ezzeModel = new EzzeModels();
+    $decModel = new DecodeModel();
+    $locModel = new LocationModel();
+    $mrzModel = new MrzExtractModel();
+    $ocrModel = new OcrExtractModel();
+    $useModel = new UserProfiles();
     setCommands($token, $currentMessages);
 
     foreach ($updates as $update) {
@@ -21,63 +25,63 @@ function processUpdates($updates, $token)
             $username = $update['message']['from']['username'] ?? '';
             $messageId = $update['message']['message_id'];
 
-            $language = $userLanguages[$chatId] ?? $ezzeModel->getUserLanguage($chatId) ?? 'en';
+            $language = $userLanguages[$chatId] ?? $useModel->getUserLanguage($chatId) ?? 'en';
 
-            $currentMessages = $messages[$language];
+            $currentMessages = $baseLanguage[$language];
 
             if (isset($update['message']['text'])) {
                 $userCommand = $update['message']['text'];
 
                 if ($userCommand === '/start') {
 
-                    if ($ezzeModel->checkUserExists($userId)) {
+                    if ($useModel->checkUserExists($userId)) {
 
-                        $welcomeMessage = sprintf($messages[$language]['welcome_message'], "<b>$firstName</b>", "<b>$lastName</b>");
+                        $welcomeMessage = sprintf($baseLanguage[$language]['welcome_message'], "<b>$firstName</b>", "<b>$lastName</b>");
                         sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
                     } else {
 
-                        sendMessage($chatId, $messages[$language]['new_user_message'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['new_user_message'], $token);
                     }
 
                     $replyMarkup = json_encode([
                         'keyboard' => [
                             [
-                                ['text' => $messages['en']['language_option']],
-                                ['text' => $messages['kh']['language_option']]
+                                ['text' => $baseLanguage['en']['language_option']],
+                                ['text' => $baseLanguage['kh']['language_option']]
                             ]
                         ],
                         'resize_keyboard' => true,
                         'one_time_keyboard' => true,
                     ]);
 
-                    sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
+                    sendMessage($chatId, $baseLanguage[$language]['please_choose_language'], $token, $replyMarkup);
                 }
 
-                if (in_array($userCommand, [$messages['en']['language_option'], $messages['kh']['language_option']])) {
+                if (in_array($userCommand, [$baseLanguage['en']['language_option'], $baseLanguage['kh']['language_option']])) {
 
-                    $language = $userCommand === $messages['en']['language_option'] ? 'en' : 'kh';
+                    $language = $userCommand === $baseLanguage['en']['language_option'] ? 'en' : 'kh';
 
                     $userLanguages[$chatId] = $language;
                     $_SESSION['userLanguages'][$chatId] = $language;
 
-                    $ezzeModel->updateUserLanguage($chatId, $language);
+                    $useModel->updateUserLanguage($chatId, $language);
 
                     if (isset($_SESSION['is_changing_language']) && $_SESSION['is_changing_language']) {
 
-                        $responseText = $language === 'en' ? "Language set to English" : "អ្នកបានកំណត់ជាភាសាខ្មែរ";
-                        sendMessage($chatId, $responseText, $token, json_encode(['remove_keyboard' => true]));
+
+                        sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
                         unset($_SESSION['is_changing_language']);
                     } else {
 
-                        $responseText = $language === 'en' ? "You have selected English" : "អ្នកបានជ្រើសរើសភាសាខ្មែរ";
-                        sendMessage($chatId, $responseText, $token, json_encode(['remove_keyboard' => true]));
+                        // $responseText = $language === 'en' ? "You have selected English" : "អ្នកបានជ្រើសរើសភាសាខ្មែរ";
+                        sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
 
-                        if ($ezzeModel->tgUsername($userId) === null) {
+                        if ($useModel->tgUsername($userId) === null) {
 
                             showContactSharing($chatId, $token, $language);
                         } else {
 
-                            sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
+                            sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
                         }
                     }
 
@@ -91,36 +95,36 @@ function processUpdates($updates, $token)
                 }
 
                 if ($userCommand === '/change_language') {
-                    // Set a session flag to track the language change process
+
                     $_SESSION['is_changing_language'] = true;
 
-                    if (!$ezzeModel->checkUserExists($userId)) {
+                    if (!$useModel->checkUserExists($userId)) {
                         showContactSharing($chatId, $token, $language);
                     } else {
                         $replyMarkup = json_encode([
                             'keyboard' => [
                                 [
-                                    ['text' => $messages['en']['language_option']],
-                                    ['text' => $messages['kh']['language_option']]
+                                    ['text' => $baseLanguage['en']['language_option']],
+                                    ['text' => $baseLanguage['kh']['language_option']]
                                 ]
                             ],
                             'resize_keyboard' => true,
                             'one_time_keyboard' => true,
                         ]);
 
-                        sendMessage($chatId, $messages[$language]['please_choose_language'], $token, $replyMarkup);
+                        sendMessage($chatId, $baseLanguage[$language]['please_choose_language'], $token, $replyMarkup);
                     }
                     continue;
                 }
 
 
                 if ($userCommand === '/share_contact') {
-                    if (!$ezzeModel->checkUserExists($userId)) {
+                    if (!$useModel->checkUserExists($userId)) {
                         showContactSharing($chatId, $token, $language);
                         setCommands($token, $currentMessages);
                     } else {
-                        if (!$ezzeModel->hasSelectedLanguage($userId)) {
-                            sendMessage($chatId, $messages['en']['please_select_language'], $token);
+                        if (!$useModel->hasSelectedLanguage($userId)) {
+                            sendMessage($chatId, $baseLanguage['en']['please_select_language'], $token);
                         } else {
                             $params = [
                                 'chat_id' => $chatId,
@@ -133,69 +137,68 @@ function processUpdates($updates, $token)
                                 'language' => $language
                             ];
 
-                            if ($ezzeModel->getUserLanguage($chatId) !== $language) {
-                                $ezzeModel->updateUserLanguage($userId, $language);
+                            if ($useModel->getUserLanguage($chatId) !== $language) {
+                                $useModel->updateUserLanguage($userId, $language);
                             }
-                            $ezzeModel->updateUser($params);
+                            $useModel->updateUser($params);
                         }
                     }
                 }
 
-
                 // Handle /decode command only if the user's contact is registered
                 if ($userCommand === '/decode') {
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $messages[$language]['upload_barcode'], $token);
+                    if ($useModel->checkUserExists($userId)) {
+                        sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
                         $_SESSION['currentCommand'][$chatId] = 'decode';
                     } else {
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
-                        sendMessage($chatId, $messages[$language]['share_contact_prompt'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['share_contact_prompt'], $token);
                     }
                 }
 
                 if ($userCommand === '/ocr') {
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $messages[$language]['upload_invoice'], $token);
-                        $_SESSION['currentCommand'][$chatId] = 'ocr'; 
+                    if ($useModel->checkUserExists($userId)) {
+                        sendMessage($chatId, $baseLanguage[$language]['upload_invoice'], $token);
+                        $_SESSION['currentCommand'][$chatId] = 'ocr';
                     } else {
- 
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+
+                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
 
                 if ($userCommand === '/mrz') {
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $messages[$language]['upload_mrz'], $token);
+                    if ($useModel->checkUserExists($userId)) {
+                        sendMessage($chatId, $baseLanguage[$language]['upload_mrz'], $token);
                         $_SESSION['currentCommand'][$chatId] = 'mrz';
                     } else {
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
 
                 if ($userCommand === '/share_location') {
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        if ($ezzeModel->hasCompletedDecode($userId)) {
+                    if ($useModel->checkUserExists($userId)) {
+                        if ($decModel->hasCompletedDecode($userId)) {
                             setCommands($token, $currentMessages);
-                            sendMessage($chatId, $messages[$language]['location_prompt'], $token);
+                            sendMessage($chatId, $baseLanguage[$language]['location_prompt'], $token);
                         } else {
-                            sendMessage($chatId, $messages[$language]['decode_not_completed'], $token);
+                            sendMessage($chatId, $baseLanguage[$language]['decode_not_completed'], $token);
                         }
                     } else {
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
 
                 if ($userCommand === '/menu') {
-                    if ($ezzeModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $messages[$language]['menu'], $token);
+                    if ($useModel->checkUserExists($userId)) {
+                        sendMessage($chatId, $baseLanguage[$language]['menu'], $token);
                     } else {
-                        sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
             }
 
             if (isset($update['message']['contact'])) {
-                if (!$ezzeModel->checkUserExists($userId) && !$ezzeModel->hasSelectedLanguage($userId)) {
+                if (!$useModel->checkUserExists($userId) && !$useModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
 
                     $userId = $update['message']['from']['id'];
@@ -208,7 +211,7 @@ function processUpdates($updates, $token)
                     $lastName = $contact['last_name'] ?? '';
                     $username = $update['message']['from']['username'] ? "https://t.me/{$update['message']['from']['username']}" : "No username available";
 
-                    $response = $ezzeModel->registerUsers([
+                    $response = $useModel->registerUsers([
                         'user_id' => $userId,
                         'chat_id' => $chatId,
                         'msg_id' => $messageId,
@@ -221,27 +224,27 @@ function processUpdates($updates, $token)
                     ]);
 
                     $responseMessage = sprintf(
-                        $messages[$language]['thanks_for_contact'],
+                        $baseLanguage[$language]['thanks_for_contact'],
                         $firstName,
                         $lastName,
                         $phoneNumber,
                         $username
                     );
                     sendMessage($chatId, $responseMessage, $token);
-                    sendMessage($chatId, $messages[$language]['upload_barcode'], $token, json_encode(['remove_keyboard' => true]));
+                    sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token, json_encode(['remove_keyboard' => true]));
 
                     $_SESSION['contact_shared'][$chatId] = true;
                     $_SESSION['currentChatId'] = $chatId;
                     setCommands($token, $currentMessages);
                     continue;
                 } else {
-                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }
             }
 
             // Handle image upload (Barcode / QR code or Invoice)
             if (isset($update['message']['photo'])) {
-                if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
+                if ($useModel->checkUserExists($userId) && $useModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
 
                     $photo = end($update['message']['photo']);
@@ -285,19 +288,19 @@ function processUpdates($updates, $token)
                                             'msg_id' => $messageId,
                                             'raw_data' => $rawText,
                                             'file_id' => $fileId,
-                                            'status' => 1, 
+                                            'status' => 1,
                                             'date' => date('Y-m-d H:i:s')
                                         ];
 
                                         // Save OCR data to database
-                                        $ezzeModel->addOcrData($ocrData);
-                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        $ocrModel->addOcrData($ocrData);
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    sendMessage($chatId, $messages[$language]['require_invoice_image'], $token);
+                                    sendMessage($chatId, $baseLanguage[$language]['require_invoice_image'], $token);
                                 }
                             } else {
-                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                                sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] === 'mrz') {
                             if (isMrzImage($localFilePath)) {
@@ -305,13 +308,12 @@ function processUpdates($updates, $token)
                                 $mrzResult = processMrzImage($localFilePath);
                                 $_SESSION['imageType'][$chatId] = 'mrz';
 
-                                error_log(print_r($mrzResult, true));
 
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
                                         $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
 
-                                        $ezzeModel->addMRZData([
+                                        $mrzModel->addMRZData([
                                             'user_id' => $userId,
                                             'mrz_line1' => $mrzResult['mrzData'][0] ?? '',
                                             'mrz_line2' => $mrzResult['mrzData'][1] ?? '',
@@ -322,13 +324,13 @@ function processUpdates($updates, $token)
                                             'date' => date('Y-m-d H:i:s')
                                         ]);
 
-                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    sendMessage($chatId, $messages[$language]['require_mrz_image'], $token);
+                                    sendMessage($chatId, $baseLanguage[$language]['require_mrz_image'], $token);
                                 }
                             } else {
-                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                                sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
                             if (isBarcodeImage($localFilePath)) {
@@ -347,7 +349,7 @@ function processUpdates($updates, $token)
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
                                     // Insert the barcode record into the database
-                                    $ezzeModel->addBarcode([
+                                    $decModel->addBarcode([
                                         'user_id' => $userId,
                                         'type' => $type,
                                         'code' => $code,
@@ -358,13 +360,13 @@ function processUpdates($updates, $token)
                                     ]);
 
                                     if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
-                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    sendMessage($chatId, $baseLanguage[$language]['require_barcode_image'], $token);
                                 }
                             } else {
-                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                                sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
                             if (isBarcodeImage($localFilePath)) {
@@ -384,7 +386,7 @@ function processUpdates($updates, $token)
                                     $_SESSION['imageType'][$chatId] = 'barcode';
 
 
-                                    $ezzeModel->addBarcode([
+                                    $decModel->addBarcode([
                                         'user_id' => $userId,
                                         'type' => $type,
                                         'code' => $code,
@@ -401,24 +403,23 @@ function processUpdates($updates, $token)
                                             'one_time_keyboard' => true,
                                         ]);
 
-                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    sendMessage($chatId, $messages[$language]['require_barcode_image'], $token);
+                                    sendMessage($chatId, $baseLanguage[$language]['require_barcode_image'], $token);
                                 }
                             }
                         } else {
-                            sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                            sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                         }
                     } else {
-                        sendMessage($chatId, $messages[$language]['file_retrieval_failed'], $token);
+                        sendMessage($chatId, $baseLanguage[$language]['file_retrieval_failed'], $token);
                     }
                 }
             }
 
-            // Handle location sharing
             if (isset($update['message']['location'])) {
-                if ($ezzeModel->checkUserExists($userId) && $ezzeModel->hasSelectedLanguage($userId)) {
+                if ($useModel->checkUserExists($userId) && $useModel->hasSelectedLanguage($userId)) {
                     $userId = $update['message']['from']['id'];
                     $chatId = $update['message']['chat']['id'];
                     $latitude = $update['message']['location']['latitude'];
@@ -429,7 +430,7 @@ function processUpdates($updates, $token)
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
                     $vatTin = $_SESSION['extractedVatTin'][$chatId] ?? [];
                     $mrzData = $_SESSION['extractedMrz'][$chatId] ?? [];
-                    $imageType = $_SESSION['imageType'][$chatId] ?? null; // Get the image type
+                    $imageType = $_SESSION['imageType'][$chatId] ?? null;
 
                     // Format the current date and time
                     $formattedDate = formatDate($language);
@@ -437,7 +438,6 @@ function processUpdates($updates, $token)
 
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
-                    // Format the barcode or VAT-TIN or MRZ list for the response message
                     $responseList = '';
                     if ($imageType === 'barcode' && !empty($decodedBarcodes)) {
                         $responseList .= implode("\n", array_map(function ($barcode, $index) {
@@ -457,11 +457,10 @@ function processUpdates($updates, $token)
                     // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
                         $lineCount = count($mrzData);
-                         $responseList .= "MRZ:\n";
+                        $responseList .= "MRZ:\n";
                         foreach ($mrzData as $index => $line) {
                             $responseList .= sprintf("line%d. <code><b>%s</b></code>\n", $index + 1, htmlspecialchars($line));
                         }
-                        
                     }
 
                     $params = [
@@ -472,12 +471,12 @@ function processUpdates($updates, $token)
                         'date' => $date,
                         'share_status' => 1,
                     ];
-                    $response = $ezzeModel->addLocation($params);
+                    $response = $locModel->addLocation($params);
                     echo $response;
 
                     if ($imageType === 'barcode') {
                         $responseMessage = sprintf(
-                            $messages[$language]['decoded_location_shared'],
+                            $baseLanguage[$language]['decoded_location_shared'],
                             $formattedDate,
                             $formattedTime,
                             $responseList,
@@ -485,7 +484,7 @@ function processUpdates($updates, $token)
                         );
                     } elseif ($imageType === 'invoice') {
                         $responseMessage = sprintf(
-                            $messages[$language]['extracted_location_shared'],
+                            $baseLanguage[$language]['extracted_location_shared'],
                             $formattedDate,
                             $formattedTime,
                             $responseList,
@@ -493,7 +492,7 @@ function processUpdates($updates, $token)
                         );
                     } elseif ($imageType === 'mrz') {
                         $responseMessage = sprintf(
-                            $messages[$language]['mrz_location_shared'],
+                            $baseLanguage[$language]['mrz_location_shared'],
                             $formattedDate,
                             $formattedTime,
                             $responseList,
@@ -506,10 +505,10 @@ function processUpdates($updates, $token)
                     unset($_SESSION['currentCommand'][$chatId]);
                     unset($_SESSION['decodedBarcodes'][$chatId]);
                     unset($_SESSION['extractedVatTin'][$chatId]);
-                    unset($_SESSION['extractedMrz'][$chatId]); 
-                    unset($_SESSION['imageType'][$chatId]); 
+                    unset($_SESSION['extractedMrz'][$chatId]);
+                    unset($_SESSION['imageType'][$chatId]);
                 } else {
-                    sendMessage($chatId, $messages[$language]['contact_not_registered'], $token);
+                    sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }
             }
         }
@@ -517,51 +516,5 @@ function processUpdates($updates, $token)
 }
 
 
-function isBarcodeImage($filePath)
-{
-
-    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedExtensions);
-}
-
-function isInvoiceImage($filePath)
-{
-
-    $allowedInvoiceExtensions = ['jpg', 'jpeg', 'png', 'pdf'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedInvoiceExtensions);
-}
-
-function isMRZImage($filePath)
-{
-
-    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedExtensions);
-}
-
-function showContactSharing($chatId, $token, $language)
-{
-    global $messages; 
-
-    $replyMarkup = json_encode([
-        'keyboard' => [[['text' => $messages[$language]['share_contact'], 'request_contact' => true]]],
-        'resize_keyboard' => true,
-        'one_time_keyboard' => true,
-    ]);
-    sendMessage($chatId, $messages[$language]['contact_request'], $token, $replyMarkup);
-}
-
-function showLocationSharing($chatId, $token, $language)
-{
-    global $messages;
-    $replyMarkup = json_encode([
-
-        'resize_keyboard' => true,
-        'one_time_keyboard' => true,
-    ]);
-    sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-}
-
+include __DIR__ . '/../includes/functions/IncFunction.php';
 include __DIR__ . '/../includes/functions/polling.php';

@@ -1,10 +1,11 @@
-<?php 
-// file name '/../functions/polling.php';
-// Loop to keep the bot running indefinitely
+<?php
+
+$config = include __DIR__ .  '/../../Config/api_key.php';
+$token = $api_key;
+$offset = 0;
+
 while (true) {
-    // Build the URL to fetch updates with the current offset
     $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30";
-    // Initialize cURL to get updates
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
@@ -22,16 +23,13 @@ while (true) {
     $updates = json_decode($response, true);
 
     if (isset($updates['result'])) {
-        // Process each update (adjust this function based on your bot's logic)
         processUpdates($updates['result'], $token);
 
-        // Update the offset to the ID of the last processed update + 1
         if (!empty($updates['result'])) {
             $lastUpdateId = end($updates['result'])['update_id'];
             $offset = $lastUpdateId + 1;
         }
     }
 
-    // Sleep for a short time to avoid spamming Telegram API
     sleep(1);
 }

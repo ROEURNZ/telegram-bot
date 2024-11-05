@@ -32,6 +32,7 @@ return $langBase = [
     // 'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'decoded_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
+    'mrz_location_shared' => " កាលបរិច្ឆេទ៖ %s, %s\n%sទីតាំង: %s",
     'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
 
     // Decoding results
