@@ -302,35 +302,40 @@ function processUpdates($updates, $token)
                             } else {
                                 sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
-                        } elseif ($_SESSION['currentCommand'][$chatId] === 'mrz') {
+                        } else if ($_SESSION['currentCommand'][$chatId] === 'mrz') {
                             if (isMrzImage($localFilePath)) {
                                 require_once __DIR__ . '/../includes/functions/MRZFunction.php';
                                 $mrzResult = processMrzImage($localFilePath);
                                 $_SESSION['imageType'][$chatId] = 'mrz';
 
-
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
-                                        $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
+                                        $_SESSION['extractedMrz'][$chatId] = [];
+                                    }
+                                    $_SESSION['extractedMrz'][$chatId][] = $mrzResult['mrzData'];  // Append new MRZ data
 
-                                        $mrzModel->addMRZData([
-                                            'user_id' => $userId,
-                                            'mrz_line1' => $mrzResult['mrzData'][0] ?? '',
-                                            'mrz_line2' => $mrzResult['mrzData'][1] ?? '',
-                                            'mrz_line3' => $mrzResult['mrzData'][2] ?? '',
-                                            'msg_id' => $messageId,
-                                            'file_id' => $fileId,
-                                            'decoded_status' => 1,
-                                            'date' => date('Y-m-d H:i:s')
-                                        ]);
+                                    // Insert each MRZ record into the database
+                                    $ezzeModel->addMRZData([
+                                        'user_id' => $userId,
+                                        'mrz_line1' => $mrzResult['mrzData'][0] ?? '',
+                                        'mrz_line2' => $mrzResult['mrzData'][1] ?? '',
+                                        'mrz_line3' => $mrzResult['mrzData'][2] ?? '',
+                                        'msg_id' => $messageId,
+                                        'file_id' => $fileId,
+                                        'decoded_status' => 1,
+                                        'date' => date('Y-m-d H:i:s')
+                                    ]);
 
-                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                    // Ask for location sharing if this is the first barcode scanned
+                                    if (count($_SESSION['extractedMrz'][$chatId]) == 1) {
+                                        // Send the location request message along with the keyboard
+                                        sendMessage($chatId, $messages[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-                                    sendMessage($chatId, $baseLanguage[$language]['require_mrz_image'], $token);
+                                    sendMessage($chatId, $messages[$language]['require_mrz_image'], $token);
                                 }
                             } else {
-                                sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
                         } elseif ($_SESSION['currentCommand'][$chatId] === 'decode') {
                             if (isBarcodeImage($localFilePath)) {
@@ -454,12 +459,13 @@ function processUpdates($updates, $token)
                             $responseList .= "<code><b>{$vatTin}</b></code>\n";
                         }
                     }
-                    // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
-                        $lineCount = count($mrzData);
-                        $responseList .= "MRZ:\n";
-                        foreach ($mrzData as $index => $line) {
-                            $responseList .= sprintf("line%d. <code><b>%s</b></code>\n", $index + 1, htmlspecialchars($line));
+                        foreach ($mrzData as $index => $mrzEntry) {
+                            $responseList .= "MRZ " . ($index + 1) . ":\n";
+                            foreach ($mrzEntry as $lineIndex => $line) {
+                                $responseList .= sprintf("  Line %d: <code><b>%s</b></code>\n", $lineIndex + 1, htmlspecialchars($line));
+                            }
+                            $responseList .= "\n";
                         }
                     }
 
