@@ -1,10 +1,6 @@
--- Host: localhost
--- Generation Time: October 10, 2024 at 3:24 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.3.29
 
-CREATE DATABASE IF NOT EXISTS  ezzebarcodedev;
-USE IF EXISTS  ezzebarcodedev;
+CREATE DATABASE IF NOT EXISTS tlbarcode_dev;
+USE tlbarcode_dev;
 
 CREATE TABLE IF NOT EXISTS `user_profiles` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -20,6 +16,8 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `language` enum('en','kh') NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+ALTER TABLE `user_profiles` ADD UNIQUE (`user_id`);
 
 
 CREATE TABLE IF NOT EXISTS `barcodes` (
@@ -57,7 +55,21 @@ CREATE TABLE IF NOT EXISTS `location` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-COMMIT;
 
+CREATE TABLE `mrz` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` BIGINT NOT NULL,
+    `mrz_line1` VARCHAR(100) NOT NULL,
+    `mrz_line2` VARCHAR(100) NOT NULL,
+    `mrz_line3` VARCHAR(100) DEFAULT NULL,
+    `msg_id` BIGINT NOT NULL,
+    `file_id` VARCHAR(100) NOT NULL,
+    `decoded_status` TINYINT(1) NOT NULL DEFAULT 0,
+    `date` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `user_profiles` (`user_id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+COMMIT;
 
 

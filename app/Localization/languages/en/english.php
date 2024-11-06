@@ -13,6 +13,7 @@ return $messages = [
     /*** ! Image upload and barcode decoding ****/
     'upload_barcode' => "Please upload a barcode or QR code image.",
     'upload_invoice' => 'Please upload an image of the invoice.',
+    'upload_mrz' => 'Please upload image from the MRZ.',
     'contact_required' => "Please share your contact information first.",
     'download_prompt' => "Please wait for a few seconds, the bot is downloading images.",
     'decode_prompt_sent' => "The decode prompt has been sent. Please upload an image containing a barcode or QR code.",
@@ -26,8 +27,9 @@ return $messages = [
 
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
-    'decoded_location_shared' => " Date: %s, %s\nDecoded Codes:\n%sLocation: %s",
+    'decoded_location_shared' => " Date: %s, %s\nDecoded:\n%sLocation: %s",
     'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
+    'mrz_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
     // Decoding results
@@ -59,6 +61,7 @@ return $messages = [
 
     'require_invoice_image' => 'Could not resolve this invoice image, please try again',
     'require_barcode_image' => 'Could not resolve this image, please try again',
+    'require_mrz_image' => 'Could not resolve this image, please try again',
 
 
 
@@ -89,11 +92,12 @@ return $messages = [
     // Commands Descriptions
 
     'start_desc' => "Click on /start command to begin the bot.",
-    // 'share_contact_desc' => "Share your contact.",
     'decode_desc' => "Decode a barcode or QR code.",
     'ocr_desc'  => "Extract VAT-TIN from an image",
+    'mrz_desc' => "Extract MRZ from an image",
     'change_language_desc' => "Change the language.",
-    // 'share_location_desc' => "Share your location.",
+    'share_location_desc' => "Share your location.",
+    'share_contact_desc' => "Share your contact.",
     'help_desc' => "Get help.",  
     'menu_desc' => "Open the menu.",
     

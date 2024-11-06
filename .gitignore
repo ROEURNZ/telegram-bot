@@ -9,3 +9,4 @@ storage/logs/ssl_error.log
 
 # ignore the images
 storage/app/public/images/decoded/*
+settings/database/*
