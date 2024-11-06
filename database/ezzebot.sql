@@ -38,12 +38,14 @@ CREATE TABLE IF NOT EXISTS `barcodes` (
 CREATE TABLE IF NOT EXISTS ocr (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` BIGINT NOT NULL,
-    `vat_tin` VARCHAR(50) NOT NULL,
     `msg_id` BIGINT NOT NULL,
     `raw_data`	VARCHAR(100) NULL,
     `file_id` varchar(100) NOT NULL,
     `status` TINYINT NOT NULL DEFAULT 0,
-    `date` DATETIME DEFAULT CURRENT_TIMESTAMP
+    `date` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `ocrtext` BIT NULL,
+    `ocrhasvat` BIT NULL,
+    `taxincluded` BIT NULL,
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 CREATE TABLE IF NOT EXISTS `location` (

@@ -12,22 +12,22 @@ class OcrExtractModel
     }
     public function addOcrData($params)
     {
-        // Check if the barcode already exists
-        if ($this->ocrExists($params['vat_tin'])) {
-            return "Error: Ocr already exists.";
-        }
 
-        $sql = "INSERT INTO ocr (user_id, vat_tin, msg_id, raw_data, file_id, status, date) 
-                    VALUES (:user_id, :vat_tin, :msg_id, :raw_data, :file_id, :status, :date)";
+        $sql = "INSERT INTO ocr (user_id, msg_id, raw_data, file_id, status, date, ocrtext, ocrhasvat, taxincluded) 
+                VALUES (:user_id, :msg_id, :raw_data, :file_id, :status, :date, :ocrtext, :ocrhasvat, :taxincluded)";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
-        $stmt->bindParam(':vat_tin', $params['vat_tin'], PDO::PARAM_STR);
-        $stmt->bindParam(':msg_id', $params['msg_id']);
-        $stmt->bindParam(':raw_data', $params['text']);
+        $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
+        $stmt->bindParam(':raw_data', $params['rawData'], PDO::PARAM_STR);
         $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
-        $stmt->bindParam(':status', $params['status']);
+        $stmt->bindParam(':status', $params['status'], PDO::PARAM_INT);
         $stmt->bindParam(':date', $params['date']);
+
+        // Bind the extracted OCR fields
+        $stmt->bindParam(':ocrtext', $params['taxIdentifiers'], PDO::PARAM_INT);
+        $stmt->bindParam(':ocrhasvat', $params['ocrhasvat'], PDO::PARAM_INT);
+        $stmt->bindParam(':taxincluded', $params['taxincluded'], PDO::PARAM_INT);
 
         if ($stmt->execute()) {
             return "OCR data inserted successfully.";
@@ -37,15 +37,6 @@ class OcrExtractModel
         }
     }
 
-    // Function to check if a barcode exists
-    public function ocrExists($vatTin)
-    {
-        $sql = "SELECT COUNT(*) FROM `ocr` WHERE vat_tin = :vat_tin";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':vat_tin', $vatTin, PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetchColumn() > 0;
-    }
 
 
 

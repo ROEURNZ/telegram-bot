@@ -28,7 +28,7 @@ return $messages = [
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
     'decoded_location_shared' => " Date: %s, %s\nDecoded:\n%sLocation: %s",
-    'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
+    'extracted_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'mrz_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 

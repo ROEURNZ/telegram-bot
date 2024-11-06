@@ -11,7 +11,6 @@ function processUpdates($updates, $token)
     $decModel = new DecodeModel();
     $locModel = new LocationModel();
     $mrzModel = new MrzExtractModel();
-    
     $ocrModel = new OcrExtractModel();
     $useModel = new UserProfiles();
     setCommands($token, $currentMessages);
