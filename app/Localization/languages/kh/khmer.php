@@ -92,20 +92,12 @@ return $langBase = [
 
     // commands
     'start_desc' => "សូមចុចលើពាក្យ /start ដើម្បីចាប់ផ្ដើម។",
-<<<<<<< HEAD
-    'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
-    'decode_desc' => "ដកស្រង់អត្ថបទពីកូដបារ៉ូដ ឬកូដ QR",
-=======
     'decode_desc' => "ដកស្រង់អត្ថបទពីបាកូដ ឬកូដ QR",
->>>>>>> mrz_command
     'ocr_desc'  => "ស្រង់ VAT-TIN ចេញពីរូបភាព",
     'mrz_desc'  => "ស្រង់ MRZ ចេញពីរូបភាព",
     'change_language_desc' => "ប្ដូរភាសា",
     'share_location_desc' => "ចែករំលែកទីតាំងរបស់អ្នក",
-<<<<<<< HEAD
-=======
     'share_contact_desc' => "ចែករំលែកទំនាក់ទំនងរបស់អ្នក",
->>>>>>> mrz_command
     'help_desc' => "ទទួលបានជំនួយ",
     'menu_desc' => "បើកម៉ឺនុយ",
     
