@@ -139,11 +139,52 @@ class UserProfiles
         return $result ? $result['language'] : 'en'; // default to 'en' if not found
     }
 
+    public function getUserLanguageByUserId($userId)
+    {
+        // Prepare a statement to get the user's language from the database based on user_id
+        $stmt = $this->pdo->prepare("SELECT language FROM `user_profiles` WHERE user_id = :user_id");
+        $stmt->execute(['user_id' => $userId]);
+
+        // Fetch the language preference
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if (!$result) {
+            return 'en';
+        }
+
+
+        // Return the language if found
+        return $result['language'];
+    }
+
     // Method to update user's language
     public function updateUserLanguage($chatId, $language)
     {
         $stmt = $this->pdo->prepare("UPDATE `user_profiles` SET language = :language WHERE chat_id = :chat_id");
         return $stmt->execute(['language' => $language, 'chat_id' => $chatId]);
+    }
+
+    public function setUserCommandLanguage($userId, $newLanguage)
+    {
+        // Step 1: Check the current language using getUserLanguageByUserId function
+        $currentLanguage = $this->getUserLanguageByUserId($userId);
+
+        // Step 2: If the current language is different from the new language, update it
+        if ($currentLanguage !== $newLanguage) {
+            // Step 3: Update the user's language in the database
+            $stmt = $this->pdo->prepare("UPDATE `user_profiles` SET language = :language WHERE user_id = :user_id");
+            $stmt->execute(['language' => $newLanguage, 'user_id' => $userId]);
+
+            // Check if the update was successful
+            if ($stmt->rowCount() > 0) {
+                return "Language updated successfully to '$newLanguage'.";
+            } else {
+                return "Error: Failed to update language.";
+            }
+        }
+
+        // If the language is the same as the current one, return a message
+        return "No change needed. The language is already set to '$currentLanguage'.";
     }
 
 

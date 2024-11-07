@@ -9,7 +9,6 @@ function processUpdates($updates, $token)
     global $baseLanguage;
 
     $decModel = new DecodeModel();
-    $locModel = new LocationModel();
     $mrzModel = new MrzExtractModel();
     $ocrModel = new OcrExtractModel();
     $useModel = new UserProfiles();
@@ -152,7 +151,6 @@ function processUpdates($updates, $token)
                         $_SESSION['currentCommand'][$chatId] = 'decode';
                     } else {
                         sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
-                        sendMessage($chatId, $baseLanguage[$language]['share_contact_prompt'], $token);
                     }
                 }
 
@@ -243,6 +241,7 @@ function processUpdates($updates, $token)
             }
 
             // Handle image upload (Barcode / QR code or Invoice)
+
             if (isset($update['message']['photo'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
@@ -282,18 +281,18 @@ function processUpdates($updates, $token)
                                     if (!isset($_SESSION['extractedVatTin'][$chatId])) {
                                         $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
 
-                                        $ocrData = [
+                                        $ocrModel->addOcrData([
                                             'user_id' => $userId,
-                                            'vat_tin' => $ocrResult['vatTin'],
+                                            'tin' => $ocrResult['vatTin'],
                                             'msg_id' => $messageId,
                                             'raw_data' => $rawText,
                                             'file_id' => $fileId,
-                                            'status' => 1,
+                                            'ocrtext' => 1,
+                                            'ocrhasvat' => 1,
+                                            'taxincluded' => 1,
                                             'date' => date('Y-m-d H:i:s')
-                                        ];
+                                        ]);
 
-                                        // Save OCR data to database
-                                        $ocrModel->addOcrData($ocrData);
                                         sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
@@ -312,17 +311,18 @@ function processUpdates($updates, $token)
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
                                         $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
-
+                                        $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
+                    
                                         $mrzModel->addMRZData([
                                             'user_id' => $userId,
-                                            'mrz_line1' => $mrzResult['mrzData'][0] ?? '',
-                                            'mrz_line2' => $mrzResult['mrzData'][1] ?? '',
-                                            'mrz_line3' => $mrzResult['mrzData'][2] ?? '',
+                                            'mrz_raw' => $mrzResult['text'],
+                                            'uic_data' => $uicData, 
                                             'msg_id' => $messageId,
                                             'file_id' => $fileId,
-                                            'decoded_status' => 1,
+                                            'mrz_status' => 1,
                                             'date' => date('Y-m-d H:i:s')
                                         ]);
+                                        
 
                                         sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
@@ -396,7 +396,6 @@ function processUpdates($updates, $token)
                                         'decoded_status' => 1,
                                     ]);
 
-
                                     if (count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
                                         json_encode([
                                             'resize_keyboard' => true,
@@ -445,6 +444,7 @@ function processUpdates($updates, $token)
                         }, $decodedBarcodes, array_keys($decodedBarcodes))) . "\n";
                     }
 
+
                     if ($imageType === 'invoice' && !empty($vatTin)) {
                         if (is_array($vatTin)) {
                             foreach ($vatTin as $index => $tin) {
@@ -454,12 +454,14 @@ function processUpdates($updates, $token)
                             $responseList .= "<code><b>{$vatTin}</b></code>\n";
                         }
                     }
+
+                    
                     // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
-                        $lineCount = count($mrzData);
-                        $responseList .= "MRZ:\n";
+                        count($mrzData);
+                        $responseList .= "MRZ UIC:\n";
                         foreach ($mrzData as $index => $line) {
-                            $responseList .= sprintf("line%d. <code><b>%s</b></code>\n", $index + 1, htmlspecialchars($line));
+                            $responseList .= sprintf("<code><b>%s</b></code>\n", htmlspecialchars($line));
                         }
                     }
 
@@ -469,12 +471,15 @@ function processUpdates($updates, $token)
                         'lon' => $longitude,
                         'location_url' => $locationUrl,
                         'date' => $date,
-                        'share_status' => 1,
                     ];
-                    $response = $locModel->addLocation($params);
-                    echo $response;
+
+                    if (isset($tin) && !empty($tin)) {
+                        $params['tin'] = $tin;
+                    }
+
 
                     if ($imageType === 'barcode') {
+                        $decModel->addLocationDecode($params);
                         $responseMessage = sprintf(
                             $baseLanguage[$language]['decoded_location_shared'],
                             $formattedDate,
@@ -483,6 +488,7 @@ function processUpdates($updates, $token)
                             $locationUrl
                         );
                     } elseif ($imageType === 'invoice') {
+                        $ocrModel->addLocationOcr($params);
                         $responseMessage = sprintf(
                             $baseLanguage[$language]['extracted_location_shared'],
                             $formattedDate,
@@ -491,6 +497,7 @@ function processUpdates($updates, $token)
                             $locationUrl
                         );
                     } elseif ($imageType === 'mrz') {
+                        $mrzModel->addLocationMrz($params);
                         $responseMessage = sprintf(
                             $baseLanguage[$language]['mrz_location_shared'],
                             $formattedDate,

@@ -36,10 +36,10 @@ while (true) {
 
 
 
-/**
- * <?php
+/*
+ <?php
 
-function pollTelegramUpdates($token, $offset = 0) {
+*function pollTelegramUpdates($token, $offset = 0) {
     $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30";
 
     $ch = curl_init($url);

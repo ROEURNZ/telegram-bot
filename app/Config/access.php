@@ -1,7 +1,7 @@
 <?php
 // Include the definition file
 include_once 'dynDirs.php';
-include_once 'api_key.php';
+// include_once 'api_key.php';
 
 // Output for $m variables
 for ($i = 1; $i <= 100; $i++) {
