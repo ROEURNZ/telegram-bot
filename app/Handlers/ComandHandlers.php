@@ -312,17 +312,17 @@ function processUpdates($updates, $token)
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
                                         $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
                                         $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
-                    
+
                                         $mrzModel->addMRZData([
                                             'user_id' => $userId,
                                             'mrz_raw' => $mrzResult['text'],
-                                            'uic_data' => $uicData, 
+                                            'uic_data' => $uicData,
                                             'msg_id' => $messageId,
                                             'file_id' => $fileId,
                                             'mrz_status' => 1,
                                             'date' => date('Y-m-d H:i:s')
                                         ]);
-                                        
+
 
                                         sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
@@ -455,13 +455,13 @@ function processUpdates($updates, $token)
                         }
                     }
 
-                    
+
                     // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
                         count($mrzData);
                         $responseList .= "MRZ UIC:\n";
-                        foreach ($mrzData as $index => $line) {
-                            $responseList .= sprintf("<code><b>%s</b></code>\n", htmlspecialchars($line));
+                        foreach ($mrzData as $index => $mrz) {
+                            $responseList .= ($index + 1) . ". <code><b>" . htmlspecialchars(is_array($mrz) ? implode("<", $mrz) : $mrz) . "</b></code>\n";
                         }
                     }
 

@@ -1,23 +1,38 @@
 <?php
 
+// backend/app/include/function/MRZFunction.php
+
+/**
+ * Process MRZ image and extract text.
+ *
+ * @param string $filePath The file path to the image.
+ * @return array Contains extracted MRZ data or an error message if extraction fails.
+ */
 function processMrzImage($filePath)
 {
     if (!file_exists($filePath) || !is_readable($filePath)) {
         return ['error' => 'File not accessible: ' . htmlspecialchars(basename($filePath))];
     }
-    $mrzCmd = "tesseract " . escapeshellarg($filePath) . " stdout -l khm+eng";
-    $mrzExtractedData = @shell_exec($mrzCmd);
 
-    if ($mrzExtractedData === null) {
-        return ['error' => 'mrz execution failed'];
+    // Updated tesseract command with whitelist and language option
+    $mrzCmd = '"C:\\Program Files\\Tesseract-OCR\\tesseract.exe" ' . escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l eng';
+    $mrzOutput = @shell_exec($mrzCmd);
+
+    if ($mrzOutput === null) {
+        return ['error' => 'MRZ execution failed', 'command' => $mrzCmd, 'output' => $mrzOutput];
     }
 
-    $text = trim($mrzExtractedData);
+    $text = trim($mrzOutput);
     if (empty($text)) {
         return ['error' => 'No text found in image'];
     }
 
+    // Extract MRZ data
     $mrzData = extractMrzData($text);
+
+    if ($mrzData === 'MRZ data not found.') {
+        return ['error' => 'Could not resolve this image, please try again.'];
+    }
 
     return [
         'text' => $text,
@@ -25,30 +40,45 @@ function processMrzImage($filePath)
     ];
 }
 
+/**
+ * Extract MRZ data from text.
+ *
+ * @param string $text The text obtained from MRZ processing.
+ * @return array Extracted MRZ information or a message if MRZ not found.
+ */
 function extractMrzData($text)
 {
-    $patterns = [
-        // Passport MRZ (TD3) - 2 lines of 44 characters each
-        '/([A-Z0-9<]{44})\n([A-Z0-9<]{44})/',
+    // The pattern for MRZ lines
+    preg_match_all('/([A-Z0-9<]{44})|([A-Z0-9<]{30})|([A-Z0-9<]{36})/', $text, $matches);
 
-        // ID card MRZ (TD1) - 3 lines of 30 characters each
-        '/([A-Z0-9<]{30})\n([A-Z0-9<]{30})\n([A-Z0-9<]{30})/',
-
-        // Visa MRZ (TD2) - 2 lines of 36 characters each
-        '/([A-Z0-9<]{36})\n([A-Z0-9<]{36})/',
-
-        // Generic - Matches a single line of 44, 36, or 30 characters
-        '/([A-Z0-9<]{44})/',
-        '/([A-Z0-9<]{36})/',
-        '/([A-Z0-9<]{30})/',
-    ];
-
-    foreach ($patterns as $pattern) {
-        if (preg_match_all($pattern, $text, $matches)) {
-            $mrzLines = array_map('trim', $matches[0]);
-            return $mrzLines;
-        }
+    // Check if we have MRZ lines
+    if (empty($matches[0])) {
+        return 'MRZ data not found.';
     }
 
-    return 'MRZ data not found.';
+    // Combine matched lines into a single MRZ string or array for further processing
+    $mrzLines = array_map('trim', $matches[0]);
+
+    // MRZ data formatting for easier extraction
+    $mrzInfo = [];
+    foreach ($mrzLines as $line) {
+        // Split the MRZ line by < symbol and clean up extra spaces
+        $mrzInfo[] = explode('<', $line);
+    }
+
+    return $mrzInfo;
+}
+
+// Usage example
+$filePath = 'C:\\Users\\PC\\Development\\Projects\\PHP\\Bots\\telegram-bot\\app\\images\\cb819975-7cd1-4d90-8826-fc765b703cbf.png';
+$result = processMrzImage($filePath);
+
+if (isset($result['error'])) {
+    echo "Error: ". $result['error'];
+} else {
+    // Process the extracted MRZ data here
+    echo "MRZ Data: \n";
+    foreach ($result['mrzData'] as $line) {
+        echo implode(' ', $line) . "\n"; // Print each line of MRZ data
+    }
 }
