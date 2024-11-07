@@ -37,11 +37,6 @@ class OcrExtractModel
         $stmt->bindParam(':taxincluded', $params['taxincluded'], PDO::PARAM_INT);
         $stmt->bindParam(':date', $params['date']);
 
-        // Bind the extracted OCR fields
-        $stmt->bindParam(':ocrtext', $params['taxIdentifiers'], PDO::PARAM_INT);
-        $stmt->bindParam(':ocrhasvat', $params['ocrhasvat'], PDO::PARAM_INT);
-        $stmt->bindParam(':taxincluded', $params['taxincluded'], PDO::PARAM_INT);
-
         if ($stmt->execute()) {
             return "OCR data inserted successfully.";
         } else {

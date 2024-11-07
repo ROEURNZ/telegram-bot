@@ -241,7 +241,6 @@ function processUpdates($updates, $token)
             }
 
             // Handle image upload (Barcode / QR code or Invoice)
-
             if (isset($update['message']['photo'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->hasSelectedLanguage($userId)) {
                     setCommands($token, $currentMessages);
@@ -275,15 +274,16 @@ function processUpdates($updates, $token)
                                 require_once __DIR__ . '/../includes/functions/OCRFunction.php';
                                 $ocrResult = processInvoiceImage($localFilePath);
                                 $_SESSION['imageType'][$chatId] = 'invoice';
-                                $rawText = $ocrResult['text'];
+                                $rawText = $ocrResult['rawData'];
 
-                                if (isset($ocrResult['vatTin']) && $ocrResult['vatTin'] !== 'VAT-TIN not found.') {
+                                // If VAT-TIN found, process and store OCR results
+                                if (isset($ocrResult['taxIdentifiers']) && !empty($ocrResult['taxIdentifiers'])) {
                                     if (!isset($_SESSION['extractedVatTin'][$chatId])) {
-                                        $_SESSION['extractedVatTin'][$chatId] = $ocrResult['vatTin'];
+                                        $_SESSION['extractedVatTin'][$chatId] = $ocrResult['taxIdentifiers'];
 
                                         $ocrModel->addOcrData([
                                             'user_id' => $userId,
-                                            'tin' => $ocrResult['vatTin'],
+                                            'tin' => implode(", ", array_column($ocrResult['taxIdentifiers'], 'code')),
                                             'msg_id' => $messageId,
                                             'raw_data' => $rawText,
                                             'file_id' => $fileId,
@@ -427,7 +427,7 @@ function processUpdates($updates, $token)
 
                     // Retrieve the decoded barcodes or VAT-TIN stored in session
                     $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
-                    $vatTin = $_SESSION['extractedVatTin'][$chatId] ?? [];
+                    $ocrData = $_SESSION['extractedVatTin'][$chatId] ?? [];
                     $mrzData = $_SESSION['extractedMrz'][$chatId] ?? [];
                     $imageType = $_SESSION['imageType'][$chatId] ?? null;
 
@@ -445,16 +445,18 @@ function processUpdates($updates, $token)
                     }
 
 
-                    if ($imageType === 'invoice' && !empty($vatTin)) {
-                        if (is_array($vatTin)) {
-                            foreach ($vatTin as $index => $tin) {
-                                $responseList .= ($index + 1) . ". <code><b>{$tin}</b></code>\n";
-                            }
-                        } else {
-                            $responseList .= "<code><b>{$vatTin}</b></code>\n";
+                    // Handling OCR response
+                    if ($imageType === 'invoice' && !empty($ocrData)) {
+                        foreach ($ocrData as $index => $identifier) {
+                            // Format each identifier and its corresponding code
+                            $responseList .= sprintf(
+                                "%d. <code><b>%s:</b> %s</code>\n",
+                                $index + 1,  // For each tax identifier (1, 2, 3...)
+                                htmlspecialchars($identifier['identifier']),  // Escape special characters in the identifier
+                                htmlspecialchars($identifier['code'])  // Escape special characters in the code
+                            );
                         }
                     }
-
 
                     // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
