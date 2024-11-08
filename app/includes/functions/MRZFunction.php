@@ -15,7 +15,7 @@ function processMrzImage($filePath)
     }
 
     // Updated tesseract command with whitelist and language option
-    $mrzCmd = '"C:\\Program Files\\Tesseract-OCR\\tesseract.exe" ' . escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l eng';
+    $mrzCmd =  "tesseract " .  escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l eng';
     $mrzOutput = @shell_exec($mrzCmd);
 
     if ($mrzOutput === null) {
