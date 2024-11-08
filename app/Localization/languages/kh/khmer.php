@@ -28,12 +28,12 @@ return $langBase = [
     // 'thanks_for_contact' => "អរគុណសម្រាប់ការផ្ដល់ព័ត៌មានទំនាក់ទំនងរបស់អ្នក!\nឈ្មោះពេញ: %s %s\nលេខទូរស័ព្ទ: %s\nឈ្មោះអ្នកប្រើ: %s",
 
     // Location sharing
-    'location_prompt' => "សូមផ្ដល់ទីតាំងរបស់អ្នក។ នេះមានប្រសិទ្ធិភាពល្អបំផុតលើឧបករណ៍ចល័ត។",
+    'location_prompt' => "សូមផ្ញើររូបភាពណាមួយ។",
     // 'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'decoded_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'extracted_location_shared' => "កាលបរិច្ឆេទ៖ %s, %s\n%sទីតាំង៖ %s",
     'mrz_location_shared' => " កាលបរិច្ឆេទ៖ %s, %s\n%sទីតាំង: %s",
-    'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
+    'thank_you' => "សូមអរគុណសម្រាប់ការគាំទ្ររបស់អ្នក!",
 
     // Decoding results
     'decode_success' => "បានដកស្រង់កូដបានដោយជោគជ័យ!\nប្រភេទ: %s\nទិន្នន័យ: %s",

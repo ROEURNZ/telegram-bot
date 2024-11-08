@@ -366,7 +366,8 @@ function processUpdates($updates, $token)
                             } else {
                                 sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
-                        } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr' || $_SESSION['currentCommand'][$chatId] !== 'mrz') {
+                        }elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' && $_SESSION['currentCommand'][$chatId] !== 'ocr' && $_SESSION['currentCommand'][$chatId] !== 'mrz')
+                        {
                             if (isBarcodeImage($localFilePath)) {
 
                                 require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
@@ -508,6 +509,8 @@ function processUpdates($updates, $token)
                     }
 
                     sendMessage($chatId, $responseMessage, $token);
+                    sendMessage($chatId, $baseLanguage[$language]['thank_you'], $token);
+
 
                     unset($_SESSION['currentCommand'][$chatId]);
                     unset($_SESSION['decodedBarcodes'][$chatId]);

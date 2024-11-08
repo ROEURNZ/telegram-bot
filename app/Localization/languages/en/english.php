@@ -26,11 +26,11 @@ return $messages = [
     // 'thanks_for_contact' => "Thanks for sharing your contact!\nTelegram User ID: %s\nTelegram Chat ID: %s\nFull Name: %s %s\nPhone Number: %s\nUsername: %s",
 
     // Location sharing
-    'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
+    'location_prompt' => "Please uplaod any photo or image.",
     'decoded_location_shared' => " Date: %s, %s\nDecoded:\n%sLocation: %s",
     'extracted_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'mrz_location_shared' => " Date: %s, %s\n%sLocation: %s",
-    'thank_you_location' => "Thank you for sharing your location!",
+    'thank_you' => "Thank you for your support!",
 
     // Decoding results
     'decode_success' => "Successfully decoded the barcode!\nType: %s\nData: %s",
