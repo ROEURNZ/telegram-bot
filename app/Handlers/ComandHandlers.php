@@ -311,7 +311,9 @@ function processUpdates($updates, $token)
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
                                         $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
-                                        $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
+                                        // $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
+                                        $uicData = is_array($mrzResult['mrzData']) ? implode("\n", array_map(fn($line) => implode(' ', $line), $mrzResult['mrzData'])) : $mrzResult['mrzData'];
+                                        
 
                                         $mrzModel->addMRZData([
                                             'user_id' => $userId,
