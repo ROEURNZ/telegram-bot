@@ -22,33 +22,7 @@ class UserProfiles
         return $checkStmt->fetchColumn() > 0;
     }
 
-    // function registerUser($params)
-    // {
-    //     if ($this->userExists($params)) {
-    //         return "Error: User already exists.";
-    //     }
-
-    //     // SQL statement for inserting a new user
-    //     $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
-    //             VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
-
-    //     $stmt = $this->pdo->prepare($sql);
-
-    //     // Execute the statement and return the result
-    //     return $stmt->execute([
-    //         ':user_id' => $params['user_id'],
-    //         ':chat_id' => $params['chat_id'],
-    //         ':msg_id' => $params['msg_id'],
-    //         ':first_name' => $params['first_name'],
-    //         ':last_name' => $params['last_name'],
-    //         ':username' => $params['username'],
-    //         ':phone_number' => $params['phone_number'],
-    //         ':date' => $params['date'],
-    //         ':language' => $params['language']
-    //     ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
-    // }
-
-    function registerUser($params)
+    function registerUser($params) 
     {
         // Check if the user already exists
         if ($this->userExists($params)) {
@@ -149,11 +123,12 @@ class UserProfiles
     public function getUserLanguage($chatId)
     {
         $sql = "SELECT language FROM `user_profiles` WHERE chat_id = :chat_id";
-        $stmt = $this->pdo->prepare();
+        $stmt = $this->pdo->prepare($sql);
         $stmt->execute(['chat_id' => $chatId]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result ? $result['language'] : 'en';
     }
+
 
 
     public function updateUserLanguage($chatId, $language)
@@ -173,4 +148,20 @@ class UserProfiles
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() ?: null;
     }
+
+
+    // not used
+    // public function changeCompleteUserStep($user_id, $val)
+    // {
+    //     $sql = "UPDATE `user_profiles` SET is_step_complete = ? WHERE user_id = ?";
+    //     $stmt = $this->pdo->prepare($sql);
+    //     $stmt->bindParam('user_id', $user_id);
+    //     $stmt->bindParam('val', $val);
+    //     return $stmt->execute();
+    // }
+
+    /**
+     *      `step` varchar(50) DEFAULT NULL,
+            `is_step_complete` tinyint (1) NOT NULL DEFAULT 1,
+     */
 }

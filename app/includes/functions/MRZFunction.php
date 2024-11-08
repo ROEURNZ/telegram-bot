@@ -5,50 +5,44 @@ function processMrzImage($filePath)
     if (!file_exists($filePath) || !is_readable($filePath)) {
         return ['error' => 'File not accessible: ' . htmlspecialchars(basename($filePath))];
     }
-    $mrzCmd = "tesseract " . escapeshellarg($filePath) . " stdout -l khm+eng";
-    $mrzExtractedData = @shell_exec($mrzCmd);
 
-    if ($mrzExtractedData === null) {
-        return ['error' => 'mrz execution failed'];
+    $mrzCmd = "tesseract " . escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l eng';
+    $mrzOutput = @shell_exec($mrzCmd);
+
+    if ($mrzOutput === null) {
+        return ['error' => 'MRZ execution failed', 'command' => $mrzCmd, 'output' => $mrzOutput];
     }
 
-    $text = trim($mrzExtractedData);
+    $text = trim($mrzOutput);
     if (empty($text)) {
         return ['error' => 'No text found in image'];
     }
 
     $mrzData = extractMrzData($text);
 
+    // Format mrzData directly
+    $mrzCode = is_array($mrzData) 
+        ? implode("\n", array_map(fn($line) => implode('<', $line), $mrzData))
+        : $mrzData;
+
     return [
         'text' => $text,
-        'mrzData' => $mrzData,
+        'mrzData' =>   $mrzCode,
     ];
 }
 
 function extractMrzData($text)
 {
-    $patterns = [
-        // Passport MRZ (TD3) - 2 lines of 44 characters each
-        '/([A-Z0-9<]{44})\n([A-Z0-9<]{44})/',
-
-        // ID card MRZ (TD1) - 3 lines of 30 characters each
-        '/([A-Z0-9<]{30})\n([A-Z0-9<]{30})\n([A-Z0-9<]{30})/',
-
-        // Visa MRZ (TD2) - 2 lines of 36 characters each
-        '/([A-Z0-9<]{36})\n([A-Z0-9<]{36})/',
-
-        // Generic - Matches a single line of 44, 36, or 30 characters
-        '/([A-Z0-9<]{44})/',
-        '/([A-Z0-9<]{36})/',
-        '/([A-Z0-9<]{30})/',
-    ];
-
-    foreach ($patterns as $pattern) {
-        if (preg_match_all($pattern, $text, $matches)) {
-            $mrzLines = array_map('trim', $matches[0]);
-            return $mrzLines;
-        }
+    $pattern = '/([A-Z0-9<]{44})|([A-Z0-9<]{30})|([A-Z0-9<]{36})/';
+    preg_match_all($pattern, $text, $matches);
+    if (empty($matches[0])) {
+        return 'MRZ data not found.';
     }
 
-    return 'MRZ data not found.';
+    $mrzLines = array_map('trim', $matches[0]);
+    $mrzInfo = [];
+    foreach ($mrzLines as $line) {
+        $mrzInfo[] = explode('<', $line);
+    }
+    return $mrzInfo;
 }
