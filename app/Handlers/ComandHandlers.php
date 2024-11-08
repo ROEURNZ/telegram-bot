@@ -309,23 +309,25 @@ function processUpdates($updates, $token)
 
 
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
+                                    // Initialize the MRZ session array if it doesn't exist
                                     if (!isset($_SESSION['extractedMrz'][$chatId])) {
-                                        $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
-                                        // $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
-                                        $uicData = is_array($mrzResult['mrzData']) ? implode("\n", array_map(fn($line) => implode('<', $line), $mrzResult['mrzData'])) : $mrzResult['mrzData'];
-                                        $mrzModel->addMRZData([
-                                            'user_id' => $userId,
-                                            'mrz_raw' => $mrzResult['text'],
-                                            'uic_data' => $uicData,
-                                            'msg_id' => $messageId,
-                                            'file_id' => $fileId,
-                                            'mrz_status' => 1,
-                                            'date' => date('Y-m-d H:i:s')
-                                        ]);
-
-
-                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        $_SESSION['extractedMrz'][$chatId] = [];
                                     }
+                                    $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
+                                    // $uicData = is_array($mrzResult['mrzData']) ? implode("\n", $mrzResult['mrzData']) : $mrzResult['mrzData'];
+                                    $uicData = is_array($mrzResult['mrzData']) ? implode("\n", array_map(fn($line) => implode('<', $line), $mrzResult['mrzData'])) : $mrzResult['mrzData'];
+                                    $mrzModel->addMRZData([
+                                        'user_id' => $userId,
+                                        'mrz_raw' => $mrzResult['text'],
+                                        'uic_data' => $uicData,
+                                        'msg_id' => $messageId,
+                                        'file_id' => $fileId,
+                                        'mrz_status' => 1,
+                                        'date' => date('Y-m-d H:i:s')
+                                    ]);
+
+
+                                    sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                 } else {
                                     sendMessage($chatId, $baseLanguage[$language]['require_mrz_image'], $token);
                                 }
