@@ -72,15 +72,11 @@ function processUpdates($updates, $token)
                         unset($_SESSION['is_changing_language']);
                     } else {
 
-                        // $responseText = $language === 'en' ? "You have selected English" : "អ្នកបានជ្រើសរើសភាសាខ្មែរ";
                         sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
 
                         if ($useModel->tgUsername($userId) === null) {
 
                             showContactSharing($chatId, $token, $language);
-                        } else {
-
-                            sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
                         }
                     }
 
@@ -370,7 +366,7 @@ function processUpdates($updates, $token)
                             } else {
                                 sendMessage($chatId, $baseLanguage[$language]['unsupported_image_type'], $token);
                             }
-                        } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr') {
+                        } elseif ($_SESSION['currentCommand'][$chatId] !== 'decode' || $_SESSION['currentCommand'][$chatId] !== 'ocr' || $_SESSION['currentCommand'][$chatId] !== 'mrz') {
                             if (isBarcodeImage($localFilePath)) {
 
                                 require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
