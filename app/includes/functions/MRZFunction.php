@@ -69,16 +69,3 @@ function extractMrzData($text)
     return $mrzInfo;
 }
 
-// Usage example
-$filePath = 'C:\\Users\\PC\\Development\\Projects\\PHP\\Bots\\telegram-bot\\app\\images\\cb819975-7cd1-4d90-8826-fc765b703cbf.png';
-$result = processMrzImage($filePath);
-
-if (isset($result['error'])) {
-    echo "Error: ". $result['error'];
-} else {
-    // Process the extracted MRZ data here
-    echo "MRZ Data: \n";
-    foreach ($result['mrzData'] as $line) {
-        echo implode(' ', $line) . "\n"; // Print each line of MRZ data
-    }
-}

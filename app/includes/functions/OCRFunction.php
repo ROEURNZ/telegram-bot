@@ -63,20 +63,3 @@ function extractTaxIdentifiers($text)
     // Return an array of tax identifiers and their codes
     return $results;
 }
-
-
-//usage example
-
-$filePath = '../../images/photo_2024-11-06_12-47-58.jpg';
-$result = processInvoiceImage($filePath);
-
-if ($result['ocrtext']) {
-
-    if (!empty($result['taxIdentifiers'])) {
-        foreach ($result['taxIdentifiers'] as $identifier) {
-            echo $identifier['identifier'] . ": " . $identifier['code'] . "\n";
-        }
-    }
-} else {
-    echo "OCR output not found.\n";
-}
