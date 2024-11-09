@@ -66,7 +66,8 @@ return $langBase = [
 
 
 
-
+    'require_barcode_image' => 'Could not resolve this image, please try again',
+    'require_invoice_image' => 'Could not resolve this invoice image, please try again',
 
 
     'please_select_language' => 'Please select a language first.',

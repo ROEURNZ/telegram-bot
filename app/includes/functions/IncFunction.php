@@ -3,26 +3,16 @@
 include __DIR__ . "/../../../vendor/autoload.php";
 
 
-function isBarcodeImage($filePath)
+
+
+function isAllowedImage($filePath)
 {
-    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedExtensions);
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'webp'];
+    $extension = strtolower(pathinfo($filePath, PATHINFO_EXTENSION));
+
+    return in_array($extension, $allowedExtensions);
 }
 
-function isInvoiceImage($filePath)
-{
-    $allowedInvoiceExtensions = ['jpg', 'jpeg', 'png', 'pdf'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedInvoiceExtensions);
-}
-
-function isMRZImage($filePath)
-{
-    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp'];
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return in_array(strtolower($extension), $allowedExtensions);
-}
 
 function showContactSharing($chatId, $token, $language)
 {
