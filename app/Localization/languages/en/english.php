@@ -65,6 +65,7 @@ return $messages = [
 
     'thank_you' => "Thank you for your support!",
 
+    'language_changed' => 'Your language preference has been updated successfully.',
 
 
     'please_select_language' => 'Please select a language first.',

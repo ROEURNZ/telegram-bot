@@ -14,7 +14,7 @@ function isAllowedImage($filePath)
 }
 
 
-function showContactSharing($chatId, $token, $language)
+function showContactSharing($chatId, $language, $baseLanguage, $token)
 {
     global $baseLanguage; 
     $replyMarkup = json_encode([
@@ -25,9 +25,8 @@ function showContactSharing($chatId, $token, $language)
     sendMessage($chatId, $baseLanguage[$language]['contact_request'], $token, $replyMarkup);
 }
 
-function showLocationSharing($chatId, $token, $language)
+function showLocationSharing($chatId, $language, $baseLanguage, $token)
 {
-    global $baseLanguage;
     $replyMarkup = json_encode([
         'resize_keyboard' => true,
         'one_time_keyboard' => true,

@@ -64,7 +64,7 @@ return $langBase = [
 
     'restart_message' => 'អ្នកអាចជ្រើសរើសភាសាដើម្បីចាប់ផ្ដើមឡើងវិញ។',
 
-
+    'language_changed' => 'ការជ្រើសរើសភាសារបស់អ្នកត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។',
 
     'require_barcode_image' => 'Could not resolve this image, please try again',
     'require_invoice_image' => 'Could not resolve this invoice image, please try again',
