@@ -22,7 +22,7 @@ class UserProfiles
         return $checkStmt->fetchColumn() > 0;
     }
 
-    function registerUser($params) 
+    function registerUser($params)
     {
         // Check if the user already exists
         if ($this->userExists($params)) {
@@ -59,11 +59,14 @@ class UserProfiles
         return $checkStmt->fetchColumn() > 0;
     }
 
-    function checkUniqueConstraints($username, $phoneNumber, $userId)
+
+
+    // Helper function to check if username or phone number is unique (avoids duplicates)
+    private function checkUniqueConstraints($username, $phoneNumber, $userId)
     {
         $uniqueCheckSql = "SELECT COUNT(*) FROM `user_profiles` 
-                           WHERE (username = :username OR phone_number = :phone_number) 
-                           AND user_id != :user_id";
+                               WHERE (username = :username OR phone_number = :phone_number) 
+                               AND user_id != :user_id";
         $uniqueCheckStmt = $this->pdo->prepare($uniqueCheckSql);
         $uniqueCheckStmt->execute([
             ':username' => $username,
@@ -73,9 +76,10 @@ class UserProfiles
         return $uniqueCheckStmt->fetchColumn() == 0;
     }
 
+    // Updates an existing user's details
     function updateUser($params)
     {
-        if (!$this->checkUserExists($params['user_id'])) {
+        if (!$this->userExists(['user_id' => $params['user_id']])) {
             return "Error: User not found.";
         }
 
@@ -83,17 +87,9 @@ class UserProfiles
             return "Error: Username or phone number already exists.";
         }
 
-        $updateSql = "UPDATE `user_profiles` 
-                      SET chat_id = :chat_id, 
-                          msg_id = :msg_id, 
-                          first_name = :first_name, 
-                          last_name = :last_name, 
-                          username = :username, 
-                          phone_number = :phone_number, 
-                          date = :date, 
-                          language = :language 
-                      WHERE user_id = :user_id";
-
+        $updateSql = "UPDATE `user_profiles` SET chat_id = :chat_id, msg_id = :msg_id, first_name = :first_name, 
+                      last_name = :last_name, username = :username, phone_number = :phone_number, date = :date, 
+                      language = :language WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($updateSql);
 
         return $stmt->execute([
@@ -120,26 +116,25 @@ class UserProfiles
         return !empty($language);
     }
 
-    public function getUserLanguage($chatId)
+
+
+    // Retrieves user language based on user_id or returns 'en' as default if not set
+    public function getUserLanguage($userId)
     {
-        $sql = "SELECT language FROM `user_profiles` WHERE chat_id = :chat_id";
+        $sql = "SELECT language FROM `user_profiles` WHERE user_id = :user_id LIMIT 1";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->execute(['chat_id' => $chatId]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        return $result ? $result['language'] : 'en';
+        $stmt->execute([':user_id' => $userId]);
+        return $stmt->fetchColumn() ?: 'en';
     }
 
 
-
-    public function updateUserLanguage($chatId, $language)
+    // Updates user language preference
+    public function updateUserLanguage($userId, $language)
     {
-        $sql = "UPDATE `user_profiles` SET language = :language WHERE chat_id = :chat_id";
+        $sql = "UPDATE `user_profiles` SET language = :language WHERE user_id = :user_id";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':chat_id', $chatId);
-        $stmt->bindParam(':language', $language);
-        return $stmt->execute();
+        return $stmt->execute([':language' => $language, ':user_id' => $userId]) ? "Language updated successfully." : "Error: " . $stmt->errorInfo()[2];
     }
-
 
     public function getUsername($userId)
     {
@@ -150,18 +145,5 @@ class UserProfiles
     }
 
 
-    // not used
-    // public function changeCompleteUserStep($user_id, $val)
-    // {
-    //     $sql = "UPDATE `user_profiles` SET is_step_complete = ? WHERE user_id = ?";
-    //     $stmt = $this->pdo->prepare($sql);
-    //     $stmt->bindParam('user_id', $user_id);
-    //     $stmt->bindParam('val', $val);
-    //     return $stmt->execute();
-    // }
 
-    /**
-     *      `step` varchar(50) DEFAULT NULL,
-            `is_step_complete` tinyint (1) NOT NULL DEFAULT 1,
-     */
 }

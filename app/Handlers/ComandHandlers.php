@@ -1,183 +1,162 @@
 <?php
 
 include __DIR__ . '/../includes/IncludeCommands.php';
-
+include __DIR__ . '/../includes/functions/SetUserCommandFunction.php';
 function processUpdates($updates, $token)
 {
-    global $currentMessages;
+    global $activeLanguage;
     static $userLanguages = [];
     global $baseLanguage;
+    global $userState;
+    $userState = $userState ?? [];
 
     $decModel = new DecodeModel();
     $mrzModel = new MrzExtractModel();
     $ocrModel = new OcrExtractModel();
     $useModel = new UserProfiles();
-    setCommands($token, $currentMessages);
 
     foreach ($updates as $update) {
         if (isset($update['message'])) {
-            setCommands($token, $currentMessages);
             $chatId = $update['message']['chat']['id'];
             $userId = $update['message']['from']['id'];
             $firstName = $update['message']['from']['first_name'] ?? '';
             $lastName = $update['message']['from']['last_name'] ?? '';
             $username = $update['message']['from']['username'] ?? '';
             $messageId = $update['message']['message_id'];
+            $userState['currentCommand'][$chatId] = $userState['currentCommand'][$chatId] ?? '';
 
             $language = $userLanguages[$chatId] ?? $useModel->getUserLanguage($chatId) ?? 'en';
-            $currentMessages = $baseLanguage[$language];
+            $activeLanguage = $baseLanguage[$language];
             if (isset($update['message']['text'])) {
                 $userCommand = $update['message']['text'];
                 if ($userCommand === '/start') {
 
                     if ($useModel->checkUserExists($userId)) {
-
                         $welcomeMessage = sprintf($baseLanguage[$language]['welcome_message'], "<b>$firstName</b>", "<b>$lastName</b>");
                         sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
                     } else {
-
                         sendMessage($chatId, $baseLanguage[$language]['new_user_message'], $token);
                     }
-
-                    $replyMarkup = json_encode([
-                        'keyboard' => [
-                            [
-                                ['text' => $baseLanguage['en']['language_option']],
-                                ['text' => $baseLanguage['kh']['language_option']]
-                            ]
-                        ],
-                        'resize_keyboard' => true,
-                        'one_time_keyboard' => true,
-                    ]);
-
-                    sendMessage($chatId, $baseLanguage[$language]['please_choose_language'], $token, $replyMarkup);
+                    selectLanguage($chatId, $language, $baseLanguage, $token);
                 }
 
                 if (in_array($userCommand, [$baseLanguage['en']['language_option'], $baseLanguage['kh']['language_option']])) {
                     $language = $userCommand === $baseLanguage['en']['language_option'] ? 'en' : 'kh';
                     $userLanguages[$chatId] = $language;
+                    // setCommands($token, $activeLanguage);
 
                     $useModel->updateUserLanguage($chatId, $language);
 
-                    if (isset($_SESSION['is_changing_language']) && $_SESSION['is_changing_language']) {
+                    // Use $userState to manage language change status
+                    if (isset($userState['is_changing_language'][$chatId]) && $userState['is_changing_language'][$chatId]) {
                         sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
+                        // setCommands($token, $activeLanguage);
                     } else {
                         sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
                         if ($useModel->getUsername($userId) === null) {
                             showContactSharing($chatId, $token, $language);
                         } else {
                             if ($useModel->checkUserExists($userId)) {
+                                setCommands($token, $activeLanguage);
                                 sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
                             }
                         }
                     }
                     continue;
                 }
-                if ($userCommand === '/change_language') {
 
-                    $_SESSION['is_changing_language'] = true;
+                if ($userCommand === '/change_language') {
+                    $userState['is_changing_language'][$chatId] = true;
 
                     if (!$useModel->checkUserExists($userId)) {
                         showContactSharing($chatId, $token, $language);
+                    } elseif (!$useModel->selectedLanguage($userId)) {
+                        selectLanguage($chatId, $language, $baseLanguage, $token);
                     } else {
-                        $replyMarkup = json_encode([
-                            'keyboard' => [
-                                [
-                                    ['text' => $baseLanguage['en']['language_option']],
-                                    ['text' => $baseLanguage['kh']['language_option']]
-                                ]
-                            ],
-                            'resize_keyboard' => true,
-                            'one_time_keyboard' => true,
-                        ]);
-
-                        sendMessage($chatId, $baseLanguage[$language]['please_choose_language'], $token, $replyMarkup);
+                        setCommands($token, $activeLanguage);
                     }
+
                     continue;
                 }
 
-                if ($userCommand === '/share_contact') {
-                    if (!$useModel->checkUserExists($userId)) {
-                        showContactSharing($chatId, $token, $language);
-                        setCommands($token, $currentMessages);
-                    } else {
-                        if (!$useModel->selectedLanguage($userId)) {
-                            sendMessage($chatId, $baseLanguage['en']['please_select_language'], $token);
-                        } else {
-                            $phone = $update['message']['contact']['phone_number'];
-                            $params = [
-                                'chat_id' => $chatId,
-                                'msg_id' => $messageId,
-                                'first_name' => $firstName,
-                                'last_name' => $lastName,
-                                'username' => $username,
-                                'phone_number' => $phone,
-                                'date' => date('Y-m-d H:i:s'),
-                                'language' => $language
-                            ];
 
-                            if ($useModel->getUserLanguage($chatId) !== $language) {
-                                $useModel->updateUserLanguage($userId, $language);
-                            }
-                            $useModel->updateUser($params);
+                if ($userCommand === '/share_contact') {
+
+                    if (!$useModel->checkUserExists($userId) || !$useModel->selectedLanguage($userId)) {
+
+                        if ($useModel->getUserLanguage($chatId) !== $language) {
+                            $useModel->updateUserLanguage($userId, $language);
                         }
+                        showContactSharing($chatId, $token, $language);
+
+                        $phone = $update['message']['contact']['phone_number'];
+                        $useModel->updateUser([
+                            'chat_id' => $chatId,
+                            'msg_id' => $messageId,
+                            'first_name' => $firstName,
+                            'last_name' => $lastName,
+                            'username' => $username,
+                            'phone_number' => $phone,
+                            'date' => date('Y-m-d H:i:s'),
+                            'language' => $language
+                        ]);
+                    } else {
+                        setCommands($token, $activeLanguage);
                     }
                 }
+
                 // Handle /decode command only if the user's contact is registered
                 if ($userCommand === '/decode') {
                     if ($useModel->checkUserExists($userId)) {
                         sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
-                        $_SESSION['currentCommand'][$chatId] = 'decode';
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
+                        // Set current command in $userState
+                        $userState['currentCommand'][$chatId] = 'decode';
                     }
                 }
 
+                // Handle /ocr command similarly
                 if ($userCommand === '/ocr') {
                     if ($useModel->checkUserExists($userId)) {
                         sendMessage($chatId, $baseLanguage[$language]['upload_invoice'], $token);
-                        $_SESSION['currentCommand'][$chatId] = 'ocr';
-                    } else {
-
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
+                        // Set current command in $userState
+                        $userState['currentCommand'][$chatId] = 'ocr';
                     }
                 }
 
+                // Handle /mrz command similarly
                 if ($userCommand === '/mrz') {
                     if ($useModel->checkUserExists($userId)) {
                         sendMessage($chatId, $baseLanguage[$language]['upload_mrz'], $token);
-                        $_SESSION['currentCommand'][$chatId] = 'mrz';
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
+                        // Set current command in $userState
+                        $userState['currentCommand'][$chatId] = 'mrz';
                     }
                 }
 
-                if ($userCommand === '/share_location') {
 
+                if ($userCommand === '/share_location') {
                     if ($useModel->checkUserExists($userId)) {
                         if ($decModel->hasCompletedDecode($userId)) {
-                            setCommands($token, $currentMessages);
+                            setCommands($token, $activeLanguage);
                             sendMessage($chatId, $baseLanguage[$language]['location_prompt'], $token);
                         } else {
                             sendMessage($chatId, $baseLanguage[$language]['decode_not_completed'], $token);
                         }
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
 
                 if ($userCommand === '/menu') {
                     if ($useModel->checkUserExists($userId)) {
                         sendMessage($chatId, $baseLanguage[$language]['menu'], $token);
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                     }
                 }
             }
 
             if (isset($update['message']['contact'])) {
                 if (!$useModel->checkUserExists($userId) && !$useModel->selectedLanguage($userId)) {
-                    setCommands($token, $currentMessages);
+
+                    setCommands($token, $activeLanguage);
+                    $userState['contact_shared'][$chatId] = true;
+                    $userState['currentChatId'] = $chatId;
 
                     $userId = $update['message']['from']['id'];
                     $messageId = $update['message']['message_id'];
@@ -200,7 +179,7 @@ function processUpdates($updates, $token)
                         'username' => $update['message']['from']['username'],
                         'phone_number' => $phoneNumber,
                         'date' => date('Y-m-d H:i:s'),
-                        'language' => $language,
+                        'language' => $language ?? 'en',
                     ]);
 
                     $responseMessage = sprintf(
@@ -213,20 +192,16 @@ function processUpdates($updates, $token)
                     sendMessage($chatId, $responseMessage, $token);
                     sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token, json_encode(['remove_keyboard' => true]));
 
-                    $_SESSION['contact_shared'][$chatId] = true;
-                    $_SESSION['currentChatId'] = $chatId;
-                    // echo $chatId;
-                    setCommands($token, $currentMessages);
                     continue;
                 } else {
                     sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }
             }
 
-            // Handle image upload (Barcode / QR code or Invoice)
+
             if (isset($update['message']['photo'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->selectedLanguage($userId)) {
-                    setCommands($token, $currentMessages);
+                    setCommands($token, $activeLanguage);
 
                     $photo = end($update['message']['photo']);
                     $chatId = $update['message']['chat']['id'];
@@ -250,17 +225,17 @@ function processUpdates($updates, $token)
 
                         file_put_contents($localFilePath, $downloadedImage);
 
-                        if ($_SESSION['currentCommand'][$chatId] === 'ocr' || $_SESSION['currentCommand'][$chatId] !== 'mrz' || $_SESSION['currentCommand'][$chatId] === '') {
+                        if ($userState['currentCommand'][$chatId] === 'ocr' || ($userState['currentCommand'][$chatId] !== 'decode') || ($userState['currentCommand'][$chatId] !== 'mrz') || ($userState['currentCommand'][$chatId] !== '')) {
                             if (isAllowedImage($localFilePath)) {
                                 require_once __DIR__ . '/../includes/functions/OCRFunction.php';
                                 $ocrResult = processInvoiceImage($localFilePath);
-                                $_SESSION['imageType'][$chatId] = 'invoice';
+                                $userState['imageType'][$chatId] = 'invoice';
                                 $rawText = $ocrResult['rawData'];
 
                                 // If VAT-TIN found, process and store OCR results
                                 if (isset($ocrResult['taxIdentifiers']) && !empty($ocrResult['taxIdentifiers'])) {
-                                    if (!isset($_SESSION['extractedVatTin'][$chatId])) {
-                                        $_SESSION['extractedVatTin'][$chatId] = $ocrResult['taxIdentifiers'];
+                                    if (!isset($userState['extractedVatTin'][$chatId])) {
+                                        $userState['extractedVatTin'][$chatId] = $ocrResult['taxIdentifiers'];
                                         $tin = implode(", ", array_column($ocrResult['taxIdentifiers'], 'code'));
 
                                         $ocrModel->addOcrData([
@@ -275,15 +250,45 @@ function processUpdates($updates, $token)
                                             'date' => date('Y-m-d H:i:s')
                                         ]);
 
-                                        if (is_array($_SESSION['extractedVatTin'][$chatId]) && count($_SESSION['extractedVatTin'][$chatId]) == 1) {
+                                        if (is_array($userState['extractedVatTin'][$chatId]) && count($userState['extractedVatTin'][$chatId]) == 1) {
                                             sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                         }
                                     }
-                                } 
+                                }
                             }
                         }
+                        // Assuming you have an array $userState to hold user-specific information
+                        if (($userState['currentCommand'][$chatId] === 'mrz')) {
+                            if (isAllowedImage($localFilePath)) {
+                                require_once __DIR__ . '/../includes/functions/MRZFunction.php';
+                                $mrzResult = processMrzImage($localFilePath);
+                                $userState['imageType'][$chatId] = 'mrz';
 
-                        if ($_SESSION['currentCommand'][$chatId] === 'decode' || $_SESSION['currentCommand'][$chatId] !== '') {
+                                if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
+                                    if (!isset($userState['extractedMrz'][$chatId])) {
+                                        $userState['extractedMrz'][$chatId] = $mrzResult['mrzData'];
+                                        $mrzCode = $mrzResult['mrzData'];
+                                        $rawMrzData = $mrzResult['text'];
+
+                                        // Save MRZ data to database
+                                        $mrzModel->addMRZData([
+                                            'user_id' => $userId,
+                                            'mrz_raw' => $rawMrzData,
+                                            'uic_data' => $mrzCode,
+                                            'msg_id' => $messageId,
+                                            'file_id' => $fileId,
+                                            'mrz_status' => 1,
+                                            'date' => date('Y-m-d H:i:s')
+                                        ]);
+
+                                        // if (is_array($userState['extractedMrz'][$chatId]) && count($userState['extractedMrz'][$chatId]) == 1) {
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        // }
+                                    }
+                                }
+                            }
+                        }
+                        if ($userState['currentCommand'][$chatId] === 'decode' || ($userState['currentCommand'][$chatId] !== 'ocr') || ($userState['currentCommand'][$chatId] !== 'mrz') || ($userState['currentCommand'][$chatId] !== '')) {
                             if (isAllowedImage($localFilePath)) {
                                 require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
                                 $decodedBarcodeData = processBarcodeImage($localFilePath);
@@ -293,11 +298,11 @@ function processUpdates($updates, $token)
                                     $type = $decodedBarcodeData['type'];
 
                                     // Save decoded barcode to session
-                                    if (!isset($_SESSION['decodedBarcodes'][$chatId])) {
-                                        $_SESSION['decodedBarcodes'][$chatId] = [];
+                                    if (!isset($userState['decodedBarcodes'][$chatId])) {
+                                        $userState['decodedBarcodes'][$chatId] = [];
                                     }
-                                    $_SESSION['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
-                                    $_SESSION['imageType'][$chatId] = 'barcode';
+                                    $userState['decodedBarcodes'][$chatId][] = $decodedBarcodeData;
+                                    $userState['imageType'][$chatId] = 'barcode';
 
                                     // Insert the barcode record into the database
                                     $decModel->addBarcode([
@@ -310,49 +315,17 @@ function processUpdates($updates, $token)
                                         'decoded_status' => 1,
                                     ]);
 
-                                    if (is_array($_SESSION['decodedBarcodes'][$chatId]) && count($_SESSION['decodedBarcodes'][$chatId]) == 1) {
+                                    if (is_array($userState['decodedBarcodes'][$chatId]) && count($userState['decodedBarcodes'][$chatId]) == 1) {
                                         sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 }
                             }
                         }
-
-                        if ($_SESSION['currentCommand'][$chatId] === 'mrz') {
-                            if (isAllowedImage($localFilePath)) {
-                                require_once __DIR__ . '/../includes/functions/MRZFunction.php';
-                                $mrzResult = processMrzImage($localFilePath);
-                                $_SESSION['imageType'][$chatId] = 'mrz';
-
-                                if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
-                                    if (!isset($_SESSION['extractedMrz'][$chatId])) {
-                                        $_SESSION['extractedMrz'][$chatId] = $mrzResult['mrzData'];
-                                        $mrzCode = $mrzResult['mrzData'];
-                                        $rawMrzData = $mrzResult['text'];
-
-                                        $mrzModel->addMRZData([
-                                            'user_id' => $userId,
-                                            'mrz_raw' => $rawMrzData,
-                                            'uic_data' => $mrzCode,
-                                            'msg_id' => $messageId,
-                                            'file_id' => $fileId,
-                                            'mrz_status' => 1,
-                                            'date' => date('Y-m-d H:i:s')
-                                        ]);
-
-                                        // if (is_array($_SESSION['extractedMrz'][$chatId]) && count($_SESSION['extractedMrz'][$chatId]) == 1) {
-
-                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                        // }
-                                    }
-                                }
-                            }
-                        }
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['file_retrieval_failed'], $token);
                     }
                 }
             }
 
+            // Handling location data
             if (isset($update['message']['location'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->selectedLanguage($userId)) {
                     $userId = $update['message']['from']['id'];
@@ -360,15 +333,16 @@ function processUpdates($updates, $token)
                     $latitude = $update['message']['location']['latitude'];
                     $longitude = $update['message']['location']['longitude'];
                     $date = date('Y-m-d H:i:s');
-                    $decodedBarcodes = $_SESSION['decodedBarcodes'][$chatId] ?? [];
-                    $ocrData = $_SESSION['extractedVatTin'][$chatId] ?? [];
-                    $mrzData = $_SESSION['extractedMrz'][$chatId] ?? [];
-                    $imageType = $_SESSION['imageType'][$chatId] ?? null;
+
+                    // Get previously decoded data based on image type
+                    $decodedBarcodes = $userState['decodedBarcodes'][$chatId] ?? [];
+                    $ocrData = $userState['extractedVatTin'][$chatId] ?? [];
+                    $mrzData = $userState['extractedMrz'][$chatId] ?? [];
+                    $imageType = $userState['imageType'][$chatId] ?? null;
 
                     // Format the current date and time
                     $formattedDate = formatDate($language);
                     $formattedTime = formatTime($language);
-
                     $locationUrl = "https://www.google.com/maps/dir/{$latitude},{$longitude}";
 
                     $responseList = '';
@@ -408,6 +382,7 @@ function processUpdates($updates, $token)
                         $params['tin'] = $tin;
                     }
 
+                    // Handle saving location data and sending response based on image type
                     if ($imageType === 'barcode') {
                         $decModel->addLocationDecode($params);
                         $responseMessage = sprintf(
@@ -438,12 +413,14 @@ function processUpdates($updates, $token)
                     }
 
                     sendMessage($chatId, $responseMessage, $token);
+                    sendMessage($chatId, $baseLanguage[$language]['thank_you'], $token);
 
-                    unset($_SESSION['currentCommand'][$chatId]);
-                    unset($_SESSION['decodedBarcodes'][$chatId]);
-                    unset($_SESSION['extractedVatTin'][$chatId]);
-                    unset($_SESSION['extractedMrz'][$chatId]);
-                    unset($_SESSION['imageType'][$chatId]);
+                    // Clean up user data after processing
+                    unset($userState['currentCommand'][$chatId]);
+                    unset($userState['decodedBarcodes'][$chatId]);
+                    unset($userState['extractedVatTin'][$chatId]);
+                    unset($userState['extractedMrz'][$chatId]);
+                    unset($userState['imageType'][$chatId]);
                 } else {
                     sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }

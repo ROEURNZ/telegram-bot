@@ -8,14 +8,17 @@ class MrzExtractModel
     {
         $this->pdo = EzzeTeamDatabase::getInstance();
     }
+
+
     public function addMRZData($params)
     {
-        // Check if the MRZ already exists
-        if ($this->mrzExists($params['msg_id'])) {
-            return "Error: Mrz already exists.";
+        // Check if the MRZ or UIC data already exists
+        if ($this->mrzExists($params['msg_id'], $params['uic_data'])) {
+            return "Error: MRZ or UIC data already exists.";
         }
-        $sql = "INSERT INTO `mrz_uic` (user_id, file_id, msg_id,mrz_raw, uic_data, lat, lon, location_url, mrz_status, date) 
-                        VALUES (:user_id, :file_id, :msg_id, :mrz_raw, :uic_data, :lat, :lon, :location_url,  :mrz_status, :date)";
+
+        $sql = "INSERT INTO `mrz_uic` (user_id, file_id, msg_id, mrz_raw, uic_data, lat, lon, location_url, mrz_status, date) 
+                        VALUES (:user_id, :file_id, :msg_id, :mrz_raw, :uic_data, :lat, :lon, :location_url, :mrz_status, :date)";
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':user_id', $params['user_id'], PDO::PARAM_INT);
@@ -36,12 +39,14 @@ class MrzExtractModel
             return "Error: " . $stmt->errorInfo()[2];
         }
     }
-    // Function to check if a MRZ exists
-    public function mrzExists($msgId)
+
+    // Function to check if MRZ or UIC data exists
+    public function mrzExists($msgId, $uicData)
     {
-        $sql = "SELECT COUNT(*) FROM `mrz_uic` WHERE msg_id = :msg_id";
+        $sql = "SELECT COUNT(*) FROM `mrz_uic` WHERE msg_id = :msg_id OR uic_data = :uic_data";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':msg_id', $msgId, PDO::PARAM_INT);
+        $stmt->bindParam(':uic_data', $uicData, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }

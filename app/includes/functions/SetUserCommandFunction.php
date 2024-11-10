@@ -1,12 +1,16 @@
 <?php
+
 include __DIR__ . '/loadLanguage.php';
 $baseLanguage = loadLanguages();
 
 
-$chatId = isset($_SESSION['currentChatId']) ? $_SESSION['currentChatId'] : null;
-$language = isset($_SESSION['userLanguages'][$chatId]) ? $_SESSION['userLanguages'][$chatId] : 'en';
 
-$currentMessages = $baseLanguage[$language];
+// Retrieve user language settings or default to English
+$chatId = isset($userState['currentChatId']) ? $userState['currentChatId'] : null;
+$language = isset($userState['userLanguages'][$chatId]) ? $userState['userLanguages'][$chatId] : 'en';
+$activeLanguage = $baseLanguage[$language];
+
+// $currentMessages = $baseLanguage[$language];
 
 function setCommands($token, $baseLanguage)
 {
@@ -75,3 +79,7 @@ function setCommands($token, $baseLanguage)
     // }
     curl_close($ch);
 }
+
+     
+
+

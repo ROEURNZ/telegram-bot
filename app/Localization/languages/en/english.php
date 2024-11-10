@@ -63,10 +63,10 @@ return $messages = [
     'require_barcode_image' => 'Could not resolve this image, please try again',
     'require_mrz_image' => 'Could not resolve this image, please try again',
 
+    'thank_you' => "Thank you for your support!",
 
 
 
-    
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
@@ -86,7 +86,7 @@ return $messages = [
     // 'barcode_error' => "I couldn't decode the barcode. Please make sure it's clear and try again.",
     'barcode_success' => "Success! The barcode has been decoded and saved. You can continue scanning.",
     'db_insert_error' => "There was an error saving your decoded data. Please try again later.",
- 
+
 
 
     // Commands Descriptions
@@ -98,7 +98,7 @@ return $messages = [
     'change_language_desc' => "Change the language.",
     'share_location_desc' => "Share your location.",
     'share_contact_desc' => "Share your contact.",
-    'help_desc' => "Get help.",  
+    'help_desc' => "Get help.",
     'menu_desc' => "Open the menu.",
-    
+
 ];

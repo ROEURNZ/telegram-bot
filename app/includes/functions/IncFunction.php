@@ -34,3 +34,21 @@ function showLocationSharing($chatId, $token, $language)
     ]);
     sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
 }
+
+function selectLanguage($chatId, $language, $baseLanguage, $token) {
+    // Prepare the reply markup for the language selection keyboard
+    $replyMarkup = json_encode([
+        'keyboard' => [
+            [
+                ['text' => $baseLanguage['en']['language_option']],
+                ['text' => $baseLanguage['kh']['language_option']]
+            ]
+        ],
+        'resize_keyboard' => true,
+        'one_time_keyboard' => true,
+    ]);
+
+    // Send the message prompting the user to choose a language
+    sendMessage($chatId, $baseLanguage[$language]['please_choose_language'], $token, $replyMarkup);
+}
+
