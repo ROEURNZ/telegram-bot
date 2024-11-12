@@ -31,7 +31,7 @@ return $langBase = [
     'location_prompt' => "សូមផ្ដល់ទីតាំងរបស់អ្នក។ នេះមានប្រសិទ្ធិភាពល្អបំផុតលើឧបករណ៍ចល័ត។",
     // 'decode_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
     'decoded_location_shared' => "កាលបរិច្ឆេទ៖ %s %s\nលេខកូដ៖ \n%sទីតាំង៖ %s",
-    'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
+    'extracted_location_shared' => "កាលបរិច្ឆេទ៖ %s, %s\n%sទីតាំង៖ %s",
     'mrz_location_shared' => " កាលបរិច្ឆេទ៖ %s, %s\n%sទីតាំង: %s",
     'thank_you_location' => "អរគុណសម្រាប់ការផ្ដល់ទីតាំងរបស់អ្នក!",
 
@@ -64,6 +64,8 @@ return $langBase = [
 
     'restart_message' => 'អ្នកអាចជ្រើសរើសភាសាដើម្បីចាប់ផ្ដើមឡើងវិញ។',
 
+    'profile_updated' => 'ព័ត៌មានរៀបរាប់របស់អ្នកត្រូវបានអាប់ដេតដោយជោគជ័យ។',
+
     'language_changed' => 'ការជ្រើសរើសភាសារបស់អ្នកត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។',
 
     'require_barcode_image' => 'Could not resolve this image, please try again',
@@ -89,6 +91,7 @@ return $langBase = [
     'barcode_success' => "ជោគជ័យ! កូដបារ៉ាក់ត្រូវបានបកស្រាយនិងរក្សាទុក។ អ្នកអាចបន្តការស្កេនទៀត។",
     'db_insert_error' => "មានបញ្ហាក្នុងការរក្សាទុកទិន្នន័យកូដបារ៉ាក់ សូមសាកល្បងម្តងទៀត។",
 
+    'decode_failed' => "មិនអាចដក់ស្រង់ទិន្នន័យចេញពីរូបភាពបានទេ។ សូមព្យាយាមម្តងទៀត ឬ បញ្ចូលរូបភាពដែលបង្ហាញច្បាស់ជាងមុន។",
 
 
     // commands

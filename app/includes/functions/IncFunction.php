@@ -1,10 +1,5 @@
 <?php
 
-include __DIR__ . "/../../../vendor/autoload.php";
-
-
-
-
 function isAllowedImage($filePath)
 {
     $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'pdf', 'webp'];

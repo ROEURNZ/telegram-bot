@@ -7,7 +7,7 @@ function processMrzImage($filePath)
         return ['error' => 'File not accessible: ' . htmlspecialchars(basename($filePath))];
     }
 
-    $mrzCmd = "tesseract " . escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l eng';
+    $mrzCmd = "tesseract " . escapeshellarg($filePath) . ' stdout --psm 6 -c "tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<" -l khm+eng';
     $mrzOutput = @shell_exec($mrzCmd);
 
     if ($mrzOutput === null) {

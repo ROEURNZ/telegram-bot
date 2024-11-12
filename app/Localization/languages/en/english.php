@@ -28,14 +28,14 @@ return $messages = [
     // Location sharing
     'location_prompt' => "Please share your location to continue. This works best on mobile devices.",
     'decoded_location_shared' => " Date: %s, %s\nDecoded:\n%sLocation: %s",
-    'extracted_location_shared' => " Date: %s, %s\nVAT-TIN:\n%sLocation: %s",
+    'extracted_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'mrz_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
 
     // Decoding results
     'decode_success' => "Successfully decoded the barcode!\nType: %s\nData: %s",
     // 'decode_failure' => "Failed to decode the barcode. Please try again or upload a clearer image.",
-    'barcode_error'  => "Failed to decode the barcode. Please try again or upload a clearer image.",
+    'decode_failed' => "Failed to resolve the image. Please try again or upload a clearer image.",
 
     // Error messages
     'image_download_failed' => "Failed to download the image. Please try again.",
@@ -67,6 +67,7 @@ return $messages = [
 
     'language_changed' => 'Your language preference has been updated successfully.',
 
+    'profile_updated' => 'Your profile has been updated successfully.',
 
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
