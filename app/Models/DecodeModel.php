@@ -14,10 +14,7 @@ class DecodeModel
     // Function to add a barcode record
     public function addBarcode($params)
     {
-        // Check if the barcode already exists
-        if ($this->barcodeExists($params['code'])) {
-            return "Error: Barcode already exists.";
-        }
+
 
         // If the barcode doesn't exist, proceed with the insert
         $sql = "INSERT INTO `decode_bar_qrcode` (user_id, type, code, lat, lon, location_url, msg_id, file_id, file_unique_id, decoded_status) 
@@ -48,15 +45,6 @@ class DecodeModel
         }
     }
 
-    // Function to check if a barcode exists
-    public function barcodeExists($code)
-    {
-        $sql = "SELECT COUNT(*) FROM `decode_bar_qrcode` WHERE code = :code";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':code', $code, PDO::PARAM_STR);
-        $stmt->execute();
-        return $stmt->fetchColumn() > 0;
-    }
 
     // Function to reset decoded_status to 0 for all barcodes of the user
     public function updateDecodeStatus($userId)

@@ -62,6 +62,7 @@ return $messages = [
     'require_invoice_image' => 'Could not resolve this invoice image, please try again',
     'require_barcode_image' => 'Could not resolve this image, please try again',
     'require_mrz_image' => 'Could not resolve this image, please try again',
+    'commands_suggestion' => 'Please press any command to resolve the image.',
 
     'thank_you' => "Thank you for your support!",
 

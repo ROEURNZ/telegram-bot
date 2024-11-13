@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS `decode_bar_qrcode` (
 CREATE TABLE IF NOT EXISTS `ocr_tax_invoice` (
     `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user_id` BIGINT NOT NULL,
-    `tin` VARCHAR(50) NOT NULL,
+    `tin` VARCHAR(50) NULL,
     `lat` VARCHAR(50) NULL,
     `lon` VARCHAR(50) NULL,
     `location_url` VARCHAR(255) NULL,
-    `ocrtext` VARCHAR(50) NOT NULL,
+    `ocrtext` BIT NULL,
     `msg_id` BIGINT NOT NULL, 
     `raw_data` TEXT NULL,
     `file_id` varchar(100) NOT NULL,

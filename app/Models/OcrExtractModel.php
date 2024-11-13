@@ -13,10 +13,6 @@ class OcrExtractModel
 
     public function addOcrData($params)
     {
-        // Check if the barcode already exists
-        if ($this->ocrExists($params['user_id'], $params['tin'])) {
-            return "Error: OCR data already exists.";
-        }
 
         $sql = "INSERT INTO `ocr_tax_invoice` 
                 (user_id, tin, lat, lon, location_url, ocrtext, msg_id, raw_data, file_id, ocrhasvat, taxincluded, date) 
@@ -29,7 +25,7 @@ class OcrExtractModel
         $stmt->bindParam(':lat', $params['lat'], PDO::PARAM_STR);
         $stmt->bindParam(':lon', $params['lon'], PDO::PARAM_STR);
         $stmt->bindParam(':location_url', $params['location_url'], PDO::PARAM_STR);
-        $stmt->bindParam(':ocrtext', $params['ocrtext'], PDO::PARAM_STR);
+        $stmt->bindParam(':ocrtext', $params['ocrtext'], PDO::PARAM_INT);
         $stmt->bindParam(':msg_id', $params['msg_id'], PDO::PARAM_INT);
         $stmt->bindParam(':raw_data', $params['raw_data'], PDO::PARAM_STR);
         $stmt->bindParam(':file_id', $params['file_id'], PDO::PARAM_STR);
@@ -65,19 +61,6 @@ class OcrExtractModel
             error_log("Database error: " . implode(", ", $stmt->errorInfo()));
             return "Error: " . $stmt->errorInfo()[2];
         }
-    }
-
-
-    // Function to check if a barcode exists for a specific user and tin
-    public function ocrExists($userId, $vatTin)
-    {
-        $sql = "SELECT 1 FROM `ocr_tax_invoice` WHERE user_id = :user_id AND tin = :tin LIMIT 1";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
-        $stmt->bindParam(':tin', $vatTin, PDO::PARAM_STR);
-        $stmt->execute();
-        
-        return $stmt->fetchColumn() !== false;
     }
 
 

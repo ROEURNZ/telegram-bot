@@ -12,6 +12,7 @@ function processUpdates($updates, $token)
 
     $decModel = new DecodeModel();
     $mrzModel = new MrzExtractModel();
+
     $ocrModel = new OcrExtractModel();
     $useModel = new UserProfiles();
 
@@ -101,8 +102,9 @@ function processUpdates($updates, $token)
                                 sendMessage($chatId, $baseLanguage[$language]['language_changed'], $token);
                             }
 
-                            showContactSharing($chatId, $language, $baseLanguage, $token);
                             $useModel->updateUser($params);
+
+                            showContactSharing($chatId, $language, $baseLanguage, $token);
                         }
                     }
                 }
@@ -128,6 +130,25 @@ function processUpdates($updates, $token)
                     if ($useModel->checkUserExists($userId)) {
                         sendMessage($chatId, $baseLanguage[$language]['upload_mrz'], $token);
                         $userState['currentCommand'][$chatId] = 'mrz';
+                    }
+                }
+
+
+                if ($userCommand === '/share_location') {
+                    if ($useModel->checkUserExists($userId)) {
+                        if ($decModel->hasCompletedDecode($userId)) {
+                            setCommands($token, $activeLanguage);
+                            showLocationSharing($chatId, $language, $baseLanguage, $token);
+                            sendMessage($chatId, $baseLanguage[$language]['location_prompt'], $token);
+                        } else {
+                            sendMessage($chatId, $baseLanguage[$language]['decode_not_completed'], $token);
+                        }
+                    }
+                }
+
+                if ($userCommand === '/menu') {
+                    if ($useModel->checkUserExists($userId)) {
+                        sendMessage($chatId, $baseLanguage[$language]['menu'], $token);
                     }
                 }
             }
@@ -169,17 +190,13 @@ function processUpdates($updates, $token)
                         $phoneNumber,
                         $userUrl
                     );
-                    sendMessage($chatId, $responseMessage, $token, json_encode(['remove_keyboard' => true]));
-
+                    sendMessage($chatId, $responseMessage, $token);
                     continue;
                 } else {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['profile_updated'], $token);
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
-                    }
+                    sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }
             }
+
 
             if (isset($update['message']['photo'])) {
                 if ($useModel->checkUserExists($userId) && $useModel->selectedLanguage($userId)) {
@@ -207,85 +224,96 @@ function processUpdates($updates, $token)
 
                         file_put_contents($localFilePath, $downloadedImage);
 
-                        if ($userState['currentCommand'][$chatId] === 'ocr' || ($userState['currentCommand'][$chatId] !== 'decode') || ($userState['currentCommand'][$chatId] !== 'mrz') || ($userState['currentCommand'][$chatId] !== '')) {
-                            if (isAllowedImage($localFilePath)) {
-                                require_once __DIR__ . '/../includes/functions/OCRFunction.php';
-                                $ocrResult = processInvoiceImage($localFilePath);
-                                $userState['imageType'][$chatId] = 'invoice';
-                                $rawText = $ocrResult['rawData'];
-
-                                // If VAT-TIN found, process and store OCR results
-                                if (isset($ocrResult['taxIdentifiers']) && !empty($ocrResult['taxIdentifiers'])) {
-                                    if (!isset($userState['extractedVatTin'][$chatId])) {
-                                        $userState['extractedVatTin'][$chatId] = $ocrResult['taxIdentifiers'];
-                                        $tin = implode(", ", array_column($ocrResult['taxIdentifiers'], 'code'));
-
-                                        $ocrModel->addOcrData([
-                                            'user_id' => $userId,
-                                            'tin' => $tin,
-                                            'msg_id' => $messageId,
-                                            'raw_data' => $rawText,
-                                            'file_id' => $fileId,
-                                            'ocrtext' => 1,
-                                            'ocrhasvat' => 1,
-                                            'taxincluded' => 1,
-                                            'date' => date('Y-m-d H:i:s')
-                                        ]);
-
-                                        if (count($userState['extractedVatTin'][$chatId]) == 1) {
-                                            sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                        }
-                                    } else {
-                                        if (empty($ocrResult['taxIdentifiers'])) {
-                                            sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        // Assuming you have an array $userState to hold user-specific information
-                        if (($userState['currentCommand'][$chatId] === 'mrz')) {
+                        // Handle unsupported commands or image uploads when no specific command is set
+                        if ($userState['currentCommand'][$chatId] === 'mrz') {
                             if (isAllowedImage($localFilePath)) {
                                 require_once __DIR__ . '/../includes/functions/MRZFunction.php';
                                 $mrzResult = processMrzImage($localFilePath);
                                 $userState['imageType'][$chatId] = 'mrz';
 
+                                // Check if MRZ data exists
                                 if (isset($mrzResult['mrzData']) && !empty($mrzResult['mrzData'])) {
                                     if (!isset($userState['extractedMrz'][$chatId])) {
                                         $userState['extractedMrz'][$chatId] = $mrzResult['mrzData'];
                                         $mrzCode = $mrzResult['mrzData'];
                                         $rawMrzData = $mrzResult['text'];
 
-                                        // Save MRZ data to database
-                                        $mrzModel->addMRZData([
-                                            'user_id' => $userId,
-                                            'mrz_raw' => $rawMrzData,
-                                            'uic_data' => $mrzCode,
-                                            'msg_id' => $messageId,
-                                            'file_id' => $fileId,
-                                            'mrz_status' => 1,
-                                            'date' => date('Y-m-d H:i:s')
-                                        ]);
-                                        if (is_array($userState['decodedBarcodes'][$chatId]) && count($userState['extractedMrz'][$chatId]) == 1) {
+                                        // Only store MRZ data in the database if $mrzCode is not empty
+                                        if (!empty($mrzCode)) {
+                                            $mrzModel->addMRZData([
+                                                'user_id' => $userId,
+                                                'mrz_raw' => $rawMrzData,
+                                                'uic_data' => $mrzCode, // Store uic_data only if available
+                                                'msg_id' => $messageId,
+                                                'file_id' => $fileId,
+                                                'mrz_status' => 1, // Set status to 1 as MRZ data was found
+                                                'date' => date('Y-m-d H:i:s')
+                                            ]);
+
                                             sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                        } else {
+                                            // If MRZ code is empty, don't store and send decode failed message
+                                            sendMessage($chatId, $baseLanguage[$language]['decode_failed'], $token);
                                         }
                                     }
+                                } else {
+                                    // If MRZ data is not found, do not store anything and notify the user
+                                    sendMessage($chatId, $baseLanguage[$language]['decode_failed'], $token);
                                 }
+                            } else {
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
-                        }
-
-                        if (
-                            $userState['currentCommand'][$chatId] === 'decode' || ($userState['currentCommand'][$chatId] !== 'ocr') ||
-                            ($userState['currentCommand'][$chatId] !== 'mrz') || ($userState['currentCommand'][$chatId] !== '')
-                        ) {
+                        } elseif ($userState['currentCommand'][$chatId] === 'ocr') {
+                            // Check if the uploaded image is an invoice
                             if (isAllowedImage($localFilePath)) {
+                                // Process the invoice image
+                                require_once __DIR__ . '/../includes/functions/OCRFunction.php';
+                                $ocrResult = processInvoiceImage($localFilePath);
+                                $userState['imageType'][$chatId] = 'invoice';
+                                $ocrhasvat = $ocrResult['ocrhasvat'];
+                                $ocrData = $ocrResult['taxIdentifiers'] ?? [];
+                                $tin = $ocrResult['tin'];
+                                $tin = ($ocrhasvat === 1 && $tin) ? $tin : null;
+
+                                // Store OCR data for each image
+                                if (!isset($userState['extractedVatTin'][$chatId])) {
+                                    $userState['extractedVatTin'][$chatId] = [];
+                                }
+                                $userState['extractedVatTin'][$chatId][] = $ocrData;
+
+                                // Save OCR data to the database, even if tin is empty
+                                $ocrModel->addOcrData([
+                                    'user_id' => $userId,
+                                    'tin' => $tin,
+                                    'msg_id' => $messageId,
+                                    'raw_data' => $ocrResult['rawData'],
+                                    'file_id' => $fileId,
+                                    'ocrtext' => !empty($ocrResult['rawData']) ? 1 : 0,
+                                    'ocrhasvat' => $ocrhasvat,
+                                    'taxincluded' => 1,
+                                    'date' => date('Y-m-d H:i:s')
+                                ]);
+
+                                // Notify user with appropriate response
+                                if (!empty($ocrData)) {
+                                    if (is_array($userState['extractedVatTin'][$chatId]) && count($userState['extractedVatTin'][$chatId]) == 1) {
+                                        sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                    }
+                                } else {
+                                    // Message indicating OCR processing but no data found
+                                    sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
+                                }
+                            } else {
+                                // Handle unsupported image type for OCR
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
+                            }
+                        } elseif ($userState['currentCommand'][$chatId] === 'decode') {
+                            // Check if the uploaded image is a barcode/QR code
+                            if (isAllowedImage($localFilePath)) {
+                                // Process the barcode image
                                 require_once __DIR__ . '/../includes/functions/DecodeFunction.php';
                                 $decodedBarcodeData = processBarcodeImage($localFilePath);
 
-                                // Initialize 'decodedBarcodes' if it doesn't exist
-                                if (!isset($userState['decodedBarcodes'][$chatId])) {
-                                    $userState['decodedBarcodes'][$chatId] = [];
-                                }
                                 if (isset($decodedBarcodeData['code'])) {
                                     $code = $decodedBarcodeData['code'];
                                     $type = $decodedBarcodeData['type'];
@@ -312,22 +340,15 @@ function processUpdates($updates, $token)
                                         sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
                                     }
                                 } else {
-
-                                    if ((is_array($userState['decodedBarcodes'][$chatId]) && count($userState['decodedBarcodes'][$chatId]) == 0)) {
-                                        if (((empty($userState['decodedBarcodes']) && !empty($ocrResult['taxIdentifiers'])) || (empty($userState['decodedBarcodes']) && !empty($userState['extractedMrz'][$chatId])))) {
-                                            sendMessage($chatId, $baseLanguage[$language]['decode_failed'], $token);
-                                        } else {
-                                            if (empty($ocrResult['taxIdentifiers']) && (empty($userState['decodedBarcodes'][$chatId]))) {
-                                                sendMessage($chatId, $baseLanguage[$language]['location_request'], $token, json_encode(['remove_keyboard' => true]));
-                                            }
-                                        }
-                                    } else {
-                                        if (empty($ocrResult['taxIdentifiers']) && (empty($userState['decodedBarcodes'][$chatId])) && (empty($userState['extractedMrz'][$chatId]))) {
-                                            sendMessage($chatId, $baseLanguage[$language]['decode_failed'], $token);
-                                        }
-                                    }
+                                    sendMessage($chatId, $baseLanguage[$language]['decode_failed'], $token);
                                 }
+                            } else {
+                                // Handle unsupported image type for decoding
+                                sendMessage($chatId, $messages[$language]['unsupported_image_type'], $token);
                             }
+                        } elseif ($userState['currentCommand'][$chatId] !== 'decode' || $userState['currentCommand'][$chatId] !== 'ocr' || $userState['currentCommand'][$chatId] !== 'mrz') {
+                            // Handle unsupported command
+                            sendMessage($chatId, $baseLanguage[$language]['commands_suggestion'], $token);
                         }
                     }
                 }
@@ -361,21 +382,29 @@ function processUpdates($updates, $token)
                     }
 
                     // Handling OCR response
-                    if ($imageType === 'invoice' && !empty($ocrData)) {
-                        foreach ($ocrData as $index => $identifier) {
-                            $responseList .= sprintf(
-                                "%d. <code><b>%s:</b> %s</code>\n",
-                                $index + 1,
-                                htmlspecialchars($identifier['prefix']),
-                                htmlspecialchars($identifier['code'])
-                            );
+                    if (!empty($ocrData)) {
+                        $counter = 1;
+                        foreach ($ocrData as $identifiers) {
+                            foreach ($identifiers as $identifier) {
+                                $codeLength = strlen($identifier['code']);
+
+                                // Only include VAT-TINs with code length >= 10
+                                if ($codeLength >= 10) {
+                                    $responseList .= sprintf(
+                                        "%d. <code><b>%s:</b> %s</code>\n",
+                                        $counter++,
+                                        htmlspecialchars($identifier['prefix']),
+                                        htmlspecialchars($identifier['code'])
+                                    );
+                                }
+                            }
                         }
                     }
 
+
                     // Include MRZ data if available and format based on the number of lines
                     if ($imageType === 'mrz' && !empty($mrzData)) {
-                        $responseList .= "MRZ UIC:\n";
-                        $responseList .= "<code><b>" . htmlspecialchars($mrzData) . "</b></code>\n";
+                        $responseList .= "MRZ UIC: <code><b>" . htmlspecialchars($mrzData) . "</b></code>\n";
                     }
 
                     $params = [
@@ -385,6 +414,7 @@ function processUpdates($updates, $token)
                         'location_url' => $locationUrl,
                         'date' => $date,
                     ];
+
 
                     if (isset($tin) && !empty($tin)) {
                         $params['tin'] = $tin;
@@ -400,8 +430,7 @@ function processUpdates($updates, $token)
                             $responseList,
                             $locationUrl
                         );
-                    }
-                    if ($imageType === 'invoice') {
+                    } elseif ($imageType === 'invoice') {
                         $ocrModel->addLocationOcr($params);
                         $responseMessage = sprintf(
                             $baseLanguage[$language]['extracted_location_shared'],
@@ -410,8 +439,7 @@ function processUpdates($updates, $token)
                             $responseList,
                             $locationUrl
                         );
-                    }
-                    if ($imageType === 'mrz') {
+                    } elseif ($imageType === 'mrz') {
                         $mrzModel->addLocationMrz($params);
                         $responseMessage = sprintf(
                             $baseLanguage[$language]['mrz_location_shared'],
@@ -431,11 +459,7 @@ function processUpdates($updates, $token)
                     unset($userState['extractedMrz'][$chatId]);
                     unset($userState['imageType'][$chatId]);
                 } else {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['profile_updated'], $token);
-                    } else {
-                        sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
-                    }
+                    sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
                 }
             }
         }
