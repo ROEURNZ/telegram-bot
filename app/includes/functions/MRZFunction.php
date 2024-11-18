@@ -46,7 +46,8 @@ function processMrzImage($filePath)
 function extractMrzData($text)
 {
     // Define a regex pattern to match MRZ lines
-    $pattern = '/([A-Z0-9<]{44})|([A-Z0-9<]{30})|([A-Z0-9<]{36})/';
+    $pattern = '/([A-Z0-9<]{9,44})/';
+
     preg_match_all($pattern, $text, $matches);
 
     // If no MRZ data is found, return an error message
@@ -63,4 +64,3 @@ function extractMrzData($text)
 
     return $mrzInfo;
 }
-
