@@ -60,7 +60,7 @@ class UserProfiles
             ':username' => $params['username'],
             ':date' => $params['date'],
             ':language' => $params['language'],
-        ]) ? "Pre-store successful." : "Error: " . $stmt->errorInfo()[2];
+        ]) ? true : "Error: " . $stmt->errorInfo()[2];
     }
 
 
