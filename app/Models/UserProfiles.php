@@ -9,48 +9,33 @@ class UserProfiles
         $this->pdo = EzzeTeamDatabase::getInstance();
     }
 
-
-
-    // Check if user exists by user_id or username
     function userExists($params)
     {
-        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username";
+        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username OR phone_number = :phone_number";
         $checkStmt = $this->pdo->prepare($checkSql);
         $checkStmt->execute([
             ':user_id' => $params['user_id'],
-            ':username' => $params['username']
+            ':username' => $params['username'],
+            ':phone_number' => $params['phone_number']
         ]);
 
         return $checkStmt->fetchColumn() > 0;
     }
 
-    // Check if user already has a phone number
-    function checkUserPhone($userId)
-    {
-        $sql = "SELECT phone_number FROM `user_profiles` WHERE user_id = :user_id";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([':user_id' => $userId]);
-        $phone_number = $stmt->fetchColumn();
-
-        return $phone_number ? $phone_number : false;
-    }
-
-    // Pre-store basic user data (without phone number)
-    public function preStore($params)
+    function registerUser($params)
     {
         // Check if the user already exists
         if ($this->userExists($params)) {
             return "Error: User already exists.";
         }
 
-        // SQL statement for inserting basic user data (without phone number)
-        $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, created_at, date, language) 
-                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, NOW(), :date, :language)";
+        // SQL statement for inserting a new user, including the previous_language column
+        $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
+            VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
 
-        // Prepare the statement
         $stmt = $this->pdo->prepare($sql);
 
-        // Execute the statement with the parameters
+        // Execute the statement with the parameters, defaulting previous_language to 'en'
         return $stmt->execute([
             ':user_id' => $params['user_id'],
             ':chat_id' => $params['chat_id'],
@@ -58,55 +43,21 @@ class UserProfiles
             ':first_name' => $params['first_name'],
             ':last_name' => $params['last_name'],
             ':username' => $params['username'],
+            ':phone_number' => $params['phone_number'],
             ':date' => $params['date'],
             ':language' => $params['language'],
         ]) ? true : "Error: " . $stmt->errorInfo()[2];
     }
 
 
-    // Register user and add phone number
-    function registerUser($params)
+    function checkUserExists($userId)
     {
-        // Check if the user already exists by user_id
-        if ($this->userExists(['user_id' => $params['user_id'], 'username' => $params['username']])) {
-            return "Error: User with this ID or username already exists.";
-        }
-
-        // Check if the user already has a phone number
-        $existingPhoneNumber = $this->checkUserPhone($params['user_id']);
-        if ($existingPhoneNumber) {
-            return "Error: User already has a phone number ($existingPhoneNumber).";
-        }
-
-        // SQL statement for inserting phone number and other details
-        $sql = "UPDATE `user_profiles` 
-                    SET phone_number = :phone_number, 
-                        updated_at = NOW()
-                    WHERE user_id = :user_id";
-
-        // Prepare the statement
-        $stmt = $this->pdo->prepare($sql);
-
-        // Execute the statement with the parameters
-        return $stmt->execute([
-            ':user_id' => $params['user_id'],
-            ':phone_number' => $params['phone_number'],
-        ]) ? "User registered successfully with phone number." : "Error: " . $stmt->errorInfo()[2];
-    }
-
-    public function checkUserExists($params)
-    {
-        // SQL query to check if the user exists based on user_id or username
-        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username";
+        $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id";
         $checkStmt = $this->pdo->prepare($checkSql);
-        $checkStmt->execute([
-            ':user_id' => $params['user_id'],
-            ':username' => $params['username']
-        ]);
-
-        // Return true if a user is found, false otherwise
+        $checkStmt->execute([':user_id' => $userId]);
         return $checkStmt->fetchColumn() > 0;
     }
+
 
 
     // Helper function to check if username or phone number is unique (avoids duplicates)
@@ -191,4 +142,7 @@ class UserProfiles
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() ?: null;
     }
+
+
+
 }

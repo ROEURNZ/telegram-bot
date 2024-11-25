@@ -24,6 +24,7 @@ function processUpdates($updates, $token)
             $lastName = $update['message']['from']['last_name'] ?? '';
             $username = $update['message']['from']['username'] ?? '';
             $messageId = $update['message']['message_id'];
+            $date = date('Y-m-d H:i:s');
             $userState['currentCommand'][$chatId] = $userState['currentCommand'][$chatId] ?? '';
 
             $language = $userLanguages[$chatId] ?? $useModel->getUserLanguage($chatId) ?? 'en';
@@ -31,17 +32,39 @@ function processUpdates($updates, $token)
             if (isset($update['message']['text'])) {
                 $userCommand = $update['message']['text'];
                 if ($userCommand === '/start') {
-
                     if ($useModel->checkUserExists($userId)) {
-                        $welcomeMessage = sprintf($baseLanguage[$language]['welcome_message'], "<b>$firstName</b>", "<b>$lastName</b>");
+                        // Fetch existing language and greet the user
+                        $existingLanguage = $useModel->getUserLanguage($userId);
+                        $welcomeMessage = sprintf(
+                            $baseLanguage[$existingLanguage]['welcome_message'],
+                            "<b>$firstName</b>",
+                            "<b>$lastName</b>"
+                        );
                         sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
                     } else {
-                        sendMessage($chatId, $baseLanguage[$language]['new_user_message'], $token);
-                    }
+                        // Register new user
+                        $params = [
+                            'user_id' => $userId,
+                            'chat_id' => $chatId,
+                            'msg_id' => $messageId,
+                            'first_name' => $firstName,
+                            'last_name' => $lastName,
+                            'username' => $username,
+                            'phone_number' => null, // Placeholder for phone number
+                            'date' => $date,
+                            'language' => 'en', 
+                        ];
+                        $registrationStatus = $useModel->registerUser($params);
 
+                        if ($registrationStatus === true) {
+                            sendMessage($chatId, $baseLanguage['en']['new_user_message'], $token);
+                        } else {
+                            sendMessage($chatId, "Error registering user: $registrationStatus", $token);
+                        }
+                    }
+                    // Prompt for language selection
                     selectLanguage($chatId, $language, $baseLanguage, $token);
                 }
-
                 if (in_array($userCommand, [$baseLanguage['en']['language_option'], $baseLanguage['kh']['language_option']])) {
                     $language = $userCommand === $baseLanguage['en']['language_option'] ? 'en' : 'kh';
                     $userLanguages[$chatId] = $language;
@@ -53,13 +76,8 @@ function processUpdates($updates, $token)
                         sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
                     } else {
                         sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
-                        if ($useModel->getUsername($userId) === null) {
-                            showContactSharing($chatId, $language, $baseLanguage, $token);
-                        } else {
-                            if ($useModel->checkUserExists($userId)) {
-                                setCommands($token, $activeLanguage);
-                            }
-                        }
+
+                        showContactSharing($chatId, $language, $baseLanguage, $token);
                     }
                     continue;
                 }
@@ -154,48 +172,46 @@ function processUpdates($updates, $token)
             }
 
             if (isset($update['message']['contact'])) {
-                if (!$useModel->checkUserExists($userId) && !$useModel->selectedLanguage($userId)) {
 
-                    setCommands($token, $activeLanguage);
-                    $userState['contact_shared'][$chatId] = true;
-                    $userState['currentChatId'] = $chatId;
+                setCommands($token, $activeLanguage);
+                $userState['contact_shared'][$chatId] = true;
+                $userState['currentChatId'] = $chatId;
 
-                    $userId = $update['message']['from']['id'];
-                    $messageId = $update['message']['message_id'];
-                    $chatId = $update['message']['chat']['id'];
-                    $language = $userLanguages[$chatId] ?? 'en';
-                    $contact = $update['message']['contact'];
-                    $phoneNumber = $contact['phone_number'];
-                    $firstName = $contact['first_name'];
-                    $lastName = $contact['last_name'] ?? '';
-                    $username = $update['message']['from']['username'];
-                    $userUrl = "https://t.me/{$username}";
+                $userId = $update['message']['from']['id'];
+                $messageId = $update['message']['message_id'];
+                $chatId = $update['message']['chat']['id'];
+                $language = $userLanguages[$chatId] ?? 'en';
+                $contact = $update['message']['contact'];
+                $phoneNumber = $contact['phone_number'];
+                $firstName = $contact['first_name'];
+                $lastName = $contact['last_name'] ?? '';
+                $username = $update['message']['from']['username'];
+                $userUrl = "https://t.me/{$username}";
 
-                    $useModel->registerUser([
-                        'user_id' => $userId,
-                        'chat_id' => $chatId,
-                        'msg_id' => $messageId,
-                        'first_name' => $firstName,
-                        'last_name' => $lastName,
-                        'username' => $update['message']['from']['username'],
-                        'phone_number' => $phoneNumber,
-                        'date' => date('Y-m-d H:i:s'),
-                        'language' => $language ?? 'en',
-                    ]);
+                $params = [
+                    'user_id' => $userId,
+                    'chat_id' => $chatId,
+                    'msg_id' => $messageId,
+                    'first_name' => $firstName,
+                    'last_name' => $lastName,
+                    'username' => $update['message']['from']['username'],
+                    'phone_number' => $phoneNumber,
+                    'date' => date('Y-m-d H:i:s'),
+                    'language' => $language ?? 'en',
+                ];
+                $useModel->updateUser($params);
 
-                    $responseMessage = sprintf(
-                        $baseLanguage[$language]['thanks_for_contact'],
-                        $firstName,
-                        $lastName,
-                        $phoneNumber,
-                        $userUrl
-                    );
-                    sendMessage($chatId, $responseMessage, $token);
-                    continue;
-                } else {
-                    sendMessage($chatId, $baseLanguage[$language]['contact_not_registered'], $token);
-                }
+                $responseMessage = sprintf(
+                    $baseLanguage[$language]['thanks_for_contact'],
+                    $firstName,
+                    $lastName,
+                    $phoneNumber,
+                    $userUrl
+                );
+                sendMessage($chatId, $responseMessage, $token, json_encode(['remove_keyboard' => true]));
+                continue;
             }
+
 
 
             if (isset($update['message']['photo'])) {
