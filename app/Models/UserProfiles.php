@@ -47,7 +47,7 @@ class UserProfiles
             ':phone_number' => $params['phone_number'],
             ':date' => $params['date'],
             ':language' => $params['language'],
-        ]) ? "Record inserted successfully." : "Error: " . $stmt->errorInfo()[2];
+        ]) ? true : "Error: " . $stmt->errorInfo()[2];
     }
 
 

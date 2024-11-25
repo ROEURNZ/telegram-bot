@@ -1,5 +1,5 @@
 <?php
-
+include __DIR__ . '/../../Utils/MRZIdentifier.php';
 function processMrzImage($filePath)
 {
     // Check if the file exists and is readable
@@ -43,24 +43,5 @@ function processMrzImage($filePath)
     ];
 }
 
-function extractMrzData($text)
-{
-    // Define a regex pattern to match MRZ lines
-    $pattern = '/([A-Z0-9<]{9,44})/';
 
-    preg_match_all($pattern, $text, $matches);
 
-    // If no MRZ data is found, return an error message
-    if (empty($matches[0])) {
-        return 'MRZ data not found.';
-    }
-
-    // Trim and process each matched line into an array
-    $mrzLines = array_map('trim', $matches[0]);
-    $mrzInfo = [];
-    foreach ($mrzLines as $line) {
-        $mrzInfo[] = explode('<', $line);  // Split by '<' character
-    }
-
-    return $mrzInfo;
-}
