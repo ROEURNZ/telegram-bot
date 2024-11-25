@@ -19,7 +19,6 @@ function processInvoiceImage($filePath)
     } 
     $taxData = extractTaxIdentifiers($rawData);
 
-    $ocrtext = !empty($rawData) ? 1 : 0;
     return [
         'rawData' => $rawData,
         'taxIdentifiers' => $taxData['taxIdentifiers'],
