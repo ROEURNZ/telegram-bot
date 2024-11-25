@@ -52,7 +52,7 @@ function processUpdates($updates, $token)
                             'username' => $username,
                             'phone_number' => null, // Placeholder for phone number
                             'date' => $date,
-                            'language' => 'en', // Default language
+                            'language' => 'en', 
                         ];
                         $registrationStatus = $useModel->registerUser($params);
 

@@ -33,7 +33,6 @@ class UserProfiles
         $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
             VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
 
-        // Prepare the statement
         $stmt = $this->pdo->prepare($sql);
 
         // Execute the statement with the parameters, defaulting previous_language to 'en'
