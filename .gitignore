@@ -14,3 +14,4 @@ settings/database/*
 index.php
 command.php
 EzzeTeamModel.php
+development/

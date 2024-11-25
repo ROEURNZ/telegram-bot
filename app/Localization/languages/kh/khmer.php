@@ -75,7 +75,9 @@ return $langBase = [
 
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
-    'contact_not_registered' => 'Your contact is not registered. Please share your contact first.',
+    'contact_not_registered' => 'ព័ត៌មានទំនាក់ទំនងរបស់អ្នកមិនទាន់បានចុះឈ្មោះទេ។ សូមផ្ញើរព័ត៌មានទំនាក់ទំនងរបស់អ្នកជាមុនសិន។',
+
+    'contact_updated' => 'ព័ត៌មានទំនាក់ទំនងរបស់អ្នកត្រូវបានធ្វើបច្ចុប្បន្នភាពដោយជោគជ័យ។',
     // 'share_contact_prompt' => 'You can share your contact by using the /share_contact command.',
     // 'location_prompt' => 'Please share your location.',
     'decode_not_completed' => 'You have not completed the decode process yet.',
