@@ -73,6 +73,15 @@ return $langBase = [
     'require_invoice_image' => 'Could not resolve this invoice image, please try again',
 
 
+    'prompt' => 'តើអ្នកចង់ចែករំលែកទំនាក់ទំនងរបស់អ្នកឬទេ?',
+    'yes' => '✅ បាទ/ចាស',
+    'no' => '❌ទេ',
+
+
+    'contact_request' => 'សូមចែករំលែកព័ត៌មានទំនាក់ទំនងរបស់អ្នក។',
+    'skip_share_contact' => 'អ្នកបានជ្រើសរើសមិនចែករំលែកព័ត៌មានទំនាក់ទំនង។ សូមអរគុណ។',
+    
+
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',
     'contact_not_registered' => 'ព័ត៌មានទំនាក់ទំនងរបស់អ្នកមិនទាន់បានចុះឈ្មោះទេ។ សូមផ្ញើរព័ត៌មានទំនាក់ទំនងរបស់អ្នកជាមុនសិន។',

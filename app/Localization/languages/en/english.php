@@ -50,6 +50,14 @@ return $messages = [
     'location_request' => 'Please share your current location to continue.',
 
 
+    'prompt' => 'Do you want to share your contact?',
+    'yes' => '✅ Yes',
+    'no' => '❌ No',
+    'contact_request' => 'Please share your contact information.',
+    // 'share_contact' => 'Share Contact',
+    'skip_share_contact' => 'You have chosen not to share your contact.',
+    // 'location_request' => 'Please share your location.',
+
 
     'help' => 'This is your help message. You can use /start to begin.',
     'menu' => 'Menu options: /start, /help',

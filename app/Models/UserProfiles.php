@@ -11,16 +11,21 @@ class UserProfiles
 
     function userExists($params)
     {
+        // Check if username or phone_number exist in $params, otherwise set them to empty string
+        $username = isset($params['username']) ? $params['username'] : '';
+        $phoneNumber = isset($params['phone_number']) ? $params['phone_number'] : '';
+    
         $checkSql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id OR username = :username OR phone_number = :phone_number";
         $checkStmt = $this->pdo->prepare($checkSql);
         $checkStmt->execute([
             ':user_id' => $params['user_id'],
-            ':username' => $params['username'],
-            ':phone_number' => $params['phone_number']
+            ':username' => $username,
+            ':phone_number' => $phoneNumber
         ]);
-
+    
         return $checkStmt->fetchColumn() > 0;
     }
+    
 
     function registerUser($params)
     {
@@ -48,6 +53,21 @@ class UserProfiles
             ':language' => $params['language'],
         ]) ? true : "Error: " . $stmt->errorInfo()[2];
     }
+
+    function checkUserPhoneNumberExists($userId, $phone)
+    {
+        // SQL query to check if the phone number exists for the specified user
+        $sql = "SELECT COUNT(*) FROM `user_profiles` WHERE user_id = :user_id AND phone_number = :phone_number";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+            ':user_id' => $userId,
+            ':phone_number' => $phone
+        ]);
+    
+        // If the count is greater than 0, the phone number exists for the user
+        return $stmt->fetchColumn() > 0;
+    }
+    
 
 
     function checkUserExists($userId)
@@ -142,7 +162,4 @@ class UserProfiles
         $stmt->execute([':user_id' => $userId]);
         return $stmt->fetchColumn() ?: null;
     }
-
-
-
 }
