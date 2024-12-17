@@ -71,6 +71,7 @@ return $langBase = [
 
     'require_barcode_image' => 'Could not resolve this image, please try again',
     'require_invoice_image' => 'Could not resolve this invoice image, please try again',
+    'no_permission' => 'អ្នកត្រូវបានហាមឃាត់នៅពេលនេះ ហើយមិនអាចអនុវត្តសកម្មភាពនេះបានទេ',
 
 
     'prompt' => 'តើអ្នកចង់ចែករំលែកទំនាក់ទំនងរបស់អ្នកឬទេ?',
@@ -80,7 +81,7 @@ return $langBase = [
 
     'contact_request' => 'សូមចែករំលែកព័ត៌មានទំនាក់ទំនងរបស់អ្នក។',
     'skip_share_contact' => 'អ្នកបានជ្រើសរើសមិនចែករំលែកព័ត៌មានទំនាក់ទំនង។ សូមអរគុណ។',
-    
+
 
     'please_select_language' => 'Please select a language first.',
     'language_prompt' => 'Please choose your language.',

@@ -17,6 +17,7 @@ function processUpdates($updates, $token)
     $ocrModel = new OcrExtractModel();
     $useModel = new UserProfiles();
 
+
     foreach ($updates as $update) {
         if (isset($update['message'])) {
             $chatId = $update['message']['chat']['id'];
@@ -30,8 +31,19 @@ function processUpdates($updates, $token)
 
             $language = $userLanguages[$chatId] ?? $useModel->getUserLanguage($chatId) ?? 'en';
             $activeLanguage = $baseLanguage[$language];
+
+
+            // Permission check
+            // if (!$useModel->hasPermission($userId)) {
+            //     sendMessage($chatId, $baseLanguage[$language]['no_permission'], $token);
+            //     continue;
+            // }
+
             if (isset($update['message']['text'])) {
                 $userCommand = $update['message']['text'];
+
+
+
                 if ($userCommand === '/start') {
                     if ($useModel->checkUserExists($userId)) {
 
@@ -41,7 +53,10 @@ function processUpdates($updates, $token)
                             "<b>$firstName</b>",
                             "<b>$lastName</b>"
                         );
-                        sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
+                        if ($useModel->hasPermission($userId)) {
+
+                            sendMessage($chatId, $welcomeMessage, $token, ['parse_mode' => 'HTML']);
+                        }
                     } else {
                         // Register new user
                         $phone = $update['message']['contact']['phone_number'];
@@ -53,6 +68,7 @@ function processUpdates($updates, $token)
                             'last_name' => $lastName,
                             'username' => $username,
                             'phone_number' => null,
+                            'permission' => 1,
                             'date' => $date,
                             'language' => 'en',
                         ];
@@ -65,112 +81,124 @@ function processUpdates($updates, $token)
                         selectLanguage($chatId, $language, $baseLanguage, $token);
                     }
                 }
-                if (in_array($userCommand, [$baseLanguage['en']['language_option'], $baseLanguage['kh']['language_option']])) {
-                    $language = $userCommand === $baseLanguage['en']['language_option'] ? 'en' : 'kh';
-                    $userLanguages[$chatId] = $language;
 
-                    $useModel->updateUserLanguage($chatId, $language);
-      
+                // Check permissions for other commands
+                if ($useModel->hasPermission($userId)) {
 
-                    // Use $userState to manage language change status
-                    if (isset($userState['is_changing_language'][$chatId]) && $userState['is_changing_language'][$chatId]) {
-                        sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
+                    if (in_array($userCommand, [$baseLanguage['en']['language_option'], $baseLanguage['kh']['language_option']])) {
+                        $language = $userCommand === $baseLanguage['en']['language_option'] ? 'en' : 'kh';
+                        $userLanguages[$chatId] = $language;
+
+                        $useModel->updateUserLanguage($chatId, $language);
+
+
+                        // Use $userState to manage language change status
+                        if (isset($userState['is_changing_language'][$chatId]) && $userState['is_changing_language'][$chatId]) {
+                            sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
+                        } else {
+                            sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
+                            $phone = $update['message']['contact']['phone_number'];
+                            if (!$useModel->checkUserPhoneNumberExists($userId, $phone)) {
+                                sendInlineKeyboard($chatId, $language, $baseLanguage, $token);
+                                setCommands($token, $activeLanguage);
+                            }
+                        }
+                        continue;
                     }
-                     else {
-                        sendMessage($chatId, $baseLanguage[$language]['language_selection'], $token, json_encode(['remove_keyboard' => true]));
-                        $phone = $update['message']['contact']['phone_number'];
+
+
+
+                    if ($userCommand === '/change_language') {
+                        $userState['is_changing_language'][$chatId] = true;
+
+                        if (!$useModel->checkUserExists($userId)) {
+                            // showContactSharing($chatId, $language, $baseLanguage, $token);
+                        } else {
+                            selectLanguage($chatId, $language, $baseLanguage, $token);
+                            setCommands($token, $activeLanguage);
+                        }
+                        continue;
+                    }
+
+                    if ($userCommand === '/share_contact') {
                         if (!$useModel->checkUserPhoneNumberExists($userId, $phone)) {
                             sendInlineKeyboard($chatId, $language, $baseLanguage, $token);
                             setCommands($token, $activeLanguage);
-                        }
-                    }
-                    continue;
-                }
-
-                if ($userCommand === '/change_language') {
-                    $userState['is_changing_language'][$chatId] = true;
-
-                    if (!$useModel->checkUserExists($userId)) {
-                        // showContactSharing($chatId, $language, $baseLanguage, $token);
-                    } else {
-                        selectLanguage($chatId, $language, $baseLanguage, $token);
-                        setCommands($token, $activeLanguage);
-                    }
-                    continue;
-                }
-
-                if ($userCommand === '/share_contact') {
-                    if (!$useModel->checkUserPhoneNumberExists($userId, $phone)) {
-                        sendInlineKeyboard($chatId, $language, $baseLanguage, $token);
-                        setCommands($token, $activeLanguage);
-                    } else {
-                        if (!$useModel->selectedLanguage($userId)) {
-                            selectLanguage($chatId, $language, $baseLanguage, $token);
                         } else {
-                            $phone = $update['message']['contact']['phone_number'];
-                            $params = [
-                                'chat_id' => $chatId,
-                                'msg_id' => $messageId,
-                                'first_name' => $firstName,
-                                'last_name' => $lastName,
-                                'username' => $username,
-                                'phone_number' => $phone,
-                                'date' => $date,
-                                'language' => $language ?? 'en',
-                            ];
+                            if (!$useModel->selectedLanguage($userId)) {
+                                selectLanguage($chatId, $language, $baseLanguage, $token);
+                            } else {
+                                $phone = $update['message']['contact']['phone_number'];
+                                $params = [
+                                    'chat_id' => $chatId,
+                                    'msg_id' => $messageId,
+                                    'first_name' => $firstName,
+                                    'last_name' => $lastName,
+                                    'username' => $username,
+                                    'phone_number' => $phone,
+                                    'permission' => 1,
+                                    'date' => $date,
+                                    'language' => $language ?? 'en',
+                                ];
 
-                            if ($useModel->getUserLanguage($chatId) !== $language) {
-                                $useModel->updateUserLanguage($userId, $language);
-                                sendMessage($chatId, $baseLanguage[$language]['language_changed'], $token);
+                                if ($useModel->getUserLanguage($chatId) !== $language) {
+                                    $useModel->updateUserLanguage($userId, $language);
+                                    sendMessage($chatId, $baseLanguage[$language]['language_changed'], $token);
+                                }
                             }
                         }
                     }
-                }
 
-                // Handle /decode command only if the user's contact is registered
-                if ($userCommand === '/decode') {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
-                        $userState['currentCommand'][$chatId] = 'decode';
-                    }
-                }
-
-                // Handle /ocr command similarly
-                if ($userCommand === '/ocr') {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['upload_invoice'], $token);
-                        $userState['currentCommand'][$chatId] = 'ocr';
-                    }
-                }
-
-                // Handle /mrz command similarly
-                if ($userCommand === '/mrz') {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['upload_mrz'], $token);
-                        $userState['currentCommand'][$chatId] = 'mrz';
-                    }
-                }
-
-
-                if ($userCommand === '/share_location') {
-                    if ($useModel->checkUserExists($userId)) {
-                        if ($decModel->hasCompletedDecode($userId)) {
-                            setCommands($token, $activeLanguage);
-                            sendMessage($chatId, $baseLanguage[$language]['location_prompt'], $token);
-                        } else {
-                            sendMessage($chatId, $baseLanguage[$language]['decode_not_completed'], $token);
+                    // Handle /decode command only if the user's contact is registered
+                    if ($userCommand === '/decode') {
+                        if ($useModel->checkUserExists($userId)) {
+                            sendMessage($chatId, $baseLanguage[$language]['upload_barcode'], $token);
+                            $userState['currentCommand'][$chatId] = 'decode';
                         }
                     }
-                }
 
-                if ($userCommand === '/menu') {
-                    if ($useModel->checkUserExists($userId)) {
-                        sendMessage($chatId, $baseLanguage[$language]['menu'], $token);
+                    // Handle /ocr command similarly
+                    if ($userCommand === '/ocr') {
+                        if ($useModel->checkUserExists($userId)) {
+                            sendMessage($chatId, $baseLanguage[$language]['upload_invoice'], $token);
+                            $userState['currentCommand'][$chatId] = 'ocr';
+                        }
+                    }
+
+                    // Handle /mrz command similarly
+                    if ($userCommand === '/mrz') {
+                        if ($useModel->checkUserExists($userId)) {
+                            sendMessage($chatId, $baseLanguage[$language]['upload_mrz'], $token);
+                            $userState['currentCommand'][$chatId] = 'mrz';
+                        }
+                    }
+
+
+                    if ($userCommand === '/share_location') {
+                        if ($useModel->checkUserExists($userId)) {
+                            if ($decModel->hasCompletedDecode($userId)) {
+                                setCommands($token, $activeLanguage);
+                                sendMessage($chatId, $baseLanguage[$language]['location_prompt'], $token);
+                            } else {
+                                sendMessage($chatId, $baseLanguage[$language]['decode_not_completed'], $token);
+                            }
+                        }
+                    }
+
+                    if ($userCommand === '/menu') {
+                        if ($useModel->checkUserExists($userId)) {
+                            sendMessage($chatId, $baseLanguage[$language]['menu'], $token);
+                        }
+                    }
+                } else {
+                    // Send 'no permission' message for users without permission, except for /start
+                    if ($userCommand === '/start') {
+                        sendMessage($chatId, $baseLanguage[$language]['no_permission'], $token);
                     }
                 }
             }
 
-            if (isset($update['message']['contact'])) {
+            if (isset($update['message']['contact']) && $useModel->hasPermission($userId)) {
                 setCommands($token, $activeLanguage);
                 $userState['contact_shared'][$chatId] = true;
                 $userState['currentChatId'] = $chatId;
@@ -206,10 +234,9 @@ function processUpdates($updates, $token)
                     $userUrl
                 );
                 sendMessage($chatId, $responseMessage, $token, json_encode(['remove_keyboard' => true]));
-
             }
 
-            if (isset($update['message']['photo'])) {
+            if (isset($update['message']['photo']) && $useModel->hasPermission($userId)) {
                 if ($useModel->checkUserExists($userId) && $useModel->selectedLanguage($userId)) {
                     setCommands($token, $activeLanguage);
 
@@ -366,7 +393,7 @@ function processUpdates($updates, $token)
             }
 
             // Handling location data
-            if (isset($update['message']['location'])) {
+            if (isset($update['message']['location']) && $useModel->hasPermission($userId)) {
                 if ($useModel->checkUserExists($userId) && $useModel->selectedLanguage($userId)) {
                     $userId = $update['message']['from']['id'];
                     $chatId = $update['message']['chat']['id'];

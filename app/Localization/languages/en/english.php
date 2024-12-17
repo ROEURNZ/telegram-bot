@@ -31,7 +31,8 @@ return $messages = [
     'extracted_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'mrz_location_shared' => " Date: %s, %s\n%sLocation: %s",
     'thank_you_location' => "Thank you for sharing your location!",
-
+ 'no_permission' => 'You are currently banned and cannot perform this action.',
+   
     // Decoding results
     'decode_success' => "Successfully decoded the barcode!\nType: %s\nData: %s",
     // 'decode_failure' => "Failed to decode the barcode. Please try again or upload a clearer image.",

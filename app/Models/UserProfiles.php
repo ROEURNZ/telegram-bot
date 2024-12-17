@@ -27,21 +27,29 @@ class UserProfiles
     }
     
 
-    function registerUser($params)
+
+
+    public function registerUser($params)
     {
         // Check if the user already exists
         if ($this->userExists($params)) {
             return "Error: User already exists.";
         }
 
-        // SQL statement for inserting a new user, including the previous_language column
-        $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, created_at, date, language) 
-            VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, NOW(), :date, :language)";
+        // Default permission to 1 if not set
+        $permission = isset($params['permission']) ? $params['permission'] : 1;
+
+        // Default language to 'en' if not set
+        $language = isset($params['language']) ? $params['language'] : 'en';
+
+        // SQL statement for inserting a new user
+        $sql = "INSERT INTO `user_profiles` (user_id, chat_id, msg_id, first_name, last_name, username, phone_number, permission, created_at, date, language) 
+                VALUES (:user_id, :chat_id, :msg_id, :first_name, :last_name, :username, :phone_number, :permission, NOW(), :date, :language)";
 
         $stmt = $this->pdo->prepare($sql);
 
-        // Execute the statement with the parameters, defaulting previous_language to 'en'
-        return $stmt->execute([
+        // Execute the statement with parameters
+        $executeSuccess = $stmt->execute([
             ':user_id' => $params['user_id'],
             ':chat_id' => $params['chat_id'],
             ':msg_id' => $params['msg_id'],
@@ -49,10 +57,27 @@ class UserProfiles
             ':last_name' => $params['last_name'],
             ':username' => $params['username'],
             ':phone_number' => $params['phone_number'],
+            ':permission' => $permission,
             ':date' => $params['date'],
-            ':language' => $params['language'],
-        ]) ? true : "Error: " . $stmt->errorInfo()[2];
+            ':language' => $language,
+        ]);
+
+        return $executeSuccess ? true : "Error: " . $stmt->errorInfo()[2];
     }
+
+    // Check if user has permission (1 means allowed)
+    public function hasPermission($user_id)
+    {
+        // Check if user exists
+        $sql = "SELECT permission FROM `user_profiles` WHERE user_id = :user_id LIMIT 1";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':user_id' => $user_id]);
+        $result = $stmt->fetch(PDO::FETCH_COLUMN);
+
+        // Return true if the permission is '1', otherwise false
+        return $result !== false && $result == 1;
+    }
+
 
     function checkUserPhoneNumberExists($userId, $phone)
     {

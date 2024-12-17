@@ -8,7 +8,7 @@ while (true) {
     $url = "https://api.telegram.org/bot{$token}/getUpdates?offset={$offset}&timeout=30";
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
     $response = curl_exec($ch);
 
     if ($response === false) {
